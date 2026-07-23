@@ -1,0 +1,6 @@
+/* Hugelmann — Webfonts
+   Brand typeface: Fira Sans (Brandkit: "Fira Sans Bold" headlines, "Fira Sans Medium" body).
+   Fira Sans is the genuine brand font, served here from Google Fonts.
+   Accent/handwritten "besser wohnen!" appears only in the locked logo lockup;
+   Caveat is provided as a NEAR-MATCH substitute for standalone script accents (flagged in readme.md). */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Caveat:wght@500;700&display=swap');

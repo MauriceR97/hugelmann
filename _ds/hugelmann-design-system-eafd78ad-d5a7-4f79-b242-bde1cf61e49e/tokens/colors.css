@@ -1,0 +1,74 @@
+/* Hugelmann — Color tokens
+   Source of truth: Hugelmann-Brandkit.pdf (Farbpalette) + pixel-sampled swatches.
+   Brand blue #034EA3 (Küchen Hugelmann), brand red #E30613 (Möbel Hugelmann),
+   anthracite #4A4A49 (interliving), white. */
+:root {
+  /* ---- Brand core ---- */
+  --hg-blue: #034EA3;        /* primary — Küchen Hugelmann */
+  --hg-red: #E30613;         /* accent — Möbel Hugelmann */
+  --hg-anthracite: #4A4A49;  /* interliving box / dark neutral */
+  --hg-white: #FFFFFF;
+
+  /* ---- Blue scale ---- */
+  --blue-900: #01203f;
+  --blue-800: #012f60;
+  --blue-700: #023d80;
+  --blue-600: #034EA3;  /* = brand blue */
+  --blue-500: #1a63b8;
+  --blue-400: #4a86cc;
+  --blue-300: #86b0de;
+  --blue-200: #bcd4ee;
+  --blue-100: #e2edf8;
+  --blue-50:  #f2f7fc;
+
+  /* ---- Red scale ---- */
+  --red-700: #a5040e;
+  --red-600: #c60511;
+  --red-500: #E30613;  /* = brand red */
+  --red-400: #ef3b45;
+  --red-300: #f77d84;
+  --red-100: #fde3e4;
+
+  /* ---- Neutral / grey scale ---- */
+  --grey-900: #201f1f;
+  --grey-800: #333332;
+  --grey-700: #4A4A49;  /* = anthracite */
+  --grey-600: #63625f;
+  --grey-500: #86847f;
+  --grey-400: #adaba6;
+  --grey-300: #d0cec9;
+  --grey-200: #e5e3df;
+  --grey-100: #f2f1ee;
+  --grey-50:  #f9f8f6;
+
+  /* ---- Semantic aliases ---- */
+  --color-primary: var(--hg-blue);
+  --color-primary-hover: var(--blue-700);
+  --color-primary-active: var(--blue-800);
+  --color-accent: var(--hg-red);
+  --color-accent-hover: var(--red-600);
+
+  --text-heading: var(--grey-900);
+  --text-body: var(--grey-700);
+  --text-muted: var(--grey-500);
+  --text-on-brand: var(--hg-white);
+  --text-link: var(--hg-blue);
+  --text-link-hover: var(--blue-700);
+
+  --surface-page: var(--hg-white);
+  --surface-subtle: var(--grey-50);
+  --surface-muted: var(--grey-100);
+  --surface-card: var(--hg-white);
+  --surface-inverse: var(--grey-700);
+  --surface-brand: var(--hg-blue);
+
+  --border-subtle: var(--grey-200);
+  --border-default: var(--grey-300);
+  --border-strong: var(--grey-400);
+
+  --focus-ring: color-mix(in srgb, var(--hg-blue) 55%, transparent);
+
+  --success: #2e7d32;
+  --warning: #e08a00;
+  --danger: var(--hg-red);
+}
