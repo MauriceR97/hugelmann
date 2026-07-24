@@ -25,14 +25,40 @@
     a { color: var(--text-link); }
     a:hover { color: var(--text-link-hover); }
   </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  @media (max-width: 980px){
+    [data-rsp~="cols4"]{grid-template-columns:repeat(2,1fr) !important;}
+    [data-rsp~="cols3"]{grid-template-columns:1fr !important;}
+    [data-rsp~="split"]{grid-template-columns:1fr !important;}
+    [data-rsp~="dash"]{display:none !important;}
+  }
+  @media (max-width: 720px){
+    h1{font-size:36px !important;}
+    h2{font-size:28px !important;}
+    [data-rsp~="cols4"]{grid-template-columns:1fr !important;}
+    [data-rsp~="pad"]{padding:48px 20px !important;}
+    [data-rsp~="hero"]{padding:140px 20px 56px !important;}
+    [data-rsp~="hero"] div{flex-wrap:wrap;}
+    [data-rsp~="card"]{padding:28px 20px !important;}
+    [data-rsp~="hauto"]{height:auto !important;}
+    [data-rsp~="ba"]{height:420px !important;}
+    [data-rsp~="stoerer"]{transform:rotate(8deg) scale(0.42) !important;transform-origin:top right !important;top:12px !important;right:12px !important;}
+    [data-rsp~="header"]{padding:10px 16px !important;gap:12px !important;}
+    [data-rsp~="header"] img{height:40px !important;}
+    [data-rsp~="slide"]{flex:0 0 82vw !important;}
+    [data-rsp~="snav-l"]{left:4px !important;}
+    [data-rsp~="snav-r"]{right:4px !important;}
+  }
+  </style>
 </helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#034EA3"></rect><circle cx="50" cy="50" r="22" fill="#E30613"></circle><text x="50" y="57" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">4T€</text></svg></template>
-<div style="min-width:1100px;">
+<div>
 <div style="background:var(--hg-red);color:#fff;text-align:center;padding:9px 16px;font-size:14px;font-weight:var(--fw-bold);letter-spacing:0.06em;text-transform:uppercase;">Alt-gegen-Neu-Aktion · begrenzt auf 30 Teilnehmer · gültig bis 31.12.2026</div>
 
 
 <header style="position:sticky;top:0;z-index:50;background:var(--hg-white);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-xs);">
-  <div style="max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+  <div data-rsp="header" style="max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
     <img src="/assets/logo.png" alt="Küchen Hugelmann – interliving" style="height:52px;display:block;">
     <div style="display:flex;align-items:center;gap:28px;">
       <a href="tel:+49782196570" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-heading);">
@@ -49,11 +75,11 @@
   <div style="position:absolute;inset:0;">
     <image-slot id="hero-bg" shape="rect" placeholder="Hero-Foto: warme, helle Küche mit Menschen ~50+ (z.B. Paar beim Kochen)"></image-slot>
   </div>
-  <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(1,32,63,0.90) 0%, rgba(1,32,63,0.72) 42%, rgba(1,32,63,0.10) 100%); pointer-events: none; left: -5px; top: -51px"><a href="/alt-gegen-neu-formular/" style="position: absolute; top: 177px; z-index: 3; width: 318px; height: 309px; border-radius: 50%; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-align: center; text-decoration: none; transform: rotate(8deg); box-shadow: 0px 12px 28px 0px #201F1F6F; padding: 18px; box-sizing: border-box; transition: all 200ms cubic-bezier(0.4,0,0.2,1); left: 1501px; background-color: var(--hg-red)" style-hover="background:var(--red-600);transform:rotate(8deg) translateY(-3px);">
+  <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(1,32,63,0.90) 0%, rgba(1,32,63,0.72) 42%, rgba(1,32,63,0.10) 100%); pointer-events: none; left: -5px; top: -51px"><a href="/alt-gegen-neu-formular/" data-rsp="stoerer" style="position: absolute; top: 177px; z-index: 3; width: 318px; height: 309px; border-radius: 50%; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-align: center; text-decoration: none; transform: rotate(8deg); box-shadow: 0px 12px 28px 0px #201F1F6F; padding: 18px; box-sizing: border-box; transition: all 200ms cubic-bezier(0.4,0,0.2,1); left: auto; right: 70px; background-color: var(--hg-red); pointer-events: auto" style-hover="background:var(--red-600);transform:rotate(8deg) translateY(-3px);">
     <span style="font-size: 25px; font-weight: var(--fw-bold); text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.2">Bis zu</span>
     <span style="font-size: 80px; font-weight: var(--fw-black); letter-spacing: var(--ls-tight); line-height: 1">4.000&nbsp;€</span>
     <span style="font-size: 30px; font-weight: var(--fw-bold); text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.2">Tauschprämie</span>
-  </a><div style="position: relative; max-width: 1200px; margin: 0 auto; width: 1209px; padding: 88px 32px; pointer-events: none; height: 493px">
+  </a><div data-rsp="hero hauto" style="position: relative; max-width: 1200px; margin: 0 auto; width: 100%; padding: 88px 32px; pointer-events: none; height: 493px; box-sizing: border-box">
     <div data-reveal="up" style="max-width:640px;display:flex;flex-direction:column;gap:22px;color:#fff;">
       <div style="display:flex;align-items:center;gap:14px;">
         
@@ -103,15 +129,15 @@
 
 
 <section id="ablauf" style="background:var(--surface-subtle);">
-  <div style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:48px;align-items:center;">
+  <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:48px;align-items:center;">
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:640px;">
       <span style="font-size:13px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--hg-blue);">So einfach geht's</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-transform:uppercase;">In 3 Schritten zur neuen Küche</h2>
       <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);">Kein Papierkram, kein Risiko – Sie beantworten ein paar Fragen, den Rest übernehmen wir.</p>
     </div>
     <div style="position:relative;width:100%;">
-      <div style="position:absolute;top:54px;left:16.67%;right:16.67%;border-top:2px dashed var(--blue-300);"></div>
-      <div data-reveal-group="110" style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;width:100%;">
+      <div data-rsp="dash" style="position:absolute;top:54px;left:16.67%;right:16.67%;border-top:2px dashed var(--blue-300);"></div>
+      <div data-rsp="cols3" data-reveal-group="110" style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;width:100%;">
         <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
           <span style="width:64px;height:64px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:var(--fw-bold);border:6px solid var(--surface-subtle);box-sizing:content-box;">1</span>
           <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:28px 32px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-top:18px;flex:1;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-300);">
@@ -148,7 +174,7 @@
 
 <section style="background-color: var(--surface-card)">
   
-<div style="max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+<div data-rsp="pad split" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
     <div data-reveal="left" style="height:420px;">
       <image-slot id="old-kitchen" shape="rounded" radius="22" placeholder="Foto: gepflegte, ältere Küche (Vorher-Motiv)" style="width: 690px; height: 371px; overflow: visible"></image-slot>
     </div>
@@ -166,13 +192,13 @@
     </div>
   </div></section><section style="border-top: 1px solid var(--border-subtle); background-color: var(--blue-50)">
   
-<div style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:44px;align-items:center;">
+<div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:44px;align-items:center;">
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:660px;">
       <span style="font-size: 16px; font-weight: var(--fw-bold); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--hg-blue)">Rechenbeispiele</span>
       <h2 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 3.5rem; color: var(--text-heading); letter-spacing: var(--ls-tight); text-transform: uppercase; width: 644px; height: 132px">Einblicke in einige Küchenmodelle</h2>
       <p style="margin: 0; font-size: 30px; line-height: var(--lh-relaxed); font-weight: 300">Wählen Sie aus Top-Marken</p>
     </div>
-    <div data-reveal-group="110" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;width:100%;align-items:stretch;">
+    <div data-rsp="cols3" data-reveal-group="110" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;width:100%;align-items:stretch;">
       <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-3px);box-shadow:var(--shadow-lg);">
         <div style="height:210px;position:relative;">
           <image-slot id="beispiel-culineo" shape="rect" placeholder="Foto: Culineo Küche C357 (U-Form, schiefergrau)"></image-slot>
@@ -249,11 +275,11 @@
         </div>
       </div>
     </div>
-    <div data-reveal="up" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;width:100%;align-items:stretch;">
-    <div style="border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); padding: 44px 48px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px; background-color: var(--blue-100); height: 592px">
+    <div data-rsp="split" data-reveal="up" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;width:100%;align-items:stretch;">
+    <div data-rsp="card hauto" style="border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); padding: 44px 48px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px; background-color: var(--blue-100); height: 592px">
       <div style="display:flex;flex-direction:column;gap:6px;text-align:center;">
-        <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;color:var(--text-heading);letter-spacing:var(--ls-tight);">So setzt sich Ihr Voll-Service-Preis zusammen</h3>
-        <span style="font-size:15px;color:var(--text-muted);">Ausführliches Rechenbeispiel – jede Position im Überblick</span>
+        <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;color:var(--text-heading);letter-spacing:var(--ls-tight);">So viel sparen Sie mit der Aktion</h3>
+        <span style="font-size:15px;color:var(--text-muted);">Ihr Vorteil – jede Position im Überblick</span>
       </div>
       <div style="display:flex;flex-direction:column;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); border-color: var(--hg-blue)">
@@ -265,34 +291,28 @@
           <strong style="font-size:17px;color:var(--hg-red);white-space:nowrap;">− 2.500,–€</strong>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); border-color: var(--hg-blue)">
-          <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-medium);">Abbau &amp; Mitnahme der alten Küche <span style="font-size:14px;color:var(--text-muted);">(statt 490,–€)</span></span>
+          <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-medium);">Abbau &amp; Mitnahme der alten Küche</span>
           <strong style="font-size:17px;color:var(--success);white-space:nowrap;">0,–€</strong>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); border-color: var(--hg-blue)">
-          <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-medium);">Lieferung durch unser eigenes Team <span style="font-size:14px;color:var(--text-muted);">(statt 199,–€)</span></span>
-          <strong style="font-size:17px;color:var(--success);white-space:nowrap;">0,–€</strong>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); border-color: var(--hg-blue)">
-          <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-medium);">Montage mit höchster Sorgfalt <span style="font-size:14px;color:var(--text-muted);">(statt 1.490,–€)</span></span>
+          <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-medium);">Lieferung &amp; Montage der neuen Küche</span>
           <strong style="font-size:17px;color:var(--success);white-space:nowrap;">0,–€</strong>
         </div>
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0 0;">
-          <span style="display:flex;flex-direction:column;gap:2px;">
-            <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-muted);">Ihr Voll-Service-Preis</span>
-            <span style="font-size:14px;color:var(--text-muted);">oder 174,98&nbsp;€ mtl. · 0&nbsp;% bei 60 Raten</span>
-          </span>
-          <strong style="font-size: 38px; font-weight: var(--fw-black); color: var(--hg-anthracite); letter-spacing: var(--ls-tight); white-space: nowrap">10.499,–€</strong>
+          <span style="font-size: 17px; font-weight: var(--fw-bold); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-muted)">Ihr Vorteil</span>
+          <strong style="font-size: 38px; font-weight: var(--fw-black); color: var(--hg-red); letter-spacing: var(--ls-tight); white-space: nowrap">4.679,–€</strong>
         </div>
       </div>
-      <div style="background:var(--blue-50);border-radius:var(--radius-md);padding:14px 20px;text-align:center;font-size:16px;font-weight:var(--fw-semibold);color:var(--hg-blue);">Ihre Gesamtersparnis in diesem Beispiel: 4.679,–€</div>
+      <a href="/alt-gegen-neu-formular/" style="text-decoration:none;align-self:center;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="280px,52px">Meine Prämie berechnen</x-import></a>
+      <p style="margin:0;font-size:12px;color:var(--text-muted);text-align:center;">Es handelt sich um eine Beispielrechnung. Die tatsächliche Prämienhöhe richtet sich nach Alter und Zustand Ihrer alten Küche sowie dem Kaufwert der neuen Küche.</p>
     </div>
-    <div style="display:flex;flex-direction:column;height:592px;box-sizing:border-box;">
+    <div data-rsp="ba" style="display:flex;flex-direction:column;height:592px;box-sizing:border-box;">
       <div style="position:relative;flex:1;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md);">
         <div style="position:absolute;inset:0;">
-          <image-slot id="nachher-kueche" shape="rect" placeholder="Foto: Küche NACHHER (neue Küche)"></image-slot>
+          <img src="/assets/nachher-kueche.png" alt="Neue Küche nach dem Tausch" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="position:absolute;inset:0;clip-path:{{ baClip }};">
-          <image-slot id="vorher-kueche" shape="rect" placeholder="Foto: Küche VORHER (alte Küche)"></image-slot>
+          <img src="/assets/vorher-kueche.jpg" alt="Alte Küche vor dem Tausch" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="position:absolute;top:0;bottom:0;left:{{ baPos }};width:3px;background:#fff;transform:translateX(-1.5px);box-shadow:var(--shadow-md);pointer-events:none;"></div>
         <div style="position:absolute;top:50%;left:{{ baPos }};transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--hg-white);box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center;gap:2px;color:var(--hg-blue);font-size:15px;font-weight:var(--fw-bold);pointer-events:none;"><span>‹</span><span>›</span></div>
@@ -307,8 +327,56 @@
       <p style="margin:0;font-size:12px;color:var(--text-muted);text-align:center;max-width:640px;">Beispielpreise inkl. Lieferung &amp; Montage. Tauschprämie als Gutschrift, abhängig vom Wert der neuen Küche. Mindestauftragswert 10.000 €.</p>
     </div>
   </div></section><section style="background:var(--hg-white);">
-  <section style="background:var(--hg-white);border-bottom:1px solid var(--border-subtle);">
-  <div style="max-width:1200px;margin:0 auto;padding:56px 32px;display:flex;flex-direction:column;gap:32px;align-items:center;">
+  <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:44px;align-items:center;">
+    <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:660px;">
+      <span style="font-size:13px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--hg-blue);">Echte Kundenküchen</span>
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-transform:uppercase;">Frisch eingebaut in der Region</h2>
+      <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);">So sehen Küchen aus, die unser Team in den letzten Monaten bei Kundinnen und Kunden eingebaut hat.</p>
+    </div>
+    <div data-reveal="up" style="width:100%;position:relative;">
+    <div ref="{{ sliderRef }}" style="display:flex;gap:28px;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 4px 18px;box-sizing:border-box;">
+      <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-01.png" alt="Kundenküche in Lahr" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Lahr</strong></div>
+      </div>
+      <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-02.png" alt="Kundenküche in Offenburg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Offenburg</strong></div>
+      </div>
+      <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-03.png" alt="Kundenküche in Friesenheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Friesenheim</strong></div>
+      </div>
+      <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-04.png" alt="Kundenküche in Ettenheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Ettenheim</strong></div>
+      </div>
+      <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-05.png" alt="Kundenküche in Kippenheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Kippenheim</strong></div>
+      </div>
+      <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-06.png" alt="Kundenküche in Seelbach" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Seelbach</strong></div>
+      </div>
+      <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-07.png" alt="Kundenküche in Gengenbach" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Gengenbach</strong></div>
+      </div>
+      <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-08.png" alt="Kundenküche in Emmendingen" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Emmendingen</strong></div>
+      </div>
+      <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-09.png" alt="Kundenküche in Herbolzheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Herbolzheim</strong></div>
+      </div>
+    </div>
+    <button onClick="{{ slidePrev }}" aria-label="Zurück" data-rsp="snav-l" style="position:absolute;left:-18px;top:132px;width:48px;height:48px;border-radius:50%;background:var(--hg-white);border:1px solid var(--border-subtle);box-shadow:var(--shadow-md);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--hg-blue);font-size:22px;font-weight:var(--fw-bold);font-family:var(--font-sans);" style-hover="background:var(--blue-50);">‹</button>
+    <button onClick="{{ slideNext }}" aria-label="Weiter" data-rsp="snav-r" style="position:absolute;right:-18px;top:132px;width:48px;height:48px;border-radius:50%;background:var(--hg-white);border:1px solid var(--border-subtle);box-shadow:var(--shadow-md);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--hg-blue);font-size:22px;font-weight:var(--fw-bold);font-family:var(--font-sans);" style-hover="background:var(--blue-50);">›</button>
+    </div>
+  </div><section style="background:var(--hg-white);border-bottom:1px solid var(--border-subtle);">
+  <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:56px 32px;display:flex;flex-direction:column;gap:32px;align-items:center;">
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:10px;">
       <span style="font-size:13px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--hg-blue);">Unsere Top-Marken</span>
       <p style="margin:0;font-size:16px;color:var(--text-muted);">Markenqualität für Küche und Geräte – alles unter einem Dach.</p>
@@ -328,7 +396,7 @@
 </section>
 
 <section style="background:var(--hg-white);">
-  <div style="max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+  <div data-rsp="pad split" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
     <div data-reveal="left" style="display:flex;flex-direction:column;gap:18px;">
       <span style="font-size:13px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--hg-blue);">Nur bei Hugelmann</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-transform:uppercase;text-wrap:balance;">Unser hauseigenes Granitstudio</h2>
@@ -347,13 +415,13 @@
 </section>
 
 <section id="funnel" style="background:var(--blue-50);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-  <div style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:40px;align-items:center;">
+  <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:40px;align-items:center;">
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:660px;">
       
       
       
     </div>
-    <div data-reveal="up" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);padding:44px 48px;width:100%;max-width:720px;box-sizing:border-box;display:flex;flex-direction:column;gap:26px;">
+    <div data-rsp="card" data-reveal="up" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);padding:44px 48px;width:100%;max-width:720px;box-sizing:border-box;display:flex;flex-direction:column;gap:26px;">
       <div style="display:flex;flex-direction:column;gap:8px;text-align:center;">
         <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;color:var(--text-heading);letter-spacing:var(--ls-tight);">Beantworten Sie 7 kurze Fragen zu Ihrer alten und neuen Küche</h3>
         <span style="font-size:15px;color:var(--text-muted);">Danach ruft Sie Ihr persönlicher Küchenberater in ca. 20 Minuten an – kostenlos und unverbindlich.</span>
@@ -370,59 +438,11 @@
 </section>
 
 <section style="background:var(--surface-subtle);border-top:1px solid var(--border-subtle);">
-  <div style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:44px;align-items:center;">
-    <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:660px;">
-      <span style="font-size:13px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--hg-blue);">Echte Kundenküchen</span>
-      <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-transform:uppercase;">Frisch eingebaut in der Region</h2>
-      <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);">So sehen Küchen aus, die unser Team in den letzten Monaten bei Kundinnen und Kunden eingebaut hat.</p>
-    </div>
-    <div data-reveal="up" style="width:100%;position:relative;">
-    <div ref="{{ sliderRef }}" style="display:flex;gap:28px;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 4px 18px;box-sizing:border-box;">
-      <div style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
-        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-01.png" alt="Kundenküche in Lahr" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Lahr</strong></div>
-      </div>
-      <div style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
-        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-02.png" alt="Kundenküche in Offenburg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Offenburg</strong></div>
-      </div>
-      <div style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
-        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-03.png" alt="Kundenküche in Friesenheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Friesenheim</strong></div>
-      </div>
-      <div style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
-        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-04.png" alt="Kundenküche in Ettenheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Ettenheim</strong></div>
-      </div>
-      <div style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
-        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-05.png" alt="Kundenküche in Kippenheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Kippenheim</strong></div>
-      </div>
-      <div style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
-        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-06.png" alt="Kundenküche in Seelbach" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Seelbach</strong></div>
-      </div>
-      <div style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
-        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-07.png" alt="Kundenküche in Gengenbach" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Gengenbach</strong></div>
-      </div>
-      <div style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
-        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-08.png" alt="Kundenküche in Emmendingen" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Emmendingen</strong></div>
-      </div>
-      <div style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
-        <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-09.png" alt="Kundenküche in Herbolzheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300">Kundenküche in Herbolzheim</strong></div>
-      </div>
-    </div>
-    <button onClick="{{ slidePrev }}" aria-label="Zurück" style="position:absolute;left:-18px;top:132px;width:48px;height:48px;border-radius:50%;background:var(--hg-white);border:1px solid var(--border-subtle);box-shadow:var(--shadow-md);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--hg-blue);font-size:22px;font-weight:var(--fw-bold);font-family:var(--font-sans);" style-hover="background:var(--blue-50);">‹</button>
-    <button onClick="{{ slideNext }}" aria-label="Weiter" style="position:absolute;right:-18px;top:132px;width:48px;height:48px;border-radius:50%;background:var(--hg-white);border:1px solid var(--border-subtle);box-shadow:var(--shadow-md);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--hg-blue);font-size:22px;font-weight:var(--fw-bold);font-family:var(--font-sans);" style-hover="background:var(--blue-50);">›</button>
-    </div>
-  </div>
+  
 </section>
 
 <section style="background:var(--hg-white);">
-  <div style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:44px;align-items:center;">
+  <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:44px;align-items:center;">
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:640px;">
       <span style="font-size:13px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--hg-blue);">Das sagen unsere Kunden</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-transform:uppercase;">Über 500 zufriedene Kunden und Kundinnen</h2>
@@ -447,7 +467,7 @@
       <h2 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-3xl); letter-spacing: var(--ls-tight); text-transform: uppercase; text-wrap: balance; color: var(--hg-white)">Ein Familienbetrieb, dem Sie vertrauen können</h2>
       <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);color:rgba(255,255,255,0.9);text-wrap:pretty;">Was als kleine Schreinerei begann, ist heute eines der führenden Einrichtungshäuser in Südbaden – inhabergeführt in dritter Generation. Bei uns kaufen Sie nicht anonym: Ihr Berater begleitet Sie persönlich von der ersten Idee bis zur fertigen Küche. Fachberatung von Herzen – <span style="font-family:var(--font-script);font-size:24px;color:#fff;">besser wohnen!</span></p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;border-top:1px solid rgba(255,255,255,0.25);padding-top:32px;" data-reveal-group="100">
+    <div data-rsp="cols4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;border-top:1px solid rgba(255,255,255,0.25);padding-top:32px;" data-reveal-group="100">
       <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">70+</strong><span style="font-size:14px;color:rgba(255,255,255,0.8);">Jahre Familienbetrieb</span></div>
       <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">14.000&nbsp;qm</strong><span style="font-size:14px;color:rgba(255,255,255,0.8);">Ausstellung in Lahr</span></div>
       <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">60+</strong><span style="font-size:14px;color:rgba(255,255,255,0.8);">Musterküchen zum Erleben</span></div>
@@ -457,7 +477,7 @@
 </section>
 
 <section style="background:var(--hg-white);">
-  <div style="max-width:800px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:36px;">
+  <div data-rsp="pad" style="max-width:800px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:36px;">
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;">
       <span style="font-size:13px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--hg-blue);">Häufige Fragen</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-transform:uppercase;">Alles Wichtige zur Aktion</h2>
@@ -477,7 +497,7 @@
 </section>
 
 <section style="background:var(--surface-subtle);">
-  <div style="max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:stretch;">
+  <div data-rsp="pad split" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:stretch;">
     <div data-reveal="left" style="min-height:380px;">
       <image-slot id="map" shape="rounded" radius="22" placeholder="Google-Maps-Ausschnitt: Rainer-Haungs-Straße 1, 77933 Lahr"></image-slot>
     </div>
@@ -496,7 +516,7 @@
 </section>
 
 <footer style="background:var(--grey-700);color:rgba(255,255,255,0.85);">
-  <div style="max-width:1200px;margin:0 auto;padding:56px 32px 40px;display:flex;flex-direction:column;gap:32px;">
+  <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:56px 32px 40px;display:flex;flex-direction:column;gap:32px;">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;">
       <div style="display:flex;flex-direction:column;gap:16px;">
         <img src="/assets/logo-weiss.png" alt="Küchen Hugelmann" style="height:56px;width:auto;display:block;">
