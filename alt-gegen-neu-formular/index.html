@@ -19,7 +19,7 @@
   <script src="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/_ds_bundle.js"></script>
   <script src="/image-slot.js"></script>
   <style>
-    body { margin: 0; background: var(--blue-50); font-family: var(--font-sans); color: var(--text-body); }
+    body { margin: 0; background: var(--grey-50); font-family: var(--font-sans); color: var(--text-body); }
     a { color: var(--text-link); }
     a:hover { color: var(--text-link-hover); }
   </style>
@@ -70,9 +70,9 @@
     <h1 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:36px;color:var(--text-heading);letter-spacing:var(--ls-tight);text-transform:uppercase;">Sichern Sie sich jetzt Ihren Platz</h1>
     <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);">7 kurze Fragen – danach rufen wir Sie in ca. 20 Minuten zurück. Kostenlos und unverbindlich.</p>
   </div>
-  <div data-rsp="card" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);padding:44px 48px;width:100%;max-width:720px;box-sizing:border-box;display:flex;flex-direction:column;gap:26px;">
+  <div style="width:100%;max-width:1000px;box-sizing:border-box;display:flex;flex-direction:column;gap:28px;">
     <sc-if value="{{ showQuiz }}" hint-placeholder-val="{{ true }}">
-      <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;">
         <div style="display:flex;justify-content:space-between;align-items:center;">
           <span style="font-size:14px;font-weight:var(--fw-bold);color:var(--hg-blue);">Frage {{ stepNum }} von 7</span>
           <span style="font-size:13px;color:var(--hg-red);font-weight:var(--fw-semibold);">Nur noch {{ spotsLeft }} Plätze frei</span>
@@ -81,29 +81,35 @@
           <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);transition:width 320ms cubic-bezier(0.4,0,0.2,1);width:{{ progressPct }};"></div>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:6px;text-align:center;">
-        <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;color:var(--text-heading);letter-spacing:var(--ls-tight);">{{ qTitle }}</h3>
-        <span style="font-size:15px;color:var(--text-muted);">{{ qSub }}</span>
+      <div style="display:flex;flex-direction:column;gap:10px;text-align:center;">
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:34px;line-height:1.2;color:var(--hg-blue);letter-spacing:var(--ls-tight);text-wrap:balance;">{{ qTitle }}</h2>
+        <span style="font-size:17px;color:var(--text-muted);">{{ qSub }}</span>
       </div>
-      <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div data-rsp="cols3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:940px;width:100%;margin:0 auto;">
         <sc-for list="{{ qOptions }}" as="opt" hint-placeholder-count="0">
-          <button onClick="{{ opt.pick }}" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px;width:100%;min-height:118px;text-align:center;font-family:var(--font-sans);font-size:17px;font-weight:var(--fw-semibold);color:var(--text-heading);background:{{ opt.bg }};border:2px solid {{ opt.border }};border-radius:var(--radius-lg);padding:14px 14px 16px;cursor:pointer;transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="border-color:var(--hg-blue);background:var(--blue-50);transform:translateY(-2px);box-shadow:var(--shadow-md);">
+          <button onClick="{{ opt.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;width:100%;text-align:center;font-family:var(--font-sans);font-size:17px;font-weight:var(--fw-bold);color:{{ opt.labelColor }};background:var(--hg-white);border:2px solid {{ opt.border }};border-radius:var(--radius-lg);padding:16px 16px 20px;cursor:pointer;box-shadow:{{ opt.shadow }};transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-2px);box-shadow:var(--shadow-md);">
+            <sc-if value="{{ opt.showCheck }}" hint-placeholder-val="{{ false }}">
+              <span style="position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:var(--hg-red);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);pointer-events:none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            </sc-if>
             <sc-if value="{{ opt.hasImgSrc }}" hint-placeholder-val="{{ false }}">
-              <span style="width:100%;height:120px;display:block;border-radius:var(--radius-md);overflow:hidden;pointer-events:none;background:#fff;">
+              <span style="width:100%;height:170px;display:block;pointer-events:none;">
                 <img src="{{ opt.imgSrc }}" alt="{{ opt.label }}" style="width:100%;height:100%;object-fit:contain;display:block;">
               </span>
             </sc-if>
             <sc-if value="{{ opt.hasSlot }}" hint-placeholder-val="{{ false }}">
-              <span style="width:100%;height:120px;display:block;border-radius:var(--radius-md);overflow:hidden;pointer-events:none;">
+              <span style="width:100%;height:170px;display:block;border-radius:var(--radius-md);overflow:hidden;pointer-events:none;">
                 <image-slot id="{{ opt.slotId }}" shape="rounded" radius="8" placeholder="{{ opt.imgPh }}"></image-slot>
               </span>
             </sc-if>
-            <span style="display:flex;align-items:center;gap:12px;margin:auto 0;">{{ opt.icon }}<span>{{ opt.label }}</span></span>
+            <sc-if value="{{ opt.qmark }}" hint-placeholder-val="{{ false }}">
+              <span style="width:100%;height:170px;display:flex;align-items:center;justify-content:center;background:var(--grey-100);border-radius:var(--radius-md);pointer-events:none;"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="var(--grey-400)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg></span>
+            </sc-if>
+            <span style="margin-top:auto;line-height:1.35;">{{ opt.label }}</span>
           </button>
         </sc-for>
       </div>
       <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ goBack }}" style="align-self:flex-start;background:none;border:none;padding:0;cursor:pointer;font-family:var(--font-sans);font-size:14px;font-weight:var(--fw-semibold);color:var(--text-muted);">‹ Zurück zur vorherigen Frage</button>
+        <button onClick="{{ goBack }}" style="align-self:center;background:none;border:none;padding:0;cursor:pointer;font-family:var(--font-sans);font-size:14px;font-weight:var(--fw-semibold);color:var(--text-muted);">‹ Zurück zur vorherigen Frage</button>
       </sc-if>
     </sc-if>
     <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
@@ -154,7 +160,7 @@
 class Component extends DCLogic {
   state = { step: 1, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {} };
   questions = [
-    { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Keine Sorge – Ihr Berater plant mit Ihnen alle Varianten durch.', options: ['Einzeilige Küche', 'Zweizeilige Küche', 'L-Form', 'U-Form', 'Mit Kochinsel', 'Andere'], files: ['/assets/kuechenformen/einzeilig.jpeg', '/assets/kuechenformen/zweizeilig.png', '/assets/kuechenformen/l-form.png', '/assets/kuechenformen/u-form.png', '/assets/kuechenformen/insel.png', null], imgs: 'form' },
+    { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Andere'], files: ['/assets/kuechenformen/einzeilig.jpeg', '/assets/kuechenformen/zweizeilig.png', '/assets/kuechenformen/l-form.png', '/assets/kuechenformen/u-form.png', '/assets/kuechenformen/insel.png', null], imgs: 'form', qmarkLast: true },
     { title: 'Welchen Küchenstil wünschen Sie sich?', options: ['Hochglanz', 'Matt', 'Massivholz', 'Landhaus', 'Andere'], imgs: 'stil' },
     { title: 'Welchen Farbstil bevorzugen Sie?', options: ['Hell', 'Dunkel', 'Farbig', 'Andere'], imgs: 'farbe' },
     { title: 'Wünschen Sie eine Finanzierung?', sub: 'Aktuell: 0 % Finanzierung bis zu 60 Monate (Bonität vorausgesetzt).', options: ['Ja, bis zu 60 Monate', 'Ja, mehr als 60 Monate', 'Nein'] },
@@ -207,12 +213,15 @@ class Component extends DCLogic {
         icon: null,
         hasImgSrc: !!(q.files && q.files[i]),
         imgSrc: (q.files && q.files[i]) || '',
-        hasSlot: !!q.imgs && !(q.files && q.files[i]),
+        hasSlot: !!q.imgs && !q.qmarkLast && !(q.files && q.files[i]),
+        qmark: !!q.qmarkLast && !!q.files && !q.files[i],
         slotId: q.imgs ? 'q-' + q.imgs + '-' + label.toLowerCase().replace(/[^a-z]+/g, '-') : '',
         imgPh: 'Foto: ' + label,
         pick: () => this.pick(i),
-        bg: selected === i ? 'var(--blue-50)' : 'var(--hg-white)',
-        border: selected === i ? 'var(--hg-blue)' : 'var(--border-default)',
+        labelColor: selected === i ? 'var(--hg-red)' : 'var(--text-heading)',
+        border: selected === i ? 'var(--hg-red)' : 'var(--border-subtle)',
+        shadow: selected === i ? '0 0 0 4px rgba(227,6,19,0.12)' : 'var(--shadow-xs)',
+        showCheck: selected === i,
       })),
       canBack: step > 1,
       goBack: () => this.setState(s => ({ step: Math.max(1, s.step - 1) })),
