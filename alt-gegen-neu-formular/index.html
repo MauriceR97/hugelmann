@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/tokens/base.css">
   <link rel="stylesheet" href="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/styles.css">
   <script src="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/_ds_bundle.js"></script>
+  <script src="/image-slot.js"></script>
   <style>
     body { margin: 0; background: var(--blue-50); font-family: var(--font-sans); color: var(--text-body); }
     a { color: var(--text-link); }
@@ -80,15 +81,24 @@
           <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);transition:width 320ms cubic-bezier(0.4,0,0.2,1);width:{{ progressPct }};"></div>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:6px;">
+      <div style="display:flex;flex-direction:column;gap:6px;text-align:center;">
         <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;color:var(--text-heading);letter-spacing:var(--ls-tight);">{{ qTitle }}</h3>
         <span style="font-size:15px;color:var(--text-muted);">{{ qSub }}</span>
       </div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <sc-for list="{{ qOptions }}" as="opt" hint-placeholder-count="4">
-          <button onClick="{{ opt.pick }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;text-align:left;font-family:var(--font-sans);font-size:17px;font-weight:var(--fw-medium);color:var(--text-heading);background:{{ opt.bg }};border:2px solid {{ opt.border }};border-radius:var(--radius-md);padding:16px 20px;cursor:pointer;transition:all 120ms cubic-bezier(0.4,0,0.2,1);" style-hover="border-color:var(--hg-blue);background:var(--blue-50);">
-            <span>{{ opt.label }}</span>
-            <span style="color:var(--hg-blue);font-weight:var(--fw-bold);font-size:18px;">›</span>
+      <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <sc-for list="{{ qOptions }}" as="opt" hint-placeholder-count="0">
+          <button onClick="{{ opt.pick }}" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px;width:100%;min-height:118px;text-align:center;font-family:var(--font-sans);font-size:17px;font-weight:var(--fw-semibold);color:var(--text-heading);background:{{ opt.bg }};border:2px solid {{ opt.border }};border-radius:var(--radius-lg);padding:14px 14px 16px;cursor:pointer;transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="border-color:var(--hg-blue);background:var(--blue-50);transform:translateY(-2px);box-shadow:var(--shadow-md);">
+            <sc-if value="{{ opt.hasImgSrc }}" hint-placeholder-val="{{ false }}">
+              <span style="width:100%;height:120px;display:block;border-radius:var(--radius-md);overflow:hidden;pointer-events:none;background:#fff;">
+                <img src="{{ opt.imgSrc }}" alt="{{ opt.label }}" style="width:100%;height:100%;object-fit:contain;display:block;">
+              </span>
+            </sc-if>
+            <sc-if value="{{ opt.hasSlot }}" hint-placeholder-val="{{ false }}">
+              <span style="width:100%;height:120px;display:block;border-radius:var(--radius-md);overflow:hidden;pointer-events:none;">
+                <image-slot id="{{ opt.slotId }}" shape="rounded" radius="8" placeholder="{{ opt.imgPh }}"></image-slot>
+              </span>
+            </sc-if>
+            <span style="display:flex;align-items:center;gap:12px;margin:auto 0;">{{ opt.icon }}<span>{{ opt.label }}</span></span>
           </button>
         </sc-for>
       </div>
@@ -111,13 +121,20 @@
         <span style="font-size:15px;color:var(--text-muted);">Ihr Berater ruft Sie in ca. 20 Minuten an – kostenlos und unverbindlich.</span>
       </div>
       <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Ihr Name" placeholder="Vor- und Nachname" required="{{ true }}" onChange="{{ onName }}" error="{{ errName }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Telefonnummer" type="tel" placeholder="z.B. 07821 123456" required="{{ true }}" onChange="{{ onTel }}" error="{{ errTel }}" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="PLZ &amp; Wohnort" placeholder="z.B. 77933 Lahr" required="{{ true }}" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="PLZ" placeholder="z.B. 77933" required="{{ true }}" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
       </div>
+      <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
+      <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;line-height:var(--lh-normal);color:var(--text-body);">
+        <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="width:20px;height:20px;margin:1px 0 0;accent-color:var(--hg-blue);cursor:pointer;flex-shrink:0;">
+        <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
+      </label>
+      <sc-if value="{{ errConsent }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:-14px 0 0;font-size:13px;color:var(--hg-red);font-weight:var(--fw-semibold);">Bitte bestätigen Sie die Einwilligung, damit wir Sie anrufen dürfen.</p>
+      </sc-if>
       <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" onClick="{{ submitForm }}" style="width:100%;" hint-size="100%,52px">Jetzt Platz sichern – kostenlos &amp; unverbindlich</x-import>
-      <p style="margin:0;font-size:13px;color:var(--text-muted);line-height:var(--lh-normal);text-align:center;">Mit dem Absenden stimmen Sie zu, dass wir Sie telefonisch zur Aktion kontaktieren. Ihre Daten werden nicht an Dritte weitergegeben.</p>
       <button onClick="{{ goBack }}" style="align-self:flex-start;background:none;border:none;padding:0;cursor:pointer;font-family:var(--font-sans);font-size:14px;font-weight:var(--fw-semibold);color:var(--text-muted);">‹ Zurück zur letzten Frage</button>
     </sc-if>
   </div>
@@ -135,29 +152,43 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;spotsLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:9,&quot;min&quot;:1,&quot;max&quot;:30,&quot;section&quot;:&quot;Aktion&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;dankeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;/alt-gegen-neu-danke/&quot;,&quot;section&quot;:&quot;Funnel&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { step: 1, answers: {}, form: { name: '', tel: '', email: '', plz: '' }, errors: {} };
+  state = { step: 1, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {} };
   questions = [
-    { title: 'Wie alt ist Ihre jetzige Küche?', sub: 'Das Alter fließt in Ihre Tauschprämie ein.', options: ['Unter 10 Jahre', '10 bis 15 Jahre', '15 bis 20 Jahre', 'Über 20 Jahre'] },
-    { title: 'In welchem Zustand ist Ihre alte Küche?', sub: 'Ihre ehrliche Einschätzung genügt – wir prüfen nichts nach.', options: ['Gut erhalten', 'Normale Gebrauchsspuren', 'Stark abgenutzt'] },
-    { title: 'Wie wohnen Sie?', options: ['Im eigenen Haus', 'In einer Eigentumswohnung', 'Zur Miete'] },
-    { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Keine Sorge – Ihr Berater plant mit Ihnen alle Varianten durch.', options: ['Küchenzeile', 'L-Form', 'U-Form', 'Mit Kochinsel', 'Bin noch offen'] },
-    { title: 'Welcher Stil gefällt Ihnen am besten?', options: ['Modern & grifflos', 'Klassisch & zeitlos', 'Landhaus-Stil', 'Ich lasse mich gern beraten'] },
-    { title: 'Welches Budget planen Sie für Ihre neue Küche?', sub: 'Die Prämie und die 0%-Finanzierung gelten für jedes Budget.', options: ['Bis 10.000 €', '10.000 bis 15.000 €', '15.000 bis 25.000 €', 'Über 25.000 €', 'Noch offen'] },
-    { title: 'Wann soll Ihre neue Küche kommen?', options: ['So bald wie möglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Ich bin flexibel'] },
+    { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Keine Sorge – Ihr Berater plant mit Ihnen alle Varianten durch.', options: ['Einzeilige Küche', 'Zweizeilige Küche', 'L-Form', 'U-Form', 'Mit Kochinsel', 'Andere'], files: ['/assets/kuechenformen/einzeilig.jpeg', '/assets/kuechenformen/zweizeilig.png', '/assets/kuechenformen/l-form.png', '/assets/kuechenformen/u-form.png', '/assets/kuechenformen/insel.png', null], imgs: 'form' },
+    { title: 'Welchen Küchenstil wünschen Sie sich?', options: ['Hochglanz', 'Matt', 'Massivholz', 'Landhaus', 'Andere'], imgs: 'stil' },
+    { title: 'Welchen Farbstil bevorzugen Sie?', options: ['Hell', 'Dunkel', 'Farbig', 'Andere'], imgs: 'farbe' },
+    { title: 'Wünschen Sie eine Finanzierung?', sub: 'Aktuell: 0 % Finanzierung bis zu 60 Monate (Bonität vorausgesetzt).', options: ['Ja, bis zu 60 Monate', 'Ja, mehr als 60 Monate', 'Nein'] },
+    { title: 'Wann benötigen Sie die neue Küche?', options: ['Schnellstmöglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später'] },
+    { title: 'Welches Budget planen Sie für Ihre neue Küche?', sub: 'Die Prämie und die 0%-Finanzierung gelten für jedes Budget.', options: ['10.000 bis 15.000 €', '15.000 bis 25.000 €', 'Über 25.000 €'] },
+    { title: 'Möchten Sie Ihre alte Küche in Zahlung geben?', sub: 'Nur so sichern Sie sich die Tauschprämie von bis zu 4.000 €.', options: ['Ja', 'Nein', 'Ich besitze keine alte Küche'] },
   ];
+  formIcon(kind) {
+    const e = React.createElement;
+    const rect = (x, y, w, h) => e('rect', { key: x + '-' + y, x, y, width: w, height: h, rx: 2, fill: 'currentColor', opacity: 0.85 });
+    let parts;
+    if (kind === 'einzeilig') parts = [rect(6, 32, 36, 8)];
+    else if (kind === 'zweizeilig') parts = [rect(6, 8, 36, 8), rect(6, 32, 36, 8)];
+    else if (kind === 'lform') parts = [rect(6, 8, 8, 32), rect(6, 32, 36, 8)];
+    else if (kind === 'uform') parts = [rect(6, 8, 8, 32), rect(34, 8, 8, 32), rect(6, 32, 36, 8)];
+    else return e('svg', { width: 48, height: 48, viewBox: '0 0 48 48', style: { color: 'var(--hg-blue)', flexShrink: 0 } },
+      e('text', { x: 24, y: 33, textAnchor: 'middle', fontSize: 26, fontWeight: 700, fill: 'currentColor' }, '?'));
+    return e('svg', { width: 48, height: 48, viewBox: '0 0 48 48', style: { color: 'var(--hg-blue)', flexShrink: 0 } }, parts);
+  }
   pick(idx) {
     const step = this.state.step;
     this.setState(s => ({ answers: { ...s.answers, [step]: idx }, step: step + 1 }));
   }
   submit() {
     const f = this.state.form, errors = {};
-    if (f.name.trim().length < 3) errors.name = 'Bitte geben Sie Ihren Namen an.';
+    if (f.vorname.trim().length < 2) errors.vorname = 'Bitte geben Sie Ihren Vornamen an.';
+    if (f.nachname.trim().length < 2) errors.nachname = 'Bitte geben Sie Ihren Nachnamen an.';
     if (f.tel.trim().length < 6) errors.tel = 'Bitte geben Sie Ihre Telefonnummer an.';
+    if (!/^\d{4,5}$/.test(f.plz.trim())) errors.plz = 'Bitte geben Sie Ihre PLZ an.';
     if (!/^\S+@\S+\.\S+$/.test(f.email.trim())) errors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse an.';
-    if (f.plz.trim().length < 4) errors.plz = 'Bitte geben Sie PLZ und Wohnort an.';
+    if (!this.state.consent) errors.consent = true;
     if (Object.keys(errors).length) { this.setState({ errors }); return; }
     // TODO: Lead-Daten an CRM/E-Mail-Endpoint senden (this.state.answers + this.state.form)
-    try { sessionStorage.setItem('agn_lead_name', f.name.trim().split(' ')[0]); } catch (e) {}
+    try { sessionStorage.setItem('agn_lead_name', f.vorname.trim()); } catch (e) {}
     window.location.href = this.props.dankeUrl ?? '/alt-gegen-neu-danke/';
   }
   field(key) { return (e) => this.setState(s => ({ form: { ...s.form, [key]: e.target.value } })); }
@@ -173,14 +204,23 @@ class Component extends DCLogic {
       qTitle: q.title, qSub: q.sub || '',
       qOptions: q.options.map((label, i) => ({
         label,
+        icon: null,
+        hasImgSrc: !!(q.files && q.files[i]),
+        imgSrc: (q.files && q.files[i]) || '',
+        hasSlot: !!q.imgs && !(q.files && q.files[i]),
+        slotId: q.imgs ? 'q-' + q.imgs + '-' + label.toLowerCase().replace(/[^a-z]+/g, '-') : '',
+        imgPh: 'Foto: ' + label,
         pick: () => this.pick(i),
         bg: selected === i ? 'var(--blue-50)' : 'var(--hg-white)',
         border: selected === i ? 'var(--hg-blue)' : 'var(--border-default)',
       })),
       canBack: step > 1,
       goBack: () => this.setState(s => ({ step: Math.max(1, s.step - 1) })),
-      onName: this.field('name'), onTel: this.field('tel'), onEmail: this.field('email'), onPlz: this.field('plz'),
-      errName: errors.name || '', errTel: errors.tel || '', errEmail: errors.email || '', errPlz: errors.plz || '',
+      onVorname: this.field('vorname'), onNachname: this.field('nachname'), onTel: this.field('tel'), onEmail: this.field('email'), onPlz: this.field('plz'),
+      errVorname: errors.vorname || '', errNachname: errors.nachname || '', errTel: errors.tel || '', errEmail: errors.email || '', errPlz: errors.plz || '',
+      consent: this.state.consent,
+      onConsent: (e) => this.setState({ consent: e.target.checked, errors: { ...this.state.errors, consent: false } }),
+      errConsent: !!errors.consent,
       submitForm: () => this.submit(),
     };
   }
