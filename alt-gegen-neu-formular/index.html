@@ -64,6 +64,7 @@
     </a>
   </div>
 </header>
+
 <main style="flex:1;display:flex;flex-direction:column;align-items:center;gap:28px;padding:56px 32px 72px;">
   <div style="text-align:center;display:flex;flex-direction:column;gap:10px;max-width:660px;">
     
@@ -127,7 +128,7 @@
       </div>
       </sc-if>
       <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ goBack }}" style="align-self:center;display:flex;align-items:center;gap:8px;background:var(--hg-white);border:1px solid var(--border-default);border-radius:var(--radius-pill);padding:10px 22px;cursor:pointer;font-family:var(--font-sans);font-size:15px;font-weight:var(--fw-semibold);color:var(--hg-blue);box-shadow:var(--shadow-xs);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="background:var(--blue-50);border-color:var(--hg-blue);"><span style="font-size:18px;font-weight:var(--fw-bold);">‹</span>Zurück zur vorherigen Frage</button>
+        <button onClick="{{ goBack }}" style="align-self: center; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--border-default); border-radius: 800px; padding: 10px 22px; cursor: pointer; font-family: var(--font-sans); font-size: 12px; font-weight: var(--fw-semibold); color: var(--hg-white); box-shadow: var(--shadow-xs); background-color: var(--hg-blue); width: 213px; height: 41px"><span style="font-size:18px;font-weight:var(--fw-bold);">‹</span>Zurück zur vorherigen Frage</button>
       </sc-if>
     </sc-if>
     <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
@@ -168,8 +169,7 @@
     <span style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Familienbetrieb seit über 70 Jahren</span>
   </div>
   <a href="/alt-gegen-neu/" style="font-size:14px;font-weight:var(--fw-semibold);">‹ Zurück zur Aktionsseite</a>
-</main>
-<footer style="background:var(--grey-700);color:rgba(255,255,255,0.7);text-align:center;padding:20px 32px;font-size:13px;">
+</main><footer style="background:var(--grey-700);color:rgba(255,255,255,0.7);text-align:center;padding:20px 32px;font-size:13px;">
   interliving – Möbel Hugelmann GmbH · Rainer-Haungs-Straße 1, 77933 Lahr · <a href="tel:+49782196570" style="color:#fff;">07821 / 96 570</a>
 </footer>
 </div>
