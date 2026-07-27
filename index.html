@@ -77,6 +77,12 @@
     [data-rsp~="dash"]{display:none !important;}
   }
   @media (max-width: 720px){
+    [data-rsp~="hero"] h1,[data-rsp~="hero"] p,[data-rsp~="hero"] ul,[data-rsp~="hero"] li{width:auto !important;max-width:100% !important;height:auto !important;}
+    [data-rsp~="hero-cta"]{width:100% !important;max-width:100% !important;align-self:center !important;align-items:center !important;}
+    [data-rsp~="hero-cta"] > *{width:100% !important;}
+    [data-rsp~="hero-cta"] button{width:100% !important;text-transform:none !important;letter-spacing:0 !important;font-size:16px !important;justify-content:center !important;white-space:normal !important;}
+    [data-rsp~="hero-cta"] span{text-align:center !important;}
+    [data-rsp~="hero-cta"]{width:100% !important;align-self:center !important;}
     [data-rsp~="hdr-cta"]{display:none !important;}
     [data-rsp~="hdr-tel-txt"]{display:none !important;}
     [data-rsp~="hdr-tel"]{width:46px !important;height:46px !important;border-radius:50% !important;background:var(--blue-50) !important;justify-content:center !important;gap:0 !important;}
@@ -113,18 +119,18 @@
 </helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#034EA3"></rect><circle cx="50" cy="50" r="22" fill="#E30613"></circle><text x="50" y="57" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">4T€</text></svg></template>
 <div>
-<div style="background:var(--hg-red);color:#fff;text-align:center;padding:9px 16px;font-size:14px;font-weight:var(--fw-bold);letter-spacing:0.06em;text-transform:uppercase;">Alt-gegen-Neu-Aktion · begrenzt auf 30 Teilnehmer · gültig bis 31.12.2026</div>
+<div style="background:var(--hg-red);color:#fff;text-align:center;padding:11px 16px;font-size:15px;font-weight:var(--fw-bold);letter-spacing:0.06em;text-transform:uppercase;">Alt-gegen-Neu-Aktion · begrenzt auf 30 Teilnehmer · gültig bis 31.12.2026</div>
 
 
 <header style="position:sticky;top:0;z-index:50;background:var(--hg-white);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-xs);">
-  <div data-rsp="header" style="max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-    <img src="/assets/logo.png" alt="Küchen Hugelmann – interliving" style="height:52px;display:block;">
-    <div style="display:flex;align-items:center;gap:28px;">
+  <div data-rsp="header" style="max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:40px;">
+    <img src="/assets/logo.png" alt="Küchen Hugelmann – interliving" style="height:56px;display:block;flex-shrink:0;">
+    <div style="display:flex;align-items:center;gap:36px;flex-shrink:0;">
       <a href="tel:+49782196570" data-rsp="hdr-tel" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-heading);">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         <span data-rsp="hdr-tel-txt" style="display:flex;flex-direction:column;line-height:1.2;">
-          <span style="font-size:12px;color:var(--text-muted);">Direkt anrufen</span>
-          <strong style="font-size:16px;">07821 / 96 570</strong>
+          <span style="font-size:13px;color:var(--text-muted);">Direkt anrufen</span>
+          <strong style="font-size:18px;">07821 / 96 570</strong>
         </span>
       </a>
       <a href="/alt-gegen-neu-formular/" class="hg-glow" data-rsp="hdr-cta" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="md" hint-size="200px,44px">Platz sichern</x-import></a>
@@ -139,22 +145,22 @@
     <span style="font-size: 80px; font-weight: var(--fw-black); letter-spacing: var(--ls-tight); line-height: 1">4.000&nbsp;€</span>
     <span style="font-size: 30px; font-weight: var(--fw-bold); text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.2">Tauschprämie</span>
   </a><div data-rsp="hero hauto" style="position: relative; max-width: 1200px; margin: 0 auto; width: 100%; padding: 88px 32px; pointer-events: none; height: 493px; box-sizing: border-box">
-    <div data-reveal="up" style="max-width:640px;display:flex;flex-direction:column;gap:22px;color:#fff;">
+    <div data-reveal="up" style="max-width: 640px; display: flex; flex-direction: column; gap: 22px; color: #fff; width: 839px; height: 568px">
       <div style="display:flex;align-items:center;gap:14px;">
         
         
       </div>
-      <h1 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-black); font-size: 80px; line-height: var(--lh-tight); letter-spacing: var(--ls-tight); text-wrap: balance; color: var(--surface-page)">Alte Küche raus, neue Küche rein.</h1>
+      <h1 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-black); font-size: 80px; line-height: var(--lh-tight); letter-spacing: var(--ls-tight); text-wrap: balance; color: var(--surface-page); width: 595px; height: 163px">Alte Küche raus, neue Küche rein.</h1>
       <p style="margin: 0; font-size: 23px; line-height: var(--lh-relaxed); color: rgba(255,255,255,0.92); max-width: 540px; text-wrap: pretty; font-weight: 600">Tauschen Sie Ihre alte Küche gegen Ihre neue Traumküche und wir kümmern uns um den Rest. Vom Abbau bis zur fertigen Montage.</p>
-      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 20px; font-weight: var(--fw-medium)">
-        <li style="display:flex;align-items:center;gap:12px;"><span style="color:#7fd48a;font-weight:var(--fw-bold);font-size:18px;">✓</span>Bis zu 4.000&nbsp;€ Tauschprämie – verrechnet mit Ihrer neuen Küche</li>
-        <li style="display:flex;align-items:center;gap:12px;"><span style="color:#7fd48a;font-weight:var(--fw-bold);font-size:18px;">✓</span>Abbau &amp; Mitnahme der alten Küche kostenfrei inklusive</li>
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 22px; font-weight: var(--fw-medium)">
+        <li style="display: flex; align-items: center; gap: 12px; width: 691px; height: 33px"><span style="color:#7fd48a;font-weight:var(--fw-bold);font-size:20px;">✓</span>Bis zu 4.000&nbsp;€ Tauschprämie für Ihre neue Küche</li>
+        <li style="display: flex; align-items: center; gap: 12px; width: 588px; height: 30px"><span style="color:#7fd48a;font-weight:var(--fw-bold);font-size:20px;">✓</span>Abbau &amp; Mitnahme der alten Küche kostenfrei inklusive</li>
         
-        <li style="display:flex;align-items:center;gap:12px;"><span style="color:#7fd48a;font-weight:var(--fw-bold);font-size:18px;">✓</span>0&nbsp;% Finanzierung bis zu 60 Monate</li>
+        <li style="display: flex; align-items: center; gap: 12px; width: 589px; height: 31px"><span style="color:#7fd48a;font-weight:var(--fw-bold);font-size:20px;">✓</span>0&nbsp;% Finanzierung bis zu 60 Monate</li>
       </ul>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:6px;pointer-events:auto;align-self:flex-start;">
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="320px,52px" style="color: var(--hg-blue)">Jetzt kostenlos Platz sichern</x-import><a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"></a>
-        <span style="font-size: 14px; text-align: center;">Kostenlos &amp; unverbindlich · Rückruf in ca. 20 Minuten</span>
+      <div data-rsp="hero-cta" style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 6px; pointer-events: auto; align-self: flex-start; width: 425px; max-width: 100%; height: auto;">
+        <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="320px,52px" style="color: var(--hg-blue)">Jetzt kostenlos Platz sichern</x-import></a><a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"></a>
+        <span style="font-size: 16px; text-align: center;">Kostenlos &amp; unverbindlich · Rückruf in ca. 20 Minuten</span>
       </div>
       
     </div>
@@ -169,16 +175,16 @@
     <span style="display:flex;align-items:center;gap:12px;">
       <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Rating" value="{{ googleRating }}" size="20" hint-size="110px,20px"></x-import>
       <span style="display:flex;flex-direction:column;line-height:1.25;">
-        <strong style="font-size:15px;color:var(--text-heading);">{{ googleRatingLabel }} Sterne bei Google</strong>
-        <span style="font-size:13px;color:var(--text-muted);">über {{ googleReviews }} Bewertungen</span>
+        <strong style="font-size:17px;color:var(--text-heading);">{{ googleRatingLabel }} Sterne bei Google</strong>
+        <span style="font-size:15px;color:var(--text-muted);">über {{ googleReviews }} Bewertungen</span>
       </span>
     </span>
     <span data-rsp="tb-hide" style="width:1px;height:36px;background:var(--border-subtle);"></span>
     <span data-rsp="tb-hide" style="display:flex;align-items:center;gap:12px;">
       <span style="width:40px;height:40px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"></path><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"></path></svg></span>
       <span style="display:flex;flex-direction:column;line-height:1.25;">
-        <strong style="font-size:15px;color:var(--text-heading);">Experte für Küchen</strong>
-        <span style="font-size:13px;color:var(--text-muted);">im Schwarzwald</span>
+        <strong style="font-size:17px;color:var(--text-heading);">Experte für Küchen</strong>
+        <span style="font-size:15px;color:var(--text-muted);">im Schwarzwald</span>
       </span>
     </span>
     <span data-rsp="tb-hide" style="width:1px;height:36px;background:var(--border-subtle);"></span>
@@ -193,7 +199,7 @@
       <image-slot id="old-kitchen" transparent="" fit="contain" placeholder="Foto: gepflegte, ältere Küche (Vorher-Motiv)"></image-slot>
     </div>
     <div data-reveal="up" style="display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center;max-width:680px;">
-      <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);text-wrap:pretty;">Dann haben wir genau das Richtige für Sie: Im Rahmen unserer <strong>Alt-gegen-Neu-Aktion</strong> tauschen Sie Ihre bestehende Küche gegen eine neue – wir übernehmen den Rest.</p>
+      <p style="margin:0;font-size:19px;line-height:var(--lh-relaxed);text-wrap:pretty;">Dann haben wir genau das Richtige für Sie: Im Rahmen unserer <strong>Alt-gegen-Neu-Aktion</strong> tauschen Sie Ihre bestehende Küche gegen eine neue – wir übernehmen den Rest.</p>
       <a href="/alt-gegen-neu-formular/" class="hg-glow hg-glow-blue" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="secondary" size="md" hint-size="280px,44px">Jetzt Prämie unverbindlich prüfen</x-import></a>
     </div>
   </div></section>
@@ -205,7 +211,7 @@
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:640px;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);">So einfach geht's</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);">In 3 Schritten zur neuen Küche</h2>
-      <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);">Kein Papierkram, kein Risiko – Sie beantworten ein paar Fragen, den Rest übernehmen wir.</p>
+      <p style="margin:0;font-size:19px;line-height:var(--lh-relaxed);">Kein Papierkram, kein Risiko – Sie beantworten ein paar Fragen, den Rest übernehmen wir.</p>
     </div>
     <div style="position:relative;width:100%;">
       <div data-rsp="dash" style="position:absolute;top:54px;left:16.67%;right:16.67%;border-top:2px dashed var(--blue-300);"></div>
@@ -214,24 +220,24 @@
           <span style="width:64px;height:64px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:var(--fw-bold);border:6px solid var(--surface-subtle);box-sizing:content-box;">1</span>
           <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:28px 32px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-top:18px;flex:1;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-300);">
             <span style="width:52px;height:52px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></span>
-            <strong style="font-size:19px;color:var(--text-heading);">Fragen beantworten</strong>
-            <p style="margin:0;font-size:15px;line-height:var(--lh-relaxed);">Beantworten Sie einige kurze Fragen zu Ihrer alten und Ihrer Wunschküche. Dauert nur 2 Minuten.</p>
+            <strong style="font-size:21px;color:var(--text-heading);">Fragen beantworten</strong>
+            <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);">Beantworten Sie einige kurze Fragen zu Ihrer alten und Ihrer Wunschküche. Dauert nur 2 Minuten.</p>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
           <span style="width:64px;height:64px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:var(--fw-bold);border:6px solid var(--surface-subtle);box-sizing:content-box;">2</span>
           <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:28px 32px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-top:18px;flex:1;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-300);">
             <span style="width:52px;height:52px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
-            <strong style="font-size:19px;color:var(--text-heading);">Wir rufen Sie an</strong>
-            <p style="margin:0;font-size:15px;line-height:var(--lh-relaxed);">Schon ca. 20 Minuten nach Ihrer Anfrage meldet sich Ihr persönlicher Küchenberater telefonisch bei Ihnen.</p>
+            <strong style="font-size:21px;color:var(--text-heading);">Wir rufen Sie an</strong>
+            <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);">Schon ca. 20 Minuten nach Ihrer Anfrage meldet sich Ihr persönlicher Küchenberater telefonisch bei Ihnen.</p>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
           <span style="width:64px;height:64px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:var(--fw-bold);border:6px solid var(--surface-subtle);box-sizing:content-box;">3</span>
           <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:28px 32px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-top:18px;flex:1;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-300);">
             <span style="width:52px;height:52px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="M2 12h2"></path><path d="M20 12h2"></path></svg></span>
-            <strong style="font-size:19px;color:var(--text-heading);">Prämie &amp; Traumküche sichern</strong>
-            <p style="margin:0;font-size:15px;line-height:var(--lh-relaxed);">Im Beratungsgespräch ermitteln wir Ihre Tauschprämie und planen Ihre neue Küche bis ins Detail.</p>
+            <strong style="font-size:21px;color:var(--text-heading);">Prämie &amp; Traumküche sichern</strong>
+            <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);">Im Beratungsgespräch ermitteln wir Ihre Tauschprämie und planen Ihre neue Küche bis ins Detail.</p>
           </div>
         </div>
       </div>
@@ -266,75 +272,75 @@
       <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-3px);box-shadow:var(--shadow-lg);">
         <div style="height:210px;position:relative;">
           <image-slot id="beispiel-culineo" shape="rect" placeholder="Foto: Culineo Küche C357 (U-Form, schiefergrau)"></image-slot>
-          <span style="position: absolute; top: 14px; left: 14px; z-index: 2; pointer-events: none; color: #fff; font-size: 12px; font-weight: var(--fw-bold); letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-pill); box-shadow: var(--shadow-sm); background-color: var(--hg-anthracite)">Bestseller</span>
+          <span style="position: absolute; top: 14px; left: 14px; z-index: 2; pointer-events: none; color: #fff; font-size: 13px; font-weight: var(--fw-bold); letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-pill); box-shadow: var(--shadow-sm); background-color: var(--hg-anthracite)">Bestseller</span>
         </div>
         <div style="padding:26px 28px 28px;display:flex;flex-direction:column;gap:14px;flex:1;">
           <div style="display:flex;flex-direction:column;gap:2px;">
-            <strong style="font-size:20px;color:var(--text-heading);font-weight:var(--fw-bold);">Culineo Küche</strong>
-            <span style="font-size:14px;color:var(--text-muted);">im Programm C357</span>
+            <strong style="font-size:22px;color:var(--text-heading);font-weight:var(--fw-bold);">Culineo Küche</strong>
+            <span style="font-size:16px;color:var(--text-muted);">im Programm C357</span>
           </div>
-          <p style="margin: 0; font-size: 14px; line-height: var(--lh-normal); color: var(--text-body); font-weight: 400">U-Form in Lack schiefergrau Premium matt, mit Hochschrank, Ansetztheke und Siemens-Elektrogeräten. Maße ca. 215×250×275 cm.</p>
+          <p style="margin: 0; font-size: 16px; line-height: var(--lh-normal); color: var(--text-body); font-weight: 400">U-Form in Lack schiefergrau Premium matt, mit Hochschrank, Ansetztheke und Siemens-Elektrogeräten. Maße ca. 215×250×275 cm.</p>
           <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px;">
             <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
-              <span style="font-size: 20px; color: var(--hg-anthracite); text-decoration: line-through; font-weight: var(--fw-semibold)">14.299,–€</span>
-              <span style="color: var(--hg-red); font-size: 16px; font-weight: var(--fw-bold); padding: 4px 12px; border-radius: var(--radius-pill); white-space: nowrap">− 3.000&nbsp;€ Tauschprämie</span>
+              <span style="font-size: 22px; color: var(--hg-anthracite); text-decoration: line-through; font-weight: var(--fw-semibold)">14.299,–€</span>
+              <span style="color: var(--hg-red); font-size: 18px; font-weight: var(--fw-bold); padding: 4px 12px; border-radius: var(--radius-pill); white-space: nowrap">− 3.000&nbsp;€ Tauschprämie</span>
             </div>
             <div style="border-top:1px solid var(--border-subtle);padding-top:12px;display:flex;flex-direction:column;gap:2px;">
-              <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-muted);">Aktionspreis ab</span>
+              <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-muted);">Aktionspreis ab</span>
               <strong style="font-size:34px;font-weight:var(--fw-black);color:var(--hg-blue);letter-spacing:var(--ls-tight);">11.299,–€</strong>
-              <span style="font-size:13px;color:var(--text-muted);">inkl. Lieferung &amp; Montage</span>
+              <span style="font-size:15px;color:var(--text-muted);">inkl. Lieferung &amp; Montage</span>
             </div>
-            <span style="font-size:14px;color:var(--text-heading);font-weight:var(--fw-semibold);">oder 188,31&nbsp;€ mtl. · 0&nbsp;% bei 60 Raten</span>
+            <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-semibold);">oder 188,31&nbsp;€ mtl. · 0&nbsp;% bei 60 Raten</span>
           </div>
         </div>
       </div>
       <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-3px);box-shadow:var(--shadow-lg);">
         <div style="height:210px;position:relative;">
           <img src="/assets/beispiel-interliving.png" alt="Interliving Küche – Lack Sahara matt &amp; goldeiche Nachbildung" style="width:100%;height:100%;object-fit:cover;display:block;">
-          <span style="position: absolute; top: 14px; left: 14px; z-index: 2; pointer-events: none; color: #fff; font-size: 12px; font-weight: var(--fw-bold); letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-pill); box-shadow: var(--shadow-sm); background-color: var(--hg-anthracite)">Bestseller</span>
+          <span style="position: absolute; top: 14px; left: 14px; z-index: 2; pointer-events: none; color: #fff; font-size: 13px; font-weight: var(--fw-bold); letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-pill); box-shadow: var(--shadow-sm); background-color: var(--hg-anthracite)">Bestseller</span>
         </div>
         <div style="padding:26px 28px 28px;display:flex;flex-direction:column;gap:14px;flex:1;">
           <div style="display:flex;flex-direction:column;gap:2px;">
-            <strong style="font-size:20px;color:var(--text-heading);font-weight:var(--fw-bold);">Interliving Küche</strong>
-            <span style="font-size:14px;color:var(--text-muted);">grifflose Frontkombination</span>
+            <strong style="font-size:22px;color:var(--text-heading);font-weight:var(--fw-bold);">Interliving Küche</strong>
+            <span style="font-size:16px;color:var(--text-muted);">grifflose Frontkombination</span>
           </div>
-          <p style="margin: 0; font-size: 14px; line-height: var(--lh-normal); color: var(--text-body); font-weight: 400">Lack Sahara matt &amp; goldeiche Nachbildung, Frontkombination grifflos, deckenhohe Hängeschränke, Siemens-Elektrogeräte. Maße ca. 430 × 187 cm.</p>
+          <p style="margin: 0; font-size: 16px; line-height: var(--lh-normal); color: var(--text-body); font-weight: 400">Lack Sahara matt &amp; goldeiche Nachbildung, Frontkombination grifflos, deckenhohe Hängeschränke, Siemens-Elektrogeräte. Maße ca. 430 × 187 cm.</p>
           <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px;">
             <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
-              <span style="font-size: 20px; color: var(--hg-anthracite); text-decoration: line-through; font-weight: var(--fw-semibold)">11.499,–€</span>
-              <span style="color: var(--hg-red); font-size: 16px; font-weight: var(--fw-bold); padding: 4px 12px; border-radius: var(--radius-pill); white-space: nowrap">− 2.000&nbsp;€ Tauschprämie</span>
+              <span style="font-size: 22px; color: var(--hg-anthracite); text-decoration: line-through; font-weight: var(--fw-semibold)">11.499,–€</span>
+              <span style="color: var(--hg-red); font-size: 18px; font-weight: var(--fw-bold); padding: 4px 12px; border-radius: var(--radius-pill); white-space: nowrap">− 2.000&nbsp;€ Tauschprämie</span>
             </div>
             <div style="border-top:1px solid var(--border-subtle);padding-top:12px;display:flex;flex-direction:column;gap:2px;">
-              <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-muted);">Aktionspreis ab</span>
+              <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-muted);">Aktionspreis ab</span>
               <strong style="font-size:34px;font-weight:var(--fw-black);color:var(--hg-blue);letter-spacing:var(--ls-tight);">9.499,–€</strong>
-              <span style="font-size:13px;color:var(--text-muted);">inkl. Lieferung &amp; Montage</span>
+              <span style="font-size:15px;color:var(--text-muted);">inkl. Lieferung &amp; Montage</span>
             </div>
-            <span style="font-size:14px;color:var(--text-heading);font-weight:var(--fw-semibold);">oder 158,32&nbsp;€ mtl. · 0&nbsp;% bei 60 Raten</span>
+            <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-semibold);">oder 158,32&nbsp;€ mtl. · 0&nbsp;% bei 60 Raten</span>
           </div>
         </div>
       </div>
       <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-3px);box-shadow:var(--shadow-lg);">
         <div style="height:210px;position:relative;">
           <image-slot id="beispiel-wert" shape="rect" placeholder="Foto: WERT Küche Nora (kristallgrau)"></image-slot>
-          <span style="position: absolute; top: 14px; left: 14px; z-index: 2; pointer-events: none; color: #fff; font-size: 12px; font-weight: var(--fw-bold); letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-pill); box-shadow: var(--shadow-sm); background-color: var(--hg-anthracite)">Beststeller</span>
+          <span style="position: absolute; top: 14px; left: 14px; z-index: 2; pointer-events: none; color: #fff; font-size: 13px; font-weight: var(--fw-bold); letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-pill); box-shadow: var(--shadow-sm); background-color: var(--hg-anthracite)">Beststeller</span>
         </div>
         <div style="padding:26px 28px 28px;display:flex;flex-direction:column;gap:14px;flex:1;">
           <div style="display:flex;flex-direction:column;gap:2px;">
-            <strong style="font-size:20px;color:var(--text-heading);font-weight:var(--fw-bold);">WERT Küche</strong>
-            <span style="font-size:14px;color:var(--text-muted);">aus dem Programm Nora</span>
+            <strong style="font-size:22px;color:var(--text-heading);font-weight:var(--fw-bold);">WERT Küche</strong>
+            <span style="font-size:16px;color:var(--text-muted);">aus dem Programm Nora</span>
           </div>
-          <p style="margin: 0; font-size: 14px; line-height: var(--lh-normal); color: var(--text-body); font-weight: 400">Front und Korpus kristallgrau, Arbeitsplatten onyxschwarz Struktur, inkl. Glasnischenrückwand, mit AEG-Elektrogeräten. Maße ca. 419×300 + 90 cm.</p>
+          <p style="margin: 0; font-size: 16px; line-height: var(--lh-normal); color: var(--text-body); font-weight: 400">Front und Korpus kristallgrau, Arbeitsplatten onyxschwarz Struktur, inkl. Glasnischenrückwand, mit AEG-Elektrogeräten. Maße ca. 419×300 + 90 cm.</p>
           <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px;">
             <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
-              <span style="font-size: 20px; color: var(--hg-anthracite); text-decoration: line-through; font-weight: var(--fw-semibold)">8.998,–€</span>
-              <span style="color: var(--hg-red); font-size: 16px; font-weight: var(--fw-bold); padding: 4px 12px; border-radius: var(--radius-pill); white-space: nowrap">− 2.000&nbsp;€ Tauschprämie</span>
+              <span style="font-size: 22px; color: var(--hg-anthracite); text-decoration: line-through; font-weight: var(--fw-semibold)">8.998,–€</span>
+              <span style="color: var(--hg-red); font-size: 18px; font-weight: var(--fw-bold); padding: 4px 12px; border-radius: var(--radius-pill); white-space: nowrap">− 2.000&nbsp;€ Tauschprämie</span>
             </div>
             <div style="border-top:1px solid var(--border-subtle);padding-top:12px;display:flex;flex-direction:column;gap:2px;">
-              <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-muted);">Aktionspreis ab</span>
+              <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-muted);">Aktionspreis ab</span>
               <strong style="font-size:34px;font-weight:var(--fw-black);color:var(--hg-blue);letter-spacing:var(--ls-tight);">6.998,–€</strong>
-              <span style="font-size:13px;color:var(--text-muted);">inkl. Lieferung &amp; Montage</span>
+              <span style="font-size:15px;color:var(--text-muted);">inkl. Lieferung &amp; Montage</span>
             </div>
-            <span style="font-size:14px;color:var(--text-heading);font-weight:var(--fw-semibold);">oder 116,63&nbsp;€ mtl. · 0&nbsp;% bei 60 Raten</span>
+            <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-semibold);">oder 116,63&nbsp;€ mtl. · 0&nbsp;% bei 60 Raten</span>
           </div>
         </div>
       </div>
@@ -343,32 +349,32 @@
     <div data-rsp="card hauto" style="border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); padding: 44px 48px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px; background-color: var(--hg-white); height: 592px">
       <div style="display:flex;flex-direction:column;gap:6px;text-align:center;">
         <h3 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 26px; color: var(--text-heading); letter-spacing: var(--ls-tight); text-align: left">Rechenbeispiel</h3>
-        <span style="font-size: 15px; color: var(--text-muted); text-align: left">Ihre Vorteile – jede Position im Überblick</span>
+        <span style="font-size: 17px; color: var(--text-muted); text-align: left">Ihre Vorteile – jede Position im Überblick</span>
       </div>
       <div style="display:flex;flex-direction:column;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); border-color: var(--hg-blue)">
-          <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-medium);">Ihre neue Küche (Beispielwert inkl. Geräte)</span>
-          <strong style="font-size:17px;color:var(--text-heading);white-space:nowrap;">12.999,–€</strong>
+          <span style="font-size:18px;color:var(--text-heading);font-weight:var(--fw-medium);">Ihre neue Küche (Beispielwert inkl. Geräte)</span>
+          <strong style="font-size:19px;color:var(--text-heading);white-space:nowrap;">12.999,–€</strong>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); border-color: var(--hg-blue)">
-          <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-medium);">Tauschprämie für Ihre alte Küche</span>
-          <strong style="font-size:17px;color:var(--hg-red);white-space:nowrap;">− 2.500,–€</strong>
+          <span style="font-size:18px;color:var(--text-heading);font-weight:var(--fw-medium);">Tauschprämie für Ihre alte Küche</span>
+          <strong style="font-size:19px;color:var(--hg-red);white-space:nowrap;">− 2.500,–€</strong>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); border-color: var(--hg-blue)">
-          <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-medium);">Abbau &amp; Mitnahme der alten Küche</span>
-          <strong style="font-size:17px;color:var(--success);white-space:nowrap;">0,–€</strong>
+          <span style="font-size:18px;color:var(--text-heading);font-weight:var(--fw-medium);">Abbau &amp; Mitnahme der alten Küche</span>
+          <strong style="font-size:19px;color:var(--success);white-space:nowrap;">0,–€</strong>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); border-color: var(--hg-blue)">
-          <span style="font-size:16px;color:var(--text-heading);font-weight:var(--fw-medium);">Lieferung &amp; Montage der neuen Küche</span>
-          <strong style="font-size:17px;color:var(--success);white-space:nowrap;">0,–€</strong>
+          <span style="font-size:18px;color:var(--text-heading);font-weight:var(--fw-medium);">Lieferung &amp; Montage der neuen Küche</span>
+          <strong style="font-size:19px;color:var(--success);white-space:nowrap;">0,–€</strong>
         </div>
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0 0;">
-          <span style="font-size: 17px; font-weight: var(--fw-bold); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-muted)">Ihr Vorteil</span>
+          <span style="font-size: 19px; font-weight: var(--fw-bold); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--text-muted)">Ihr Vorteil</span>
           <strong style="font-size: 38px; font-weight: var(--fw-black); color: var(--hg-red); letter-spacing: var(--ls-tight); white-space: nowrap">4.679,–€</strong>
         </div>
       </div>
       <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;align-self:center;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="280px,52px">Meine Prämie berechnen</x-import></a>
-      <p style="margin:0;font-size:12px;color:var(--text-muted);text-align:center;">Es handelt sich um eine Beispielrechnung.</p>
+      <p style="margin:0;font-size:13px;color:var(--text-muted);text-align:center;">Es handelt sich um eine Beispielrechnung.</p>
     </div>
     <div data-rsp="ba" style="display:flex;flex-direction:column;height:592px;box-sizing:border-box;">
       <div style="position:relative;flex:1;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md);">
@@ -379,9 +385,9 @@
           <img src="/assets/vorher-kueche.jpg" alt="Alte Küche vor dem Tausch" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div style="position:absolute;top:0;bottom:0;left:{{ baPos }};width:3px;background:#fff;transform:translateX(-1.5px);box-shadow:var(--shadow-md);pointer-events:none;"></div>
-        <div style="position:absolute;top:50%;left:{{ baPos }};transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--hg-white);box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center;gap:2px;color:var(--hg-blue);font-size:15px;font-weight:var(--fw-bold);pointer-events:none;"><span>‹</span><span>›</span></div>
-        <span style="position:absolute;top:14px;left:14px;background:rgba(74,74,73,0.85);color:#fff;font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);pointer-events:none;">Vorher</span>
-        <span style="position:absolute;top:14px;right:14px;background:var(--hg-blue);color:#fff;font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);pointer-events:none;">Nachher</span>
+        <div style="position:absolute;top:50%;left:{{ baPos }};transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--hg-white);box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center;gap:2px;color:var(--hg-blue);font-size:17px;font-weight:var(--fw-bold);pointer-events:none;"><span>‹</span><span>›</span></div>
+        <span style="position:absolute;top:14px;left:14px;background:rgba(74,74,73,0.85);color:#fff;font-size:13px;font-weight:var(--fw-bold);letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);pointer-events:none;">Vorher</span>
+        <span style="position:absolute;top:14px;right:14px;background:var(--hg-blue);color:#fff;font-size:13px;font-weight:var(--fw-bold);letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill);pointer-events:none;">Nachher</span>
         <input type="range" min="0" max="100" value="{{ baVal }}" onInput="{{ onBaSlide }}" aria-label="Vorher/Nachher-Regler" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;">
       </div>
     </div>
@@ -395,64 +401,157 @@
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:660px;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);">Referenzküchen</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);">Frisch eingebaut in der Region</h2>
-      <p style="margin: 0; font-size: 17px; line-height: var(--lh-relaxed); font-weight: 400">Echte Küchen, die unser Team in den letzten Monaten bei Kundinnen und Kunden aus Lahr und Umgebung eingebaut hat.</p>
+      <p style="margin: 0; font-size: 19px; line-height: var(--lh-relaxed); font-weight: 400">Echte Küchen, die unser Team in den letzten Monaten bei Kundinnen und Kunden aus Lahr und Umgebung eingebaut hat.</p>
     </div>
     <div data-reveal="up" style="width:100%;position:relative;">
     <div ref="{{ sliderRef }}" style="display:flex;gap:28px;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 4px 18px;box-sizing:border-box;">
       <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-01.png" alt="Kundenküche in Lahr" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Lahr</strong></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 18px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Lahr</strong></div>
       </div>
       <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-02.png" alt="Kundenküche in Offenburg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Offenburg</strong></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 18px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Offenburg</strong></div>
       </div>
       <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-03.png" alt="Kundenküche in Friesenheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Friesenheim</strong></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 18px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Friesenheim</strong></div>
       </div>
       <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-04.png" alt="Kundenküche in Ettenheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Ettenheim</strong></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 18px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Ettenheim</strong></div>
       </div>
       <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-05.png" alt="Kundenküche in Kippenheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Kippenheim</strong></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 18px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Kippenheim</strong></div>
       </div>
       <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-06.png" alt="Kundenküche in Seelbach" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Seelbach</strong></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 18px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Seelbach</strong></div>
       </div>
       <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-07.png" alt="Kundenküche in Gengenbach" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Gengenbach</strong></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 18px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Gengenbach</strong></div>
       </div>
       <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-08.png" alt="Kundenküche in Emmendingen" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Emmendingen</strong></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 18px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Emmendingen</strong></div>
       </div>
       <div data-rsp="slide" style="flex:0 0 360px;scroll-snap-align:start;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:260px;overflow:hidden;"><img src="/assets/kundenkuechen/kueche-09.png" alt="Kundenküche in Herbolzheim" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding:16px 22px;"><strong style="font-size: 16px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Herbolzheim</strong></div>
+        <div style="padding:16px 22px;"><strong style="font-size: 18px; color: var(--text-heading); font-weight: 300; display:flex; align-items:center; gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Kundenküche in Herbolzheim</strong></div>
       </div>
     </div>
-    <button onClick="{{ slidePrev }}" aria-label="Zurück" data-rsp="snav-l" style="position:absolute;left:-18px;top:132px;width:48px;height:48px;border-radius:50%;background:var(--hg-white);border:1px solid var(--border-subtle);box-shadow:var(--shadow-md);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--hg-blue);font-size:22px;font-weight:var(--fw-bold);font-family:var(--font-sans);" style-hover="background:var(--blue-50);">‹</button>
-    <button onClick="{{ slideNext }}" aria-label="Weiter" data-rsp="snav-r" style="position:absolute;right:-18px;top:132px;width:48px;height:48px;border-radius:50%;background:var(--hg-white);border:1px solid var(--border-subtle);box-shadow:var(--shadow-md);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--hg-blue);font-size:22px;font-weight:var(--fw-bold);font-family:var(--font-sans);" style-hover="background:var(--blue-50);">›</button>
+    <button onClick="{{ slidePrev }}" aria-label="Zurück" data-rsp="snav-l" style="position:absolute;left:-18px;top:132px;width:48px;height:48px;border-radius:50%;background:var(--hg-white);border:1px solid var(--border-subtle);box-shadow:var(--shadow-md);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--hg-blue);font-size:25px;font-weight:var(--fw-bold);font-family:var(--font-sans);" style-hover="background:var(--blue-50);">‹</button>
+    <button onClick="{{ slideNext }}" aria-label="Weiter" data-rsp="snav-r" style="position:absolute;right:-18px;top:132px;width:48px;height:48px;border-radius:50%;background:var(--hg-white);border:1px solid var(--border-subtle);box-shadow:var(--shadow-md);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--hg-blue);font-size:25px;font-weight:var(--fw-bold);font-family:var(--font-sans);" style-hover="background:var(--blue-50);">›</button>
     <div style="display:flex;justify-content:center;gap:10px;padding-top:6px;">
       <sc-for list="{{ slideDots }}" as="dot" hint-placeholder-count="9">
         <button onClick="{{ dot.go }}" aria-label="{{ dot.label }}" style="width:{{ dot.w }};height:10px;border-radius:var(--radius-pill);background:{{ dot.bg }};border:none;padding:0;cursor:pointer;transition:all 200ms cubic-bezier(0.4,0,0.2,1);"></button>
       </sc-for>
     </div>
     </div>
-  </div><section style="background:var(--hg-white);">
+  </div><section style="background:var(--grey-50);border-top:1px solid var(--border-subtle);">
+  <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:88px 32px;display:flex;flex-direction:column;gap:56px;">
+    <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;max-width:720px;margin:0 auto;">
+      <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;color:var(--hg-blue);">Ihr Weg zur neuen Küche</span>
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Entspannt, kostenlos &amp; in Ihrem Tempo</h2>
+      <p style="margin:0;font-size:19px;line-height:var(--lh-relaxed);color:var(--text-muted);text-wrap:pretty;">Beratung, Planung und Aufmaß sind bei uns immer kostenlos. Und das Beste: Sie bestimmen selbst, wann Ihre neue Küche kommt.</p>
+    </div>
+    <div data-reveal="up" data-rsp="ablaufwrap" style="position:relative;">
+        <button id="ablauf-prev" onClick="{{ ablaufPrev }}" aria-label="Zurück" style="position:absolute;left:0;top:36px;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:50%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:26px;line-height:1;font-weight:400;transition:color 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="color:var(--hg-blue);">‹</button>
+        <button id="ablauf-next" onClick="{{ ablaufNext }}" aria-label="Weiter" style="position:absolute;right:0;top:36px;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:50%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:26px;line-height:1;font-weight:400;transition:color 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="color:var(--hg-blue);">›</button>
+        <div id="ablauf-track" style="overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:16px 0 12px;">
+          <div style="position:relative;display:flex;gap:56px;width:max-content;padding:0 72px;">
+            
+          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
+            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-white);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:15px;display:flex;align-items:center;justify-content:center;">1</span>
+            </span>
+            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:22px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Kostenloses Beratungsgespräch</strong>
+              <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:#1f7a3d;background:#e7f4ec;border-radius:var(--radius-pill);padding:4px 10px;">Kostenlos</span>
+            </span>
+            <span style="font-size:18px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Wir rufen Sie an, hören zu und beantworten Ihre Fragen – unverbindlich.</span>
+          </div>
+          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
+            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-white);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M12 3v18"></path><path d="M3 12h9"></path></svg>
+              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:15px;display:flex;align-items:center;justify-content:center;">2</span>
+            </span>
+            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:22px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Kostenlose Küchenplanung</strong>
+              <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:#1f7a3d;background:#e7f4ec;border-radius:var(--radius-pill);padding:4px 10px;">Kostenlos</span>
+            </span>
+            <span style="font-size:18px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Wir planen Ihre Wunschküche individuell – inklusive 3D-Visualisierung.</span>
+          </div>
+          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
+            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-white);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 8.7 8.7 21.3a1 1 0 0 1-1.4 0l-4.6-4.6a1 1 0 0 1 0-1.4L15.3 2.7a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4z"></path><path d="m7.5 10.5 2 2"></path><path d="m10.5 7.5 2 2"></path><path d="m13.5 4.5 2 2"></path><path d="m4.5 13.5 2 2"></path></svg>
+              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:15px;display:flex;align-items:center;justify-content:center;">3</span>
+            </span>
+            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:22px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Kostenloser Aufmaß-Termin</strong>
+              <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:#1f7a3d;background:#e7f4ec;border-radius:var(--radius-pill);padding:4px 10px;">Kostenlos</span>
+            </span>
+            <span style="font-size:18px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Wir messen bei Ihnen zu Hause exakt nach – damit später alles passt.</span>
+          </div>
+          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
+            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-red);border:2px solid var(--hg-red);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"></path><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h1"></path><circle cx="7.5" cy="17.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:15px;display:flex;align-items:center;justify-content:center;">4</span>
+            </span>
+            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:22px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Abbau Ihrer alten Küche</strong>
+              <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:var(--hg-red);background:#fdeaea;border-radius:var(--radius-pill);padding:4px 10px;">Inklusive</span>
+            </span>
+            <span style="font-size:18px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Zum Wunschtermin bauen wir Ihre alte Küche ab und nehmen sie kostenlos mit.</span>
+          </div>
+          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
+            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-white);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path><path d="M12 14v4"></path><path d="M10 16h4"></path></svg>
+              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:15px;display:flex;align-items:center;justify-content:center;">5</span>
+            </span>
+            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:22px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Sie bestimmen den Zeitpunkt</strong>
+              <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:var(--hg-blue);background:var(--blue-50);border-radius:var(--radius-pill);padding:4px 10px;">Flexibel</span>
+            </span>
+            <span style="font-size:18px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Neue Küche sofort oder später? Viele renovieren erst noch Boden oder Wände – Sie entscheiden.</span>
+          </div>
+          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
+            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-white);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:15px;display:flex;align-items:center;justify-content:center;">6</span>
+            </span>
+            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:22px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Lieferung &amp; Montage</strong>
+              <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:#1f7a3d;background:#e7f4ec;border-radius:var(--radius-pill);padding:4px 10px;">Kostenlos</span>
+            </span>
+            <span style="font-size:18px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Unser eigenes Team montiert Ihre neue Traumküche – fix und fertig.</span>
+          </div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;gap:8px;margin-top:14px;">
+          <span style="font-size:16px;color:var(--text-muted);">Ziehen oder wischen Sie, um alle 6 Schritte zu sehen</span>
+        </div>
+      </div>
+      <div data-reveal="up" data-rsp="hauto" style="position:relative;height:420px;width:100%;">
+        <image-slot id="ablauf-montage" shape="rounded" radius="18" placeholder="Foto: Montageteam / Lieferung der neuen Küche"></image-slot>
+        <div style="position:absolute;right:36px;bottom:-28px;width:180px;height:180px;border-radius:50%;background:var(--hg-red);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;box-sizing:border-box;box-shadow:var(--shadow-lg);transform:rotate(-6deg);">
+          <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:21px;line-height:1.15;">Inklusive Abbau &amp; Mitnahme</strong>
+          <span style="font-size:16px;line-height:1.25;margin-top:6px;">der alten Küche</span>
+        </div>
+      </div>
+    </div>
+</section><section style="background:var(--hg-white);">
   <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:44px;align-items:center;">
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:640px;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);">Das sagen unsere Kunden</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);">Über 500 zufriedene Kunden und Kundinnen</h2>
       <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Rating" value="{{ googleRating }}" size="22" hint-size="120px,22px"></x-import>
-        <span style="font-size:16px;font-weight:var(--fw-semibold);color:var(--text-heading);">{{ googleRatingLabel }} von 5</span>
-        <span style="font-size:15px;color:var(--text-muted);">· {{ googleReviews }} Bewertungen auf Google</span>
+        <span style="font-size:18px;font-weight:var(--fw-semibold);color:var(--text-heading);">{{ googleRatingLabel }} von 5</span>
+        <span style="font-size:17px;color:var(--text-muted);">· {{ googleReviews }} Bewertungen auf Google</span>
       </div>
     </div>
     <div data-reveal="up" style="width:100%;">
@@ -464,8 +563,8 @@
     <div data-reveal="left" style="display:flex;flex-direction:column;gap:18px;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);">Entspannt finanzieren</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">0&nbsp;% Finanzierung -&nbsp;<br>ganz ohne Zinsen</h2>
-      <p style="margin: 0; font-size: 17px; line-height: var(--lh-relaxed); text-wrap: pretty; font-weight: 400">Ihre neue Traumküche muss nicht warten: Teilen Sie den Kaufpreis bequem in bis zu 60 Monatsraten auf – <strong>ganz ohne Zinsen und ohne versteckte Kosten</strong>.</p>
-      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:16px;font-weight:var(--fw-medium);">
+      <p style="margin: 0; font-size: 19px; line-height: var(--lh-relaxed); text-wrap: pretty; font-weight: 400">Ihre neue Traumküche muss nicht warten: Teilen Sie den Kaufpreis bequem in bis zu 60 Monatsraten auf – <strong>ganz ohne Zinsen und ohne versteckte Kosten</strong>.</p>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:18px;font-weight:var(--fw-medium);">
         <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>0&nbsp;% effektiver Jahreszins</li>
         <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Laufzeit flexibel wählbar – bis zu 60 Monate</li>
         <li style="display:flex;align-items:center;gap:10px;"><span style="color: var(--success); font-weight: var(--fw-bold);">✓&nbsp; &nbsp;<span style="font-weight: var(--fw-medium); background-color: var(--blue-50); color: rgb(74, 74, 73);">Keine Anzahlung nötig</span></span></li>
@@ -478,16 +577,16 @@
       <div data-rsp="split" style="border-radius: var(--radius-xl); padding: 40px 36px; display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: center; background-color: var(--hg-white); border-width: 1px; border-style: solid; border-color: var(--blue-200); width:100%; box-sizing:border-box;">
         <img src="/assets/finanzierung-badge.png" alt="Finanzierung – bis zu 60 Monate, 0 % Zinsen" style="width:240px;max-width:100%;height:auto;display:block;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);">
         <div style="display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center;">
-          <span style="font-size:15px;font-weight:var(--fw-bold);text-transform:uppercase;letter-spacing:var(--ls-eyebrow);color:var(--hg-blue);">Beispiel: Küche für 15.000&nbsp;€</span>
+          <span style="font-size:17px;font-weight:var(--fw-bold);text-transform:uppercase;letter-spacing:var(--ls-eyebrow);color:var(--hg-blue);">Beispiel: Küche für 15.000&nbsp;€</span>
           <div style="display:flex;flex-direction:column;gap:4px;">
             <span style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:54px;line-height:1;color:var(--text-heading);">250,–&nbsp;€</span>
-            <span style="font-size:16px;color:var(--text-muted);">monatlich bei 60 Monaten Laufzeit</span>
+            <span style="font-size:18px;color:var(--text-muted);">monatlich bei 60 Monaten Laufzeit</span>
           </div>
           <div style="width:100%;height:1px;background:var(--border-subtle);"></div>
           <div style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;">
-            <span style="display:flex;flex-direction:column;gap:2px;"><strong style="font-size:22px;color:var(--hg-blue);">0&nbsp;%</strong><span style="font-size:13px;color:var(--text-muted);">Zinsen</span></span>
-            <span style="display:flex;flex-direction:column;gap:2px;"><strong style="font-size:22px;color:var(--hg-blue);">0&nbsp;€</strong><span style="font-size:13px;color:var(--text-muted);">Anzahlung</span></span>
-            <span style="display:flex;flex-direction:column;gap:2px;"><strong style="font-size:22px;color:var(--hg-blue);">60</strong><span style="font-size:13px;color:var(--text-muted);">Monate</span></span>
+            <span style="display:flex;flex-direction:column;gap:2px;"><strong style="font-size:25px;color:var(--hg-blue);">0&nbsp;%</strong><span style="font-size:15px;color:var(--text-muted);">Zinsen</span></span>
+            <span style="display:flex;flex-direction:column;gap:2px;"><strong style="font-size:25px;color:var(--hg-blue);">0&nbsp;€</strong><span style="font-size:15px;color:var(--text-muted);">Anzahlung</span></span>
+            <span style="display:flex;flex-direction:column;gap:2px;"><strong style="font-size:25px;color:var(--hg-blue);">60</strong><span style="font-size:15px;color:var(--text-muted);">Monate</span></span>
           </div>
         </div>
       </div>
@@ -500,9 +599,9 @@
       <div style="background:var(--hg-white);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:18px;">
         <span style="display:flex;gap:16px;align-items:center;">
           <span style="width:48px;height:48px;border-radius:50%;background:var(--blue-50);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span>
-          <strong style="font-size:17px;color:var(--text-heading);">FunktionsGarantie auf alle mechanischen &amp; elektronischen Beschläge*</strong>
+          <strong style="font-size:19px;color:var(--text-heading);">FunktionsGarantie auf alle mechanischen &amp; elektronischen Beschläge*</strong>
         </span>
-        <ul data-rsp="split" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;font-size:15px;color:var(--text-body);">
+        <ul data-rsp="split" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;font-size:17px;color:var(--text-body);">
           <li style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Topfbänder</li>
           <li style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Klappen- &amp; Liftbeschläge</li>
           <li style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Schubladen- &amp; Auszugssysteme</li>
@@ -513,7 +612,7 @@
           <li style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Wandschrankaufhängungen</li>
           <li style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Climber- &amp; Jalousiebeschläge</li>
         </ul>
-        <span style="font-size:12px;color:var(--text-muted);">* Die Funktionsgarantie gilt ausschließlich für Culineo-Küchen.</span>
+        <span style="font-size:13px;color:var(--text-muted);">* Die Funktionsgarantie gilt ausschließlich für Culineo-Küchen.</span>
       </div><div data-rsp="mq-view" style="width:100%;"><div data-rsp="cols4 mq-track" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;"><span data-rsp="mq-set" style="display:contents;">
           
           <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/siemens.webp" alt="Siemens" style="max-width:100%;max-height:22px;object-fit:contain;"></span>
@@ -537,7 +636,7 @@
     <div data-reveal="right" style="display:flex;flex-direction:column;gap:18px;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);; text-align: right">Lange sorgenfrei</span>
       <h2 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-3xl); color: var(--text-heading); letter-spacing: var(--ls-tight); text-wrap: balance; text-align: right">Garantieverlängerung – von 2 auf 5 Jahre</h2>
-      <p style="margin: 0; font-size: 17px; line-height: var(--lh-relaxed); text-wrap: pretty; text-align: right; font-weight: 400">Nach dem Kauf profitieren Sie aktuell von unserem Angebot: Wir verlängern die Garantie auf <strong>alle Elektrogeräte von 2 auf 5 Jahre</strong>. Dazu erhalten Sie unsere FunktionsGarantie auf alle mechanischen und elektronischen Beschläge – sollte doch einmal etwas sein, kümmert sich unser eigener Kundendienst schnell und unkompliziert.</p>
+      <p style="margin: 0; font-size: 19px; line-height: var(--lh-relaxed); text-wrap: pretty; text-align: right; font-weight: 400">Nach dem Kauf profitieren Sie aktuell von unserem Angebot: Wir verlängern die Garantie auf <strong>alle Elektrogeräte von 2 auf 5 Jahre</strong>. Dazu erhalten Sie unsere FunktionsGarantie auf alle mechanischen und elektronischen Beschläge – sollte doch einmal etwas sein, kümmert sich unser eigener Kundendienst schnell und unkompliziert.</p>
       <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-end;margin-top:6px;">
         
         
@@ -552,8 +651,8 @@
     <div data-reveal="up" style="display:flex;flex-direction:column;gap:18px;align-items:center;max-width:720px;">
       <span style="font-family: var(--font-script); font-size: 30px; line-height: 1.1; font-weight: 700; letter-spacing: 0; text-transform: none; color: var(--blue-300)">Nur bei Hugelmann</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--hg-white);letter-spacing:var(--ls-tight);text-wrap:balance;">Unser hauseigenes Granitstudio</h2>
-      <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);text-wrap:pretty;font-weight:400;color:var(--hg-white);">Als eines der wenigen Küchenhäuser der Region haben wir ein eigenes Granitstudio: Hier erleben Sie echte Naturstein-Arbeitsplatten im Original – und Ihre neue Platte kommt passgenau aus einer Hand.</p>
-      <ul style="list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;font-size:17px;font-weight:var(--fw-medium);">
+      <p style="margin:0;font-size:19px;line-height:var(--lh-relaxed);text-wrap:pretty;font-weight:400;color:var(--hg-white);">Als eines der wenigen Küchenhäuser der Region haben wir ein eigenes Granitstudio: Hier erleben Sie echte Naturstein-Arbeitsplatten im Original – und Ihre neue Platte kommt passgenau aus einer Hand.</p>
+      <ul style="list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;font-size:19px;font-weight:var(--fw-medium);">
         <li style="display:flex;align-items:center;gap:10px;color:var(--hg-white);"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Individuelle Arbeitsplatten</li>
         <li style="display:flex;align-items:center;gap:10px;color:var(--hg-white);"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>dekorative Rückwandverkleidungen</li>
         <li style="display:flex;align-items:center;gap:10px;color:var(--hg-white);"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>individuelle Granitspülen</li>
@@ -574,110 +673,17 @@
     <div data-rsp="card" data-reveal="up" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);padding:44px 48px;width:100%;max-width:720px;box-sizing:border-box;display:flex;flex-direction:column;gap:26px;">
       <div style="display:flex;flex-direction:column;gap:8px;text-align:center;">
         <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;color:var(--text-heading);letter-spacing:var(--ls-tight);">Beantworten Sie 7 kurze Fragen zu Ihrer alten und neuen Küche</h3>
-        <span style="font-size:15px;color:var(--text-muted);">Danach ruft Sie Ihr persönlicher Küchenberater in ca. 20 Minuten an – kostenlos und unverbindlich.</span>
+        <span style="font-size:17px;color:var(--text-muted);">Danach ruft Sie Ihr persönlicher Küchenberater in ca. 20 Minuten an – kostenlos und unverbindlich.</span>
       </div>
       <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;align-self:center;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="340px,52px">Jetzt starten – dauert nur 2 Minuten</x-import></a>
-      <span style="font-size:13px;color:var(--hg-red);font-weight:var(--fw-semibold);text-align:center;">Nur noch {{ spotsLeft }} von 30 Plätzen frei</span>
+      <span style="font-size:15px;color:var(--hg-red);font-weight:var(--fw-semibold);text-align:center;">Nur noch {{ spotsLeft }} von 30 Plätzen frei</span>
     </div>
-    <div style="display:flex;gap:28px;align-items:center;font-size:14px;color:var(--text-muted);">
+    <div style="display:flex;gap:28px;align-items:center;font-size:16px;color:var(--text-muted);">
       <span style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>100&nbsp;% kostenlos</span>
       <span style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Unverbindlich</span>
       <span style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Familienbetrieb seit über 70 Jahren</span>
     </div>
   </div>
-</section><section style="background:var(--grey-50);border-top:1px solid var(--border-subtle);">
-  <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:88px 32px;display:flex;flex-direction:column;gap:56px;">
-    <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;max-width:720px;margin:0 auto;">
-      <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;color:var(--hg-blue);">Ihr Weg zur neuen Küche</span>
-      <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Entspannt, kostenlos &amp; in Ihrem Tempo</h2>
-      <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);color:var(--text-muted);text-wrap:pretty;">Beratung, Planung und Aufmaß sind bei uns immer kostenlos. Und das Beste: Sie bestimmen selbst, wann Ihre neue Küche kommt.</p>
-    </div>
-    <div data-reveal="up" data-rsp="ablaufwrap" style="position:relative;">
-        <button id="ablauf-prev" onClick="{{ ablaufPrev }}" aria-label="Zurück" style="position:absolute;left:0;top:36px;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:50%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:26px;line-height:1;font-weight:400;transition:color 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="color:var(--hg-blue);">‹</button>
-        <button id="ablauf-next" onClick="{{ ablaufNext }}" aria-label="Weiter" style="position:absolute;right:0;top:36px;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:50%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:26px;line-height:1;font-weight:400;transition:color 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="color:var(--hg-blue);">›</button>
-        <div id="ablauf-track" style="overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:16px 0 12px;">
-          <div style="position:relative;display:flex;gap:56px;width:max-content;padding:0 72px;">
-            
-          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
-            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-white);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:13px;display:flex;align-items:center;justify-content:center;">1</span>
-            </span>
-            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:20px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Kostenloses Beratungsgespräch</strong>
-              <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:#1f7a3d;background:#e7f4ec;border-radius:var(--radius-pill);padding:4px 10px;">Kostenlos</span>
-            </span>
-            <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Wir rufen Sie an, hören zu und beantworten Ihre Fragen – unverbindlich.</span>
-          </div>
-          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
-            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-white);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M12 3v18"></path><path d="M3 12h9"></path></svg>
-              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:13px;display:flex;align-items:center;justify-content:center;">2</span>
-            </span>
-            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:20px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Kostenlose Küchenplanung</strong>
-              <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:#1f7a3d;background:#e7f4ec;border-radius:var(--radius-pill);padding:4px 10px;">Kostenlos</span>
-            </span>
-            <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Wir planen Ihre Wunschküche individuell – inklusive 3D-Visualisierung.</span>
-          </div>
-          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
-            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-white);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 8.7 8.7 21.3a1 1 0 0 1-1.4 0l-4.6-4.6a1 1 0 0 1 0-1.4L15.3 2.7a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4z"></path><path d="m7.5 10.5 2 2"></path><path d="m10.5 7.5 2 2"></path><path d="m13.5 4.5 2 2"></path><path d="m4.5 13.5 2 2"></path></svg>
-              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:13px;display:flex;align-items:center;justify-content:center;">3</span>
-            </span>
-            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:20px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Kostenloser Aufmaß-Termin</strong>
-              <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:#1f7a3d;background:#e7f4ec;border-radius:var(--radius-pill);padding:4px 10px;">Kostenlos</span>
-            </span>
-            <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Wir messen bei Ihnen zu Hause exakt nach – damit später alles passt.</span>
-          </div>
-          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
-            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-red);border:2px solid var(--hg-red);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"></path><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h1"></path><circle cx="7.5" cy="17.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
-              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:13px;display:flex;align-items:center;justify-content:center;">4</span>
-            </span>
-            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:20px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Abbau Ihrer alten Küche</strong>
-              <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:var(--hg-red);background:#fdeaea;border-radius:var(--radius-pill);padding:4px 10px;">Inklusive</span>
-            </span>
-            <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Zum Wunschtermin bauen wir Ihre alte Küche ab und nehmen sie kostenlos mit.</span>
-          </div>
-          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
-            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-white);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path><path d="M12 14v4"></path><path d="M10 16h4"></path></svg>
-              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:13px;display:flex;align-items:center;justify-content:center;">5</span>
-            </span>
-            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:20px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Sie bestimmen den Zeitpunkt</strong>
-              <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:var(--hg-blue);background:var(--blue-50);border-radius:var(--radius-pill);padding:4px 10px;">Flexibel</span>
-            </span>
-            <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Neue Küche sofort oder später? Viele renovieren erst noch Boden oder Wände – Sie entscheiden.</span>
-          </div>
-          <div data-ablauf-item="" style="position:relative;scroll-snap-align:center;flex:0 0 320px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:opacity 220ms cubic-bezier(0.4,0,0.2,1);"><span data-ablauf-line="" style="position:absolute;top:36px;left:calc(50% + 46px);width:calc(100% - 36px);border-top:2px dashed var(--border-default);pointer-events:none;"></span>
-            <span style="position:relative;width:72px;height:72px;border-radius:50%;background:var(--hg-white);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E30613" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-              <span style="position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--hg-blue);color:#fff;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:13px;display:flex;align-items:center;justify-content:center;">6</span>
-            </span>
-            <span style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-              <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:20px;line-height:1.3;color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Lieferung &amp; Montage</strong>
-              <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:0.1em;text-transform:uppercase;color:#1f7a3d;background:#e7f4ec;border-radius:var(--radius-pill);padding:4px 10px;">Kostenlos</span>
-            </span>
-            <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-body);text-wrap:pretty;">Unser eigenes Team montiert Ihre neue Traumküche – fix und fertig.</span>
-          </div>
-          </div>
-        </div>
-        <div style="display:flex;justify-content:center;gap:8px;margin-top:14px;">
-          <span style="font-size:14px;color:var(--text-muted);">Ziehen oder wischen Sie, um alle 6 Schritte zu sehen</span>
-        </div>
-      </div>
-      <div data-reveal="up" data-rsp="hauto" style="position:relative;height:420px;width:100%;">
-        <image-slot id="ablauf-montage" shape="rounded" radius="18" placeholder="Foto: Montageteam / Lieferung der neuen Küche"></image-slot>
-        <div style="position:absolute;right:36px;bottom:-28px;width:180px;height:180px;border-radius:50%;background:var(--hg-red);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;box-sizing:border-box;box-shadow:var(--shadow-lg);transform:rotate(-6deg);">
-          <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:19px;line-height:1.15;">Inklusive Abbau &amp; Mitnahme</strong>
-          <span style="font-size:14px;line-height:1.25;margin-top:6px;">der alten Küche</span>
-        </div>
-      </div>
-    </div>
 </section>
 
 <section style="background:var(--surface-subtle);border-top:1px solid var(--border-subtle);">
@@ -693,12 +699,12 @@
     <div data-reveal="up" style="max-width:680px;display:flex;flex-direction:column;gap:16px;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--blue-300);">Seit über 70 Jahren in Lahr</span>
       <h2 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-3xl); letter-spacing: var(--ls-tight); text-wrap: balance; color: var(--hg-white)">Ein Familienbetrieb, dem Sie vertrauen können</h2>
-      <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);color:rgba(255,255,255,0.9);text-wrap:pretty;">Was als kleine Schreinerei begann, ist heute eines der führenden Einrichtungshäuser in Südbaden – inhabergeführt in dritter Generation. Bei uns kaufen Sie nicht anonym: Ihr Berater begleitet Sie persönlich von der ersten Idee bis zur fertigen Küche. Fachberatung von Herzen – <span style="font-family:var(--font-script);font-size:24px;color:#fff;">besser wohnen!</span></p>
+      <p style="margin:0;font-size:19px;line-height:var(--lh-relaxed);color:rgba(255,255,255,0.9);text-wrap:pretty;">Was als kleine Schreinerei begann, ist heute eines der führenden Einrichtungshäuser in Südbaden – inhabergeführt in dritter Generation. Bei uns kaufen Sie nicht anonym: Ihr Berater begleitet Sie persönlich von der ersten Idee bis zur fertigen Küche. Fachberatung von Herzen – <span style="font-family:var(--font-script);font-size:24px;color:#fff;">besser wohnen!</span></p>
     </div>
     <div data-rsp="cols4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;border-top:1px solid rgba(255,255,255,0.25);padding-top:32px;" data-reveal-group="100">
-      <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">70+</strong><span style="font-size:14px;color:rgba(255,255,255,0.8);">Jahre Familienbetrieb</span></div>
-      <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">14.000&nbsp;qm</strong><span style="font-size:14px;color:rgba(255,255,255,0.8);">Ausstellung in Lahr</span></div>
-      <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">60+</strong><span style="font-size:14px;color:rgba(255,255,255,0.8);">Musterküchen zum Erleben</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">70+</strong><span style="font-size:16px;color:rgba(255,255,255,0.8);">Jahre Familienbetrieb</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">14.000&nbsp;qm</strong><span style="font-size:16px;color:rgba(255,255,255,0.8);">Ausstellung in Lahr</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">60+</strong><span style="font-size:16px;color:rgba(255,255,255,0.8);">Musterküchen zum Erleben</span></div>
       <div style="display:flex;flex-direction:column;gap:4px;"></div>
     </div>
   </div>
@@ -717,7 +723,7 @@
       <p style="margin: 0; font-family: var(--font-display); font-weight: 300; font-size: 26px; line-height: 1.45; color: var(--text-heading); letter-spacing: var(--ls-tight); text-wrap: balance; font-style: italic; width: 1031px; height: 114px">„Seit über 70 Jahren richten wir die Küchen unserer Region ein. Mein Versprechen an Sie: Wir behandeln Ihre Küche so, als wäre es unsere eigene – von der Planung bis zur letzten Schraube."</p>
       <footer style="display:flex;flex-direction:column;gap:2px;">
         <span style="font-family:var(--font-script);font-size:26px;line-height:1.1;font-weight:700;color:var(--hg-blue);">Rainer Hugelmann</span>
-        <span style="font-size:14px;color:var(--text-muted);">Geschäftsführer, interliving – Möbel Hugelmann GmbH</span>
+        <span style="font-size:16px;color:var(--text-muted);">Geschäftsführer, interliving – Möbel Hugelmann GmbH</span>
       </footer>
     </blockquote>
   </div>
@@ -735,11 +741,11 @@
 <section style="background:var(--surface-subtle);">
   <section style="background:var(--hg-blue);">
   <div data-reveal="up" style="max-width:1200px;margin:0 auto;padding:72px 32px;display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center;color:#fff;">
-    <span style="background:var(--hg-red);color:#fff;font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:var(--radius-pill);">Nur noch {{ spotsLeft }} von 30 Plätzen frei</span>
+    <span style="background:var(--hg-red);color:#fff;font-size:13px;font-weight:var(--fw-bold);letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:var(--radius-pill);">Nur noch {{ spotsLeft }} von 30 Plätzen frei</span>
     <h2 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-3xl); letter-spacing: var(--ls-tight); max-width: 760px; text-wrap: balance; color: var(--hg-white)">Warten Sie nicht, bis alle Plätze vergeben sind.</h2>
-    <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);color:rgba(255,255,255,0.9);max-width:560px;">Die Alt-gegen-Neu-Aktion läuft nur bis zum 31.12.2026 und ist auf 30 Teilnehmer begrenzt.</p>
+    <p style="margin:0;font-size:19px;line-height:var(--lh-relaxed);color:rgba(255,255,255,0.9);max-width:560px;">Die Alt-gegen-Neu-Aktion läuft nur bis zum 31.12.2026 und ist auf 30 Teilnehmer begrenzt.</p>
     <a href="/alt-gegen-neu-formular/" class="hg-glow hg-glow-white" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="inverse" size="lg" hint-size="320px,52px">Jetzt kostenlos Platz sichern</x-import></a>
-    <span style="font-size:14px;color:rgba(255,255,255,0.8);">Oder rufen Sie uns direkt an: <a href="tel:+49782196570" style="color:#fff;font-weight:var(--fw-bold);">07821 / 96 570</a></span>
+    <span style="font-size:16px;color:rgba(255,255,255,0.8);">Oder rufen Sie uns direkt an: <a href="tel:+49782196570" style="color:#fff;font-weight:var(--fw-bold);">07821 / 96 570</a></span>
   </div>
 </section><div data-rsp="pad split" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:stretch;">
     <div data-reveal="left" style="min-height:380px;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md);">
@@ -748,7 +754,7 @@
     <div data-reveal="right" style="display:flex;flex-direction:column;gap:20px;justify-content:center;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);">Besuchen Sie uns</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-2xl);color:var(--text-heading);letter-spacing:var(--ls-tight);">Mitten in Lahr – gut erreichbar aus der ganzen Region</h2>
-      <div style="display:flex;flex-direction:column;gap:14px;font-size:16px;">
+      <div style="display:flex;flex-direction:column;gap:14px;font-size:18px;">
         <span style="display:flex;align-items:center;gap:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>interliving – Möbel Hugelmann GmbH · Rainer-Haungs-Straße 1, 77933 Lahr</span>
         <span style="display:flex;align-items:center;gap:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+49782196570">+49 (0) 78 21 / 96 570</a></span>
         <span style="display:flex;align-items:center;gap:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><path d="M22 6l-10 7L2 6"></path></svg><a href="mailto:info@hugelmann.de">info@hugelmann.de</a></span>
@@ -763,8 +769,8 @@
 
 <section style="background:var(--grey-50);border-top:1px solid var(--border-subtle);">
   <div style="max-width:1200px;margin:0 auto;padding:48px 32px;display:flex;flex-direction:column;gap:18px;">
-    <strong style="font-size: 14px; color: var(--text-heading); text-transform: uppercase; letter-spacing: var(--ls-eyebrow); text-align: center">Aktionsbedingungen &amp; Hinweise</strong>
-    <div style="display:flex;flex-direction:column;gap:14px;font-size:12px;line-height:1.6;color:var(--text-muted);">
+    <strong style="font-size: 16px; color: var(--text-heading); text-transform: uppercase; letter-spacing: var(--ls-eyebrow); text-align: center">Aktionsbedingungen &amp; Hinweise</strong>
+    <div style="display:flex;flex-direction:column;gap:14px;font-size:13px;line-height:1.6;color:var(--text-muted);">
       <p style="margin: 0; text-align: center"><strong style="color: var(--text-body);">1) Tauschprämie:<br></strong>&nbsp;Die Tauschprämie von bis zu 4.000&nbsp;€ wird ausschließlich als Gutschrift beim Kauf einer neuen Küche gewährt und nicht bar ausgezahlt. Die konkrete Höhe der Prämie ist abhängig vom Wert der neu gekauften Küche. Gilt auf alle Neuaufträge im Rahmen der „Alt gegen Neu"-Aktion. Voraussetzung ist ein Mindestauftragswert der neuen Küche von 10.000&nbsp;€. Die Aktion ist auf 30 Plätze limitiert und gilt bis zum 31.12.2026. Ausgenommen sind bereits getätigte Aufträge. Nicht mit anderen Aktionen kombinierbar. Auf Wunsch wird die alte Küche kostenlos demontiert und entsorgt, innerhalb eines 50-km-Radius um Lahr.</p>
       <p style="margin: 0; text-align: center"><strong style="color: var(--text-body);">2) Finanzierungshinweise:</strong> <br>Finanzierungsbeispiel: Nobilia Küche, Barzahlungspreis: 6.998,–&nbsp;€, Gebühr: 0,–&nbsp;€, Anzahlung: 0,–&nbsp;€ = Nettodarlehensbetrag 6.998,–&nbsp;€, monatliche Rate: 583,17&nbsp;€, Laufzeit: 12 Monate, Sollzins p.&nbsp;a.: 0,00&nbsp;%, effektiver Jahreszins und gebundener Sollzins entsprechen 0,00&nbsp;% p.&nbsp;a., Bonität vorausgesetzt. Partner ist die Cronbank AG, Hans-Strothoff-Platz 1, 63303 Dreieich. Die Angaben stellen zugleich das 2/3-Beispiel gemäß §&nbsp;6a Abs.&nbsp;4 PAngV dar. Gilt auf alle Neuaufträge ab einem Einkaufswert von 500,–&nbsp;€ (Mindest-Monatsrate 15,–&nbsp;€).</p>
       <p style="margin: 0; text-align: center"><strong style="color: var(--text-body);">3) Allgemeine Hinweise:</strong> <br>Alle Maße sind ca.-Maße. Technische Änderungen, Druckfehler und Irrtümer vorbehalten. Nicht mit anderen Rabatt- und Vorteilsaktionen kombinierbar. Für Rabatte und Gutscheine keine Barauszahlung. Die Garantieverlängerung auf 5 Jahre gilt für Elektrogeräte; die FunktionsGarantie auf mechanische und elektronische Beschläge gilt ausschließlich für Culineo-Küchen. Gültig bis 31.12.2026.</p>
@@ -777,25 +783,25 @@
     <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;">
       <div style="display:flex;flex-direction:column;gap:16px;">
         <img src="/assets/logo-weiss.png" alt="Küchen Hugelmann" style="width:221px;height:56px;max-width:100%;object-fit:contain;flex-shrink:0;align-self:flex-start;display:block;">
-        <span style="font-size:14px;line-height:var(--lh-normal);">interliving – Möbel Hugelmann GmbH<br>Rainer-Haungs-Straße 1, 77933 Lahr<br>Tel.: <a href="tel:+49782196570" style="color:#fff;">+49 (0) 78 21 / 96 570</a> · <a href="mailto:info@hugelmann.de" style="color:#fff;">info@hugelmann.de</a></span>
+        <span style="font-size:16px;line-height:var(--lh-normal);">interliving – Möbel Hugelmann GmbH<br>Rainer-Haungs-Straße 1, 77933 Lahr<br>Tel.: <a href="tel:+49782196570" style="color:#fff;">+49 (0) 78 21 / 96 570</a> · <a href="mailto:info@hugelmann.de" style="color:#fff;">info@hugelmann.de</a></span>
       </div>
-      <div style="display:flex;gap:28px;font-size:14px;">
+      <div style="display:flex;gap:28px;font-size:16px;">
         <a href="#" style="color:rgba(255,255,255,0.85);">Impressum</a>
         <a href="#" style="color:rgba(255,255,255,0.85);">Datenschutz</a>
         <a href="#" style="color:rgba(255,255,255,0.85);">AGB</a>
       </div>
     </div>
-    <p style="margin:0;font-size:12px;line-height:var(--lh-relaxed);color:rgba(255,255,255,0.6);border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;">* Aktionsbedingungen: Die Alt-gegen-Neu-Aktion gilt bis zum 31.12.2026 und ist auf 30 Teilnehmer begrenzt. Die Höhe der Tauschprämie (bis zu 4.000&nbsp;€) richtet sich nach Alter und Zustand der alten Küche sowie dem Kaufwert der neuen Küche und wird mit dem Kaufpreis verrechnet; eine Barauszahlung ist nicht möglich. Kostenfreie Lieferung, Montage sowie Abbau und Mitnahme der Altküche im Rahmen der Aktion. 0&nbsp;%-Finanzierung mit einer Laufzeit von bis zu 60 Monaten über unsere Partnerbank, Bonität vorausgesetzt. Alle Angaben ohne Gewähr.</p>
+    <p style="margin:0;font-size:13px;line-height:var(--lh-relaxed);color:rgba(255,255,255,0.6);border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;">* Aktionsbedingungen: Die Alt-gegen-Neu-Aktion gilt bis zum 31.12.2026 und ist auf 30 Teilnehmer begrenzt. Die Höhe der Tauschprämie (bis zu 4.000&nbsp;€) richtet sich nach Alter und Zustand der alten Küche sowie dem Kaufwert der neuen Küche und wird mit dem Kaufpreis verrechnet; eine Barauszahlung ist nicht möglich. Kostenfreie Lieferung, Montage sowie Abbau und Mitnahme der Altküche im Rahmen der Aktion. 0&nbsp;%-Finanzierung mit einer Laufzeit von bis zu 60 Monaten über unsere Partnerbank, Bonität vorausgesetzt. Alle Angaben ohne Gewähr.</p>
   </div>
 </footer>
 </section>
 <div id="sticky-cta" data-rsp="stickybar" style="position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--hg-white);border-top:1px solid var(--border-subtle);box-shadow:0 -6px 24px rgba(32,31,31,0.12);opacity:0;transform:translateY(100%);pointer-events:none;transition:opacity 240ms cubic-bezier(0.4,0,0.2,1),transform 240ms cubic-bezier(0.4,0,0.2,1);">
   <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;">
     <span style="display:flex;align-items:center;gap:14px;">
-      <span style="width:40px;height:40px;border-radius:50%;background:#fdeaea;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:22px;line-height:1;color:var(--hg-red);">€</span></span>
+      <span style="width:40px;height:40px;border-radius:50%;background:#fdeaea;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:25px;line-height:1;color:var(--hg-red);">€</span></span>
       <span style="display:flex;flex-direction:column;">
-        <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:19px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Bis zu 4.000&nbsp;€ für Ihre alte Küche</strong>
-        <span data-rsp="hidemob" style="font-size:14px;color:var(--text-muted);">Aktion bis 31.12.2026 · nur noch wenige Plätze frei</span>
+        <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:21px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Bis zu 4.000&nbsp;€ für Ihre alte Küche</strong>
+        <span data-rsp="hidemob" style="font-size:16px;color:var(--text-muted);">Aktion bis 31.12.2026 · nur noch wenige Plätze frei</span>
       </span>
     </span>
     <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="220px,52px">Jetzt Prämie sichern</x-import></a>
