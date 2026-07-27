@@ -66,8 +66,11 @@
       first_landing_url: first.first_landing_url || '',
       first_seen: first.first_seen || ''
     };
-    KEYS.forEach(function (k) { if (last[k]) out[k] = last[k]; });
-    KEYS.forEach(function (k) { if (first[k]) out['ft_' + k] = first[k]; });
+    // Alle Schlüssel immer mitsenden (auch leer) — hält das Zapier-Mapping stabil
+    KEYS.forEach(function (k) { out[k] = last[k] || ''; });
+    KEYS.forEach(function (k) { out['ft_' + k] = first[k] || ''; });
+    out.page_referrer = document.referrer || '';
+    out.landing_query = location.search ? location.search.replace(/^\?/, '') : '';
     return out;
   }
 

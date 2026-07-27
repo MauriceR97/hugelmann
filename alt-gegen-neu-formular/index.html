@@ -233,7 +233,7 @@
       </sc-if>
       <div style="display:flex;justify-content:center;width:100%;">
         <span class="hg-glow" style="display:inline-block;">
-          <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" onClick="{{ submitForm }}" hint-size="auto,52px">Jetzt Aktionsplatz sichern</x-import>
+          <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" onClick="{{ submitForm }}" disabled="{{ sending }}" hint-size="auto,52px">{{ submitLabel }}</x-import>
         </span>
       </div>
     </sc-if>
@@ -288,13 +288,15 @@ class Component extends DCLogic {
     if (Object.keys(errors).length) { this.setState({ errors }); return; }
     try { sessionStorage.setItem('agn_lead_name', f.vorname.trim()); } catch (e) {}
     try { sessionStorage.setItem('agn_lead_ok', '1'); } catch (e) {}
+    if (this._sending) return;
+    this._sending = true;
     this.setState({ sending: true });
     const go = () => { window.location.href = this.props.dankeUrl ?? '/alt-gegen-neu-danke/'; };
     // Webhook zuerst abschicken, erst danach weiterleiten (max. 4 s warten)
     let done = false;
     const once = () => { if (!done) { done = true; go(); } };
     setTimeout(once, 4000);
-    this.sendLead(f).then(once, once);
+    Promise.resolve().then(() => this.sendLead(f)).then(once, once);
   }
   sendLead(f) {
     const trk = window.REH_TRACK ? window.REH_TRACK.getAll() : {};
@@ -329,17 +331,21 @@ class Component extends DCLogic {
       foto_dateiname: this.state.foto ? this.state.foto.name : ''
     });
     const url = 'https://hooks.zapier.com/hooks/catch/18583379/44e0n4p/';
-    // Zapier akzeptiert JSON zuverlässig; no-cors vermeidet CORS-Abbrüche
+    // Formulardaten: Zapier legt daraus benannte Felder an (nötig für das Mapping)
+    const body = new URLSearchParams(fields).toString();
     return fetch(url, {
       method: 'POST',
-      mode: 'no-cors',
+      mode: 'cors',
       keepalive: true,
-      headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-      body: JSON.stringify(fields)
-    }).catch(() => {
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      body: body
+    }).then((r) => {
+      if (!r.ok) console.warn('[Lead] Webhook antwortete mit Status', r.status);
+    }).catch((err) => {
+      console.warn('[Lead] Webhook nicht erreichbar:', err && err.message);
       try {
         if (navigator.sendBeacon) {
-          navigator.sendBeacon(url, new Blob([JSON.stringify(fields)], { type: 'text/plain;charset=UTF-8' }));
+          navigator.sendBeacon(url, new Blob([body], { type: 'application/x-www-form-urlencoded;charset=UTF-8' }));
         }
       } catch (e) {}
     });
@@ -347,7 +353,7 @@ class Component extends DCLogic {
   field(key) { return (e) => this.setState(s => ({ form: { ...s.form, [key]: e.target.value } })); }
   zustandLabels = ['Sehr gut – kaum Gebrauchsspuren', 'Gut – normale Gebrauchsspuren', 'Gebraucht – sichtbare Spuren', 'Stark abgenutzt oder beschädigt'];
   altFormLabels = ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Andere'];
-  geraeteLabels = ['Ja, alle E-Geräte', 'Nur einzelne Geräte', 'Nein, die behalte ich'];
+  geraeteLabels = ['Ja, alle E-Geräte', 'Vereinzelt', 'Nein'];
   pickZustand(i) { this.setState(s => ({ zustand: i, errors: { ...s.errors, zustand: false } })); }
   onFotoChange(e) {
     const file = e.target.files && e.target.files[0];
@@ -447,6 +453,8 @@ class Component extends DCLogic {
       onConsent: (e) => this.setState({ consent: e.target.checked, errors: { ...this.state.errors, consent: false } }),
       errConsent: !!errors.consent,
       submitForm: () => this.submit(),
+      sending: !!this.state.sending,
+      submitLabel: this.state.sending ? 'Wird gesendet …' : 'Jetzt Aktionsplatz sichern',
     };
   }
 }
