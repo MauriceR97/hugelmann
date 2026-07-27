@@ -64,8 +64,11 @@
     #ablauf-prev,#ablauf-next{top:auto !important;bottom:0 !important;transform:none !important;width:34px !important;height:34px !important;font-size:20px !important;background:var(--hg-white) !important;border:1px solid var(--border-default) !important;box-shadow:var(--shadow-sm) !important;color:var(--hg-blue) !important;}
     #ablauf-prev{left:calc(50% - 46px) !important;right:auto !important;}
     #ablauf-next{right:calc(50% - 46px) !important;left:auto !important;}
-    #ablauf-track > div{padding:0 16px !important;gap:32px !important;}
-    [data-ablauf-item]{flex:0 0 min(300px, calc(100vw - 72px)) !important;}
+    #ablauf-prev,#ablauf-next{display:none !important;}
+    [data-rsp~="ablaufwrap"]{padding-bottom:0 !important;}
+    #ablauf-track{overflow-x:visible !important;scroll-snap-type:none !important;padding:8px 0 0 !important;}
+    #ablauf-track > div{display:flex !important;flex-direction:column !important;width:100% !important;padding:0 !important;gap:36px !important;}
+    [data-ablauf-item]{flex:0 0 auto !important;width:100% !important;opacity:1 !important;transform:none !important;scroll-snap-align:none !important;}
     [data-ablauf-line]{display:none !important;}
     h1,h2,h3,p{max-width:100% !important;width:auto !important;height:auto !important;}
     img{max-width:100%;}
@@ -77,6 +80,12 @@
     [data-rsp~="dash"]{display:none !important;}
   }
   @media (max-width: 720px){
+    [data-rsp~="stoerer"]{pointer-events:none !important;cursor:default !important;}
+    [data-rsp~="granit"] [data-rsp~="pad"]{padding:52px 20px !important;}
+    [data-rsp~="granit"] h2{font-size:28px !important;}
+    [data-rsp~="granit"] p{font-size:16px !important;}
+    [data-rsp~="granit"] span[style*="font-script"]{font-size:24px !important;}
+    [data-rsp~="granit"] ul{font-size:16px !important;gap:10px 18px !important;}
     [data-rsp~="hero"] h1,[data-rsp~="hero"] p,[data-rsp~="hero"] ul,[data-rsp~="hero"] li{width:auto !important;max-width:100% !important;height:auto !important;}
     [data-rsp~="hero-cta"]{width:100% !important;max-width:100% !important;align-self:center !important;align-items:center !important;}
     [data-rsp~="hero-cta"] > *{width:100% !important;}
@@ -675,7 +684,7 @@
   </div>
 </section>
 
-<section style="position:relative;background: url(&quot;/assets/granit-bg.png&quot;) center / cover no-repeat">
+<section data-rsp="granit" style="position:relative;background: url(&quot;/assets/granit-bg.png&quot;) center / cover no-repeat">
   <div style="position: absolute; inset: 0; pointer-events: none; background-color: #37393C4C"></div>
   <div data-rsp="pad" style="position:relative;max-width:1200px;margin:0 auto;padding:96px 32px;display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;">
     <div data-reveal="up" style="display:flex;flex-direction:column;gap:18px;align-items:center;max-width:720px;">
