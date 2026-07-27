@@ -50,6 +50,9 @@
     justify-content: center !important;
     text-align: center !important;
   }
+  @media (max-width: 560px){
+    [data-rsp~="zustand-nav"]{grid-template-columns:1fr !important;}
+  }
   @media (max-width: 420px){
     [data-rsp~="cols3"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}
   }
@@ -170,37 +173,20 @@
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;text-align:center;">
-        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:var(--hg-blue);letter-spacing:var(--ls-tight);text-wrap:balance;">Erzählen Sie uns kurz etwas zu Ihrer alten Küche</h2>
-        <span style="font-size:15px;color:var(--text-muted);">Das hilft uns, Ihre Tauschprämie realistisch einzuschätzen.</span>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:34px;line-height:1.2;color:var(--hg-blue);letter-spacing:var(--ls-tight);text-wrap:balance;">Ihre alte Küche</h2>
+        <span style="font-size:17px;line-height:var(--lh-relaxed);color:var(--text-muted);text-wrap:pretty;">Ein paar kurze Infos helfen uns, eine erste Einschätzung Ihrer Prämie zu kalkulieren.</span>
       </div>
-      <div style="display:flex;flex-direction:column;gap:26px;max-width:560px;width:100%;margin:0 auto;">
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:560px;width:100%;margin:0 auto;">
+        {{ zustandSelect }}
+        {{ altFormSelect }}
+        {{ geraeteSelect }}
+        <textarea placeholder="Besonderheiten (optional)" value="{{ besonderheiten }}" onChange="{{ onBesonderheiten }}" rows="4" style="width:100%;box-sizing:border-box;font-family:var(--font-sans);font-size:17px;font-weight:500;color:var(--text-heading);background:var(--hg-white);border:1px solid var(--border-default);border-radius:14px;padding:18px 20px;resize:vertical;"></textarea>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <strong style="font-size:16px;color:var(--text-heading);">In welchem Zustand ist Ihre Küche?</strong>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <sc-for list="{{ zustandOptions }}" as="opt" hint-placeholder-count="4">
-              <button onClick="{{ opt.pick }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;text-align:left;font-family:var(--font-sans);font-size:16px;font-weight:var(--fw-semibold);color:{{ opt.labelColor }};background:var(--hg-white);border:2px solid {{ opt.border }};border-radius:var(--radius-md);padding:14px 18px;cursor:pointer;box-shadow:{{ opt.shadow }};transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-1px);box-shadow:var(--shadow-md);">
-                <span>{{ opt.label }}</span>
-                <sc-if value="{{ opt.showCheck }}" hint-placeholder-val="{{ false }}">
-                  <span style="width:22px;height:22px;border-radius:50%;background:var(--hg-red);display:flex;align-items:center;justify-content:center;flex-shrink:0;pointer-events:none;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
-                </sc-if>
-              </button>
-            </sc-for>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <strong style="font-size:16px;color:var(--text-heading);">Wie alt ist Ihre Küche etwa?</strong>
-          <div style="display:flex;flex-wrap:wrap;gap:10px;">
-            <sc-for list="{{ alterOptions }}" as="opt" hint-placeholder-count="4">
-              <button onClick="{{ opt.pick }}" style="font-family:var(--font-sans);font-size:15px;font-weight:var(--fw-semibold);color:{{ opt.labelColor }};background:var(--hg-white);border:2px solid {{ opt.border }};border-radius:var(--radius-pill);padding:10px 18px;cursor:pointer;box-shadow:{{ opt.shadow }};transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-1px);box-shadow:var(--shadow-md);">{{ opt.label }}</button>
-            </sc-for>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <strong style="font-size:16px;color:var(--text-heading);">Foto Ihrer alten Küche <span style="font-weight:var(--fw-medium);color:var(--text-muted);">(optional)</span></strong>
-          <label style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px dashed var(--border-default);border-radius:var(--radius-lg);padding:26px 20px;cursor:pointer;background:var(--grey-50);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="border-color:var(--hg-blue);background:var(--blue-50);">
-            <span style="width:44px;height:44px;border-radius:50%;background:var(--hg-white);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);box-shadow:var(--shadow-xs);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3.5"></circle></svg></span>
-            <span style="font-size:15px;font-weight:var(--fw-semibold);color:var(--text-heading);text-align:center;">{{ fotoLabel }}</span>
-            <span style="font-size:13px;color:var(--text-muted);text-align:center;">JPG oder PNG · einfach antippen</span>
+          <strong style="font-size:16px;color:var(--text-heading);">Foto Ihrer aktuellen Küche (optional)</strong>
+          <label onDrop="{{ onFotoDrop }}" onDragOver="{{ onFotoDragOver }}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px dashed var(--border-default);border-radius:14px;padding:34px 20px;cursor:pointer;background:var(--hg-white);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="border-color:var(--hg-red);background:var(--grey-50);">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"></path><path d="M7 9l5-5 5 5"></path><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path></svg>
+            <span style="font-size:17px;font-weight:var(--fw-bold);color:var(--text-heading);text-align:center;">{{ fotoLabel }}</span>
+            <span style="font-size:15px;color:var(--text-muted);text-align:center;">JPG oder PNG · hilft uns bei der Prämien-Einschätzung</span>
             <input type="file" accept="image/*" onChange="{{ onFoto }}" style="display:none;">
           </label>
           <sc-if value="{{ hasFotoPreview }}" hint-placeholder-val="{{ false }}">
@@ -208,15 +194,13 @@
           </sc-if>
         </div>
         <sc-if value="{{ errZustand }}" hint-placeholder-val="{{ false }}">
-          <span style="font-size:14px;color:var(--hg-red);font-weight:var(--fw-semibold);text-align:center;">Bitte wählen Sie Zustand und Alter Ihrer Küche.</span>
+          <span style="font-size:15px;color:var(--hg-red);font-weight:var(--fw-semibold);text-align:center;">Bitte füllen Sie die drei Auswahlfelder aus.</span>
         </sc-if>
-        <div style="display:flex;justify-content:center;width:100%;">
-          <span class="hg-glow" style="display:inline-block;">
-            <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" onClick="{{ zustandNext }}" hint-size="auto,52px">Weiter zum letzten Schritt</x-import>
-          </span>
+        <div data-rsp="zustand-nav" style="display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:stretch;margin-top:4px;">
+          <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:var(--hg-white);border:1px solid var(--border-default);border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:17px;font-weight:var(--fw-bold);color:var(--text-heading);box-shadow:var(--shadow-xs);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="border-color:var(--hg-blue);color:var(--hg-blue);">←&nbsp;Zurück</button>
+          <button onClick="{{ zustandNext }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-red);border:none;border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:19px;font-weight:var(--fw-bold);color:#fff;box-shadow:0 0 20px 4px rgba(227,6,19,0.28);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:0 0 26px 7px rgba(227,6,19,0.38);">Weiter&nbsp;→</button>
         </div>
       </div>
-      <button onClick="{{ goBack }}" style="align-self: center; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--border-default); border-radius: 800px; padding: 10px 22px; cursor: pointer; font-family: var(--font-sans); font-size: 12px; font-weight: var(--fw-semibold); color: var(--hg-white); box-shadow: var(--shadow-xs); background-color: var(--hg-blue); width: 213px; height: 41px"><span style="font-size:18px;font-weight:var(--fw-bold);">‹</span>Zurück zur vorherigen Frage</button>
       <a href="/alt-gegen-neu/" style="align-self:center;font-size:14px;font-weight:var(--fw-semibold);">‹ Zurück zur Aktionsseite</a>
     </sc-if>
     <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
@@ -267,7 +251,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;spotsLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:9,&quot;min&quot;:1,&quot;max&quot;:30,&quot;section&quot;:&quot;Aktion&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;dankeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;/alt-gegen-neu-danke/&quot;,&quot;section&quot;:&quot;Funnel&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { step: 1, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, kuechenalter: null, foto: null };
+  state = { step: 1, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
   questions = [
     { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Andere'], files: ['/assets/kuechenformen/einzeilig.jpeg', '/assets/kuechenformen/zweizeilig.png', '/assets/kuechenformen/l-form.png', '/assets/kuechenformen/u-form.png', '/assets/kuechenformen/insel.png', null], imgs: 'form', qmarkLast: true },
     { title: 'Welchen Küchenstil wünschen Sie sich?', sub: 'Wählen Sie den Stil, der Ihnen am besten gefällt.', options: ['Hochglanz', 'Matt', 'Massivholz', 'Landhaus', 'Andere'], files: ['/assets/kuechenstile/hochglanz.jpeg', '/assets/kuechenstile/matt.jpeg', '/assets/kuechenstile/massivholz.jpeg', '/assets/kuechenstile/landhaus.jpeg', null], imgs: 'stil', qmarkLast: true },
@@ -332,8 +316,10 @@ class Component extends DCLogic {
       zeitrahmen: answer(4),
       budget: answer(5),
       alte_kueche: answer(6),
-      alte_kueche_zustand: typeof this.state.zustand === 'number' ? this.zustandLabels[this.state.zustand] : '',
-      alte_kueche_alter: typeof this.state.kuechenalter === 'number' ? this.alterLabels[this.state.kuechenalter] : '',
+      alte_kueche_zustand: this.state.zustand || '',
+      alte_kueche_form: this.state.altForm || '',
+      alte_kueche_geraete: this.state.geraete || '',
+      alte_kueche_besonderheiten: (this.state.besonderheiten || '').trim(),
       foto_vorhanden: this.state.foto ? 'ja' : 'nein',
       foto_dateiname: this.state.foto ? this.state.foto.name : ''
     });
@@ -359,9 +345,9 @@ class Component extends DCLogic {
   }
   field(key) { return (e) => this.setState(s => ({ form: { ...s.form, [key]: e.target.value } })); }
   zustandLabels = ['Sehr gut – kaum Gebrauchsspuren', 'Gut – normale Gebrauchsspuren', 'Gebraucht – sichtbare Spuren', 'Stark abgenutzt oder beschädigt'];
-  alterLabels = ['Unter 5 Jahre', '5 bis 10 Jahre', '10 bis 20 Jahre', 'Über 20 Jahre'];
+  altFormLabels = ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Andere'];
+  geraeteLabels = ['Ja, alle E-Geräte', 'Nur einzelne Geräte', 'Nein, die behalte ich'];
   pickZustand(i) { this.setState(s => ({ zustand: i, errors: { ...s.errors, zustand: false } })); }
-  pickAlter(i) { this.setState(s => ({ kuechenalter: i, errors: { ...s.errors, zustand: false } })); }
   onFotoChange(e) {
     const file = e.target.files && e.target.files[0];
     if (!file) return;
@@ -369,18 +355,28 @@ class Component extends DCLogic {
     this.setState({ foto: { name: file.name, size: Math.round(file.size / 1024), url } });
   }
   zustandNext() {
-    if (typeof this.state.zustand !== 'number' || typeof this.state.kuechenalter !== 'number') {
-      this.setState(s => ({ errors: { ...s.errors, zustand: true } }));
+    const s = this.state;
+    if (s.zustand === null || s.zustand === '' || s.altForm === null || s.altForm === '' || s.geraete === null || s.geraete === '') {
+      this.setState(st => ({ errors: { ...st.errors, zustand: true } }));
       return;
     }
     this.setState({ step: 9 });
   }
-  chip(active) {
+  selStyle(v) {
     return {
-      labelColor: active ? 'var(--hg-red)' : 'var(--text-heading)',
-      border: active ? 'var(--hg-red)' : 'var(--border-subtle)',
-      shadow: active ? '0 0 0 4px rgba(227,6,19,0.12)' : 'var(--shadow-xs)',
-      showCheck: active
+      width: '100%', appearance: 'none', WebkitAppearance: 'none', boxSizing: 'border-box',
+      fontFamily: 'var(--font-sans)', fontSize: '17px', fontWeight: 500,
+      color: v ? 'var(--text-heading)' : 'var(--text-muted)',
+      background: 'var(--hg-white)', border: '1px solid var(--border-default)',
+      borderRadius: '14px', padding: '18px 46px 18px 20px', cursor: 'pointer',
+      backgroundImage: 'url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'20\' height=\'20\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%235B6470\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M6 9l6 6 6-6\'/%3E%3C/svg%3E")',
+      backgroundRepeat: 'no-repeat', backgroundPosition: 'right 18px center'
+    };
+  }
+  sel(key) {
+    return (e) => {
+      const v = e.target.value;
+      this.setState(s => ({ [key]: v === '' ? null : v, errors: { ...s.errors, zustand: false } }));
     };
   }
   renderVals() {
@@ -396,10 +392,27 @@ class Component extends DCLogic {
       showZustand: step === 8 && needsZustand,
       showForm: step === 9 || (step === 8 && !needsZustand),
       stepTotal: needsZustand ? 8 : 7,
-      zustandOptions: this.zustandLabels.map((label, i) => Object.assign({ label, pick: () => this.pickZustand(i) }, this.chip(this.state.zustand === i))),
-      alterOptions: this.alterLabels.map((label, i) => Object.assign({ label, pick: () => this.pickAlter(i) }, this.chip(this.state.kuechenalter === i))),
+      zustandSelect: React.createElement('select', {
+        value: this.state.zustand || '', onChange: this.sel('zustand'),
+        style: this.selStyle(this.state.zustand)
+      }, [React.createElement('option', { key: 'p', value: '' }, 'Zustand Ihrer alten Küche')].concat(
+        this.zustandLabels.map(l => React.createElement('option', { key: l, value: l }, l)))),
+      altFormSelect: React.createElement('select', {
+        value: this.state.altForm || '', onChange: this.sel('altForm'),
+        style: this.selStyle(this.state.altForm)
+      }, [React.createElement('option', { key: 'p', value: '' }, 'Ihre aktuelle Küchenform')].concat(
+        this.altFormLabels.map(l => React.createElement('option', { key: l, value: l }, l)))),
+      geraeteSelect: React.createElement('select', {
+        value: this.state.geraete || '', onChange: this.sel('geraete'),
+        style: this.selStyle(this.state.geraete)
+      }, [React.createElement('option', { key: 'p', value: '' }, 'Möchten Sie Ihre E-Geräte ebenfalls abgeben?')].concat(
+        this.geraeteLabels.map(l => React.createElement('option', { key: l, value: l }, l)))),
+      onBesonderheiten: (e) => this.setState({ besonderheiten: e.target.value }),
+      besonderheiten: this.state.besonderheiten || '',
       onFoto: (e) => this.onFotoChange(e),
-      fotoLabel: foto ? foto.name + ' (' + foto.size + ' KB)' : 'Foto auswählen oder aufnehmen',
+      onFotoDrop: (e) => { e.preventDefault(); const f = e.dataTransfer.files && e.dataTransfer.files[0]; if (f) this.setState({ foto: { name: f.name, size: Math.round(f.size / 1024), url: URL.createObjectURL(f) } }); },
+      onFotoDragOver: (e) => e.preventDefault(),
+      fotoLabel: foto ? foto.name + ' (' + foto.size + ' KB)' : 'Bild auswählen oder hierher ziehen',
       hasFotoPreview: !!foto,
       fotoPreview: foto ? React.createElement('img', { src: foto.url, alt: 'Foto der alten Küche', style: { width: '100%', height: 'auto', display: 'block' } }) : null,
       errZustand: !!errors.zustand,
