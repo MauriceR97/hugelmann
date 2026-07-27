@@ -28,7 +28,7 @@
   <style>
   #sticky-cta.is-visible{opacity:1 !important;transform:translateY(0) !important;pointer-events:auto !important;}
   .hg-glow { box-shadow: 0 0 18px 4px rgba(227,6,19,0.30); border-radius: 999px; display: inline-block; }
-  .hg-glow > button, [data-rsp~="stickybar"] button, [data-rsp~="hdr-cta"] button {
+  .hg-glow > button, [data-rsp~="stickybar"] button, [data-rsp~="hdr-cta"] button, a button, button[class*="Button"] {
     text-transform: none !important;
     font-size: 15px !important;
     letter-spacing: 0 !important;
@@ -152,10 +152,10 @@
         
         <li style="display:flex;align-items:center;gap:12px;"><span style="color:#7fd48a;font-weight:var(--fw-bold);font-size:18px;">✓</span>0&nbsp;% Finanzierung bis zu 60 Monate</li>
       </ul>
-      <div style="display:flex;align-items:center;gap:18px;margin-top:6px;pointer-events:auto;">
-        <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="320px,52px" style="color: var(--hg-blue)">Jetzt kostenlos Platz sichern</x-import></a>
-        <a href="#ablauf" style="text-decoration:none;"></a>
-      </div><span style="font-size: 14px; text-align: center">Kostenlos &amp; unverbindlich · Rückruf in ca. 20 Minuten</span>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:6px;pointer-events:auto;align-self:flex-start;">
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="320px,52px" style="color: var(--hg-blue)">Jetzt kostenlos Platz sichern</x-import><a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"></a>
+        <span style="font-size: 14px; text-align: center;">Kostenlos &amp; unverbindlich · Rückruf in ca. 20 Minuten</span>
+      </div>
       
     </div>
   </div></div>
@@ -290,26 +290,26 @@
       </div>
       <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-3px);box-shadow:var(--shadow-lg);">
         <div style="height:210px;position:relative;">
-          <image-slot id="beispiel-nobilia" shape="rect" placeholder="Foto: Nobilia Küche Easytouch (onyx-schwarz &amp; Eiche)"></image-slot>
+          <img src="/assets/beispiel-interliving.png" alt="Interliving Küche – Lack Sahara matt &amp; goldeiche Nachbildung" style="width:100%;height:100%;object-fit:cover;display:block;">
           <span style="position: absolute; top: 14px; left: 14px; z-index: 2; pointer-events: none; color: #fff; font-size: 12px; font-weight: var(--fw-bold); letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-pill); box-shadow: var(--shadow-sm); background-color: var(--hg-anthracite)">Bestseller</span>
         </div>
         <div style="padding:26px 28px 28px;display:flex;flex-direction:column;gap:14px;flex:1;">
           <div style="display:flex;flex-direction:column;gap:2px;">
-            <strong style="font-size:20px;color:var(--text-heading);font-weight:var(--fw-bold);">Nobilia Küche</strong>
-            <span style="font-size:14px;color:var(--text-muted);">aus dem Programm Easytouch</span>
+            <strong style="font-size:20px;color:var(--text-heading);font-weight:var(--fw-bold);">Interliving Küche</strong>
+            <span style="font-size:14px;color:var(--text-muted);">grifflose Frontkombination</span>
           </div>
-          <p style="margin: 0; font-size: 14px; line-height: var(--lh-normal); color: var(--text-body); font-weight: 400">UV-Lack onyx-schwarz matt und Eiche cognac-braun, Zeile mit Hochschränken und großer Insel, Siemens-Elektrogeräte. Maße ca. 430 + 300 cm.</p>
+          <p style="margin: 0; font-size: 14px; line-height: var(--lh-normal); color: var(--text-body); font-weight: 400">Lack Sahara matt &amp; goldeiche Nachbildung, Frontkombination grifflos, deckenhohe Hängeschränke, Siemens-Elektrogeräte. Maße ca. 430 × 187 cm.</p>
           <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px;">
             <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
-              <span style="font-size: 20px; color: var(--hg-anthracite); text-decoration: line-through; font-weight: var(--fw-semibold)">8.999,–€</span>
+              <span style="font-size: 20px; color: var(--hg-anthracite); text-decoration: line-through; font-weight: var(--fw-semibold)">11.499,–€</span>
               <span style="color: var(--hg-red); font-size: 16px; font-weight: var(--fw-bold); padding: 4px 12px; border-radius: var(--radius-pill); white-space: nowrap">− 2.000&nbsp;€ Tauschprämie</span>
             </div>
             <div style="border-top:1px solid var(--border-subtle);padding-top:12px;display:flex;flex-direction:column;gap:2px;">
               <span style="font-size:11px;font-weight:var(--fw-bold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-muted);">Aktionspreis ab</span>
-              <strong style="font-size:34px;font-weight:var(--fw-black);color:var(--hg-blue);letter-spacing:var(--ls-tight);">6.999,–€</strong>
+              <strong style="font-size:34px;font-weight:var(--fw-black);color:var(--hg-blue);letter-spacing:var(--ls-tight);">9.499,–€</strong>
               <span style="font-size:13px;color:var(--text-muted);">inkl. Lieferung &amp; Montage</span>
             </div>
-            <span style="font-size:14px;color:var(--text-heading);font-weight:var(--fw-semibold);">oder 116,65&nbsp;€ mtl. · 0&nbsp;% bei 60 Raten</span>
+            <span style="font-size:14px;color:var(--text-heading);font-weight:var(--fw-semibold);">oder 158,32&nbsp;€ mtl. · 0&nbsp;% bei 60 Raten</span>
           </div>
         </div>
       </div>
@@ -699,7 +699,7 @@
       <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">70+</strong><span style="font-size:14px;color:rgba(255,255,255,0.8);">Jahre Familienbetrieb</span></div>
       <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">14.000&nbsp;qm</strong><span style="font-size:14px;color:rgba(255,255,255,0.8);">Ausstellung in Lahr</span></div>
       <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">60+</strong><span style="font-size:14px;color:rgba(255,255,255,0.8);">Musterküchen zum Erleben</span></div>
-      <div style="display:flex;flex-direction:column;gap:4px;"><strong style="font-size:34px;font-weight:var(--fw-black);">Eigenes</strong><span style="font-size:14px;color:rgba(255,255,255,0.8);">Liefer- &amp; Montageteam</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"></div>
     </div>
   </div>
 </section>
@@ -1022,12 +1022,11 @@ class Component extends DCLogic {
       submitForm: () => this.submit(),
       leadFirstName: name ? ', ' + name.split(' ')[0] : '',
       faqItems: [
-        { title: 'Wie wird meine Tauschprämie berechnet?', content: 'Die Prämie richtet sich nach Alter und Zustand Ihrer alten Küche sowie dem Kaufwert Ihrer neuen Küche – bis zu 4.000 €. Sie wird direkt mit dem Kaufpreis der neuen Küche verrechnet. Die genaue Höhe ermitteln wir gemeinsam im Beratungsgespräch.' },
-        { title: 'Was passiert mit meiner alten Küche?', content: 'Unser Team baut Ihre alte Küche fachgerecht ab und nimmt sie kostenfrei mit – inklusive fachgerechter Verwertung bzw. Entsorgung. Sie müssen sich um nichts kümmern.' },
-        { title: 'Was kostet mich die Teilnahme?', content: 'Nichts. Die Anfrage ist kostenlos und unverbindlich. Lieferung, Montage sowie Abbau und Mitnahme der alten Küche sind im Rahmen der Aktion kostenfrei enthalten.' },
-        { title: 'Wie funktioniert die 0%-Finanzierung?', content: 'Sie zahlen Ihre neue Küche bequem in monatlichen Raten über eine Laufzeit von bis zu 60 Monaten – ganz ohne Zinsen (Bonität vorausgesetzt). Alle Details bespricht Ihr Berater persönlich mit Ihnen.' },
-        { title: 'Muss ich meine Küche selbst ausmessen?', content: 'Nein. Ihr Berater übernimmt das Aufmaß und die komplette Planung für Sie – bis ins Detail. Für die erste Einschätzung genügen ein paar Fotos Ihrer jetzigen Küche.' },
-        { title: 'Wie lange gilt die Aktion?', content: 'Die Alt-gegen-Neu-Aktion läuft bis zum 31.12.2026, ist aber auf 30 Teilnehmer begrenzt. Sobald alle Plätze vergeben sind, endet die Aktion vorzeitig – sichern Sie sich Ihren Platz daher am besten gleich.' },
+        { title: 'Was ist, wenn meine Küche schon sehr alt und beschädigt ist?', content: 'Das ist kein Problem – im Gegenteil. Wir nehmen Ihre alte Küche in jedem Zustand zurück, auch mit Kratzern, defekten Geräten oder ausgeblichenen Fronten. Die Höhe der Tauschprämie richtet sich nach Alter und Zustand Ihrer alten Küche sowie dem Kaufwert Ihrer neuen Küche. Abbau und Mitnahme sind für Sie in jedem Fall kostenfrei.' },
+        { title: 'Gilt die Aktion auch für meine Wohnung?', content: 'Ja. Ob Eigentumswohnung, Mietwohnung, Haus oder Reihenhaus – die Aktion gilt für jede Wohnform. Unser Team ist auf Küchen in Etagenwohnungen, engen Treppenhäusern und Altbauten eingerichtet und plant den Ein- und Ausbau entsprechend.' },
+        { title: 'Bin ich mit dem Formular zu irgendetwas verpflichtet?', content: 'Nein. Das Ausfüllen ist kostenlos und völlig unverbindlich. Sie sichern sich damit nur einen der 30 Aktionsplätze und ein persönliches Beratungsgespräch. Erst wenn Sie sich für eine Küche entscheiden, kommt ein Auftrag zustande.' },
+        { title: 'Was passiert nach dem Ausfüllen des Formulars?', content: 'Wir melden uns innerhalb von ca. 20 Minuten telefonisch bei Ihnen (innerhalb unserer Öffnungszeiten). Im Gespräch klären wir kurz Ihre Wünsche und Ihre jetzige Küche und vereinbaren einen Termin für die kostenlose Planung in unserem Küchenstudio in Lahr.' },
+        { title: 'Gibt es einen Mindestbestellwert für die Tauschprämie?', content: 'Ja. Die Tauschprämie wird ab einem Auftragswert der neuen Küche von 10.000 € gewährt. Die genaue Höhe der Prämie – bis zu 4.000 € – richtet sich nach dem Wert Ihrer neuen Küche und wird direkt mit dem Kaufpreis verrechnet.' },
       ],
     };
   }
