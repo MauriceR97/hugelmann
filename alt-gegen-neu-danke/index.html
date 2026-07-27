@@ -9,6 +9,12 @@
 <body>
 <x-dc>
 <helmet>
+  <script src="/tracking.js"></script>
+  <script>
+    window.PIXEL_ID = "1544546306914801";
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    if (window.PIXEL_ID) { try { fbq('init', window.PIXEL_ID); fbq('track', 'PageView'); } catch (e) {} }
+  </script>
   <link rel="stylesheet" href="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/tokens/fonts.css">
   <link rel="stylesheet" href="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/tokens/colors.css">
   <link rel="stylesheet" href="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/tokens/typography.css">
@@ -142,6 +148,25 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
+  componentDidMount() {
+    // Lead nur nach echter Formular-Absendung und nur einmal feuern
+    let ok = '';
+    try { ok = sessionStorage.getItem('agn_lead_ok') || ''; } catch (e) {}
+    if (!ok || window.__agnLeadFired) return;
+    window.__agnLeadFired = true;
+    try { sessionStorage.removeItem('agn_lead_ok'); } catch (e) {}
+    const evid = window.REH_TRACK ? window.REH_TRACK.leadEventId() : '';
+    const fire = () => {
+      if (typeof window.fbq !== 'function') return false;
+      window.fbq('track', 'Lead', { content_name: 'Alt gegen Neu' }, { eventID: evid });
+      if (window.REH_TRACK) window.REH_TRACK.clearLeadEventId();
+      return true;
+    };
+    if (!fire()) {
+      let tries = 0;
+      const iv = setInterval(() => { if (fire() || ++tries > 20) clearInterval(iv); }, 300);
+    }
+  }
   renderVals() {
     let n = '';
     try { n = sessionStorage.getItem('agn_lead_name') || ''; } catch (e) {}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Platz sichern – Alt gegen Neu | Küchen Hugelmann</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="/support.js"></script>
@@ -8,6 +9,12 @@
 <body>
 <x-dc>
 <helmet>
+  <script src="/tracking.js"></script>
+  <script>
+    window.PIXEL_ID = "1544546306914801";
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    if (window.PIXEL_ID) { try { fbq('init', window.PIXEL_ID); fbq('track', 'PageView'); } catch (e) {} }
+  </script>
   <link rel="stylesheet" href="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/tokens/fonts.css">
   <link rel="stylesheet" href="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/tokens/colors.css">
   <link rel="stylesheet" href="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/tokens/typography.css">
@@ -237,9 +244,44 @@ class Component extends DCLogic {
     if (!/^\S+@\S+\.\S+$/.test(f.email.trim())) errors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse an.';
     if (!this.state.consent) errors.consent = true;
     if (Object.keys(errors).length) { this.setState({ errors }); return; }
-    // TODO: Lead-Daten an CRM/E-Mail-Endpoint senden (this.state.answers + this.state.form)
     try { sessionStorage.setItem('agn_lead_name', f.vorname.trim()); } catch (e) {}
+    this.sendLead(f);
+    try { sessionStorage.setItem('agn_lead_ok', '1'); } catch (e) {}
     window.location.href = this.props.dankeUrl ?? '/alt-gegen-neu-danke/';
+  }
+  sendLead(f) {
+    const trk = window.REH_TRACK ? window.REH_TRACK.getAll() : {};
+    const evid = window.REH_TRACK ? window.REH_TRACK.leadEventId() : '';
+    const a = this.state.answers, q = this.questions;
+    const answer = (i) => {
+      const idx = a[i + 1];
+      return typeof idx === 'number' && q[i] ? q[i].options[idx] || '' : '';
+    };
+    const fields = Object.assign({}, trk, {
+      event_name: 'Lead',
+      event_id: evid,
+      event_source_url: location.origin + '/alt-gegen-neu-danke/',
+      vorname: f.vorname.trim(),
+      nachname: f.nachname.trim(),
+      email: f.email.trim(),
+      telefon: f.tel.trim(),
+      plz: f.plz.trim(),
+      aktion: 'Alt gegen Neu',
+      kuechenform: answer(0),
+      kuechenstil: answer(1),
+      farbstil: answer(2),
+      finanzierung: answer(3),
+      zeitrahmen: answer(4),
+      budget: answer(5),
+      alte_kueche: answer(6)
+    });
+    try {
+      fetch('https://hooks.zapier.com/hooks/catch/18583379/44e0n4p/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: new URLSearchParams(fields).toString()
+      }).catch(() => {});
+    } catch (e) {}
   }
   field(key) { return (e) => this.setState(s => ({ form: { ...s.form, [key]: e.target.value } })); }
   renderVals() {
