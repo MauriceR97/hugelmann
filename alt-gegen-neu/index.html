@@ -50,6 +50,8 @@
   @keyframes hg-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (max-width: 1100px){ html,body{overflow-x:clip;max-width:100%;} }
   @media (max-width: 980px){
+    [data-rsp~="garantie"], [data-rsp~="garantie"] *{text-align:left !important;}
+    [data-rsp~="garantie"] > div{align-items:flex-start !important;}
     [data-rsp~="preisrow"]{flex-direction:column !important;align-items:flex-start !important;gap:4px !important;}
     [data-rsp~="cols2"]{grid-template-columns:1fr !important;}
     [data-rsp~="split"]{grid-template-columns:minmax(0,1fr) !important;}
@@ -64,6 +66,8 @@
   @media (prefers-reduced-motion: reduce){ [data-rsp~="mq-track"]{animation:none !important;} }
   @media (max-width: 1100px){ html,body{overflow-x:clip;max-width:100%;} }
   @media (max-width: 980px){
+    [data-rsp~="garantie"], [data-rsp~="garantie"] *{text-align:left !important;}
+    [data-rsp~="garantie"] > div{align-items:flex-start !important;}
     [data-rsp~="preisrow"]{flex-direction:column !important;align-items:flex-start !important;gap:4px !important;}
     [data-rsp~="cols2"]{grid-template-columns:1fr !important;}
     [data-rsp~="ablaufwrap"]{padding-bottom:52px !important;}
@@ -690,7 +694,7 @@
           
         </span></div></div>
     </div>
-    <div data-reveal="right" style="display:flex;flex-direction:column;gap:18px;">
+    <div data-reveal="right" data-rsp="garantie" style="display:flex;flex-direction:column;gap:18px;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);; text-align: right">Lange sorgenfrei</span>
       <h2 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-3xl); color: var(--text-heading); letter-spacing: var(--ls-tight); text-wrap: balance; text-align: right">Garantieverlängerung – von 2 auf 5 Jahre</h2>
       <p style="margin: 0; font-size: 19px; line-height: var(--lh-relaxed); text-wrap: pretty; text-align: right; font-weight: 400">Nach dem Kauf profitieren Sie aktuell von unserem Angebot: Wir verlängern die Garantie auf <strong>alle Elektrogeräte von 2 auf 5 Jahre</strong>. Dazu erhalten Sie unsere FunktionsGarantie auf alle mechanischen und elektronischen Beschläge – sollte doch einmal etwas sein, kümmert sich unser eigener Kundendienst schnell und unkompliziert.</p>
