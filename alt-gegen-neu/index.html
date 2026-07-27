@@ -807,7 +807,7 @@
 </div>
 <div style="height:84px;"></div></div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;spotsLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:9,&quot;min&quot;:1,&quot;max&quot;:30,&quot;section&quot;:&quot;Aktion&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;googleRating&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:4.1,&quot;min&quot;:1,&quot;max&quot;:5,&quot;step&quot;:0.1,&quot;section&quot;:&quot;Social Proof&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;googleReviews&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:522,&quot;min&quot;:1,&quot;section&quot;:&quot;Social Proof&quot;,&quot;tsType&quot;:&quot;number&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;spotsLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:9,&quot;min&quot;:1,&quot;max&quot;:30,&quot;section&quot;:&quot;Aktion&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;googleRating&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:4.1,&quot;min&quot;:1,&quot;max&quot;:5,&quot;step&quot;:0.1,&quot;section&quot;:&quot;Social Proof&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;googleReviews&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:534,&quot;min&quot;:1,&quot;section&quot;:&quot;Social Proof&quot;,&quot;tsType&quot;:&quot;number&quot;}}">
 class Component extends DCLogic {
   state = { step: 1, answers: {}, form: { name: '', tel: '', email: '', plz: '' }, errors: {}, done: false, baPos: 50, slideIdx: 0 };
   questions = [
@@ -1008,7 +1008,7 @@ class Component extends DCLogic {
       spotsLeft: this.props.spotsLeft ?? 9,
       googleRating: this.props.googleRating ?? 4.1,
       googleRatingLabel: String(this.props.googleRating ?? 4.1).replace('.', ','),
-      googleReviews: this.props.googleReviews ?? 522,
+      googleReviews: this.props.googleReviews ?? 534,
       five: 5,
       showQuiz, showForm: !done && step === 8, showSuccess: done,
       stepNum: step, progressPct: Math.round(((step - 1) / 7) * 100) + '%',
