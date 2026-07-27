@@ -39,7 +39,26 @@
     [data-rsp~="hero"] [data-reveal="up"]{max-width:100% !important;}
     [data-rsp~="stoerer"]{transform:rotate(8deg) scale(0.42) !important;transform-origin:top right !important;top:12px !important;right:12px !important;}
   }
+  @keyframes hg-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (max-width: 980px){
+    [data-rsp~="split"]{grid-template-columns:minmax(0,1fr) !important;}
+    [data-reveal="right"],[data-reveal="left"]{min-width:0 !important;}
+    [data-rsp~="mq-view"]{overflow:hidden !important;min-width:0 !important;max-width:100% !important;width:100% !important;}
+    [data-rsp~="mq-track"]{display:flex !important;flex-wrap:nowrap !important;grid-template-columns:none !important;width:max-content !important;gap:0 !important;animation:hg-marquee 26s linear infinite;align-items:center !important;justify-content:flex-start !important;}
+    [data-rsp~="mq-set"],[data-rsp~="mq-dup"]{display:flex !important;align-items:center !important;gap:28px !important;padding-right:28px !important;flex:0 0 auto !important;}
+    [data-rsp~="mq-set"] > *,[data-rsp~="mq-dup"] > *{flex:0 0 auto !important;}
+    [data-rsp~="mq-set"] > span,[data-rsp~="mq-dup"] > span{width:110px !important;}
+    [data-rsp~="mq-set"] > div[style*="width:250px"],[data-rsp~="mq-dup"] > div[style*="width:250px"]{width:180px !important;height:76px !important;padding:12px 16px !important;}
+  }
+  @media (prefers-reduced-motion: reduce){ [data-rsp~="mq-track"]{animation:none !important;} }
+  @media (max-width: 980px){
+    [data-rsp~="ablaufwrap"]{padding-bottom:52px !important;}
+    #ablauf-prev,#ablauf-next{top:auto !important;bottom:0 !important;transform:none !important;width:34px !important;height:34px !important;font-size:20px !important;background:var(--hg-white) !important;border:1px solid var(--border-default) !important;box-shadow:var(--shadow-sm) !important;color:var(--hg-blue) !important;}
+    #ablauf-prev{left:calc(50% - 46px) !important;right:auto !important;}
+    #ablauf-next{right:calc(50% - 46px) !important;left:auto !important;}
+    #ablauf-track > div{padding:0 16px !important;gap:32px !important;}
+    [data-ablauf-item]{flex:0 0 min(300px, calc(100vw - 72px)) !important;}
+    [data-ablauf-line]{display:none !important;}
     h1,h2,h3,p{max-width:100% !important;width:auto !important;height:auto !important;}
     img{max-width:100%;}
     iframe{max-width:100%;}
@@ -50,6 +69,21 @@
     [data-rsp~="dash"]{display:none !important;}
   }
   @media (max-width: 720px){
+    [data-rsp~="hdr-cta"]{display:none !important;}
+    [data-rsp~="hdr-tel-txt"]{display:none !important;}
+    [data-rsp~="hdr-tel"]{width:46px !important;height:46px !important;border-radius:50% !important;background:var(--blue-50) !important;justify-content:center !important;gap:0 !important;}
+    [data-rsp~="tb-hide"]{display:none !important;}
+    [data-rsp~="gf-siegel"]{display:block !important;}
+    [data-rsp~="gf-quote"] p{font-size:19px !important;line-height:1.45 !important;}
+    [data-rsp~="gf-quote"] footer span:first-child{font-size:22px !important;}
+    [data-rsp~="stickybar"] [data-rsp~="pad"]{justify-content:center !important;}
+    [data-rsp~="stickybar"] [data-rsp~="pad"] > span{display:none !important;}
+    [data-rsp~="stickybar"] a{width:100% !important;}
+    [data-rsp~="hero"]{padding:112px 20px 44px !important;}
+    [data-rsp~="hero"] h1{font-size:32px !important;}
+    [data-rsp~="hero"] p{font-size:17px !important;}
+    [data-rsp~="hero"] ul{font-size:15px !important;gap:8px !important;}
+    [data-rsp~="hero"] > div > div{gap:16px !important;}
     [data-rsp~="hidemob"]{display:none !important;}
     [data-rsp~="stickybar"] [data-rsp~="pad"]{padding:12px 16px !important;gap:12px !important;flex-wrap:nowrap !important;}
     h1{font-size:36px !important;}
@@ -79,14 +113,14 @@
   <div data-rsp="header" style="max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
     <img src="/assets/logo.png" alt="Küchen Hugelmann – interliving" style="height:52px;display:block;">
     <div style="display:flex;align-items:center;gap:28px;">
-      <a href="tel:+49782196570" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-heading);">
+      <a href="tel:+49782196570" data-rsp="hdr-tel" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-heading);">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        <span style="display:flex;flex-direction:column;line-height:1.2;">
+        <span data-rsp="hdr-tel-txt" style="display:flex;flex-direction:column;line-height:1.2;">
           <span style="font-size:12px;color:var(--text-muted);">Direkt anrufen</span>
           <strong style="font-size:16px;">07821 / 96 570</strong>
         </span>
       </a>
-      <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="md" hint-size="200px,44px">Platz sichern</x-import></a>
+      <a href="/alt-gegen-neu-formular/" class="hg-glow" data-rsp="hdr-cta" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="md" hint-size="200px,44px">Platz sichern</x-import></a>
     </div>
   </div>
 </header><section style="position:relative;min-height:660px;display:flex;align-items:center;overflow:hidden;">
@@ -132,16 +166,16 @@
         <span style="font-size:13px;color:var(--text-muted);">über {{ googleReviews }} Bewertungen</span>
       </span>
     </span>
-    <span style="width:1px;height:36px;background:var(--border-subtle);"></span>
-    <span style="display:flex;align-items:center;gap:12px;">
+    <span data-rsp="tb-hide" style="width:1px;height:36px;background:var(--border-subtle);"></span>
+    <span data-rsp="tb-hide" style="display:flex;align-items:center;gap:12px;">
       <span style="width:40px;height:40px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"></path><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"></path></svg></span>
       <span style="display:flex;flex-direction:column;line-height:1.25;">
         <strong style="font-size:15px;color:var(--text-heading);">Experte für Küchen</strong>
         <span style="font-size:13px;color:var(--text-muted);">im Schwarzwald</span>
       </span>
     </span>
-    <span style="width:1px;height:36px;background:var(--border-subtle);"></span>
-    <img src="/assets/siegel-moebelhaus-2025.png" alt="DtGV-Siegel: Herausragendes Möbelhaus 2025" style="height:64px;width:auto;display:block;">
+    <span data-rsp="tb-hide" style="width:1px;height:36px;background:var(--border-subtle);"></span>
+    <img src="/assets/siegel-moebelhaus-2025.png" data-rsp="tb-hide" alt="DtGV-Siegel: Herausragendes Möbelhaus 2025" style="height:64px;width:auto;display:block;">
   </div>
 </section><div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:44px;align-items:center;">
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:680px;">
@@ -211,12 +245,17 @@
       <h2 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 3.5rem; color: var(--text-heading); letter-spacing: var(--ls-tight); width: 644px; height: 132px; text-align: center">Einblicke in einige Küchenmodelle</h2>
       <p style="margin: 0; font-size: 30px; line-height: var(--lh-relaxed); font-weight: 300; width: 646px; height: 52px">Wählen Sie aus Top-Marken</p>
     </div>
-    <div data-reveal-group="60" style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;width:100%;">
+    <div data-rsp="mq-view" style="width:100%;"><div data-reveal-group="60" data-rsp="mq-track" style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;width:100%;"><span data-rsp="mq-set" style="display:contents;">
       <div style="width:250px;height:100px;padding:20px 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/interliving-kueche.png" alt="Interliving Küche" style="max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:0.55;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="filter:grayscale(0);opacity:1;"></div>
       <div style="width:250px;height:100px;padding:20px 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/culineo.png" alt="Culineo – Aus Liebe zur Küche" style="max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:0.55;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="filter:grayscale(0);opacity:1;"></div>
       <div style="width:250px;height:100px;padding:20px 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/next125.png" alt="next125" style="max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:0.55;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="filter:grayscale(0);opacity:1;"></div>
       <div style="width:250px;height:100px;padding:20px 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/wertkueche.png" alt="WERT Küche" style="max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:0.55;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="filter:grayscale(0);opacity:1;"></div>
-    </div><div data-rsp="cols3" data-reveal-group="110" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;width:100%;align-items:stretch;">
+    </span><span data-rsp="mq-dup" style="display:none;">
+      <div style="width:250px;height:100px;padding:20px 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/interliving-kueche.png" alt="Interliving Küche" style="max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:0.55;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="filter:grayscale(0);opacity:1;"></div>
+      <div style="width:250px;height:100px;padding:20px 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/culineo.png" alt="Culineo – Aus Liebe zur Küche" style="max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:0.55;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="filter:grayscale(0);opacity:1;"></div>
+      <div style="width:250px;height:100px;padding:20px 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/next125.png" alt="next125" style="max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:0.55;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="filter:grayscale(0);opacity:1;"></div>
+      <div style="width:250px;height:100px;padding:20px 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/wertkueche.png" alt="WERT Küche" style="max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:0.55;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="filter:grayscale(0);opacity:1;"></div>
+    </span></div></div><div data-rsp="cols3" data-reveal-group="110" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;width:100%;align-items:stretch;">
       <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-3px);box-shadow:var(--shadow-lg);">
         <div style="height:210px;position:relative;">
           <image-slot id="beispiel-culineo" shape="rect" placeholder="Foto: Culineo Küche C357 (U-Form, schiefergrau)"></image-slot>
@@ -468,7 +507,7 @@
           <li style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Climber- &amp; Jalousiebeschläge</li>
         </ul>
         <span style="font-size:12px;color:var(--text-muted);">* Die Funktionsgarantie gilt ausschließlich für Culineo-Küchen.</span>
-      </div><div data-rsp="cols4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;">
+      </div><div data-rsp="mq-view" style="width:100%;"><div data-rsp="cols4 mq-track" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;"><span data-rsp="mq-set" style="display:contents;">
           
           <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/siemens.webp" alt="Siemens" style="max-width:100%;max-height:22px;object-fit:contain;"></span>
           <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/bosch.webp" alt="Bosch" style="max-width:100%;max-height:28px;object-fit:contain;"></span>
@@ -477,7 +516,16 @@
           <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/bora.webp" alt="BORA" style="max-width:100%;max-height:22px;object-fit:contain;"></span>
           <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/samsung.png" alt="Samsung" style="max-width:100%;max-height:18px;object-fit:contain;"></span>
           
-        </div>
+        </span><span data-rsp="mq-dup" style="display:none;">
+          
+          <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/siemens.webp" alt="Siemens" style="max-width:100%;max-height:22px;object-fit:contain;"></span>
+          <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/bosch.webp" alt="Bosch" style="max-width:100%;max-height:28px;object-fit:contain;"></span>
+          <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/neff.webp" alt="Neff" style="max-width:100%;max-height:24px;object-fit:contain;"></span>
+          <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/aeg.webp" alt="AEG" style="max-width:100%;max-height:22px;object-fit:contain;"></span><span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/miele.png" alt="Miele" style="max-width:100%;max-height:28px;object-fit:contain;"></span>
+          <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/bora.webp" alt="BORA" style="max-width:100%;max-height:22px;object-fit:contain;"></span>
+          <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/samsung.png" alt="Samsung" style="max-width:100%;max-height:18px;object-fit:contain;"></span>
+          
+        </span></div></div>
     </div>
     <div data-reveal="right" style="display:flex;flex-direction:column;gap:18px;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);; text-align: right">Lange sorgenfrei</span>
@@ -537,7 +585,7 @@
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Entspannt, kostenlos &amp; in Ihrem Tempo</h2>
       <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);color:var(--text-muted);text-wrap:pretty;">Beratung, Planung und Aufmaß sind bei uns immer kostenlos. Und das Beste: Sie bestimmen selbst, wann Ihre neue Küche kommt.</p>
     </div>
-    <div data-reveal="up" style="position:relative;">
+    <div data-reveal="up" data-rsp="ablaufwrap" style="position:relative;">
         <button id="ablauf-prev" onClick="{{ ablaufPrev }}" aria-label="Zurück" style="position:absolute;left:0;top:36px;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:50%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:26px;line-height:1;font-weight:400;transition:color 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="color:var(--hg-blue);">‹</button>
         <button id="ablauf-next" onClick="{{ ablaufNext }}" aria-label="Weiter" style="position:absolute;right:0;top:36px;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:50%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:26px;line-height:1;font-weight:400;transition:color 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="color:var(--hg-blue);">›</button>
         <div id="ablauf-track" style="overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:16px 0 12px;">
@@ -657,7 +705,8 @@
     <div data-reveal="up" style="width:132px;height:132px;flex-shrink:0;">
       <image-slot id="geschaeftsfuehrer" shape="circle" placeholder="Porträt Rainer Hugelmann" style="width: 140px; height: 140px"></image-slot>
     </div>
-    <blockquote data-reveal="up" style="margin:0;display:flex;flex-direction:column;gap:18px;align-items:center;">
+    <img src="/assets/siegel-moebelhaus-2025.png" data-rsp="gf-siegel" alt="DtGV-Siegel: Herausragendes Möbelhaus 2025" style="display:none;height:78px;width:auto;">
+    <blockquote data-reveal="up" data-rsp="gf-quote" style="margin:0;display:flex;flex-direction:column;gap:18px;align-items:center;">
       <p style="margin: 0; font-family: var(--font-display); font-weight: 300; font-size: 26px; line-height: 1.45; color: var(--text-heading); letter-spacing: var(--ls-tight); text-wrap: balance; font-style: italic; width: 1031px; height: 114px">„Seit über 70 Jahren richten wir die Küchen unserer Region ein. Mein Versprechen an Sie: Wir behandeln Ihre Küche so, als wäre es unsere eigene – von der Planung bis zur letzten Schraube."</p>
       <footer style="display:flex;flex-direction:column;gap:2px;">
         <span style="font-family:var(--font-script);font-size:26px;line-height:1.1;font-weight:700;color:var(--hg-blue);">Rainer Hugelmann</span>
