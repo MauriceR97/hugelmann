@@ -287,9 +287,14 @@ class Component extends DCLogic {
     if (!this.state.consent) errors.consent = true;
     if (Object.keys(errors).length) { this.setState({ errors }); return; }
     try { sessionStorage.setItem('agn_lead_name', f.vorname.trim()); } catch (e) {}
-    this.sendLead(f);
     try { sessionStorage.setItem('agn_lead_ok', '1'); } catch (e) {}
-    window.location.href = this.props.dankeUrl ?? '/alt-gegen-neu-danke/';
+    this.setState({ sending: true });
+    const go = () => { window.location.href = this.props.dankeUrl ?? '/alt-gegen-neu-danke/'; };
+    // Webhook zuerst abschicken, erst danach weiterleiten (max. 4 s warten)
+    let done = false;
+    const once = () => { if (!done) { done = true; go(); } };
+    setTimeout(once, 4000);
+    this.sendLead(f).then(once, once);
   }
   sendLead(f) {
     const trk = window.REH_TRACK ? window.REH_TRACK.getAll() : {};
@@ -324,24 +329,20 @@ class Component extends DCLogic {
       foto_dateiname: this.state.foto ? this.state.foto.name : ''
     });
     const url = 'https://hooks.zapier.com/hooks/catch/18583379/44e0n4p/';
-    const body = new URLSearchParams(fields);
-    let sent = false;
-    // sendBeacon überlebt den Seitenwechsel zur Danke-Seite
-    try {
-      if (navigator.sendBeacon) {
-        sent = navigator.sendBeacon(url, new Blob([body.toString()], { type: 'application/x-www-form-urlencoded;charset=UTF-8' }));
-      }
-    } catch (e) {}
-    if (!sent) {
+    // Zapier akzeptiert JSON zuverlässig; no-cors vermeidet CORS-Abbrüche
+    return fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      keepalive: true,
+      headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+      body: JSON.stringify(fields)
+    }).catch(() => {
       try {
-        fetch(url, {
-          method: 'POST',
-          keepalive: true,
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-          body: body.toString()
-        }).catch(() => {});
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon(url, new Blob([JSON.stringify(fields)], { type: 'text/plain;charset=UTF-8' }));
+        }
       } catch (e) {}
-    }
+    });
   }
   field(key) { return (e) => this.setState(s => ({ form: { ...s.form, [key]: e.target.value } })); }
   zustandLabels = ['Sehr gut – kaum Gebrauchsspuren', 'Gut – normale Gebrauchsspuren', 'Gebraucht – sichtbare Spuren', 'Stark abgenutzt oder beschädigt'];
