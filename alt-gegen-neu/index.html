@@ -37,9 +37,9 @@
   }
   .hg-glow-blue { box-shadow: 0 0 18px 4px rgba(3,78,163,0.35); }
   .hg-glow-white { box-shadow: 0 0 18px 4px rgba(255,255,255,0.45); }
-  [data-rsp~="dash"]{--dash-hide:scaleX(0);transform-origin:left center;}
+  [data-rsp~="dash"]{--dash-p:0;transform:scaleX(var(--dash-p));transform-origin:left center;}
   @media (max-width: 980px){
-    [data-rsp~="dash"]{--dash-hide:scaleY(0);transform-origin:center top;left:50% !important;right:auto !important;top:34px !important;bottom:34px !important;width:0 !important;border-top:none !important;border-left:2px dashed var(--blue-300) !important;}
+    [data-rsp~="dash"]{transform:scaleY(var(--dash-p)) !important;transform-origin:center top;left:50% !important;right:auto !important;top:34px !important;bottom:34px !important;width:0 !important;border-top:none !important;border-left:2px dashed var(--blue-300) !important;}
   }
   #ablauf-track{scrollbar-width:none;-ms-overflow-style:none;}
   #ablauf-track::-webkit-scrollbar{display:none;}
@@ -53,7 +53,10 @@
   }
   @keyframes hg-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (max-width: 1100px){ html,body{overflow-x:clip;max-width:100%;} }
+  h1,h2{text-align:center;}
   @media (max-width: 980px){
+    [data-rsp~="beschlaege"],[data-rsp~="garantie-lang"]{display:none !important;}
+    [data-rsp~="garantie-kompakt"]{display:flex !important;}
     [data-rsp~="garantie"], [data-rsp~="garantie"] *{text-align:left !important;}
     [data-rsp~="garantie"] > div{align-items:flex-start !important;}
     [data-rsp~="preisrow"]{flex-direction:column !important;align-items:flex-start !important;gap:4px !important;}
@@ -69,7 +72,10 @@
   }
   @media (prefers-reduced-motion: reduce){ [data-rsp~="mq-track"]{animation:none !important;} }
   @media (max-width: 1100px){ html,body{overflow-x:clip;max-width:100%;} }
+  h1,h2{text-align:center;}
   @media (max-width: 980px){
+    [data-rsp~="beschlaege"],[data-rsp~="garantie-lang"]{display:none !important;}
+    [data-rsp~="garantie-kompakt"]{display:flex !important;}
     [data-rsp~="garantie"], [data-rsp~="garantie"] *{text-align:left !important;}
     [data-rsp~="garantie"] > div{align-items:flex-start !important;}
     [data-rsp~="preisrow"]{flex-direction:column !important;align-items:flex-start !important;gap:4px !important;}
@@ -660,7 +666,7 @@
   <div data-rsp="pad split" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
     <div data-reveal="left" style="display:flex;flex-direction:column;gap:20px;">
       
-      <div style="background:var(--hg-white);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:18px;">
+      <div data-rsp="beschlaege" style="background:var(--hg-white);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:18px;">
         <span style="display:flex;gap:16px;align-items:center;">
           <span style="width:48px;height:48px;border-radius:50%;background:var(--blue-50);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span>
           <strong style="font-size:19px;color:var(--text-heading);">FunktionsGarantie auf alle mechanischen &amp; elektronischen Beschläge*</strong>
@@ -698,9 +704,29 @@
         </span></div></div>
     </div>
     <div data-reveal="right" data-rsp="garantie" style="display:flex;flex-direction:column;gap:18px;">
-      <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);; text-align: right">Lange sorgenfrei</span>
-      <h2 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-3xl); color: var(--text-heading); letter-spacing: var(--ls-tight); text-wrap: balance; text-align: right">Garantieverlängerung – von 2 auf 5 Jahre</h2>
-      <p style="margin: 0; font-size: 19px; line-height: var(--lh-relaxed); text-wrap: pretty; text-align: right; font-weight: 400">Nach dem Kauf profitieren Sie aktuell von unserem Angebot: Wir verlängern die Garantie auf <strong>alle Elektrogeräte von 2 auf 5 Jahre</strong>. Dazu erhalten Sie unsere FunktionsGarantie auf alle mechanischen und elektronischen Beschläge – sollte doch einmal etwas sein, kümmert sich unser eigener Kundendienst schnell und unkompliziert.</p>
+      <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);; text-align: center">Lange sorgenfrei</span>
+      <h2 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-3xl); color: var(--text-heading); letter-spacing: var(--ls-tight); text-wrap: balance; text-align: center">Garantieverlängerung – von 2 auf 5 Jahre</h2>
+      <div data-rsp="garantie-kompakt" style="display:none;flex-direction:column;gap:18px;background:var(--hg-white);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:26px 22px;">
+        <div style="display:flex;align-items:center;justify-content:center;gap:14px;">
+          <span style="display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--text-muted);">
+            <span style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;line-height:1;text-decoration:line-through;">2</span>
+            <span style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;">Jahre</span>
+          </span>
+          <span style="font-size:26px;color:var(--hg-blue);font-weight:var(--fw-bold);line-height:1;">→</span>
+          <span style="width:92px;height:92px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;line-height:1;">
+            <strong style="font-family:var(--font-display);font-weight:var(--fw-black);font-size:34px;">5</strong>
+            <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.06em;text-transform:uppercase;margin-top:4px;">Jahre</span>
+          </span>
+        </div>
+        <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-body);text-align:center;">Garantie auf <strong>alle Elektrogeräte</strong> – plus FunktionsGarantie auf alle Beschläge.</span>
+        <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--border-subtle);padding-top:16px;">
+          <span style="display:flex;align-items:center;gap:10px;font-size:16px;color:var(--text-body);"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Schubladen, Auszüge &amp; Topfbänder</span>
+          <span style="display:flex;align-items:center;gap:10px;font-size:16px;color:var(--text-body);"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Lift-, Klappen- &amp; Jalousiebeschläge</span>
+          <span style="display:flex;align-items:center;gap:10px;font-size:16px;color:var(--text-body);"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Mülltrennung, Tip-on &amp; Innenausstattung</span>
+        </div>
+        <span style="font-size:13px;color:var(--text-muted);">Eigener Kundendienst aus Lahr · gilt für Culineo Küchen.</span>
+      </div>
+      <p data-rsp="garantie-lang" style="margin: 0; font-size: 19px; line-height: var(--lh-relaxed); text-wrap: pretty; text-align: right; font-weight: 400">Nach dem Kauf profitieren Sie aktuell von unserem Angebot: Wir verlängern die Garantie auf <strong>alle Elektrogeräte von 2 auf 5 Jahre</strong>. Dazu erhalten Sie unsere FunktionsGarantie auf alle mechanischen und elektronischen Beschläge – sollte doch einmal etwas sein, kümmert sich unser eigener Kundendienst schnell und unkompliziert.</p>
       <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-end;margin-top:6px;">
         
         
@@ -982,10 +1008,7 @@ class Component extends DCLogic {
         if (!pending.has(el)) return;
         pending.delete(el);
         if (snap) el.style.transition = 'none';
-        if (el.__revealDash) {
-          setTimeout(() => { el.style.transform = 'none'; }, snap ? 0 : 260);
-          return;
-        }
+        if (el.__revealDash) { return; }
         setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, snap ? 0 : (el.__revealDelay || 0));
       };
       const sweep = () => {
@@ -1000,10 +1023,9 @@ class Component extends DCLogic {
         el.__revealDelay = delay;
         if (dir === 'dash') {
           el.__revealDash = true;
-          el.style.transform = 'var(--dash-hide)';
-          el.style.transition = 'transform 1100ms cubic-bezier(0.22,1,0.36,1)';
+          el.style.setProperty('--dash-p', '0');
           el.style.willChange = 'transform';
-          pending.add(el);
+          this._dashEls = (this._dashEls || []).concat(el);
           return;
         }
         el.style.opacity = '0';
@@ -1012,6 +1034,20 @@ class Component extends DCLogic {
         el.style.willChange = 'opacity, transform';
         pending.add(el);
       });
+      const dashTick = () => {
+        (this._dashEls || []).forEach(el => {
+          const r = el.getBoundingClientRect();
+          const start = window.innerHeight * 0.88;
+          const end = window.innerHeight * 0.34;
+          let p = (start - r.top) / (start - end);
+          p = p < 0 ? 0 : p > 1 ? 1 : p;
+          el.style.setProperty('--dash-p', p.toFixed(3));
+        });
+      };
+      this._dashTick = dashTick;
+      window.addEventListener('scroll', dashTick, { passive: true });
+      window.addEventListener('resize', dashTick, { passive: true });
+      dashTick();
       window.addEventListener('scroll', sweep, { passive: true });
       window.addEventListener('resize', sweep, { passive: true });
       this._sweep = sweep;
