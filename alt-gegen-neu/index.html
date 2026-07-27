@@ -49,6 +49,7 @@
   }
   @keyframes hg-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (max-width: 980px){
+    [data-rsp~="cols2"]{grid-template-columns:1fr !important;}
     [data-rsp~="split"]{grid-template-columns:minmax(0,1fr) !important;}
     [data-reveal="right"],[data-reveal="left"]{min-width:0 !important;}
     [data-rsp~="mq-view"]{overflow:hidden !important;min-width:0 !important;max-width:100% !important;width:100% !important;}
@@ -60,6 +61,7 @@
   }
   @media (prefers-reduced-motion: reduce){ [data-rsp~="mq-track"]{animation:none !important;} }
   @media (max-width: 980px){
+    [data-rsp~="cols2"]{grid-template-columns:1fr !important;}
     [data-rsp~="ablaufwrap"]{padding-bottom:52px !important;}
     #ablauf-prev,#ablauf-next{top:auto !important;bottom:0 !important;transform:none !important;width:34px !important;height:34px !important;font-size:20px !important;background:var(--hg-white) !important;border:1px solid var(--border-default) !important;box-shadow:var(--shadow-sm) !important;color:var(--hg-blue) !important;}
     #ablauf-prev{left:calc(50% - 46px) !important;right:auto !important;}
@@ -217,26 +219,26 @@
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;color:var(--hg-blue);">Ihre Vorteile auf einen Blick</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-2xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Warum jetzt der richtige Zeitpunkt ist</h2>
     </div>
-    <div data-rsp="cols4" data-reveal-group="80" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;width:100%;">
-      <div style="background:var(--surface-card);border:1px solid var(--hg-blue);border-radius:var(--radius-lg);box-shadow:0 0 20px 4px rgba(3,78,163,0.28);padding:30px 24px;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:0 0 26px 7px rgba(3,78,163,0.38);transform:translateY(-3px);">
-        <span style="width:56px;height:56px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);"><span style="font-family:var(--font-display);font-weight:var(--fw-black);font-size:30px;line-height:1;">€</span></span>
-        <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:21px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Bis zu 4.000&nbsp;€ Tauschprämie</strong>
-        <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-muted);">Direkt mit dem Preis Ihrer neuen Küche verrechnet.</span>
+    <div data-rsp="cols2" data-reveal-group="80" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;width:100%;max-width:960px;">
+      <div style="background:var(--surface-card);border:1px solid var(--hg-blue);border-radius:var(--radius-lg);box-shadow:0 0 20px 4px rgba(3,78,163,0.28);padding:22px 24px;display:grid;grid-template-columns:52px 1fr;column-gap:16px;row-gap:5px;align-items:center;text-align:left;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:0 0 26px 7px rgba(3,78,163,0.38);transform:translateY(-3px);">
+        <span style="grid-row:1 / span 2;width:52px;height:52px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);flex-shrink:0;"><span style="font-family:var(--font-display);font-weight:var(--fw-black);font-size:30px;line-height:1;">€</span></span>
+        <strong style="grid-column:2;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:19px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Bis zu 4.000&nbsp;€ Tauschprämie</strong>
+        <span style="grid-column:2;font-size:15px;line-height:var(--lh-relaxed);color:var(--text-muted);">Direkt mit dem Preis Ihrer neuen Küche verrechnet.</span>
       </div>
-      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:30px 24px;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-3px);">
-        <span style="width:56px;height:56px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span>
-        <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:21px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Abbau &amp; Mitnahme kostenfrei</strong>
-        <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-muted);">Wir demontieren und entsorgen Ihre alte Küche.</span>
+      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:22px 24px;display:grid;grid-template-columns:52px 1fr;column-gap:16px;row-gap:5px;align-items:center;text-align:left;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-3px);">
+        <span style="grid-row:1 / span 2;width:52px;height:52px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);flex-shrink:0;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span>
+        <strong style="grid-column:2;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:19px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Abbau &amp; Mitnahme kostenfrei</strong>
+        <span style="grid-column:2;font-size:15px;line-height:var(--lh-relaxed);color:var(--text-muted);">Wir demontieren und entsorgen Ihre alte Küche.</span>
       </div>
-      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:30px 24px;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-3px);">
-        <span style="width:56px;height:56px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"></path><path d="M16 8h4l3 3v5h-7"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></span>
-        <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:21px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Lieferung &amp; Montage kostenfrei</strong>
-        <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-muted);">Vom eigenen Team aus Lahr – termingerecht und sorgfältig.</span>
+      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:22px 24px;display:grid;grid-template-columns:52px 1fr;column-gap:16px;row-gap:5px;align-items:center;text-align:left;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-3px);">
+        <span style="grid-row:1 / span 2;width:52px;height:52px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);flex-shrink:0;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"></path><path d="M16 8h4l3 3v5h-7"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></span>
+        <strong style="grid-column:2;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:19px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Lieferung &amp; Montage kostenfrei</strong>
+        <span style="grid-column:2;font-size:15px;line-height:var(--lh-relaxed);color:var(--text-muted);">Vom eigenen Team aus Lahr – termingerecht und sorgfältig.</span>
       </div>
-      <div style="border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 30px 24px; display: flex; flex-direction: column; gap: 14px; align-items: center; text-align: center; transition: all 200ms cubic-bezier(0.4,0,0.2,1); background-color: var(--hg-blue)" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-3px);">
-        <span style="width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--hg-blue); background-color: var(--hg-white)"><span style="font-family:var(--font-display);font-weight:var(--fw-black);font-size:28px;line-height:1;">%</span></span>
-        <strong style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 21px; line-height: 1.25; color: var(--hg-white); letter-spacing: var(--ls-tight)">0&nbsp;% Finanzierung</strong>
-        <span style="font-size: 16px; line-height: var(--lh-relaxed); color: var(--hg-white)">Bis zu 60 Monate ohne Zinsen (Bonität vorausgesetzt).</span>
+      <div style="border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 22px 24px; display: grid; grid-template-columns: 52px 1fr; column-gap: 16px; row-gap: 5px; align-items: center; text-align: left; transition: all 200ms cubic-bezier(0.4,0,0.2,1); background-color: var(--hg-blue)" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-3px);">
+        <span style="grid-row: 1 / span 2; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--hg-blue); background-color: var(--hg-white); flex-shrink: 0"><span style="font-family:var(--font-display);font-weight:var(--fw-black);font-size:28px;line-height:1;">%</span></span>
+        <strong style="grid-column: 2; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 19px; line-height: 1.25; color: var(--hg-white); letter-spacing: var(--ls-tight)">0&nbsp;% Finanzierung</strong>
+        <span style="grid-column: 2; font-size: 15px; line-height: var(--lh-relaxed); color: var(--hg-white)">Bis zu 60 Monate ohne Zinsen (Bonität vorausgesetzt).</span>
       </div>
     </div>
   </div>
@@ -848,7 +850,7 @@
     <span style="display:flex;align-items:center;gap:14px;">
       <span style="width:40px;height:40px;border-radius:50%;background:#fdeaea;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:25px;line-height:1;color:var(--hg-red);">€</span></span>
       <span style="display:flex;flex-direction:column;">
-        <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:21px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Bis zu 4.000&nbsp;€ für Ihre alte Küche</strong>
+        <strong style="grid-column:2;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:19px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Bis zu 4.000&nbsp;€ für Ihre alte Küche</strong>
         <span data-rsp="hidemob" style="font-size:16px;color:var(--text-muted);">Aktion bis 31.12.2026 · nur noch wenige Plätze frei</span>
       </span>
     </span>
