@@ -95,6 +95,7 @@
     [data-rsp~="dash"]{display:none !important;}
   }
   @media (max-width: 720px){
+    [data-rsp~="ratingline"]{display:none !important;}
     [data-rsp~="stoerer"]{pointer-events:none !important;cursor:default !important;}
     [data-rsp~="granit"] [data-rsp~="pad"]{padding:52px 20px !important;}
     [data-rsp~="granit"] h2{font-size:28px !important;}
@@ -602,7 +603,7 @@
     <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:640px;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);">Das sagen unsere Kunden</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);">Über 500 zufriedene Kunden und Kundinnen</h2>
-      <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+      <div data-rsp="ratingline" style="display:flex;align-items:center;justify-content:center;gap:12px;">
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Rating" value="{{ googleRating }}" size="22" hint-size="120px,22px"></x-import>
         <span style="font-size:18px;font-weight:var(--fw-semibold);color:var(--text-heading);">{{ googleRatingLabel }} von 5</span>
         <span style="font-size:17px;color:var(--text-muted);">· {{ googleReviews }} Bewertungen auf Google</span>
