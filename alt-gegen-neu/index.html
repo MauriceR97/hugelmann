@@ -58,6 +58,12 @@
     [data-rsp~="beschlaege"],[data-rsp~="garantie-lang"]{display:none !important;}
     [data-rsp~="garantie-kompakt"]{display:flex !important;}
     [data-rsp~="garantie"], [data-rsp~="garantie"] *{text-align:left !important;}
+    [data-rsp~="garantie"] h2, [data-rsp~="garantie"] > span{text-align:center !important;}
+    [data-rsp~="finanz"] h2, [data-rsp~="finanz"] > span{text-align:center !important;}
+    [data-rsp~="garantie-kompakt"] > div:first-child{justify-content:center !important;}
+    [data-rsp~="garantie-kompakt"] > div:first-child *{text-align:center !important;}
+    [data-rsp~="garantie"]{order:-1 !important;}
+    [data-rsp~="geraete-label"]{display:block !important;text-align:center !important;}
     [data-rsp~="garantie"] > div{align-items:flex-start !important;}
     [data-rsp~="preisrow"]{flex-direction:column !important;align-items:flex-start !important;gap:4px !important;}
     [data-rsp~="cols2"]{grid-template-columns:1fr !important;}
@@ -77,6 +83,12 @@
     [data-rsp~="beschlaege"],[data-rsp~="garantie-lang"]{display:none !important;}
     [data-rsp~="garantie-kompakt"]{display:flex !important;}
     [data-rsp~="garantie"], [data-rsp~="garantie"] *{text-align:left !important;}
+    [data-rsp~="garantie"] h2, [data-rsp~="garantie"] > span{text-align:center !important;}
+    [data-rsp~="finanz"] h2, [data-rsp~="finanz"] > span{text-align:center !important;}
+    [data-rsp~="garantie-kompakt"] > div:first-child{justify-content:center !important;}
+    [data-rsp~="garantie-kompakt"] > div:first-child *{text-align:center !important;}
+    [data-rsp~="garantie"]{order:-1 !important;}
+    [data-rsp~="geraete-label"]{display:block !important;text-align:center !important;}
     [data-rsp~="garantie"] > div{align-items:flex-start !important;}
     [data-rsp~="preisrow"]{flex-direction:column !important;align-items:flex-start !important;gap:4px !important;}
     [data-rsp~="cols2"]{grid-template-columns:1fr !important;}
@@ -630,7 +642,7 @@
   </div>
 </section><section style="border-bottom: 1px solid var(--border-subtle); background-color: var(--blue-50)">
   <div data-rsp="pad split" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
-    <div data-reveal="left" style="display:flex;flex-direction:column;gap:18px;">
+    <div data-reveal="left" data-rsp="finanz" style="display:flex;flex-direction:column;gap:18px;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);">Entspannt finanzieren</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">0&nbsp;% Finanzierung -&nbsp;<br>ganz ohne Zinsen</h2>
       <p style="margin: 0; font-size: 19px; line-height: var(--lh-relaxed); text-wrap: pretty; font-weight: 400">Ihre neue Traumküche muss nicht warten: Teilen Sie den Kaufpreis bequem in bis zu 60 Monatsraten auf – <strong>ganz ohne Zinsen und ohne versteckte Kosten</strong>.</p>
@@ -683,7 +695,7 @@
           <li style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Climber- &amp; Jalousiebeschläge</li>
         </ul>
         <span style="font-size:13px;color:var(--text-muted);">* Die Funktionsgarantie gilt auf alle Geräte.</span>
-      </div><div data-rsp="mq-view" style="width:100%;"><div data-rsp="cols4 mq-track" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;"><span data-rsp="mq-set" style="display:contents;">
+      </div><strong data-rsp="geraete-label" style="font-size:16px;color:var(--text-heading);margin-top:4px;">Dazu nagelneue Markengeräte von:</strong><div data-rsp="mq-view" style="width:100%;"><div data-rsp="cols4 mq-track" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;"><span data-rsp="mq-set" style="display:contents;">
           
           <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/siemens.webp" alt="Siemens" style="max-width:100%;max-height:22px;object-fit:contain;"></span>
           <span style="display:flex;align-items:center;justify-content:center;height:52px;box-sizing:border-box;"><img src="/assets/geraete-marken/bosch.webp" alt="Bosch" style="max-width:100%;max-height:28px;object-fit:contain;"></span>
