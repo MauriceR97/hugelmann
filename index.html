@@ -26,6 +26,7 @@
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+  #sticky-cta.is-visible{opacity:1 !important;transform:translateY(0) !important;pointer-events:auto !important;}
   .hg-glow { box-shadow: 0 0 18px 4px rgba(227,6,19,0.30); border-radius: 999px; display: inline-block; }
   .hg-glow > button, [data-rsp~="stickybar"] button, [data-rsp~="hdr-cta"] button {
     text-transform: none !important;
@@ -85,7 +86,6 @@
     [data-rsp~="gf-quote"] footer span:first-child{font-size:22px !important;}
     [data-rsp~="stickybar"] [data-rsp~="pad"]{justify-content:center !important;}
     [data-rsp~="stickybar"] [data-rsp~="pad"] > span{display:none !important;}
-    [data-rsp~="stickybar"] a{width:100% !important;}
     [data-rsp~="hero"]{padding:112px 20px 44px !important;}
     [data-rsp~="hero"] h1{font-size:32px !important;}
     [data-rsp~="hero"] p{font-size:17px !important;}
@@ -144,7 +144,7 @@
         
         
       </div>
-      <h1 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-black); font-size: 70px; line-height: var(--lh-tight); letter-spacing: var(--ls-tight); text-wrap: balance; color: var(--surface-page)">Alte Küche raus, neue Küche rein.</h1>
+      <h1 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-black); font-size: 80px; line-height: var(--lh-tight); letter-spacing: var(--ls-tight); text-wrap: balance; color: var(--surface-page)">Alte Küche raus, neue Küche rein.</h1>
       <p style="margin: 0; font-size: 23px; line-height: var(--lh-relaxed); color: rgba(255,255,255,0.92); max-width: 540px; text-wrap: pretty; font-weight: 600">Tauschen Sie Ihre alte Küche gegen Ihre neue Traumküche und wir kümmern uns um den Rest. Vom Abbau bis zur fertigen Montage.</p>
       <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 20px; font-weight: var(--fw-medium)">
         <li style="display:flex;align-items:center;gap:12px;"><span style="color:#7fd48a;font-weight:var(--fw-bold);font-size:18px;">✓</span>Bis zu 4.000&nbsp;€ Tauschprämie – verrechnet mit Ihrer neuen Küche</li>
@@ -155,7 +155,7 @@
       <div style="display:flex;align-items:center;gap:18px;margin-top:6px;pointer-events:auto;">
         <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="320px,52px" style="color: var(--hg-blue)">Jetzt kostenlos Platz sichern</x-import></a>
         <a href="#ablauf" style="text-decoration:none;"></a>
-      </div><span style="font-size: 14px">Kostenlos &amp; unverbindlich · Rückruf in ca. 20 Minuten</span>
+      </div><span style="font-size: 14px; text-align: center">Kostenlos &amp; unverbindlich · Rückruf in ca. 20 Minuten</span>
       
     </div>
   </div></div>
@@ -789,8 +789,8 @@
   </div>
 </footer>
 </section>
-<div data-rsp="stickybar" style="position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--hg-white);border-top:1px solid var(--border-subtle);box-shadow:0 -6px 24px rgba(32,31,31,0.12);">
-  <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+<div id="sticky-cta" data-rsp="stickybar" style="position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--hg-white);border-top:1px solid var(--border-subtle);box-shadow:0 -6px 24px rgba(32,31,31,0.12);opacity:0;transform:translateY(100%);pointer-events:none;transition:opacity 240ms cubic-bezier(0.4,0,0.2,1),transform 240ms cubic-bezier(0.4,0,0.2,1);">
+  <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;">
     <span style="display:flex;align-items:center;gap:14px;">
       <span style="width:40px;height:40px;border-radius:50%;background:#fdeaea;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:22px;line-height:1;color:var(--hg-red);">€</span></span>
       <span style="display:flex;flex-direction:column;">
@@ -870,7 +870,22 @@ class Component extends DCLogic {
     this.syncAblauf();
   }
 
+  initStickyCta() {
+    const bar = document.getElementById('sticky-cta');
+    if (!bar) { setTimeout(() => this.initStickyCta(), 300); return; }
+    if (bar._agnBound) return;
+    bar._agnBound = true;
+    const upd = () => {
+      const show = window.scrollY > Math.min(320, window.innerHeight * 0.45);
+      bar.classList.toggle('is-visible', show);
+    };
+    window.addEventListener('scroll', upd, { passive: true });
+    window.addEventListener('resize', upd, { passive: true });
+    upd();
+  }
+
   componentDidMount() {
+    setTimeout(() => this.initStickyCta(), 300);
     setTimeout(() => this.initAblauf(), 400);
     this._clearSlotBg = setInterval(() => {
       const el = document.getElementById('old-kitchen');
