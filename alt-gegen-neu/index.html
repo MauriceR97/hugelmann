@@ -8,7 +8,7 @@
 <body>
 <x-dc>
 <helmet>
-  <meta name="description" content="Alte Küche raus, neue Küche rein: bis zu 4.000 € Tauschprämie, Abbau & Mitnahme kostenfrei, Lieferung & Montage inklusive und 0 % Finanzierung bis 60 Monate. Nur 30 Plätze bis 31.12.2026.">
+  <meta name="description" content="Alte Küche raus, neue Küche rein: bis zu 4.000 € Tauschprämie, Abbau &amp; Mitnahme kostenfrei, Lieferung &amp; Montage inklusive und 0 % Finanzierung bis 60 Monate. Nur 30 Plätze bis 31.12.2026.">
   <link rel="canonical" href="https://kueche-hugelmann.de/alt-gegen-neu/">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
@@ -19,16 +19,16 @@
   <meta property="og:site_name" content="Küchen Hugelmann">
   <meta property="og:url" content="https://kueche-hugelmann.de/alt-gegen-neu/">
   <meta property="og:title" content="Alt gegen Neu: Bis zu 4.000 € Tauschprämie für Ihre alte Küche">
-  <meta property="og:description" content="Alte Küche raus, neue Küche rein: bis zu 4.000 € Tauschprämie, Abbau & Mitnahme kostenfrei, Lieferung & Montage inklusive und 0 % Finanzierung bis 60 Monate. Nur 30 Plätze bis 31.12.2026.">
+  <meta property="og:description" content="Alte Küche raus, neue Küche rein: bis zu 4.000 € Tauschprämie, Abbau &amp; Mitnahme kostenfrei, Lieferung &amp; Montage inklusive und 0 % Finanzierung bis 60 Monate. Nur 30 Plätze bis 31.12.2026.">
   <meta property="og:image" content="https://kueche-hugelmann.de/assets/social-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Helle moderne Küche mit Paar – Aktion Alt gegen Neu, bis zu 4.000 Euro Tauschprämie">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Alt gegen Neu: Bis zu 4.000 € Tauschprämie für Ihre alte Küche">
-  <meta name="twitter:description" content="Alte Küche raus, neue Küche rein: bis zu 4.000 € Tauschprämie, Abbau & Mitnahme kostenfrei, Lieferung & Montage inklusive und 0 % Finanzierung bis 60 Monate. Nur 30 Plätze bis 31.12.2026.">
+  <meta name="twitter:description" content="Alte Küche raus, neue Küche rein: bis zu 4.000 € Tauschprämie, Abbau &amp; Mitnahme kostenfrei, Lieferung &amp; Montage inklusive und 0 % Finanzierung bis 60 Monate. Nur 30 Plätze bis 31.12.2026.">
   <meta name="twitter:image" content="https://kueche-hugelmann.de/assets/social-preview.png">
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="814c3e68-4376-41fa-aac8-fcf731b7dfed"  type="text/javascript"></script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="814c3e68-4376-41fa-aac8-fcf731b7dfed" type="text/javascript"></script>
   <script src="/tracking.js"></script>
   <script>
     window.PIXEL_ID = "1544546306914801";
@@ -188,35 +188,53 @@
     [data-rsp~="gf-quote"] p{font-size:19px !important;line-height:1.45 !important;}
     [data-rsp~="gf-quote"] footer span:first-child{font-size:22px !important;}
 
-    [data-rsp~="herosec"]{min-height:0 !important;max-height:none !important;display:flex !important;align-items:flex-start !important;overflow:visible !important;}
-    [data-rsp~="hero-img"]{object-position:62% 84% !important;filter:brightness(1.06) !important;}
-    [data-rsp~="hero-grad"]{position:absolute !important;inset:0 !important;width:auto !important;height:auto !important;background:linear-gradient(180deg, rgba(1,32,63,0.93) 0%, rgba(1,32,63,0.86) 34%, rgba(1,32,63,0.56) 54%, rgba(1,32,63,0.26) 76%, rgba(1,32,63,0.14) 100%) !important;}
-    [data-rsp~="hero"]{padding:34px 20px 40px !important;height:auto !important;min-height:0 !important;position:relative !important;z-index:2 !important;}
-    [data-rsp~="hero"] > div{width:100% !important;max-width:100% !important;height:auto !important;margin:0 !important;left:auto !important;top:auto !important;position:static !important;gap:16px !important;}
-    [data-rsp~="hero"] h1,[data-rsp~="hero"] p,[data-rsp~="hero"] ul,[data-rsp~="hero"] li{width:auto !important;max-width:100% !important;height:auto !important;text-align:left !important;}
-    [data-rsp~="hero"] h1{font-size:32px !important;max-width:calc(100% - 118px) !important;text-shadow:0 2px 10px rgba(1,20,40,0.5) !important;}
-    [data-rsp~="hero"] p{font-size:17px !important;}
-    [data-rsp~="hero"] ul{font-size:15px !important;gap:8px !important;}
-    [data-rsp~="hero"] p,[data-rsp~="hero"] ul{text-shadow:0 1px 8px rgba(1,20,40,0.55) !important;}
+    [data-rsp~="mobonly"]{display:flex !important;}
+    [data-rsp~="herosec"]{min-height:0 !important;max-height:none !important;display:block !important;overflow:hidden !important;background:var(--hg-white) !important;}
+    /* Foto als eigenes Band oben: voll sichtbar, unbedeckt */
+    /* Foto: ruhiges Band, voll sichtbar */
+    [data-rsp~="hero-imgwrap"]{position:relative !important;inset:auto !important;display:block !important;height:266px !important;}
+    [data-rsp~="hero-img"]{object-position:62% 40% !important;filter:none !important;}
+    [data-rsp~="hero-grad"]{position:absolute !important;top:0 !important;left:0 !important;right:0 !important;bottom:auto !important;height:266px !important;width:auto !important;background:linear-gradient(180deg, rgba(1,26,52,0.10) 0%, rgba(1,26,52,0.00) 45%, rgba(1,26,52,0.06) 100%) !important;}
+    [data-rsp~="topbar"]{display:none !important;}
+    [data-rsp~="heroproof"]{display:none !important;}
+    [data-rsp~="hdr-proof"]{display:flex !important;}
+    [data-rsp~="heropaar"]{display:block !important;}
+    [data-rsp~="hero-img"]{display:none !important;}
+    [data-rsp~="hero-img-mob"]{display:block !important;object-position:50% 50% !important;}
+    [data-rsp~="splitlabels"]{display:flex !important;}
+    [data-rsp~="hero-imgwrap"]{overflow:visible !important;z-index:3 !important;}
+    [data-rsp~="hero"] > div{padding-top:36px !important;}
+    /* Textblock: helle, warme Fläche – ruhig und hochwertig, gerade Kanten */
+    [data-rsp~="hero"]{padding:0 !important;height:auto !important;min-height:0 !important;position:relative !important;z-index:2 !important;margin-top:0 !important;}
+    [data-rsp~="hero"] > div{width:100% !important;max-width:100% !important;height:auto !important;margin:0 !important;left:auto !important;top:auto !important;position:static !important;gap:18px !important;background:var(--surface-page) !important;border-radius:0 !important;border-top:3px solid var(--hg-red) !important;padding:26px 20px 30px !important;box-shadow:none !important;box-sizing:border-box !important;}
+    [data-rsp~="hero"] h1,[data-rsp~="hero"] ul,[data-rsp~="hero"] li{width:auto !important;max-width:100% !important;height:auto !important;min-height:0 !important;text-align:left !important;text-shadow:none !important;}
+    [data-rsp~="hero"] h1{font-size:31px !important;line-height:1.14 !important;color:var(--text-heading) !important;}
+    [data-rsp~="hero"] > div > p{display:none !important;}
+    [data-rsp~="hero"] ul{font-size:16px !important;gap:12px !important;color:var(--text-body) !important;font-weight:500 !important;}
+    [data-rsp~="hero"] li{align-items:flex-start !important;line-height:1.4 !important;gap:11px !important;}
+    [data-rsp~="hero"] [data-rsp~="hchk"]{width:21px !important;height:21px !important;margin-top:2px !important;background:var(--hg-blue) !important;box-shadow:none !important;}
+    /* Prämien-Zeile als ruhiger Wert-Anker statt lautem Badge */
+    [data-rsp~="mobbadge"]{display:flex !important;align-self:stretch !important;justify-content:flex-start !important;align-items:baseline !important;gap:8px !important;background:transparent !important;color:var(--hg-red) !important;padding:0 !important;box-shadow:none !important;font-family:var(--font-display) !important;font-size:15px !important;font-weight:var(--fw-bold) !important;text-transform:uppercase !important;letter-spacing:0.12em !important;}
+    [data-rsp~="hero-cta"]{gap:12px !important;margin-top:4px !important;}
+    [data-rsp~="hero-cta"] button{height:58px !important;font-size:17px !important;font-weight:var(--fw-bold) !important;box-shadow:0 10px 24px rgba(227,6,19,0.30) !important;}
+    [data-rsp~="hero-cta"] > span{color:var(--text-muted) !important;font-size:14px !important;}
     [data-rsp~="hero-cta"]{width:100% !important;max-width:100% !important;height:auto !important;align-self:center !important;align-items:center !important;text-align:center !important;gap:6px !important;}
     [data-rsp~="hero-cta"] > a{width:100% !important;}
     [data-rsp~="hero-cta"] > span{width:100% !important;text-align:center !important;}
     [data-rsp~="hero-cta"] button{width:100% !important;text-transform:none !important;letter-spacing:0 !important;font-size:16px !important;justify-content:center !important;white-space:normal !important;}
-    [data-rsp~="stoerer"]{position:absolute !important;top:14px !important;bottom:auto !important;left:auto !important;right:12px !important;width:104px !important;height:104px !important;padding:6px !important;transform:rotate(9deg) !important;transform-origin:center !important;z-index:5 !important;box-shadow:0 8px 20px rgba(32,31,31,0.35) !important;pointer-events:none !important;cursor:default !important;}
-    [data-rsp~="stoerer"] span:nth-child(1){font-size:9px !important;letter-spacing:0.05em !important;}
-    [data-rsp~="stoerer"] span:nth-child(2){font-size:24px !important;line-height:1 !important;}
-    [data-rsp~="stoerer"] span:nth-child(3){font-size:8.5px !important;letter-spacing:0.03em !important;}
+    [data-rsp~="stoerer"]{display:none !important;}
   }
 </style>
 </helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#034EA3"></rect><circle cx="50" cy="50" r="22" fill="#E30613"></circle><text x="50" y="57" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">4T€</text></svg></template>
 <div>
-<div style="background:var(--hg-red);color:#fff;text-align:center;padding:11px 16px;font-size:15px;font-weight:var(--fw-bold);letter-spacing:0.06em;text-transform:uppercase;">Alt-gegen-Neu-Aktion · begrenzt auf 30 Teilnehmer · gültig bis 31.12.2026</div>
+<div data-rsp="topbar" style="background:var(--hg-red);color:#fff;text-align:center;padding:11px 16px;font-size:15px;font-weight:var(--fw-bold);letter-spacing:0.06em;text-transform:uppercase;">Alt-gegen-Neu-Aktion · begrenzt auf 30 Teilnehmer · gültig bis 31.12.2026</div>
 
 
 <header style="position:sticky;top:0;z-index:50;background:var(--hg-white);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-xs);">
   <div data-rsp="header" style="max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:40px;">
     <img src="/assets/logo.png" alt="Küchen Hugelmann – interliving" style="height:56px;display:block;flex-shrink:0;">
+    <span data-rsp="hdr-proof" style="display:none;margin-left:auto;align-items:center;gap:7px;font-size:13px;font-weight:var(--fw-bold);color:var(--text-heading);white-space:nowrap;"><svg width="15" height="15" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#f5a623;letter-spacing:0.5px;">★★★★</span>4,1</span>
     <div style="display:flex;align-items:center;gap:36px;flex-shrink:0;">
       
       <a href="/alt-gegen-neu-formular/" class="hg-glow" data-rsp="hdr-cta" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="md" hint-size="200px,44px">Platz sichern</x-import></a>
@@ -225,14 +243,15 @@
 </header><section data-rsp="herosec" style="position:relative;min-height:660px;display:flex;align-items:center;overflow:hidden;">
   <div data-rsp="hero-imgwrap" style="position:absolute;inset:0;">
     <img src="/assets/hero-kueche.png" data-rsp="hero-img" alt="Helle moderne Küche mit Kochinsel" style="width:100%;height:100%;object-fit:cover;display:block;">
+    <img src="/assets/hero-alt-gegen-neu-mobil.png" data-rsp="hero-img-mob" alt="Helle moderne Küche mit Kochinsel" style="display:none;width:100%;height:100%;object-fit:cover;">
+    <img src="/assets/paar-freisteller.png" data-rsp="mobonly heropaar" alt="Zufriedenes Paar in seiner neuen Küche" style="display: none; position: absolute; height: 230px; width: auto; z-index: 4; pointer-events: none; filter: drop-shadow(0 9px 7px rgba(1,20,40,0.30)); left: 276px; top: 89px">
+    <span data-rsp="mobonly splitlabels" style="display:none;position:absolute;top:12px;left:0;right:0;z-index:3;justify-content:space-between;padding:0 14px;pointer-events:none;"><span style="background:rgba(20,18,16,0.62);color:#fff;font-family:var(--font-display);font-size:11px;font-weight:var(--fw-bold);letter-spacing:0.14em;text-transform:uppercase;border-radius:var(--radius-pill);padding:5px 12px;">Vorher</span><span style="background:rgba(227,6,19,0.92);color:#fff;font-family:var(--font-display);font-size:11px;font-weight:var(--fw-bold);letter-spacing:0.14em;text-transform:uppercase;border-radius:var(--radius-pill);padding:5px 12px;">Nachher</span></span>
+    <span data-rsp="mobonly heroproof" style="display:none;position:absolute;left:16px;bottom:38px;align-items:center;gap:8px;background:rgba(255,255,255,0.95);border-radius:var(--radius-pill);padding:7px 14px 7px 11px;box-shadow:0 6px 18px rgba(1,20,40,0.28);font-size:13px;font-weight:var(--fw-bold);color:var(--text-heading);"><svg width="15" height="15" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#f5a623;letter-spacing:1px;">★★★★</span>4,1 · 534 Bewertungen</span>
   </div>
   <div data-rsp="hero-grad" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(1,32,63,0.90) 0%, rgba(1,32,63,0.72) 42%, rgba(1,32,63,0.10) 100%); pointer-events: none;"></div>
   <div data-rsp="hero hauto" style="position: relative; max-width: 1200px; margin: 0 auto; width: 100%; padding: 48px 32px 56px; pointer-events: none; height: auto; box-sizing: border-box">
     <div data-reveal="up" style="max-width: 640px; display: flex; flex-direction: column; gap: 22px; color: #fff;">
-      <div style="display:flex;align-items:center;gap:14px;">
-        
-        
-      </div>
+      <span data-rsp="mobonly mobbadge" style="display:none;align-self:flex-start;background:var(--hg-red);color:#fff;font-weight:var(--fw-black);letter-spacing:0.02em;border-radius:var(--radius-pill);padding:9px 18px;font-size:16px;box-shadow:0 6px 16px rgba(227,6,19,0.42);">Tauschprämie bis zu 4.000&nbsp;€</span>
       <h1 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-black); font-size: 80px; line-height: var(--lh-tight); letter-spacing: var(--ls-tight); text-wrap: balance; color: var(--surface-page); width: 595px; max-width: 100%; min-height: 163px">Alte Küche raus, neue Küche rein.</h1>
       <p style="margin: 0; font-size: 23px; line-height: var(--lh-relaxed); color: rgba(255,255,255,0.92); max-width: 540px; text-wrap: pretty; font-weight: 600">Sie wählen Ihre neue Traumküche, wir übernehmen alles andere. Vom Abbau der alten Küche bis zur fertig montierten neuen.</p>
       <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 22px; font-weight: var(--fw-medium)">
@@ -243,7 +262,7 @@
       </ul>
       <div data-rsp="hero-cta" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 6px; pointer-events: auto; align-self: flex-start; max-width: 100%; height: auto;">
         <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="320px,52px" style="color: var(--hg-blue)">Jetzt kostenlos Platz sichern</x-import></a>
-        <span style="font-size: 16px; text-align: center;">Kostenlos &amp; unverbindlich · Rückruf in ca. 20 Minuten</span>
+        <span style="font-size: 16px; text-align: center;">Kostenlos &amp; unverbindlich · in 2 Minuten erledigt</span>
       </div>
       
     </div>
@@ -288,7 +307,7 @@
     <div data-rsp="cols2" data-reveal-group="80" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;width:100%;max-width:960px;">
       <div style="background:var(--surface-card);border:1px solid var(--hg-blue);border-radius:var(--radius-lg);box-shadow:0 0 20px 4px rgba(3,78,163,0.28);padding:22px 24px;display:grid;grid-template-columns:52px 1fr;column-gap:16px;row-gap:5px;align-items:center;text-align:left;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:0 0 26px 7px rgba(3,78,163,0.38);transform:translateY(-3px);">
         <span style="grid-row:1 / span 2;width:52px;height:52px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);flex-shrink:0;"><span style="font-family:var(--font-display);font-weight:var(--fw-black);font-size:30px;line-height:1;">€</span></span>
-        <strong style="grid-column:2;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:19px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Bis zu 4.000&nbsp;€ Tauschprämie</strong>
+        <strong style="grid-column:2;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:19px;line-height:1.25;color:var(--text-heading);letter-spacing:var(--ls-tight);">Bis zu 4.000&nbsp;€ für Ihre alte Küche</strong>
         <span style="grid-column:2;font-size:15px;line-height:var(--lh-relaxed);color:var(--text-muted);">Sie zahlen von Anfang an weniger, ohne Papierkram.</span>
       </div>
       <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:22px 24px;display:grid;grid-template-columns:52px 1fr;column-gap:16px;row-gap:5px;align-items:center;text-align:left;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-3px);">
@@ -346,7 +365,7 @@
           <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:28px 32px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-top:18px;flex:1;transition:all 200ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-300);">
             <span style="width:52px;height:52px;border-radius:50%;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--hg-blue);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
             <strong style="font-size:21px;color:var(--text-heading);">Wir rufen Sie an</strong>
-            <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);">Schon ca. 20 Minuten später hören Sie von Ihrem persönlichen Berater. Kein Warten, kein Nachfragen.</p>
+            <p style="margin:0;font-size:17px;line-height:var(--lh-relaxed);">Ihr persönlicher Berater meldet sich telefonisch bei Ihnen. Kein Warten in der Leitung, kein Nachfragen.</p>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
@@ -806,7 +825,7 @@
     <div data-rsp="card" data-reveal="up" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);padding:44px 48px;width:100%;max-width:720px;box-sizing:border-box;display:flex;flex-direction:column;gap:26px;">
       <div style="display:flex;flex-direction:column;gap:8px;text-align:center;">
         <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;color:var(--text-heading);letter-spacing:var(--ls-tight);">Beantworten Sie 7 kurze Fragen zu Ihrer alten und neuen Küche</h3>
-        <span style="font-size:17px;color:var(--text-muted);">Danach ruft Sie Ihr persönlicher Küchenberater in ca. 20 Minuten an. Kostenlos und unverbindlich.</span>
+        <span style="font-size:17px;color:var(--text-muted);">Danach meldet sich Ihr persönlicher Küchenberater bei Ihnen. Kostenlos und unverbindlich.</span>
       </div>
       <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;align-self:center;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="340px,52px">Jetzt starten, dauert nur 2 Minuten</x-import></a>
       <span style="font-size:15px;color:var(--hg-red);font-weight:var(--fw-semibold);text-align:center;">Nur noch {{ spotsLeft }} von 30 Plätzen frei</span>
@@ -1179,7 +1198,7 @@ class Component extends DCLogic {
         { title: 'Was ist, wenn meine Küche schon sehr alt und beschädigt ist?', content: 'Das ist kein Problem – im Gegenteil. Wir nehmen Ihre alte Küche in jedem Zustand zurück, auch mit Kratzern, defekten Geräten oder ausgeblichenen Fronten. Die Höhe der Tauschprämie richtet sich nach Alter und Zustand Ihrer alten Küche sowie dem Kaufwert Ihrer neuen Küche. Abbau und Mitnahme sind für Sie in jedem Fall kostenfrei.' },
         { title: 'Gilt die Aktion auch für meine Wohnung?', content: 'Ja. Ob Eigentumswohnung, Mietwohnung, Haus oder Reihenhaus – die Aktion gilt für jede Wohnform. Unser Team ist auf Küchen in Etagenwohnungen, engen Treppenhäusern und Altbauten eingerichtet und plant den Ein- und Ausbau entsprechend.' },
         { title: 'Bin ich mit dem Formular zu irgendetwas verpflichtet?', content: 'Nein. Das Ausfüllen ist kostenlos und völlig unverbindlich. Sie sichern sich damit nur einen der 30 Aktionsplätze und ein persönliches Beratungsgespräch. Erst wenn Sie sich für eine Küche entscheiden, kommt ein Auftrag zustande.' },
-        { title: 'Was passiert nach dem Ausfüllen des Formulars?', content: 'Wir melden uns innerhalb von ca. 20 Minuten telefonisch bei Ihnen (innerhalb unserer Öffnungszeiten). Im Gespräch klären wir kurz Ihre Wünsche und Ihre jetzige Küche und vereinbaren einen Termin für die kostenlose Planung in unserem Küchenstudio in Lahr.' },
+        { title: 'Was passiert nach dem Ausfüllen des Formulars?', content: 'Ihr persönlicher Küchenberater meldet sich telefonisch bei Ihnen. Im Gespräch klären wir kurz Ihre Wünsche und Ihre jetzige Küche und vereinbaren einen Termin für die kostenlose Planung in unserem Küchenstudio in Lahr.' },
         { title: 'Gibt es einen Mindestbestellwert für die Tauschprämie?', content: 'Ja. Die Tauschprämie wird ab einem Auftragswert der neuen Küche von 10.000 € gewährt. Die genaue Höhe der Prämie – bis zu 4.000 € – richtet sich nach dem Wert Ihrer neuen Küche und wird direkt mit dem Kaufpreis verrechnet.' },
       ],
     };
