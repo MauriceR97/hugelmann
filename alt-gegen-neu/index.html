@@ -155,6 +155,7 @@
     iframe{max-width:100%;}
     [data-rsp~="cols4"]{grid-template-columns:repeat(2,1fr) !important;}
     [data-rsp~="cols3"]{grid-template-columns:1fr !important;}
+    [data-rsp~="ps-mid"]{border-left:none !important;border-right:none !important;border-top:2px dashed var(--border-default) !important;border-bottom:2px dashed var(--border-default) !important;}
     [data-rsp~="nocon"]{display:none !important;}
     [data-rsp~="split"]{grid-template-columns:1fr !important;}
   }
@@ -208,7 +209,7 @@
     [data-rsp~="hero"] > div{padding-top:18px !important;}
     /* Textblock: helle, warme Fläche – ruhig und hochwertig, gerade Kanten */
     [data-rsp~="hero"]{padding:0 !important;height:auto !important;min-height:0 !important;position:relative !important;z-index:2 !important;margin-top:0 !important;}
-    [data-rsp~="hero"] > div{width:100% !important;max-width:100% !important;height:auto !important;margin:0 !important;left:auto !important;top:auto !important;position:static !important;gap:0 !important;background:var(--surface-page) !important;border-radius:0 !important;padding:18px 20px 22px !important;box-shadow:none !important;box-sizing:border-box !important;}
+    [data-rsp~="hero"] > div{width:100% !important;max-width:100% !important;height:auto !important;margin:0 !important;left:auto !important;top:auto !important;position:static !important;gap:0 !important;background:linear-gradient(180deg, #32507f 0%, #32507f 62%, var(--surface-page) 100%) !important;border-radius:0 !important;padding:22px 20px 30px !important;box-shadow:none !important;box-sizing:border-box !important;}
     [data-rsp~="hero"] h1,[data-rsp~="hero"] ul,[data-rsp~="hero"] li{width:auto !important;max-width:100% !important;height:auto !important;min-height:0 !important;text-align:left !important;text-shadow:none !important;}
     [data-rsp~="hero"] h1{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0,0,0,0) !important;white-space:nowrap !important;border:0 !important;}
     [data-rsp~="hero"] > div > p{display:none !important;}
@@ -219,7 +220,7 @@
     [data-rsp~="mobbadge"]{display:none !important;}
     [data-rsp~="hero-cta"]{gap:12px !important;margin-top:4px !important;}
     [data-rsp~="hero-cta"] button{height:58px !important;font-size:17px !important;font-weight:var(--fw-bold) !important;box-shadow:0 10px 24px rgba(227,6,19,0.30) !important;}
-    [data-rsp~="hero-cta"] > span{color:var(--text-muted) !important;font-size:14px !important;}
+    [data-rsp~="hero-cta"] > span{color:rgba(255,255,255,0.88) !important;font-size:14px !important;}
     [data-rsp~="hero-cta"]{width:100% !important;max-width:100% !important;height:auto !important;align-self:center !important;align-items:center !important;text-align:center !important;gap:6px !important;}
     [data-rsp~="hero-cta"] > a{width:100% !important;}
     [data-rsp~="hero-cta"] > span{width:100% !important;text-align:center !important;}
@@ -247,7 +248,7 @@
 </header><section data-rsp="herosec" style="position:relative;min-height:660px;display:flex;align-items:center;overflow:hidden;">
   <div data-rsp="hero-imgwrap" style="position:absolute;inset:0;">
     <img loading="eager" fetchpriority="high" decoding="async" src="/assets/hero-kueche.webp" data-rsp="hero-img" alt="Helle moderne Küche mit Kochinsel" style="width:100%;height:100%;object-fit:cover;display:block;">
-    <img loading="eager" fetchpriority="high" decoding="async" src="/assets/hero-banner-mobil.webp" data-rsp="hero-img-mob" alt="Alte Küche aus den 90er Jahren – bis zu 4.000 € Tauschprämie, Abbau und Mitnahme kostenfrei, Lieferung und Montage inklusive" style="display:none;width:100%;height:100%;object-fit:cover;">
+    <img loading="eager" fetchpriority="high" decoding="async" src="/assets/hero-banner-mobil.webp" data-rsp="hero-img-mob" alt="Alte Eichenküche – Alt gegen Neu: diese Küche ist noch bis zu 4.000 € wert, kostenloser Abbau und Mitnahme, kostenlose Lieferung und Montage, 0 % Finanzierung über 60 Monate" style="display:none;width:100%;height:100%;object-fit:cover;">
     <img loading="lazy" decoding="async" src="/assets/paar-freisteller.webp" data-rsp="mobonly heropaar" alt="Zufriedenes Paar in seiner neuen Küche" style="display: none; position: absolute; height: 230px; width: auto; z-index: 4; pointer-events: none; filter: drop-shadow(0 9px 7px rgba(1,20,40,0.30)); left: 276px; top: 89px">
     <span data-rsp="mobonly splitlabels" style="display:none;position:absolute;top:12px;left:0;right:0;z-index:3;justify-content:space-between;padding:0 14px;pointer-events:none;"><span style="background:rgba(20,18,16,0.62);color:#fff;font-family:var(--font-display);font-size:11px;font-weight:var(--fw-bold);letter-spacing:0.14em;text-transform:uppercase;border-radius:var(--radius-pill);padding:5px 12px;">Vorher</span><span style="background:rgba(227,6,19,0.92);color:#fff;font-family:var(--font-display);font-size:11px;font-weight:var(--fw-bold);letter-spacing:0.14em;text-transform:uppercase;border-radius:var(--radius-pill);padding:5px 12px;">Nachher</span></span>
     <span data-rsp="mobonly heroproof" style="display:none;position:absolute;left:16px;bottom:38px;align-items:center;gap:8px;background:rgba(255,255,255,0.95);border-radius:var(--radius-pill);padding:7px 14px 7px 11px;box-shadow:0 6px 18px rgba(1,20,40,0.28);font-size:13px;font-weight:var(--fw-bold);color:var(--text-heading);"><svg width="15" height="15" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#f5a623;letter-spacing:1px;">★★★★</span>4,1 · 534 Bewertungen</span>
@@ -349,12 +350,12 @@
   <section style="border-top: 1px solid var(--border-subtle); background-color: var(--blue-50)">
   <div data-rsp="pad" style="max-width:900px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:28px;align-items:center;text-align:center;">
     
-    <img loading="lazy" decoding="async" src="/assets/siegel-moebelhaus-2025.webp" data-rsp="gf-siegel" alt="DtGV-Siegel: Herausragendes Möbelhaus 2025" style="display:none;height:78px;width:auto;">
-    <img loading="lazy" decoding="async" src="/assets/rainer-hugelmann.webp" alt="Rainer Hugelmann, Geschäftsführer" style="width:132px;height:132px;border-radius:50%;object-fit:cover;box-shadow:var(--shadow-md);flex-shrink:0;display:block;">
     <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
       <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;color:var(--hg-blue);">Warum wir das machen</span>
       <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-2xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Damit gute Küchen nicht am Preis scheitern</h2>
     </div>
+    <img loading="lazy" decoding="async" src="/assets/siegel-moebelhaus-2025.webp" data-rsp="gf-siegel" alt="DtGV-Siegel: Herausragendes Möbelhaus 2025" style="display:none;height:78px;width:auto;">
+    <img loading="lazy" decoding="async" src="/assets/rainer-hugelmann.webp" alt="Rainer Hugelmann, Geschäftsführer" style="width:132px;height:132px;border-radius:50%;object-fit:cover;box-shadow:var(--shadow-md);flex-shrink:0;display:block;">
     <blockquote data-reveal="up" data-rsp="gf-quote" style="margin:0;display:flex;flex-direction:column;gap:18px;align-items:center;">
       <p style="margin: 0; font-family: var(--font-display); font-weight: 300; font-size: 26px; line-height: 1.45; color: var(--text-heading); letter-spacing: var(--ls-tight); text-wrap: balance; font-style: italic; width: 1031px; max-width: 100%; min-height: 114px">„Viele Familien in unserer Region leben seit 20 oder 30 Jahren mit derselben Küche. Nicht, weil sie ihnen noch gefällt, sondern weil eine neue Küche eine große Summe ist. Mit der Tauschprämie nehmen wir davon einen Teil weg und holen die alte Küche gleich mit ab. So wird aus einem Vorhaben, das man immer weiter verschiebt, endlich ein Termin."</p>
       <footer style="display:flex;flex-direction:column;gap:2px;">
@@ -911,7 +912,7 @@
         <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:18px;color:var(--text-heading);">Heute Platz sichern</strong>
         <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-body);">Ein paar Fragen beantworten, mehr ist erst einmal nicht nötig.</span>
       </div>
-      <div style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;padding:26px 20px;border-left:2px dashed var(--border-default);border-right:2px dashed var(--border-default);">
+      <div data-rsp="ps-mid" style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;padding:26px 20px;border-left:2px dashed var(--border-default);border-right:2px dashed var(--border-default);">
         <span style="width:56px;height:56px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:var(--fw-black);font-size:22px;">2</span>
         <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:18px;color:var(--text-heading);">Planen in Ruhe</strong>
         <span style="font-size:16px;line-height:var(--lh-relaxed);color:var(--text-body);">Sie bestimmen, wann geplant wird. Ohne Zeitdruck, ohne Nachteil.</span>
