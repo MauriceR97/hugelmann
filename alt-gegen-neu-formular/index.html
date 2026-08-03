@@ -8,7 +8,7 @@
 <body>
 <x-dc>
 <helmet>
-  <meta name="description" content="In 2 Minuten Ihren Aktionsplatz sichern: 7 kurze Fragen, danach rufen wir Sie innerhalb von ca. 20 Minuten zurück. Kostenlos und unverbindlich.">
+  <meta name="description" content="In 2 Minuten Ihren Aktionsplatz sichern: ein paar kurze Fragen, danach meldet sich Ihr persönlicher Küchenberater. Kostenlos und unverbindlich.">
   <link rel="canonical" href="https://kueche-hugelmann.de/alt-gegen-neu-formular/">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
@@ -19,14 +19,14 @@
   <meta property="og:site_name" content="Küchen Hugelmann">
   <meta property="og:url" content="https://kueche-hugelmann.de/alt-gegen-neu-formular/">
   <meta property="og:title" content="Aktionsplatz sichern – Alt gegen Neu | Küchen Hugelmann">
-  <meta property="og:description" content="In 2 Minuten Ihren Aktionsplatz sichern: 7 kurze Fragen, danach rufen wir Sie innerhalb von ca. 20 Minuten zurück. Kostenlos und unverbindlich.">
+  <meta property="og:description" content="In 2 Minuten Ihren Aktionsplatz sichern: ein paar kurze Fragen, danach meldet sich Ihr persönlicher Küchenberater. Kostenlos und unverbindlich.">
   <meta property="og:image" content="https://kueche-hugelmann.de/assets/social-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Helle moderne Küche mit Paar – Aktion Alt gegen Neu, bis zu 4.000 Euro Tauschprämie">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Aktionsplatz sichern – Alt gegen Neu | Küchen Hugelmann">
-  <meta name="twitter:description" content="In 2 Minuten Ihren Aktionsplatz sichern: 7 kurze Fragen, danach rufen wir Sie innerhalb von ca. 20 Minuten zurück. Kostenlos und unverbindlich.">
+  <meta name="twitter:description" content="In 2 Minuten Ihren Aktionsplatz sichern: ein paar kurze Fragen, danach meldet sich Ihr persönlicher Küchenberater. Kostenlos und unverbindlich.">
   <meta name="twitter:image" content="https://kueche-hugelmann.de/assets/social-preview.png">
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="814c3e68-4376-41fa-aac8-fcf731b7dfed"  type="text/javascript"></script>
   <script src="/tracking.js"></script>
@@ -74,6 +74,8 @@
   @media (max-width: 560px){
     [data-rsp~="zustand-nav"]{grid-template-columns:1fr !important;}
   }
+  [data-rsp~="qnav"]:has(> sc-if:only-child){grid-template-columns:1fr !important;}
+  [data-rsp~="qnav"] > sc-if{display:contents;}
   @media (max-width: 420px){
     [data-rsp~="cols3"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}
   }
@@ -106,7 +108,7 @@
 <div style="min-height:100vh;display:flex;flex-direction:column;">
 <header style="background:var(--hg-white);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-xs);">
   <div data-rsp="header" style="max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-    <a href="/alt-gegen-neu/" style="display:block;"><img src="/assets/logo.png" alt="Küchen Hugelmann – interliving" style="height:52px;display:block;"></a>
+    <a href="/alt-gegen-neu/" style="display:block;"><img loading="lazy" decoding="async" src="/assets/logo.webp" alt="Küchen Hugelmann – interliving" style="height:52px;display:block;"></a>
     
   </div>
 </header>
@@ -121,7 +123,7 @@
     <sc-if value="{{ showQuiz }}" hint-placeholder-val="{{ true }}">
       <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;">
         <div style="display:flex;justify-content:space-between;align-items:center;">
-          <span style="font-size:14px;font-weight:var(--fw-bold);color:var(--hg-blue);">Frage {{ stepNum }} von {{ stepTotal }}</span>
+          <span style="font-size:14px;font-weight:var(--fw-bold);color:var(--hg-blue);">{{ progressLabel }}</span>
           
         </div>
         <div style="height:8px;background:var(--grey-200);border-radius:var(--radius-pill);overflow:hidden;">
@@ -173,9 +175,14 @@
         </sc-for>
       </div>
       </sc-if>
-      <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ goBack }}" style="align-self: center; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--border-default); border-radius: 800px; padding: 10px 22px; cursor: pointer; font-family: var(--font-sans); font-size: 12px; font-weight: var(--fw-semibold); color: var(--hg-white); box-shadow: var(--shadow-xs); background-color: var(--hg-blue); width: 213px; height: 41px"><span style="font-size:18px;font-weight:var(--fw-bold);">‹</span>Zurück zur vorherigen Frage</button>
-      </sc-if>
+      <div data-rsp="qnav" style="display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:stretch;margin-top:4px;max-width:720px;width:100%;margin-left:auto;margin-right:auto;">
+        <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:var(--hg-white);border:1px solid var(--border-default);border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:17px;font-weight:var(--fw-bold);color:var(--text-heading);box-shadow:var(--shadow-xs);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="border-color:var(--hg-blue);color:var(--hg-blue);">←&nbsp;Zurück</button>
+        </sc-if>
+        <sc-if value="{{ canForward }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ goForward }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-red);border:none;border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:19px;font-weight:var(--fw-bold);color:#fff;box-shadow:0 0 20px 4px rgba(227,6,19,0.28);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:0 0 26px 7px rgba(227,6,19,0.38);">Weiter&nbsp;→</button>
+        </sc-if>
+      </div>
       <a href="/alt-gegen-neu/" style="align-self:center;font-size:14px;font-weight:var(--fw-semibold);">‹ Zurück zur Aktionsseite</a>
     </sc-if>
     <sc-if value="{{ showZustand }}" hint-placeholder-val="{{ false }}">
@@ -230,7 +237,7 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;">
         <h3 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 26px; color: var(--text-heading); letter-spacing: var(--ls-tight); text-align: center">Fast geschafft! <br>Jetzt Aktionsplatz sichern.</h3>
-        <span style="font-size: 15px; color: var(--text-muted); text-align: center">Wir rufen Sie in ca. 20 Minuten persönlich an. <br>(Zu unseren Öffnungszeiten)</span>
+        <span style="font-size: 15px; color: var(--text-muted); text-align: center">Wohin dürfen wir Ihre persönliche Prämien-Einschätzung schicken?</span>
       </div>
       <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
@@ -239,12 +246,15 @@
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="PLZ" placeholder="z.B. 77933" required="{{ true }}" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
       </div>
       <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
-      <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;line-height:var(--lh-normal);color:var(--text-body);">
+      <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;line-height:var(--lh-normal);color:var(--text-body);background:var(--grey-50);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:14px 16px;">
         <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="width:20px;height:20px;margin:1px 0 0;accent-color:var(--hg-blue);cursor:pointer;flex-shrink:0;">
         <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
       </label>
       <sc-if value="{{ errConsent }}" hint-placeholder-val="{{ false }}">
         <p style="margin:-14px 0 0;font-size:13px;color:var(--hg-red);font-weight:var(--fw-semibold);">Bitte bestätigen Sie die Einwilligung, damit wir Sie anrufen dürfen.</p>
+      </sc-if>
+      <sc-if value="{{ consentMissing }}" hint-placeholder-val="{{ true }}">
+        <p style="margin:0;text-align:center;font-size:14px;font-weight:var(--fw-semibold);color:var(--text-muted);">Bitte bestätigen Sie zuerst die Einwilligung oben.</p>
       </sc-if>
       <div style="display:flex;justify-content:center;width:100%;">
         <span class="hg-glow" style="display:inline-block;">
@@ -268,9 +278,9 @@
 class Component extends DCLogic {
   state = { step: 1, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
   questions = [
-    { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Andere'], files: ['/assets/kuechenformen/einzeilig.jpeg', '/assets/kuechenformen/zweizeilig.png', '/assets/kuechenformen/l-form.png', '/assets/kuechenformen/u-form.png', '/assets/kuechenformen/insel.png', null], imgs: 'form', qmarkLast: true },
-    { title: 'Welchen Küchenstil wünschen Sie sich?', sub: 'Wählen Sie den Stil, der Ihnen am besten gefällt.', options: ['Hochglanz', 'Matt', 'Massivholz', 'Landhaus', 'Andere'], files: ['/assets/kuechenstile/hochglanz.jpeg', '/assets/kuechenstile/matt.jpeg', '/assets/kuechenstile/massivholz.jpeg', '/assets/kuechenstile/landhaus.jpeg', null], imgs: 'stil', qmarkLast: true },
-    { title: 'Welchen Farbstil bevorzugen Sie?', sub: 'Hell, dunkel oder farbig – was passt zu Ihrem Zuhause?', options: ['Hell', 'Dunkel', 'Farbig', 'Andere'], files: ['/assets/farbstile/hell.png', '/assets/farbstile/dunkel.png', '/assets/farbstile/farbig.png', null], imgs: 'farbe', qmarkLast: true },
+    { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Andere'], files: ['/assets/kuechenformen/einzeilig.webp', '/assets/kuechenformen/zweizeilig.webp', '/assets/kuechenformen/l-form.webp', '/assets/kuechenformen/u-form.webp', '/assets/kuechenformen/insel.webp', null], imgs: 'form', qmarkLast: true },
+    { title: 'Welchen Küchenstil wünschen Sie sich?', sub: 'Wählen Sie den Stil, der Ihnen am besten gefällt.', options: ['Hochglanz', 'Matt', 'Massivholz', 'Landhaus', 'Andere'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
+    { title: 'Welchen Farbstil bevorzugen Sie?', sub: 'Hell, dunkel oder farbig – was passt zu Ihrem Zuhause?', options: ['Hell', 'Dunkel', 'Farbig', 'Andere'], files: ['/assets/farbstile/hell.webp', '/assets/farbstile/dunkel.webp', '/assets/farbstile/farbig.webp', null], imgs: 'farbe', qmarkLast: true },
     { title: 'Wünschen Sie eine Finanzierung?', sub: 'Aktuell mit 0% Zinsen möglich.\n', options: ['Ja, bis zu 60 Monate', 'Ja, mehr als 60 Monate', 'Nein'] },
     { title: 'Wann benötigen Sie die neue Küche?', sub: 'Ganz unverbindlich - Sie bestimmen das Tempo.', options: ['Schnellstmöglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später'] },
     { title: 'Welches Budget planen Sie für Ihre neue Küche?', sub: 'Die Prämie und die 0%-Finanzierung gelten für jedes Budget.', options: ['10.000 bis 15.000 €', '15.000 bis 25.000 €', 'Über 25.000 €'] },
@@ -440,6 +450,13 @@ class Component extends DCLogic {
       errZustand: !!errors.zustand,
       zustandNext: () => this.zustandNext(),
       stepNum: step, progressPct: Math.round(((step - 1) / (needsZustand ? 8 : 7)) * 100) + '%',
+      progressLabel: (() => {
+        const total = needsZustand ? 9 : 8;
+        const left = total - step;
+        if (left <= 0) return 'Letzter Schritt';
+        if (left === 1) return 'Nur noch 1 Schritt';
+        return 'Nur noch ' + left + ' Schritte';
+      })(),
       qTitle: q.title, qSub: q.sub || '',
       isTileQ: showQuiz && !!q.imgs,
       isListQ: showQuiz && !q.imgs,
@@ -462,13 +479,16 @@ class Component extends DCLogic {
       })),
       canBack: step > 1,
       goBack: () => this.setState(s => ({ step: Math.max(1, s.step - 1) })),
+      canForward: selected != null,
+      goForward: () => this.pick(selected),
       onVorname: this.field('vorname'), onNachname: this.field('nachname'), onTel: this.field('tel'), onEmail: this.field('email'), onPlz: this.field('plz'),
       errVorname: errors.vorname || '', errNachname: errors.nachname || '', errTel: errors.tel || '', errEmail: errors.email || '', errPlz: errors.plz || '',
       consent: this.state.consent,
       onConsent: (e) => this.setState({ consent: e.target.checked, errors: { ...this.state.errors, consent: false } }),
       errConsent: !!errors.consent,
       submitForm: () => this.submit(),
-      sending: !!this.state.sending,
+      sending: !!this.state.sending || !this.state.consent,
+      consentMissing: !this.state.consent,
       submitLabel: this.state.sending ? 'Wird gesendet …' : 'Jetzt Aktionsplatz sichern',
     };
   }
