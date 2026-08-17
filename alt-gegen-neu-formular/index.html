@@ -279,7 +279,7 @@
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Telefonnummer" type="tel" placeholder="z.B. 07821 123456" required="{{ true }}" onChange="{{ onTel }}" error="{{ errTel }}" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="PLZ" placeholder="z.B. 77933" required="{{ true }}" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="PLZ (optional)" placeholder="z.B. 77933" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
       </div>
       <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
       <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;line-height:var(--lh-normal);color:var(--text-body);background:var(--grey-50);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:14px 16px;">
@@ -347,7 +347,7 @@ class Component extends DCLogic {
     if (f.vorname.trim().length < 2) errors.vorname = 'Bitte geben Sie Ihren Vornamen an.';
     if (f.nachname.trim().length < 2) errors.nachname = 'Bitte geben Sie Ihren Nachnamen an.';
     if (f.tel.trim().length < 6) errors.tel = 'Bitte geben Sie Ihre Telefonnummer an.';
-    if (!/^\d{4,5}$/.test(f.plz.trim())) errors.plz = 'Bitte geben Sie Ihre PLZ an.';
+    if (f.plz.trim() && !/^\d{4,5}$/.test(f.plz.trim())) errors.plz = 'Bitte prüfen Sie die Postleitzahl.';
     if (!/^\S+@\S+\.\S+$/.test(f.email.trim())) errors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse an.';
     if (!this.state.consent) errors.consent = true;
     if (Object.keys(errors).length) { this.setState({ errors }); return; }
