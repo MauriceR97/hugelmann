@@ -318,9 +318,9 @@
 class Component extends DCLogic {
   state = { step: 1, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
   questions = [
-    { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Andere'], files: ['/assets/kuechenformen/einzeilig.webp', '/assets/kuechenformen/zweizeilig.webp', '/assets/kuechenformen/l-form.webp', '/assets/kuechenformen/u-form.webp', '/assets/kuechenformen/insel.webp', null], imgs: 'form', qmarkLast: true },
-    { title: 'Welchen Küchenstil wünschen Sie sich?', sub: 'Wählen Sie den Stil, der Ihnen am besten gefällt.', options: ['Hochglanz', 'Matt', 'Massivholz', 'Landhaus', 'Andere'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
-    { title: 'Welchen Farbstil bevorzugen Sie?', sub: 'Hell, dunkel oder farbig – was passt zu Ihrem Zuhause?', options: ['Hell', 'Dunkel', 'Farbig', 'Andere'], files: ['/assets/farbstile/hell.webp', '/assets/farbstile/dunkel.webp', '/assets/farbstile/farbig.webp', null], imgs: 'farbe', qmarkLast: true },
+    { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Weiß ich noch nicht'], files: ['/assets/kuechenformen/einzeilig.webp', '/assets/kuechenformen/zweizeilig.webp', '/assets/kuechenformen/l-form.webp', '/assets/kuechenformen/u-form.webp', '/assets/kuechenformen/insel.webp', null], imgs: 'form', qmarkLast: true },
+    { title: 'Welchen Küchenstil wünschen Sie sich?', sub: 'Wählen Sie den Stil, der Ihnen am besten gefällt.', options: ['Hochglanz', 'Matt', 'Massivholz', 'Landhaus', 'Weiß ich noch nicht'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
+    { title: 'Welchen Farbstil bevorzugen Sie?', sub: 'Hell, dunkel oder farbig – was passt zu Ihrem Zuhause?', options: ['Hell', 'Dunkel', 'Farbig', 'Weiß ich noch nicht'], files: ['/assets/farbstile/hell.webp', '/assets/farbstile/dunkel.webp', '/assets/farbstile/farbig.webp', null], imgs: 'farbe', qmarkLast: true },
     { title: 'Wünschen Sie eine Finanzierung?', sub: 'Aktuell mit 0% Zinsen möglich.\n', options: ['Ja, bis zu 60 Monate', 'Ja, mehr als 60 Monate', 'Weiß ich noch nicht', 'Nein'] },
     { title: 'Wann benötigen Sie die neue Küche?', sub: 'Ganz unverbindlich - Sie bestimmen das Tempo.', options: ['Schnellstmöglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später'] },
     { title: 'Welches Budget planen Sie für Ihre neue Küche?', sub: 'Die Prämie und die 0%-Finanzierung gelten für jedes Budget.', options: ['Bis 10.000 €', '10.000 bis 15.000 €', '15.000 bis 25.000 €', 'Über 25.000 €'] },
@@ -417,7 +417,7 @@ class Component extends DCLogic {
   }
   field(key) { return (e) => this.setState(s => ({ form: { ...s.form, [key]: e.target.value } })); }
   zustandLabels = ['Sehr gut – kaum Gebrauchsspuren', 'Gut – normale Gebrauchsspuren', 'Gebraucht – sichtbare Spuren', 'Stark abgenutzt oder beschädigt'];
-  altFormLabels = ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Andere'];
+  altFormLabels = ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Weiß ich noch nicht'];
   geraeteLabels = ['Ja, alle E-Geräte', 'Vereinzelt', 'Nein'];
   pickZustand(i) { this.setState(s => ({ zustand: i, errors: { ...s.errors, zustand: false } })); }
   onFotoChange(e) {
