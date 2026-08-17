@@ -67,6 +67,9 @@
     [data-rsp~="cols3"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important;}
   }
   @media (max-width: 720px){
+    [data-rsp~="finalvalue"]{grid-template-columns:1fr !important;padding:16px 18px !important;gap:10px !important;}
+    [data-rsp~="finalrainer"]{flex-direction:column !important;text-align:center !important;gap:12px !important;padding:18px !important;}
+    [data-rsp~="finalrainer"] > span{align-items:center !important;}
     [data-rsp~="hdr-tel-txt"]{display:none !important;}
     [data-rsp~="hdr-tel"]{width:46px !important;height:46px !important;border-radius:50% !important;background:var(--blue-50) !important;justify-content:center !important;gap:0 !important;}
     main{padding-left:16px !important;padding-right:16px !important;}
@@ -94,6 +97,9 @@
     [data-rsp~="dash"]{display:none !important;}
   }
   @media (max-width: 720px){
+    [data-rsp~="finalvalue"]{grid-template-columns:1fr !important;padding:16px 18px !important;gap:10px !important;}
+    [data-rsp~="finalrainer"]{flex-direction:column !important;text-align:center !important;gap:12px !important;padding:18px !important;}
+    [data-rsp~="finalrainer"] > span{align-items:center !important;}
     h1{font-size:36px !important;}
     h2{font-size:28px !important;}
     [data-rsp~="cols4"]{grid-template-columns:1fr !important;}
@@ -248,6 +254,20 @@
         <h3 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 26px; color: var(--text-heading); letter-spacing: var(--ls-tight); text-align: center">Fast geschafft! <br>Jetzt Aktionsplatz sichern.</h3>
         <span style="font-size: 15px; color: var(--text-muted); text-align: center">Wohin dürfen wir Ihre persönliche Prämien-Einschätzung schicken?</span>
       </div>
+      <div data-rsp="finalvalue" style="display:grid;grid-template-columns:1fr 1fr;gap:12px 26px;background:var(--blue-50);border:1px solid var(--hg-blue);border-radius:var(--radius-lg);padding:20px 24px;">
+        <span style="grid-column:1 / -1;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:17px;color:var(--text-heading);">Das erhalten Sie mit Ihrem Aktionsplatz</span>
+        <span style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:var(--lh-normal);color:var(--text-body);"><span style="width:20px;height:20px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:1px;">✓</span>Ihre persönliche Prämien-Einschätzung</span>
+        <span style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:var(--lh-normal);color:var(--text-body);"><span style="width:20px;height:20px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:1px;">✓</span>Kostenlose Planung in unserem Studio</span>
+        <span style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:var(--lh-normal);color:var(--text-body);"><span style="width:20px;height:20px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:1px;">✓</span>Preis 2026, auch bei Einbau 2027</span>
+        <span style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:var(--lh-normal);color:var(--text-body);"><span style="width:20px;height:20px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:1px;">✓</span>Einer von nur 30 Plätzen</span>
+      </div>
+      <div data-rsp="finalrainer" style="display:flex;align-items:center;gap:18px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:18px 22px;">
+        <img loading="lazy" decoding="async" src="/assets/rainer-hugelmann.webp" alt="Rainer Hugelmann, Inhaber" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 22%;flex-shrink:0;">
+        <span style="display:flex;flex-direction:column;gap:5px;">
+          <span style="font-size:15px;line-height:var(--lh-relaxed);color:var(--text-body);font-style:italic;">„Ihre Angaben landen direkt bei meinem Team in Lahr. Kein Callcenter, keine Weitergabe an Dritte."</span>
+          <span style="font-size:14px;font-weight:var(--fw-bold);color:var(--text-heading);">Rainer Hugelmann · Inhaber</span>
+        </span>
+      </div>
       <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
@@ -265,9 +285,13 @@
       <sc-if value="{{ consentMissing }}" hint-placeholder-val="{{ true }}">
         <p style="margin:0;text-align:center;font-size:14px;font-weight:var(--fw-semibold);color:var(--text-muted);">Bitte bestätigen Sie zuerst die Einwilligung oben.</p>
       </sc-if>
-      <div style="display:flex;justify-content:center;width:100%;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;">
         <span class="hg-glow" style="display:inline-block;">
           <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" onClick="{{ submitForm }}" disabled="{{ sending }}" hint-size="auto,52px">{{ submitLabel }}</x-import>
+        </span>
+        <span style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-muted);text-align:center;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Kein Vertreterbesuch, keine Anzahlung, jederzeit widerrufbar
         </span>
       </div>
     </sc-if>
@@ -290,9 +314,9 @@ class Component extends DCLogic {
     { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Andere'], files: ['/assets/kuechenformen/einzeilig.webp', '/assets/kuechenformen/zweizeilig.webp', '/assets/kuechenformen/l-form.webp', '/assets/kuechenformen/u-form.webp', '/assets/kuechenformen/insel.webp', null], imgs: 'form', qmarkLast: true },
     { title: 'Welchen Küchenstil wünschen Sie sich?', sub: 'Wählen Sie den Stil, der Ihnen am besten gefällt.', options: ['Hochglanz', 'Matt', 'Massivholz', 'Landhaus', 'Andere'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
     { title: 'Welchen Farbstil bevorzugen Sie?', sub: 'Hell, dunkel oder farbig – was passt zu Ihrem Zuhause?', options: ['Hell', 'Dunkel', 'Farbig', 'Andere'], files: ['/assets/farbstile/hell.webp', '/assets/farbstile/dunkel.webp', '/assets/farbstile/farbig.webp', null], imgs: 'farbe', qmarkLast: true },
-    { title: 'Wünschen Sie eine Finanzierung?', sub: 'Aktuell mit 0% Zinsen möglich.\n', options: ['Ja, bis zu 60 Monate', 'Ja, mehr als 60 Monate', 'Nein'] },
+    { title: 'Wünschen Sie eine Finanzierung?', sub: 'Aktuell mit 0% Zinsen möglich.\n', options: ['Ja, bis zu 60 Monate', 'Ja, mehr als 60 Monate', 'Weiß ich noch nicht', 'Nein'] },
     { title: 'Wann benötigen Sie die neue Küche?', sub: 'Ganz unverbindlich - Sie bestimmen das Tempo.', options: ['Schnellstmöglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später'] },
-    { title: 'Welches Budget planen Sie für Ihre neue Küche?', sub: 'Die Prämie und die 0%-Finanzierung gelten für jedes Budget.', options: ['10.000 bis 15.000 €', '15.000 bis 25.000 €', 'Über 25.000 €'] },
+    { title: 'Welches Budget planen Sie für Ihre neue Küche?', sub: 'Die Prämie und die 0%-Finanzierung gelten für jedes Budget.', options: ['Bis 10.000 €', '10.000 bis 15.000 €', '15.000 bis 25.000 €', 'Über 25.000 €'] },
     { title: 'Möchten Sie Ihre alte Küche in Zahlung geben?', sub: 'Kostenfreie Demontage, Abholung und eine Tauschprämie für Ihre alte Küche.', options: ['Ja', 'Nein', 'Ich besitze keine alte Küche'] },
   ];
   formIcon(kind) {
