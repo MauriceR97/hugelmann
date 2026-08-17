@@ -286,12 +286,12 @@
         <p style="margin:0;text-align:center;font-size:14px;font-weight:var(--fw-semibold);color:var(--text-muted);">Bitte bestätigen Sie zuerst die Einwilligung oben.</p>
       </sc-if>
       <div style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;">
-        <span class="hg-glow" style="display:inline-block;">
-          <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" onClick="{{ submitForm }}" disabled="{{ sending }}" hint-size="auto,52px">{{ submitLabel }}</x-import>
+        <span style="display:inline-block;">
+          <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="primary" size="lg" onClick="{{ submitForm }}" disabled="{{ sending }}" hint-size="auto,52px">{{ submitLabel }}</x-import>
         </span>
         <span style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-muted);text-align:center;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          Kein Vertreterbesuch, keine Anzahlung, jederzeit widerrufbar
+          <span><strong style="color:var(--text-body);">Kostenfrei &amp; unverbindlich.</strong> Ihre Daten werden nicht an Dritte weitergegeben.</span>
         </span>
       </div>
     </sc-if>
@@ -522,7 +522,7 @@ class Component extends DCLogic {
       submitForm: () => this.submit(),
       sending: !!this.state.sending || !this.state.consent,
       consentMissing: !this.state.consent,
-      submitLabel: this.state.sending ? 'Wird gesendet …' : 'Jetzt Aktionsplatz sichern',
+      submitLabel: this.state.sending ? 'Wird gesendet …' : 'Jetzt Anfrage senden',
     };
   }
 }
