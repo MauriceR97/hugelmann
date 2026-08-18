@@ -167,6 +167,11 @@
     iframe{max-width:100%;}
     [data-rsp~="cols4"]{grid-template-columns:repeat(2,1fr) !important;}
     [data-rsp~="cols3"]{grid-template-columns:1fr !important;}
+    [data-rsp~="vergleich"]{grid-template-columns:1fr !important;}
+    [data-rsp~="vergleich"] > div:first-child{border-radius:var(--radius-xl) var(--radius-xl) 0 0 !important;}
+    [data-rsp~="vergleich"] > div:last-child{border-radius:0 0 var(--radius-xl) var(--radius-xl) !important;}
+    [data-rsp~="vpfeil"]{padding:14px 0 !important;}
+    [data-rsp~="vpfeil"] span{transform:rotate(90deg);}
     [data-rsp~="ps-mid"]{border-left:none !important;border-right:none !important;border-top:2px dashed var(--border-default) !important;border-bottom:2px dashed var(--border-default) !important;}
     [data-rsp~="nocon"]{display:none !important;}
     [data-rsp~="split"]{grid-template-columns:1fr !important;}
@@ -208,7 +213,7 @@
     /* Foto: Band oben, ~40% der Höhe, voll sichtbar */
     [data-rsp~="topbar"]{display:none !important;}
     [data-rsp~="hdr-proof"]{display:flex !important;}
-    [data-rsp~="herosec"]{min-height:0 !important;max-height:none !important;display:block !important;align-items:stretch !important;overflow:hidden !important;background:#0b1b30 !important;aspect-ratio:auto !important;}
+    [data-rsp~="herosec"]{min-height:0 !important;max-height:none !important;display:block !important;align-items:stretch !important;overflow:visible !important;background:var(--blue-50) !important;aspect-ratio:auto !important;}
     [data-rsp~="hero-imgwrap"]{position:relative !important;inset:auto !important;display:block !important;height:auto !important;aspect-ratio:1/1 !important;overflow:hidden !important;}
     [data-rsp~="hero-img"]{display:none !important;}
     [data-rsp~="hero-img-mob"]{display:none !important;}
@@ -217,32 +222,37 @@
     [data-rsp~="heroproof"]{display:none !important;}
     [data-rsp~="heropaar"]{display:none !important;}
     [data-rsp~="splitlabels"]{display:none !important;}
-    [data-rsp~="stoerer"]{display:flex !important;top:auto !important;bottom:14px !important;left:auto !important;right:14px !important;width:132px !important;height:132px !important;padding:10px !important;gap:1px !important;z-index:5 !important;box-shadow:0 8px 20px rgba(32,31,31,0.42) !important;pointer-events:none !important;}
+    [data-rsp~="stoerer"]{display:flex !important;top:calc(100vw - 118px) !important;bottom:auto !important;left:auto !important;right:14px !important;width:132px !important;height:132px !important;padding:10px !important;gap:1px !important;z-index:5 !important;box-shadow:0 8px 20px rgba(32,31,31,0.42) !important;pointer-events:none !important;}
     [data-rsp~="stoerer"] span:nth-child(1){font-size:11px !important;letter-spacing:0.04em !important;}
     [data-rsp~="stoerer"] span:nth-child(2){font-size:29px !important;line-height:1 !important;}
     [data-rsp~="stoerer"] span:nth-child(3){font-size:10px !important;letter-spacing:0.02em !important;}
     /* Textblock darunter: weiß, volle Lesbarkeit */
-    [data-rsp~="hero"]{padding:0 !important;height:auto !important;min-height:0 !important;position:relative !important;z-index:3 !important;margin-top:-46px !important;align-self:auto !important;}
-    [data-rsp~="hero"] > div{width:100% !important;max-width:100% !important;height:auto !important;margin:0 !important;left:auto !important;top:auto !important;position:static !important;gap:16px !important;background:#0b1b30 !important;border-radius:0 !important;padding:4px 20px 30px !important;box-shadow:none !important;box-sizing:border-box !important;color:#fff !important;}
-    [data-rsp~="hero-imgwrap"]::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg, rgba(11,27,48,0) 0%, rgba(11,27,48,0.55) 55%, #0b1b30 100%);pointer-events:none;z-index:1;}
+    [data-rsp~="hero"]{padding:0 !important;height:auto !important;min-height:0 !important;position:relative !important;z-index:3 !important;margin-top:-6px !important;align-self:auto !important;}
+    [data-rsp~="hero"] > div{width:100% !important;max-width:100% !important;height:auto !important;margin:0 !important;left:auto !important;top:auto !important;position:static !important;gap:16px !important;background:transparent !important;border-radius:0 !important;padding:0 20px 30px !important;box-shadow:none !important;box-sizing:border-box !important;color:var(--text-body) !important;}
+    [data-rsp~="hero-imgwrap"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:74px;background:var(--blue-50);-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,52 C240,-14 480,96 720,52 C960,8 1200,84 1440,44 L1440,120 Z' fill='%23fff'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,52 C240,-14 480,96 720,52 C960,8 1200,84 1440,44 L1440,120 Z' fill='%23fff'/%3E%3C/svg%3E");-webkit-mask-size:100% 100%;mask-size:100% 100%;pointer-events:none;z-index:2;}
     /* Prämien-Karte ragt über die Bildkante */
     [data-rsp~="praemiebadge"]{display:none !important;}
-    [data-rsp~="hero-fud"],[data-rsp~="hero-proof2"]{display:none !important;}
+    [data-rsp~="hero-proof2"]{display:none !important;}
     
-    [data-rsp~="hero"] h1{position:static !important;width:auto !important;height:auto !important;min-height:0 !important;padding:0 !important;margin:0 !important;overflow:visible !important;clip:auto !important;white-space:normal !important;font-size:36px !important;line-height:1.08 !important;letter-spacing:-0.02em !important;text-align:left !important;color:#fff !important;text-shadow:none !important;}
-    [data-rsp~="hero"] > div > p{display:block !important;width:auto !important;max-width:100% !important;font-size:16.5px !important;line-height:1.5 !important;font-weight:500 !important;text-align:left !important;color:rgba(255,255,255,0.92) !important;text-shadow:0 1px 10px rgba(4,14,28,0.55) !important;}
+    [data-rsp~="hero"] h1{position:static !important;width:auto !important;height:auto !important;min-height:0 !important;padding:0 !important;margin:0 !important;overflow:visible !important;clip:auto !important;white-space:normal !important;font-size:36px !important;line-height:1.08 !important;letter-spacing:-0.02em !important;text-align:left !important;color:var(--hg-blue) !important;text-shadow:none !important;}
+    [data-rsp~="hero"] > div > p{display:block !important;width:auto !important;max-width:100% !important;font-size:16.5px !important;line-height:1.5 !important;font-weight:500 !important;text-align:left !important;color:var(--text-body) !important;text-shadow:none !important;}
     [data-rsp~="hero"] > div > p:not([data-rsp~="submob"]){display:none !important;}
-    [data-rsp~="submob"]{display:block !important;}
-    [data-rsp~="hero"] ul{display:flex !important;width:auto !important;max-width:100% !important;font-size:16.5px !important;gap:10px !important;color:#fff !important;font-weight:var(--fw-semibold) !important;text-shadow:0 1px 10px rgba(4,14,28,0.6) !important;}
-    [data-rsp~="hero"] li{align-items:flex-start !important;line-height:1.4 !important;gap:11px !important;text-align:left !important;text-shadow:0 1px 10px rgba(4,14,28,0.6) !important;height:auto !important;min-height:0 !important;width:auto !important;max-width:100% !important;}
+    [data-rsp~="submob"]{display:block !important;font-size:18px !important;color:var(--text-body) !important;}
+    /* eleganter Übergang Hero → nächste Sektion */
+    [data-rsp~="herosec"]{position:relative !important;padding-bottom:0 !important;}
+
+    [data-rsp~="hero"] ul{display:flex !important;width:auto !important;max-width:100% !important;font-size:16.5px !important;gap:10px !important;color:var(--text-heading) !important;font-weight:var(--fw-semibold) !important;text-shadow:none !important;}
+    [data-rsp~="hero"] li{align-items:flex-start !important;line-height:1.4 !important;gap:11px !important;text-align:left !important;text-shadow:none !important;height:auto !important;min-height:0 !important;width:auto !important;max-width:100% !important;}
     [data-rsp~="hero"] [data-rsp~="hchk"]{width:22px !important;height:22px !important;margin-top:1px !important;background:#2fa84f !important;box-shadow:none !important;}
     /* CTA */
     [data-rsp~="hero-cta"]{width:100% !important;max-width:100% !important;height:auto !important;align-self:center !important;align-items:center !important;text-align:center !important;gap:8px !important;margin-top:4px !important;}
     [data-rsp~="hero-cta"] > a{width:100% !important;}
     [data-rsp~="hero-cta"] button{width:100% !important;height:58px !important;font-size:17px !important;font-weight:var(--fw-bold) !important;text-transform:none !important;letter-spacing:0 !important;justify-content:center !important;white-space:normal !important;box-shadow:0 10px 24px rgba(227,6,19,0.30) !important;}
+    [data-rsp~="hero-cta"] > a.hg-glow{box-shadow:none !important;}
+    [data-rsp~="closer"] a.hg-glow{box-shadow:none !important;}
     [data-rsp~="hero-cta"] > span{width:100% !important;text-align:center !important;color:var(--text-muted) !important;font-size:14px !important;}
-    [data-rsp~="heroproof3"]{display:flex !important;border-top-color:rgba(255,255,255,0.28) !important;}
-    [data-rsp~="heroproof3"] span{color:#fff !important;}
+    [data-rsp~="heroproof3"]{display:flex !important;border-top-color:var(--border-subtle) !important;}
+    [data-rsp~="heroproof3"] span{color:var(--text-heading) !important;}
     [data-rsp~="heroproof3"] img{filter:brightness(1.06) !important;}
     [data-rsp~="ctalabel-desktop"]{display:none !important;}
     [data-rsp~="ctalabel-mobil"]{display:inline !important;}
@@ -258,7 +268,7 @@
 <header style="position:sticky;top:0;z-index:50;background:var(--hg-white);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-xs);">
   <div data-rsp="header" style="max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:40px;">
     <img loading="eager" decoding="async" src="/assets/logo.webp" alt="Küchen Hugelmann – interliving" style="height:56px;display:block;flex-shrink:0;">
-    <span data-rsp="hdr-proof" style="display:none;margin-left:auto;align-items:center;gap:7px;font-size:13px;font-weight:var(--fw-bold);color:var(--text-heading);white-space:nowrap;"><svg width="15" height="15" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#f5a623;letter-spacing:0.5px;">★★★★</span>4,1</span>
+    <span data-rsp="hdr-proof" style="display:none;margin-left:auto;align-items:center;gap:7px;font-size:13px;font-weight:var(--fw-bold);color:var(--text-heading);white-space:nowrap;"><svg width="15" height="15" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#f5a623;letter-spacing:0.5px;">★★★★</span>4,2</span>
     <div style="display:flex;align-items:center;gap:36px;flex-shrink:0;">
       
       <a href="/alt-gegen-neu-formular/" class="hg-glow" data-rsp="hdr-cta" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="md" hint-size="200px,44px">Platz sichern</x-import></a>
@@ -295,21 +305,13 @@
       <div data-rsp="hero-cta" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 6px; pointer-events: auto; align-self: flex-start; max-width: 100%; height: auto;">
         <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="320px,52px" style="color: var(--hg-blue)"><span data-rsp="ctalabel-desktop">Jetzt kostenlos Platz sichern</span><span data-rsp="ctalabel-mobil" style="display:none;">Jetzt Küchenprämie anfragen</span></x-import></a>
         <span style="font-size: 16px; text-align: center;">Kostenlos &amp; unverbindlich · in 2 Minuten erledigt</span>
-        <ul data-rsp="hero-fud" style="list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px;">
-          <li style="display:flex;align-items:center;gap:7px;font-size:15px;font-weight:var(--fw-semibold);color:rgba(255,255,255,0.94);"><span style="width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.22);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:var(--fw-bold);flex-shrink:0;">✓</span>Keine Anzahlung</li>
-          <li style="display:flex;align-items:center;gap:7px;font-size:15px;font-weight:var(--fw-semibold);color:rgba(255,255,255,0.94);"><span style="width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.22);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:var(--fw-bold);flex-shrink:0;">✓</span>Keine Verpflichtung</li>
-          <li style="display:flex;align-items:center;gap:7px;font-size:15px;font-weight:var(--fw-semibold);color:rgba(255,255,255,0.94);"><span style="width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.22);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:var(--fw-bold);flex-shrink:0;">✓</span>Kein Vertreterbesuch</li>
-        </ul>
-        <div data-rsp="hero-proof2" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:12px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.22);">
+                <div data-rsp="hero-proof2" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:12px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.22);">
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:var(--fw-bold);color:#fff;"><svg width="17" height="17" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#ffcf4d;letter-spacing:1px;">★★★★</span>{{ googleRatingLabel }} · {{ googleReviews }} Bewertungen</span>
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:var(--fw-bold);color:#fff;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"></path></svg>Seit über 70 Jahren in Lahr</span>
         </div>
-        <div data-rsp="mobonly heroproof3" style="display:none;flex-direction:column;gap:12px;width:100%;margin-top:14px;padding-top:16px;border-top:1px solid var(--border-subtle);">
-          <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;">
-            <span style="display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:var(--fw-bold);color:var(--text-heading);"><svg width="16" height="16" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#f5a623;letter-spacing:1px;">★★★★</span>4,2 · 534 Bewertungen</span>
-            <img loading="lazy" decoding="async" src="/assets/siegel-moebelhaus-2025.webp" alt="DtGV-Siegel: Herausragendes Möbelhaus 2025" style="height:56px;width:auto;display:block;">
-          </div>
-          <span style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:var(--fw-semibold);color:var(--text-body);text-align:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M3 21h18"></path><path d="M5 21V8l7-5 7 5v13"></path><path d="M10 21v-6h4v6"></path></svg>Seit über 70 Jahren Ihr Küchenstudio in Lahr</span>
+        <div data-rsp="mobonly heroproof3" style="display:none;align-items:center;justify-content:center;gap:14px;width:100%;margin-top:16px;padding-top:16px;border-top:1px solid var(--border-subtle);">
+          <img loading="lazy" decoding="async" src="/assets/siegel-moebelhaus-2025.webp" alt="DtGV-Siegel: Herausragendes Möbelhaus 2025" style="height:62px;width:auto;display:block;flex-shrink:0;">
+          <span style="display:flex;align-items:center;gap:9px;font-size:15px;font-weight:var(--fw-semibold);color:var(--text-heading);text-align:left;line-height:1.35;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M3 21h18"></path><path d="M5 21V8l7-5 7 5v13"></path><path d="M10 21v-6h4v6"></path></svg>Seit über 70&nbsp;Jahren Ihr Küchenstudio in Lahr</span>
         </div>
       </div>
       
@@ -346,6 +348,108 @@
     <img loading="lazy" decoding="async" src="/assets/siegel-moebelhaus-2025.webp" data-rsp="tb-hide" alt="DtGV-Siegel: Herausragendes Möbelhaus 2025" style="height:64px;width:auto;display:block;">
   </div>
 </section>
+<section style="background-color: var(--surface-subtle)"><div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:44px;align-items:center;">
+    <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:680px;">
+      <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);">Zeit für etwas Neues</span>
+      <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Kommt Ihnen das bekannt vor?</h2>
+    </div>
+    <div data-rsp="cols2 vergleich" data-reveal-group="90" style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;width:100%;max-width:1040px;align-items:stretch;">
+        <div style="background:var(--grey-50);border:1px solid var(--border-subtle);border-radius:var(--radius-xl) 0 0 var(--radius-xl);padding:34px 32px;display:flex;flex-direction:column;gap:22px;">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.14em;text-transform:uppercase;color:var(--grey-500);">Ihre Küche heute</span>
+            <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;line-height:1.15;color:var(--grey-600);letter-spacing:var(--ls-tight);">Man arrangiert sich</strong>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;">
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;">
+            <span style="color:var(--grey-400);margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <strong style="font-size:17px;line-height:1.3;color:var(--text-heading);font-weight:var(--fw-bold);">Kaum Stauraum</strong>
+              <span style="font-size:15.5px;line-height:1.45;color:var(--text-muted);text-wrap:pretty;">Töpfe stapeln sich, für Neues fehlt der Platz.</span>
+            </span>
+          </li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;">
+            <span style="color:var(--grey-400);margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <strong style="font-size:17px;line-height:1.3;color:var(--text-heading);font-weight:var(--fw-bold);">Geräte am Ende</strong>
+              <span style="font-size:15.5px;line-height:1.45;color:var(--text-muted);text-wrap:pretty;">Der Backofen heizt ungleich, die Spülmaschine dröhnt.</span>
+            </span>
+          </li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;">
+            <span style="color:var(--grey-400);margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <strong style="font-size:17px;line-height:1.3;color:var(--text-heading);font-weight:var(--fw-bold);">Fronten abgenutzt</strong>
+              <span style="font-size:15.5px;line-height:1.45;color:var(--text-muted);text-wrap:pretty;">Kanten lösen sich, die Farbe wirkt vergilbt.</span>
+            </span>
+          </li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;">
+            <span style="color:var(--grey-400);margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <strong style="font-size:17px;line-height:1.3;color:var(--text-heading);font-weight:var(--fw-bold);">Zu wenig Arbeitsfläche</strong>
+              <span style="font-size:15.5px;line-height:1.45;color:var(--text-muted);text-wrap:pretty;">Das Schneidebrett muss auf die Spüle.</span>
+            </span>
+          </li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;">
+            <span style="color:var(--grey-400);margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <strong style="font-size:17px;line-height:1.3;color:var(--text-heading);font-weight:var(--fw-bold);">Dunkle Ecken</strong>
+              <span style="font-size:15.5px;line-height:1.45;color:var(--text-muted);text-wrap:pretty;">Beim Schneiden liegt der Schatten auf dem Brett.</span>
+            </span>
+          </li>
+          </ul>
+        </div>
+        <div data-rsp="vpfeil" style="display:flex;align-items:center;justify-content:center;background:var(--surface-subtle);padding:0 4px;">
+          <span style="width:60px;height:60px;border-radius:50%;background:var(--hg-red);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(227,6,19,0.32);flex-shrink:0;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span>
+        </div>
+        <div style="background:var(--surface-card);border:1px solid var(--hg-blue);border-radius:0 var(--radius-xl) var(--radius-xl) 0;box-shadow:0 0 26px 5px rgba(3,78,163,0.16);padding:34px 32px;display:flex;flex-direction:column;gap:22px;">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-size:12px;font-weight:var(--fw-bold);letter-spacing:0.14em;text-transform:uppercase;color:var(--hg-blue);">Mit Alt gegen Neu</span>
+            <strong style="font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;line-height:1.15;color:var(--text-heading);letter-spacing:var(--ls-tight);">Endlich, wie es sein soll</strong>
+          </div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;">
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;">
+            <span style="color:var(--success);margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <strong style="font-size:17px;line-height:1.3;color:var(--text-heading);font-weight:var(--fw-bold);">Stauraum, der zu Ihnen passt</strong>
+              <span style="font-size:15.5px;line-height:1.45;color:var(--text-muted);text-wrap:pretty;">Geplant nach Ihren Wünschen, damit alles seinen Platz hat.</span>
+            </span>
+          </li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;">
+            <span style="color:var(--success);margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <strong style="font-size:17px;line-height:1.3;color:var(--text-heading);font-weight:var(--fw-bold);">Neue Markengeräte</strong>
+              <span style="font-size:15.5px;line-height:1.45;color:var(--text-muted);text-wrap:pretty;">Leise, sparsam und von Herstellern, die Sie kennen.</span>
+            </span>
+          </li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;">
+            <span style="color:var(--success);margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <strong style="font-size:17px;line-height:1.3;color:var(--text-heading);font-weight:var(--fw-bold);">Fronten, die Sie wählen</strong>
+              <span style="font-size:15.5px;line-height:1.45;color:var(--text-muted);text-wrap:pretty;">Ob grifflos oder mit Griff, matt oder Holz: Sie entscheiden.</span>
+            </span>
+          </li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;">
+            <span style="color:var(--success);margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <strong style="font-size:17px;line-height:1.3;color:var(--text-heading);font-weight:var(--fw-bold);">Genug Platz zum Arbeiten</strong>
+              <span style="font-size:15.5px;line-height:1.45;color:var(--text-muted);text-wrap:pretty;">Die Arbeitsfläche wird auf Ihre Küche zugeschnitten.</span>
+            </span>
+          </li>
+          <li style="display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;">
+            <span style="color:var(--success);margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <strong style="font-size:17px;line-height:1.3;color:var(--text-heading);font-weight:var(--fw-bold);">Licht, wo Sie es brauchen</strong>
+              <span style="font-size:15.5px;line-height:1.45;color:var(--text-muted);text-wrap:pretty;">Beleuchtung wird mitgeplant, nicht nachträglich improvisiert.</span>
+            </span>
+          </li>
+          </ul>
+        </div>
+      </div>
+      <div data-reveal="up" style="display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center;max-width:680px;">
+        <p style="margin:0;font-size:19px;line-height:var(--lh-relaxed);text-wrap:pretty;">Dann haben wir genau das Richtige für Sie: Im Rahmen unserer <strong>Alt-gegen-Neu-Aktion</strong> tauschen Sie Ihre bestehende Küche gegen eine neue. Um alles andere kümmern wir uns.</p>
+        <a href="/alt-gegen-neu-formular/" class="hg-glow hg-glow-blue" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="secondary" size="md" hint-size="280px,44px">Jetzt Prämie unverbindlich prüfen</x-import></a>
+      </div>
+      </div>
+  </div></section>
 <section style="background-color: var(--blue-50)">
   <div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:56px 32px;display:flex;flex-direction:column;gap:34px;align-items:center;">
     <div style="display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;">
@@ -374,19 +478,7 @@
         <span style="grid-column: 2; font-size: 15px; line-height: var(--lh-relaxed); color: var(--hg-white)">Ihre Traumküche heute, bezahlt in kleinen Monatsraten.</span>
       </div>
     </div>
-</div></section><div data-rsp="pad" style="max-width:1200px;margin:0 auto;padding:80px 32px;display:flex;flex-direction:column;gap:44px;align-items:center;">
-    <div data-reveal="up" style="text-align:center;display:flex;flex-direction:column;gap:14px;max-width:680px;">
-      <span style="font-family:var(--font-script);font-size:28px;line-height:1.1;font-weight:700;letter-spacing:0;text-transform:none;color:var(--hg-blue);">Zeit für etwas Neues</span>
-      <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-3xl);color:var(--text-heading);letter-spacing:var(--ls-tight);text-wrap:balance;">Kommt Ihnen das bekannt vor?</h2>
-    </div>
-    <div data-reveal="up" data-rsp="hauto" style="width:100%;max-width:960px;height:520px;">
-      <img loading="lazy" decoding="async" src="/assets/alte-kueche-collage.webp" alt="Kaum Stauraum, veraltete Geräte, altmodisches Design" style="width:100%;height:100%;object-fit:contain;display:block;">
-    </div>
-    <div data-reveal="up" style="display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center;max-width:680px;">
-      <p style="margin:0;font-size:19px;line-height:var(--lh-relaxed);text-wrap:pretty;">Dann haben wir genau das Richtige für Sie: Im Rahmen unserer <strong>Alt-gegen-Neu-Aktion</strong> tauschen Sie Ihre bestehende Küche gegen eine neue. Um alles andere kümmern wir uns.</p>
-      <a href="/alt-gegen-neu-formular/" class="hg-glow hg-glow-blue" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="secondary" size="md" hint-size="280px,44px">Jetzt Prämie unverbindlich prüfen</x-import></a>
-    </div>
-  </div></section>
+</div></section></section>
 
 <section style="border-top: 1px solid var(--border-subtle); background-color: var(--border-subtle)">
   
@@ -961,12 +1053,7 @@
     <div data-reveal="up" style="display:flex;flex-direction:column;gap:12px;align-items:center;width:100%;">
       <a href="/alt-gegen-neu-formular/" class="hg-glow" style="text-decoration:none;display:inline-block;"><x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="accent" size="lg" hint-size="320px,54px">Jetzt Küchenprämie anfragen</x-import></a>
       <span style="font-size:16px;color:rgba(255,255,255,0.82);">Kostenlos &amp; unverbindlich · in 2 Minuten erledigt</span>
-      <ul style="list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 24px;">
-        <li style="font-size:15px;font-weight:var(--fw-semibold);color:rgba(255,255,255,0.86);">Keine Anzahlung</li>
-        <li style="font-size:15px;font-weight:var(--fw-semibold);color:rgba(255,255,255,0.86);">Keine Verpflichtung</li>
-        <li style="font-size:15px;font-weight:var(--fw-semibold);color:rgba(255,255,255,0.86);">Kein Vertreterbesuch</li>
-      </ul>
-    </div>
+          </div>
     <div data-reveal="up" style="display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;padding-top:22px;border-top:1px solid rgba(255,255,255,0.2);width:100%;max-width:700px;">
       <span style="display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:var(--fw-bold);color:#fff;"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#ffcf4d;letter-spacing:1px;">★★★★</span>{{ googleRatingLabel }} · {{ googleReviews }} Bewertungen</span>
       <img loading="lazy" decoding="async" src="/assets/siegel-moebelhaus-2025.webp" alt="DtGV-Siegel: Herausragendes Möbelhaus 2025" style="height:66px;width:auto;display:block;">
