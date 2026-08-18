@@ -1085,7 +1085,45 @@ class Component extends DCLogic {
     upd();
   }
 
+  ga(name, params) {
+    try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) {}
+  }
+  initTracking() {
+    // CTA-Klicks: welcher Button auf der Seite bringt den Klick in den Funnel?
+    document.querySelectorAll('a[href*="alt-gegen-neu-formular"], a[href*="Formular"]').forEach(a => {
+      if (a.dataset.gaBound) return;
+      a.dataset.gaBound = '1';
+      a.addEventListener('click', () => {
+        const sec = a.closest('section');
+        const head = sec && sec.querySelector('h1, h2');
+        this.ga('cta_click', {
+          cta_text: (a.innerText || '').trim().slice(0, 60),
+          cta_section: head ? head.innerText.trim().slice(0, 60) : 'Header/Leiste'
+        });
+      });
+    });
+    // Scrolltiefe: wie weit kommen Besucher, bevor sie abbrechen?
+    const marks = [25, 50, 75, 90];
+    const seen = {};
+    const onScroll = () => {
+      const h = document.documentElement;
+      const pct = Math.round(((window.scrollY + window.innerHeight) / h.scrollHeight) * 100);
+      marks.forEach(m => {
+        if (pct >= m && !seen[m]) { seen[m] = 1; this.ga('scroll_depth', { percent: m }); }
+      });
+      if (marks.every(m => seen[m])) window.removeEventListener('scroll', onScroll);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    // Welche FAQ-Fragen werden geöffnet? Zeigt die offenen Bedenken.
+    document.querySelectorAll('#faq button, #faq [role="button"]').forEach(b => {
+      if (b.dataset.gaBound) return;
+      b.dataset.gaBound = '1';
+      b.addEventListener('click', () => this.ga('faq_open', { question: (b.innerText || '').trim().slice(0, 80) }));
+    });
+  }
   componentDidMount() {
+    setTimeout(() => this.initTracking(), 800);
     setTimeout(() => this.initStickyCta(), 300);
     setTimeout(() => this.initAblauf(), 400);
     this._clearSlotBg = setInterval(() => {

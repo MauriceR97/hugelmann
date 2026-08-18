@@ -131,7 +131,7 @@
 <div style="min-height:100vh;display:flex;flex-direction:column;">
 <header style="background:var(--hg-white);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-xs);">
   <div data-rsp="header" style="max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-    <a href="/alt-gegen-neu/" style="display:block;"><img loading="lazy" decoding="async" src="/assets/logo.webp" alt="Küchen Hugelmann – interliving" style="height:52px;display:block;"></a>
+    <a href="/alt-gegen-neu/" style="display:block;"><img loading="eager" decoding="async" src="/assets/logo.webp" alt="Küchen Hugelmann – interliving" style="height:52px;display:block;"></a>
       <span data-rsp="form-proof" style="display:inline-flex;margin-left:auto;align-items:center;gap:7px;font-size:13px;font-weight:var(--fw-bold);color:var(--text-heading);white-space:nowrap;"><svg width="15" height="15" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#f5a623;letter-spacing:1px;">★★★★</span>4,2 · 534 Bewertungen</span>
     </div>
   </header>
@@ -338,9 +338,32 @@ class Component extends DCLogic {
       e('text', { x: 24, y: 33, textAnchor: 'middle', fontSize: 26, fontWeight: 700, fill: 'currentColor' }, '?'));
     return e('svg', { width: 48, height: 48, viewBox: '0 0 48 48', style: { color: 'var(--hg-blue)', flexShrink: 0 } }, parts);
   }
+  ga(name, params) {
+    try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) {}
+  }
+  stepName(step) {
+    const q = this.questions[step - 1];
+    if (q) return q.title;
+    if (step === 8 && this.state.answers[7] === 0) return 'Zustand der alten Küche';
+    return 'Kontaktdaten';
+  }
+  componentDidMount() {
+    this.ga('funnel_start', { funnel: 'alt_gegen_neu' });
+    this.trackStep(1);
+  }
+  trackStep(step) {
+    this.ga('funnel_step', { funnel: 'alt_gegen_neu', step_number: step, step_name: this.stepName(step) });
+  }
   pick(idx) {
     const step = this.state.step;
-    this.setState(s => ({ answers: { ...s.answers, [step]: idx }, step: step + 1 }));
+    const q = this.questions[step - 1];
+    this.ga('funnel_answer', {
+      funnel: 'alt_gegen_neu',
+      step_number: step,
+      step_name: this.stepName(step),
+      answer: q ? (q.options[idx] || String(idx)) : String(idx)
+    });
+    this.setState(s => ({ answers: { ...s.answers, [step]: idx }, step: step + 1 }), () => this.trackStep(this.state.step));
   }
   submit() {
     const f = this.state.form, errors = {};
@@ -350,7 +373,11 @@ class Component extends DCLogic {
     if (f.plz.trim() && !/^\d{4,5}$/.test(f.plz.trim())) errors.plz = 'Bitte prüfen Sie die Postleitzahl.';
     if (!/^\S+@\S+\.\S+$/.test(f.email.trim())) errors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse an.';
     if (!this.state.consent) errors.consent = true;
-    if (Object.keys(errors).length) { this.setState({ errors }); return; }
+    if (Object.keys(errors).length) {
+      this.ga('form_error', { funnel: 'alt_gegen_neu', fields: Object.keys(errors).join(',') });
+      this.setState({ errors }); return;
+    }
+    this.ga('generate_lead', { funnel: 'alt_gegen_neu', budget: this.questions[5].options[this.state.answers[6]] || '', timing: this.questions[4].options[this.state.answers[5]] || '' });
     try { sessionStorage.setItem('agn_lead_name', f.vorname.trim()); } catch (e) {}
     try { sessionStorage.setItem('agn_lead_ok', '1'); } catch (e) {}
     if (this._sending) return;
@@ -518,7 +545,7 @@ class Component extends DCLogic {
         noCheck: selected !== i,
       })),
       canBack: step > 1,
-      goBack: () => this.setState(s => ({ step: Math.max(1, s.step - 1) })),
+      goBack: () => { this.ga('funnel_back', { funnel: 'alt_gegen_neu', step_number: this.state.step }); this.setState(s => ({ step: Math.max(1, s.step - 1) }), () => this.trackStep(this.state.step)); },
       canForward: selected != null,
       goForward: () => this.pick(selected),
       onVorname: this.field('vorname'), onNachname: this.field('nachname'), onTel: this.field('tel'), onEmail: this.field('email'), onPlz: this.field('plz'),
