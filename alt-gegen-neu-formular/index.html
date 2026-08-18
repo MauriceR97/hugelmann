@@ -276,12 +276,12 @@
         </span>
       </div>
       <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Telefonnummer" type="tel" placeholder="z.B. 07821 123456" required="{{ true }}" onChange="{{ onTel }}" error="{{ errTel }}" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="PLZ (optional)" placeholder="z.B. 77933" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" name="vorname" autoComplete="given-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" name="nachname" autoComplete="family-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Telefonnummer" type="tel" placeholder="z.B. 07821 123456" name="telefon" autoComplete="tel" inputMode="tel" required="{{ true }}" onChange="{{ onTel }}" error="{{ errTel }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="PLZ (optional)" placeholder="z.B. 77933" name="plz" autoComplete="postal-code" inputMode="numeric" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
       </div>
-      <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
+      <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" name="email" autoComplete="email" inputMode="email" autoCapitalize="none" spellCheck="{{ false }}" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
       <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;line-height:var(--lh-normal);color:var(--text-body);background:var(--grey-50);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:14px 16px;">
         <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="width:20px;height:20px;margin:1px 0 0;accent-color:var(--hg-blue);cursor:pointer;flex-shrink:0;">
         <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
@@ -347,7 +347,31 @@ class Component extends DCLogic {
     if (step === 8 && this.state.answers[7] === 0) return 'Zustand der alten Küche';
     return 'Kontaktdaten';
   }
+  applyAutofill() {
+    const map = [
+      ['Vorname', 'given-name', 'vorname', { autocapitalize: 'words' }],
+      ['Nachname', 'family-name', 'nachname', { autocapitalize: 'words' }],
+      ['Telefon', 'tel', 'telefon', { inputmode: 'tel', type: 'tel' }],
+      ['PLZ', 'postal-code', 'plz', { inputmode: 'numeric' }],
+      ['Mail', 'email', 'email', { inputmode: 'email', autocapitalize: 'none', spellcheck: 'false', type: 'email' }],
+    ];
+    document.querySelectorAll('label').forEach(l => {
+      const txt = (l.textContent || '').trim();
+      const inp = l.querySelector('input') || (l.htmlFor && document.getElementById(l.htmlFor));
+      if (!inp || inp.type === 'checkbox') return;
+      const hit = map.find(([key]) => txt.indexOf(key) === 0 || txt.indexOf(key) > -1);
+      if (!hit) return;
+      const [, ac, name, extra] = hit;
+      inp.setAttribute('autocomplete', ac);
+      if (!inp.name) inp.setAttribute('name', name);
+      Object.entries(extra).forEach(([k, v]) => inp.setAttribute(k, v));
+    });
+  }
+  componentDidUpdate() {
+    if (this.state.step >= 8) setTimeout(() => this.applyAutofill(), 60);
+  }
   componentDidMount() {
+    setTimeout(() => this.applyAutofill(), 300);
     this.ga('funnel_start', { funnel: 'alt_gegen_neu' });
     this.trackStep(1);
   }
