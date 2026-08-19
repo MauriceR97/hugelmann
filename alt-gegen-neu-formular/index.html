@@ -71,7 +71,7 @@
     [data-rsp~="form-proof"]{font-size:12px !important;gap:6px !important;}
     [data-rsp~="header"]{padding:12px 16px !important;gap:12px !important;}
     [data-rsp~="header"] img{height:42px !important;}
-    [data-rsp~="finalvalue"]{grid-template-columns:1fr !important;padding:16px 18px !important;gap:10px !important;}
+    [data-rsp~="finalvalue"]{flex-direction:column !important;padding:13px 15px !important;gap:8px !important;}
     [data-rsp~="finalrainer"]{flex-direction:column !important;text-align:center !important;gap:12px !important;padding:18px !important;}
     [data-rsp~="finalrainer"] > span{align-items:center !important;}
     [data-rsp~="hdr-tel-txt"]{display:none !important;}
@@ -81,7 +81,7 @@
     button[style*="width: 213px"],button[style*="width:213px"]{width:100% !important;max-width:280px !important;}
     [data-rsp~="qwrap"]{width:100% !important;max-width:100% !important;}
   }
-  .hg-noCaps button, a button, .hg-glow > button {
+  .hg-noCaps button, a button, .hg-glow > button, [data-rsp~="submitwrap"] button, [data-rsp~="qnav"] button {
     text-transform: none !important;
     letter-spacing: 0 !important;
     justify-content: center !important;
@@ -105,7 +105,7 @@
     [data-rsp~="form-proof"]{font-size:12px !important;gap:6px !important;}
     [data-rsp~="header"]{padding:12px 16px !important;gap:12px !important;}
     [data-rsp~="header"] img{height:42px !important;}
-    [data-rsp~="finalvalue"]{grid-template-columns:1fr !important;padding:16px 18px !important;gap:10px !important;}
+    [data-rsp~="finalvalue"]{flex-direction:column !important;padding:13px 15px !important;gap:8px !important;}
     [data-rsp~="finalrainer"]{flex-direction:column !important;text-align:center !important;gap:12px !important;padding:18px !important;}
     [data-rsp~="finalrainer"] > span{align-items:center !important;}
     h1{font-size:36px !important;}
@@ -258,23 +258,11 @@
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;">
-        <h3 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 26px; color: var(--text-heading); letter-spacing: var(--ls-tight); text-align: center">Fast geschafft! <br>Jetzt Aktionsplatz sichern.</h3>
-        <span style="font-size: 15px; color: var(--text-muted); text-align: center">Wohin dürfen wir Ihre persönliche Prämien-Einschätzung schicken?</span>
+        <h3 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 26px; color: var(--text-heading); letter-spacing: var(--ls-tight); text-align: center">Nur noch Ihre Kontaktdaten</h3>
+        <span style="font-size: 15px; color: var(--text-muted); text-align: center">Damit wir Ihnen sagen können, wie viel Ihre alte Küche wert ist.</span>
       </div>
-      <div data-rsp="finalvalue" style="display:grid;grid-template-columns:1fr 1fr;gap:12px 26px;background:var(--blue-50);border:1px solid var(--hg-blue);border-radius:var(--radius-lg);padding:20px 24px;">
-        <span style="grid-column:1 / -1;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:17px;color:var(--text-heading);">Das erhalten Sie mit Ihrem Aktionsplatz</span>
-        <span style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:var(--lh-normal);color:var(--text-body);"><span style="width:20px;height:20px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:1px;">✓</span>Ihre persönliche Prämien-Einschätzung</span>
-        <span style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:var(--lh-normal);color:var(--text-body);"><span style="width:20px;height:20px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:1px;">✓</span>Kostenlose Planung in unserem Studio</span>
-        <span style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:var(--lh-normal);color:var(--text-body);"><span style="width:20px;height:20px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:1px;">✓</span>Preis 2026, auch bei Einbau 2027</span>
-        <span style="display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:var(--lh-normal);color:var(--text-body);"><span style="width:20px;height:20px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:1px;">✓</span>Einer von nur 30 Plätzen</span>
-      </div>
-      <div data-rsp="finalrainer" style="display:flex;align-items:center;gap:18px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:18px 22px;">
-        <img loading="lazy" decoding="async" src="/assets/rainer-hugelmann.webp" alt="Rainer Hugelmann, Inhaber" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 22%;flex-shrink:0;">
-        <span style="display:flex;flex-direction:column;gap:5px;">
-          <span style="font-size:15px;line-height:var(--lh-relaxed);color:var(--text-body);font-style:italic;">„Ihre Angaben landen direkt bei meinem Team in Lahr. Kein Callcenter, keine Weitergabe an Dritte."</span>
-          <span style="font-size:14px;font-weight:var(--fw-bold);color:var(--text-heading);">Rainer Hugelmann · Inhaber</span>
-        </span>
-      </div>
+      
+      
       <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" name="vorname" autoComplete="given-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" name="nachname" autoComplete="family-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
@@ -282,6 +270,11 @@
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="PLZ (optional)" placeholder="z.B. 77933" name="plz" autoComplete="postal-code" inputMode="numeric" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
       </div>
       <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" name="email" autoComplete="email" inputMode="email" autoCapitalize="none" spellCheck="{{ false }}" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
+      <div data-rsp="finalvalue" style="display:flex;flex-wrap:wrap;gap:8px 22px;background:var(--blue-50);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:13px 16px;">
+        <span style="display:flex;align-items:flex-start;gap:7px;font-size:13px;line-height:1.35;color:var(--text-muted);"><span style="width:14px;height:14px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:2px;">✓</span>Persönliche Prämien-Einschätzung</span>
+        <span style="display:flex;align-items:flex-start;gap:7px;font-size:13px;line-height:1.35;color:var(--text-muted);"><span style="width:14px;height:14px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:2px;">✓</span>Kostenlose Planung im Küchenzentrum</span>
+        <span style="display:flex;align-items:flex-start;gap:7px;font-size:13px;line-height:1.35;color:var(--text-muted);"><span style="width:14px;height:14px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:2px;">✓</span>Preis 2026, auch bei Einbau 2027</span>
+      </div>
       <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;line-height:var(--lh-normal);color:var(--text-body);background:var(--grey-50);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:14px 16px;">
         <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="width:20px;height:20px;margin:1px 0 0;accent-color:var(--hg-blue);cursor:pointer;flex-shrink:0;">
         <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
@@ -293,13 +286,21 @@
         <p style="margin:0;text-align:center;font-size:14px;font-weight:var(--fw-semibold);color:var(--text-muted);">Bitte bestätigen Sie zuerst die Einwilligung oben.</p>
       </sc-if>
       <div style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;">
-        <span style="display:inline-block;">
+        <span data-rsp="submitwrap" style="display:inline-block;">
           <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="primary" size="lg" onClick="{{ submitForm }}" disabled="{{ sending }}" hint-size="auto,52px">{{ submitLabel }}</x-import>
         </span>
         <span style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-muted);text-align:center;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
           <span><strong style="color:var(--text-body);">Kostenfrei &amp; unverbindlich.</strong> Ihre Daten werden nicht an Dritte weitergegeben.</span>
         </span>
+      <div data-rsp="finalrainer" style="display:flex;align-items:center;gap:18px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:18px 22px;">
+        <img loading="lazy" decoding="async" src="/assets/rainer-hugelmann.webp" alt="Rainer Hugelmann, Inhaber" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 22%;flex-shrink:0;">
+        <span style="display:flex;flex-direction:column;gap:5px;">
+          <span style="font-size:15px;line-height:var(--lh-relaxed);color:var(--text-body);font-style:italic;">„Ihre Angaben landen direkt bei meinem Team in Lahr. Kein Callcenter, keine Weitergabe an Dritte."</span>
+          <span style="font-size:14px;font-weight:var(--fw-bold);color:var(--text-heading);">Rainer Hugelmann · Inhaber</span>
+        </span>
+      </div>
+      
       </div>
     </sc-if>
   </div>
