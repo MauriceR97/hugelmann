@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Standort Küchen Hugelmann Lahr</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html,body{margin:0;padding:0;height:100%;background:#eef1f4;font-family:'Fira Sans',system-ui,sans-serif;}
+  #map{width:100%;height:100%;}
+  .leaflet-container{background:#eef1f4;font-family:'Fira Sans',system-ui,sans-serif;}
+  .hg-pin{width:46px;height:46px;margin-left:-23px;margin-top:-46px;position:relative;}
+  .hg-pin i{position:absolute;inset:0;background:#E30613;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 6px 18px rgba(2,16,34,0.4);display:block;}
+  .hg-pin b{position:absolute;left:13px;top:11px;width:20px;height:20px;border-radius:50%;background:#fff;display:block;}
+  .hg-pin s{position:absolute;left:19px;top:17px;width:8px;height:8px;border-radius:50%;background:#E30613;display:block;}
+  .hg-dot{width:11px;height:11px;margin-left:-5.5px;margin-top:-5.5px;border-radius:50%;background:#034EA3;border:2px solid #fff;box-shadow:0 2px 6px rgba(2,16,34,0.3);}
+  .hg-label{background:rgba(255,255,255,0.94);border:1px solid rgba(3,78,163,0.16);border-radius:999px;padding:3px 9px;font-size:11.5px;font-weight:700;color:#1c2a3a;white-space:nowrap;box-shadow:0 2px 8px rgba(2,16,34,0.12);}
+  .leaflet-popup-content-wrapper{border-radius:12px;}
+  .leaflet-popup-content{margin:14px 16px;font-size:14px;line-height:1.5;color:#1c2a3a;}
+  .leaflet-popup-content strong{display:block;font-size:15px;margin-bottom:3px;}
+  .leaflet-control-attribution{font-size:10px;background:rgba(255,255,255,0.8);}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  var hugelmann = [48.3455, 7.8483];
+  var map = L.map('map', { center: [48.34, 7.86], zoom: 10, scrollWheelZoom: false, zoomControl: true });
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors', maxZoom: 18
+  }).addTo(map);
+
+  L.circle(hugelmann, {
+    radius: 50000, color: '#034EA3', weight: 1.5, opacity: 0.4,
+    fillColor: '#034EA3', fillOpacity: 0.055, dashArray: '6 6'
+  }).addTo(map);
+
+  var orte = [
+    ['Ettenheim', 48.2556, 7.8117], ['Offenburg', 48.4711, 7.9447],
+    ['Kehl', 48.5719, 7.8153], ['Emmendingen', 48.1206, 7.8497],
+    ['Freiburg', 47.9990, 7.8421], ['Haslach', 48.2789, 8.0917],
+    ['Achern', 48.6297, 8.0797], ['Straßburg', 48.5734, 7.7521]
+  ];
+  orte.forEach(function (o) {
+    L.marker([o[1], o[2]], { icon: L.divIcon({ className: '', html: '<div class="hg-dot"></div>', iconSize: [11, 11] }), interactive: false }).addTo(map);
+    L.marker([o[1], o[2]], {
+      icon: L.divIcon({ className: '', html: '<span class="hg-label">' + o[0] + '</span>', iconSize: [0, 0], iconAnchor: [-9, 7] }), interactive: false
+    }).addTo(map);
+  });
+
+  L.marker(hugelmann, {
+    icon: L.divIcon({ className: '', html: '<div class="hg-pin"><i></i><b></b><s></s></div>', iconSize: [46, 46], iconAnchor: [0, 0] }),
+    zIndexOffset: 1000, title: 'Möbel Hugelmann, Lahr'
+  }).addTo(map).bindPopup('<strong>interliving Möbel Hugelmann</strong>Rainer-Haungs-Straße 1<br>77933 Lahr');
+
+  map.fitBounds(L.latLngBounds([[47.93, 7.42], [48.72, 8.32]]), { padding: [12, 12] });
+</script>
+</body>
+</html>
