@@ -179,6 +179,8 @@ class Component extends DCLogic {
     window.__agnLeadFired = true;
     try { sessionStorage.removeItem('agn_lead_ok'); } catch (e) {}
     const evid = window.REH_TRACK ? window.REH_TRACK.leadEventId() : '';
+    // Google Ads Conversion (v6-Lead-Küche-Hugelmann); transaction_id dedupliziert Mehrfachzählung
+    try { if (typeof window.gtag === 'function') window.gtag('event', 'conversion', { send_to: 'AW-16834542068/tXNcCIX2muMcEPTzqts-', transaction_id: evid || undefined }); } catch (e) {}
     const fire = () => {
       if (typeof window.fbq !== 'function') return false;
       window.fbq('track', 'Lead', { content_name: 'Alt gegen Neu' }, { eventID: evid });
