@@ -55,7 +55,7 @@
   <script src="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/_ds_bundle.js"></script>
   <script src="/image-slot.js?v=4"></script>
   <style>
-    body { margin: 0; background: var(--grey-50); font-family: var(--font-sans); color: var(--text-body); }
+    body { margin: 0; background: linear-gradient(165deg,#eef3f9 0%,#e6eef7 60%,#e1eaf4 100%) fixed; font-family: var(--font-sans); color: var(--text-body); }
     a { color: var(--text-link); }
     a:hover { color: var(--text-link-hover); }
   </style>
@@ -125,7 +125,7 @@
     [data-rsp~="snav-l"]{left:4px !important;}
     [data-rsp~="snav-r"]{right:4px !important;}
   }
-  .hg-glow { box-shadow: 0 0 18px 4px rgba(227,6,19,0.30); border-radius: 999px; }
+  .hg-glow { box-shadow: 0 0 18px 4px rgba(3,78,163,0.30); border-radius: 999px; }
   </style>
 </helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#034EA3"></rect><rect x="28" y="30" width="44" height="8" rx="4" fill="#fff"></rect><rect x="28" y="46" width="44" height="8" rx="4" fill="#fff" opacity="0.7"></rect><rect x="28" y="62" width="44" height="8" rx="4" fill="#E30613"></rect></svg></template>
@@ -163,7 +163,7 @@
             <button onClick="{{ opt.pick }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;text-align:left;font-family:var(--font-sans);font-size:16px;font-weight:var(--fw-semibold);color:{{ opt.labelColor }};background:var(--hg-white);border:2px solid {{ opt.border }};border-radius:var(--radius-md);padding:16px 20px;cursor:pointer;box-shadow:{{ opt.shadow }};transition:transform 150ms cubic-bezier(0.23,1,0.32,1),box-shadow 150ms cubic-bezier(0.4,0,0.2,1),background 150ms,border-color 150ms,color 150ms;" style-hover="transform:translateY(-1px);box-shadow:var(--shadow-md);">
               <span>{{ opt.label }}</span>
               <sc-if value="{{ opt.showCheck }}" hint-placeholder-val="{{ false }}">
-                <span style="width:24px;height:24px;border-radius:50%;background:var(--hg-red);display:flex;align-items:center;justify-content:center;flex-shrink:0;pointer-events:none;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+                <span style="width:24px;height:24px;border-radius:50%;background:var(--hg-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;pointer-events:none;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
               </sc-if>
               <sc-if value="{{ opt.noCheck }}" hint-placeholder-val="{{ false }}">
                 <span style="color:var(--hg-blue);font-weight:var(--fw-bold);font-size:18px;">›</span>
@@ -177,7 +177,7 @@
         <sc-for list="{{ qOptions }}" as="opt" hint-placeholder-count="0">
           <button onClick="{{ opt.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;width:100%;aspect-ratio:1/1;overflow:hidden;text-align:center;font-family:var(--font-sans);font-size:15px;font-weight:var(--fw-bold);color:{{ opt.labelColor }};background:var(--hg-white);border:2px solid {{ opt.border }};border-radius:var(--radius-lg);padding:0;cursor:pointer;box-shadow:{{ opt.shadow }};transition:transform 150ms cubic-bezier(0.23,1,0.32,1),box-shadow 150ms cubic-bezier(0.4,0,0.2,1),background 150ms,border-color 150ms,color 150ms;" style-hover="transform:translateY(-2px);box-shadow:var(--shadow-md);">
             <sc-if value="{{ opt.showCheck }}" hint-placeholder-val="{{ false }}">
-              <span style="position:absolute;top:10px;right:10px;z-index:2;width:28px;height:28px;border-radius:50%;background:var(--hg-red);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);pointer-events:none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+              <span style="position:absolute;top:10px;right:10px;z-index:2;width:28px;height:28px;border-radius:50%;background:var(--hg-blue);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);pointer-events:none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
             </sc-if>
             <sc-if value="{{ opt.hasImgSrc }}" hint-placeholder-val="{{ false }}">
               <span style="display:block;flex:1;min-height:0;pointer-events:none;">{{ opt.img }}</span>
@@ -203,7 +203,7 @@
           <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:var(--hg-white);border:1px solid var(--border-default);border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:17px;font-weight:var(--fw-bold);color:var(--text-heading);box-shadow:var(--shadow-xs);transition:transform 150ms cubic-bezier(0.23,1,0.32,1),box-shadow 150ms cubic-bezier(0.4,0,0.2,1),background 150ms,border-color 150ms,color 150ms;" style-hover="border-color:var(--hg-blue);color:var(--hg-blue);">←&nbsp;Zurück</button>
         </sc-if>
         <sc-if value="{{ canForward }}" hint-placeholder-val="{{ false }}">
-          <button onClick="{{ goForward }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-red);border:none;border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:19px;font-weight:var(--fw-bold);color:#fff;box-shadow:0 0 20px 4px rgba(227,6,19,0.28);transition:transform 150ms cubic-bezier(0.23,1,0.32,1),box-shadow 150ms cubic-bezier(0.4,0,0.2,1),background 150ms,border-color 150ms,color 150ms;" style-hover="box-shadow:0 0 26px 7px rgba(227,6,19,0.38);">Weiter&nbsp;→</button>
+          <button onClick="{{ goForward }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-blue);border:none;border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:19px;font-weight:var(--fw-bold);color:#fff;box-shadow:0 0 20px 4px rgba(3,78,163,0.28);transition:transform 150ms cubic-bezier(0.23,1,0.32,1),box-shadow 150ms cubic-bezier(0.4,0,0.2,1),background 150ms,border-color 150ms,color 150ms;" style-hover="box-shadow:0 0 26px 7px rgba(3,78,163,0.38);">Weiter&nbsp;→</button>
         </sc-if>
       </div>
       <a href="/alt-gegen-neu/" style="align-self:center;font-size:14px;font-weight:var(--fw-semibold);">‹ Zurück zur Aktionsseite</a>
@@ -228,8 +228,8 @@
         <textarea placeholder="Besonderheiten (optional)" value="{{ besonderheiten }}" onChange="{{ onBesonderheiten }}" rows="4" style="width:100%;box-sizing:border-box;font-family:var(--font-sans);font-size:17px;font-weight:500;color:var(--text-heading);background:var(--hg-white);border:1px solid var(--border-default);border-radius:14px;padding:18px 20px;resize:vertical;"></textarea>
         <div style="display:flex;flex-direction:column;gap:10px;">
           <strong style="font-size:16px;color:var(--text-heading);">Foto Ihrer aktuellen Küche (optional)</strong>
-          <label onDrop="{{ onFotoDrop }}" onDragOver="{{ onFotoDragOver }}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px dashed var(--border-default);border-radius:14px;padding:34px 20px;cursor:pointer;background:var(--hg-white);transition:transform 150ms cubic-bezier(0.23,1,0.32,1),box-shadow 150ms cubic-bezier(0.4,0,0.2,1),background 150ms,border-color 150ms,color 150ms;" style-hover="border-color:var(--hg-red);background:var(--grey-50);">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--hg-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"></path><path d="M7 9l5-5 5 5"></path><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path></svg>
+          <label onDrop="{{ onFotoDrop }}" onDragOver="{{ onFotoDragOver }}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px dashed var(--border-default);border-radius:14px;padding:34px 20px;cursor:pointer;background:var(--hg-white);transition:transform 150ms cubic-bezier(0.23,1,0.32,1),box-shadow 150ms cubic-bezier(0.4,0,0.2,1),background 150ms,border-color 150ms,color 150ms;" style-hover="border-color:var(--hg-blue);background:var(--grey-50);">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"></path><path d="M7 9l5-5 5 5"></path><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path></svg>
             <span style="font-size:17px;font-weight:var(--fw-bold);color:var(--text-heading);text-align:center;">{{ fotoLabel }}</span>
             <span style="font-size:15px;color:var(--text-muted);text-align:center;">JPG oder PNG · hilft uns bei der Prämien-Einschätzung</span>
             <input type="file" accept="image/*" onChange="{{ onFoto }}" style="display:none;">
@@ -239,11 +239,11 @@
           </sc-if>
         </div>
         <sc-if value="{{ errZustand }}" hint-placeholder-val="{{ false }}">
-          <span style="font-size:15px;color:var(--hg-red);font-weight:var(--fw-semibold);text-align:center;">Bitte füllen Sie die drei Auswahlfelder aus.</span>
+          <span style="font-size:15px;color:var(--hg-blue);font-weight:var(--fw-semibold);text-align:center;">Bitte füllen Sie die drei Auswahlfelder aus.</span>
         </sc-if>
         <div data-rsp="zustand-nav" style="display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:stretch;margin-top:4px;">
           <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:var(--hg-white);border:1px solid var(--border-default);border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:17px;font-weight:var(--fw-bold);color:var(--text-heading);box-shadow:var(--shadow-xs);transition:transform 150ms cubic-bezier(0.23,1,0.32,1),box-shadow 150ms cubic-bezier(0.4,0,0.2,1),background 150ms,border-color 150ms,color 150ms;" style-hover="border-color:var(--hg-blue);color:var(--hg-blue);">←&nbsp;Zurück</button>
-          <button onClick="{{ zustandNext }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-red);border:none;border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:19px;font-weight:var(--fw-bold);color:#fff;box-shadow:0 0 20px 4px rgba(227,6,19,0.28);transition:transform 150ms cubic-bezier(0.23,1,0.32,1),box-shadow 150ms cubic-bezier(0.4,0,0.2,1),background 150ms,border-color 150ms,color 150ms;" style-hover="box-shadow:0 0 26px 7px rgba(227,6,19,0.38);">Weiter&nbsp;→</button>
+          <button onClick="{{ zustandNext }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-blue);border:none;border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:19px;font-weight:var(--fw-bold);color:#fff;box-shadow:0 0 20px 4px rgba(3,78,163,0.28);transition:transform 150ms cubic-bezier(0.23,1,0.32,1),box-shadow 150ms cubic-bezier(0.4,0,0.2,1),background 150ms,border-color 150ms,color 150ms;" style-hover="box-shadow:0 0 26px 7px rgba(3,78,163,0.38);">Weiter&nbsp;→</button>
         </div>
       </div>
       <a href="/alt-gegen-neu/" style="align-self:center;font-size:14px;font-weight:var(--fw-semibold);">‹ Zurück zur Aktionsseite</a>
@@ -281,7 +281,7 @@
         <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
       </label>
       <sc-if value="{{ errConsent }}" hint-placeholder-val="{{ false }}">
-        <p style="margin:-14px 0 0;font-size:13px;color:var(--hg-red);font-weight:var(--fw-semibold);">Bitte bestätigen Sie die Einwilligung, damit wir Sie anrufen dürfen.</p>
+        <p style="margin:-14px 0 0;font-size:13px;color:var(--hg-blue);font-weight:var(--fw-semibold);">Bitte bestätigen Sie die Einwilligung, damit wir Sie anrufen dürfen.</p>
       </sc-if>
       <sc-if value="{{ consentMissing }}" hint-placeholder-val="{{ true }}">
         <p style="margin:0;text-align:center;font-size:14px;font-weight:var(--fw-semibold);color:var(--text-muted);">Bitte bestätigen Sie zuerst die Einwilligung oben.</p>
@@ -578,9 +578,9 @@ class Component extends DCLogic {
         slotId: q.imgs ? 'q-' + q.imgs + '-' + label.toLowerCase().replace(/[^a-z]+/g, '-') : '',
         imgPh: 'Foto: ' + label,
         pick: () => this.pick(i),
-        labelColor: selected === i ? 'var(--hg-red)' : 'var(--text-heading)',
-        border: selected === i ? 'var(--hg-red)' : 'var(--border-subtle)',
-        shadow: selected === i ? '0 0 0 4px rgba(227,6,19,0.12)' : 'var(--shadow-xs)',
+        labelColor: selected === i ? 'var(--hg-blue)' : 'var(--text-heading)',
+        border: selected === i ? 'var(--hg-blue)' : 'var(--border-subtle)',
+        shadow: selected === i ? '0 0 0 4px rgba(3,78,163,0.12)' : 'var(--shadow-xs)',
         showCheck: selected === i,
         noCheck: selected !== i,
       })),
