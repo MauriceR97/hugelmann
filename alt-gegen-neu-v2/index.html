@@ -689,11 +689,23 @@
   @media (min-width: 345px) and (max-width: 465px){
     [data-rsp~="stoerer"]{top:calc(100vw - 150px) !important;}
   }
-  /* Quiz-Teaser (Hero) */
-  [data-rsp~="quiz-teaser"] a{display:inline-block;background:rgba(255,255,255,0.94);color:var(--hg-blue);font-size:15px;font-weight:var(--fw-bold);border-radius:999px;padding:9px 16px;text-decoration:none;transition:background 160ms ease-out;}
+  /* Quiz-Teaser (Hero): weiße Karte, funktioniert auf Foto- (Desktop) und hellem Hintergrund (Mobil) */
+  [data-rsp~="quiz-teaser"], [data-rsp~="quiz-teaser"] *{box-sizing:border-box;}
+  [data-rsp~="quiz-teaser"]{width:100%;background:var(--hg-white);border:1px solid rgba(3,78,163,0.10);border-radius:16px;padding:16px 16px 13px;box-shadow:0 18px 44px -18px rgba(6,20,38,0.38), 0 2px 10px rgba(6,20,38,0.08);text-align:left !important;}
+  [data-rsp~="quiz-teaser"] .qt-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  [data-rsp~="quiz-teaser"] .qt-chip{background:var(--hg-red);color:#fff;font-size:11.5px;font-weight:var(--fw-bold);letter-spacing:0.08em;text-transform:uppercase;border-radius:999px;padding:5px 11px;}
+  [data-rsp~="quiz-teaser"] .qt-note{font-size:13px;color:var(--text-muted);font-weight:var(--fw-semibold);}
+  [data-rsp~="quiz-teaser"] .qt-q{display:block;margin-top:10px;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:18px;line-height:1.25;color:var(--hg-blue);text-wrap:balance;}
+  [data-rsp~="quiz-teaser"] .qt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px;}
+  [data-rsp~="quiz-teaser"] a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;background:#f4f8fd;border:1.5px solid rgba(3,78,163,0.22);color:var(--hg-blue);font-size:14.5px;line-height:1.25;font-weight:var(--fw-bold);border-radius:12px;padding:10px 12px;text-decoration:none;text-align:left;transition:background 150ms ease-out,border-color 150ms ease-out,color 150ms ease-out;}
+  [data-rsp~="quiz-teaser"] a::after{content:"→";flex:none;font-weight:var(--fw-bold);color:rgba(3,78,163,0.45);transition:color 150ms ease-out,transform 200ms cubic-bezier(0.23,1,0.32,1);}
   @media (hover: hover) and (pointer: fine){
-    [data-rsp~="quiz-teaser"] a:hover{background:#fff;color:var(--hg-blue);}
+    [data-rsp~="quiz-teaser"] a:hover{background:var(--hg-blue);border-color:var(--hg-blue);color:#fff;}
+    [data-rsp~="quiz-teaser"] a:hover::after{color:#fff;transform:translateX(2px);}
   }
+  [data-rsp~="quiz-teaser"] a:active{background:var(--hg-blue);border-color:var(--hg-blue);color:#fff;}
+  [data-rsp~="quiz-teaser"] a:active::after{color:#fff;}
+  [data-rsp~="quiz-teaser"] .qt-hint{display:block;margin-top:10px;font-size:13px;color:var(--text-muted);}
   /* Press-Feedback: Farbvertiefung statt Scaling (Brandkit) */
   a[href="/alt-gegen-neu-formular-v2/"]:active, [data-rsp~="quiz-teaser"] a:active{filter:brightness(0.88);}
 </style>
@@ -748,16 +760,18 @@
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:var(--fw-bold);color:#fff;"><svg width="17" height="17" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#ffcf4d;letter-spacing:1px;">★★★★</span>{{ googleRatingLabel }} · {{ googleReviews }} Bewertungen</span>
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:var(--fw-bold);color:#fff;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"></path></svg>Seit über 70 Jahren in Lahr</span>
         </div>
-        <div data-rsp="quiz-teaser" style="display:flex;flex-direction:column;gap:10px;margin-top:16px;width:100%;">
-          <span style="font-size:15px;font-weight:var(--fw-bold);color:#fff;">Frage 1 von 7: Welche Küchenform wünschen Sie sich?</span>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <div data-rsp="quiz-teaser" style="margin-top:16px;">
+          <span class="qt-top"><span class="qt-chip">Frage 1 von 7</span><span class="qt-note">2 Minuten · kostenlos &amp; unverbindlich</span></span>
+          <strong class="qt-q">Welche Küchenform wünschen Sie sich?</strong>
+          <span class="qt-grid">
             <a href="/alt-gegen-neu-formular-v2/" data-teaser-kf="0">Einzeilige Küchenzeile</a>
             <a href="/alt-gegen-neu-formular-v2/" data-teaser-kf="1">2-zeilige Küchenzeile</a>
             <a href="/alt-gegen-neu-formular-v2/" data-teaser-kf="2">L-Form</a>
             <a href="/alt-gegen-neu-formular-v2/" data-teaser-kf="3">U-Form</a>
             <a href="/alt-gegen-neu-formular-v2/" data-teaser-kf="4">Küche mit Inselblock</a>
             <a href="/alt-gegen-neu-formular-v2/" data-teaser-kf="5">Weiß ich noch nicht</a>
-          </div>
+          </span>
+          <span class="qt-hint">Antwort antippen – Sie starten direkt bei Frage 2.</span>
         </div>
         
       <div data-rsp="mobonly heroVid" style="display:none;flex-direction:column;gap:0;width:100%;margin-top:22px;">
