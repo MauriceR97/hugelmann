@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="/support.js"></script>
+<script src="/support.js?v=4"></script>
 </head>
 <body>
 <x-dc>
@@ -29,7 +29,7 @@
   <meta name="twitter:description" content="In 2 Minuten Ihren Aktionsplatz sichern: ein paar kurze Fragen, danach meldet sich Ihr persönlicher Küchenberater. Kostenlos und unverbindlich.">
   <meta name="twitter:image" content="https://kueche-hugelmann.de/assets/social-preview.png">
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="814c3e68-4376-41fa-aac8-fcf731b7dfed"  type="text/javascript"></script>
-  <script src="/tracking.js"></script>
+  <script src="/tracking.js?v=4"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NDQ2F4B21N"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -52,7 +52,7 @@
   <link rel="stylesheet" href="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/tokens/base.css">
   <link rel="stylesheet" href="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/styles.css">
   <script src="/_ds/hugelmann-design-system-eafd78ad-d5a7-4f79-b242-bde1cf61e49e/_ds_bundle.js"></script>
-  <script src="/image-slot.js"></script>
+  <script src="/image-slot.js?v=4"></script>
   <style>
     body { margin: 0; background: var(--grey-50); font-family: var(--font-sans); color: var(--text-body); }
     a { color: var(--text-link); }
@@ -311,7 +311,7 @@
   </div>
 
 </main><footer style="background:var(--grey-700);color:rgba(255,255,255,0.7);text-align:center;padding:20px 32px;font-size:13px;">
-  interliving – Möbel Hugelmann GmbH · Rainer-Haungs-Straße 1, 77933 Lahr
+  interliving – Möbel Hugelmann GmbH · Rainer-Haungs-Straße 1, 77933 Lahr · <a href="https://www.hugelmann.de/impressum" style="color:rgba(255,255,255,0.7);">Impressum</a> · <a href="https://www.hugelmann.de/datenschutz" style="color:rgba(255,255,255,0.7);">Datenschutz</a>
 </footer>
 </div>
 </x-dc>
@@ -438,6 +438,7 @@ class Component extends DCLogic {
       telefon: f.tel.trim(),
       plz: f.plz.trim(),
       aktion: 'Alt gegen Neu',
+      lp_version: (function () { try { return localStorage.getItem('hg_lp_version') || ''; } catch (e) { return ''; } })(),
       kuechenform: answer(0),
       kuechenstil: answer(1),
       farbstil: answer(2),
