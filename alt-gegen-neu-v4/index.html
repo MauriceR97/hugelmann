@@ -86,33 +86,37 @@ p{margin:0;text-wrap:pretty;}
 .hdr .hdr-cta{display:inline-flex;background:var(--rot);color:#fff;font-weight:800;font-size:14.5px;padding:11px 18px;border-radius:11px;text-decoration:none;}
 @media (max-width:640px){ .hdr .hdr-cta{display:none;} }
 
-/* Aktionslogo-Lockup */
-.aktlogo{text-align:center;padding:26px 16px 4px;}
-.aktlogo .row{display:inline-flex;align-items:center;gap:7px;font-weight:900;font-size:clamp(24px,3.4vw,32px);letter-spacing:0.01em;}
-.aktlogo .b1{background:var(--navy);color:#fff;padding:3px 10px;}
-.aktlogo .mid{color:var(--navy);}
-.aktlogo .b2{background:var(--rot);color:#fff;padding:3px 10px;}
-.aktlogo .sub{display:block;font-size:11px;letter-spacing:0.3em;color:var(--muted);font-weight:700;margin-top:6px;text-transform:uppercase;}
+/* Aktionslogo-Lockup (liegt DIREKT auf dem Hero-Bild) */
+.aktlogo{text-align:center;padding:26px 16px 0;position:relative;z-index:5;}
+.aktlogo .row{display:inline-flex;align-items:center;gap:7px;font-weight:900;font-size:clamp(26px,3.8vw,38px);letter-spacing:0.01em;}
+.aktlogo .b1{background:var(--navy);color:#fff;padding:3px 11px;box-shadow:0 6px 18px rgba(16,29,51,0.25);}
+.aktlogo .mid{color:var(--navy);text-shadow:0 1px 10px rgba(255,255,255,0.8);}
+.aktlogo .b2{background:var(--rot);color:#fff;padding:3px 11px;box-shadow:0 6px 18px rgba(227,6,19,0.3);}
+.aktlogo .sub{display:block;font-size:11.5px;letter-spacing:0.3em;color:#33405a;font-weight:800;margin-top:8px;text-transform:uppercase;text-shadow:0 1px 8px rgba(255,255,255,0.9);}
 
-/* Hero */
-.hero{max-width:1060px;margin:0 auto;padding:22px 24px 8px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);gap:40px;align-items:center;}
-.hero h1{font-size:clamp(29px,3.9vw,42px);line-height:1.12;}
-.hero h1 .red{color:var(--rot);display:block;}
-.hero .sub{font-size:16.5px;line-height:1.55;color:var(--body);margin-top:14px;max-width:470px;}
-.checks{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:15px;font-weight:700;color:var(--ink);}
-.checks li{display:flex;gap:10px;align-items:flex-start;}
-.checks b{color:var(--gruen);flex:none;}
-.hero-cta{margin-top:22px;max-width:430px;}
+/* Hero: Vollbild-Foto, Lockup oben, Text unten auf Verlauf */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;background:var(--navy);}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 34%;}
+.hero .shade{position:absolute;inset:0;background:radial-gradient(115% 85% at 6% 98%,rgba(16,29,51,0.5) 0%,rgba(16,29,51,0) 58%),linear-gradient(180deg,rgba(16,29,51,0) 34%,rgba(16,29,51,0.4) 62%,rgba(16,29,51,0.88) 100%);}
+.hero .content{position:relative;z-index:4;margin-top:auto;width:100%;max-width:1060px;margin-left:auto;margin-right:auto;padding:0 24px 34px;color:#fff;}
+.hero h1{font-size:clamp(30px,4.4vw,48px);line-height:1.1;color:#fff;text-shadow:0 3px 24px rgba(0,0,0,0.35);}
+.hero h1 .red{color:#ff4a55;display:block;}
+.checks{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:15.5px;font-weight:700;color:#fff;}
+.checks li{display:flex;gap:10px;align-items:flex-start;text-shadow:0 1px 12px rgba(0,0,0,0.4);}
+.checks b{color:#7ee2a0;flex:none;}
+.hero-cta{margin-top:20px;max-width:430px;}
 .hero-cta .btn-rot{width:100%;}
-.telrow{margin-top:14px;border:1.5px solid var(--line);border-radius:12px;text-align:center;padding:12px;font-size:15px;font-weight:700;color:var(--ink);max-width:430px;}
-.telrow a{color:var(--ink);text-decoration:none;}
-.heroimg{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -26px rgba(16,29,51,0.4);}
-.heroimg img{width:100%;aspect-ratio:4/4.4;object-fit:cover;}
-.badge{position:absolute;top:16px;right:16px;width:118px;height:118px;border-radius:50%;background:var(--rot);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(6deg);box-shadow:0 10px 26px rgba(227,6,19,0.4);text-align:center;}
+.hero .micro{color:rgba(255,255,255,0.85);}
+.hero .grow{color:#fff;}
+.badge{position:absolute;z-index:4;top:calc(26px + clamp(70px,10vw,96px));right:clamp(14px,4vw,60px);width:clamp(104px,12vw,132px);height:clamp(104px,12vw,132px);border-radius:50%;background:var(--rot);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(6deg);box-shadow:0 10px 26px rgba(227,6,19,0.4);text-align:center;}
 .badge small{font-size:10.5px;font-weight:700;letter-spacing:0.1em;}
-.badge b{font-size:25px;font-weight:900;}
+.badge b{font-size:clamp(22px,2.2vw,27px);font-weight:900;}
 .badge .t{font-size:9.5px;font-weight:700;letter-spacing:0.05em;}
-@media (max-width:860px){ .hero{grid-template-columns:1fr;gap:24px;} .hero > div:first-child{order:2;} .heroimg{order:1;} .heroimg img{aspect-ratio:4/3.4;} .hero-cta,.telrow{max-width:none;} }
+.subblock{max-width:1060px;margin:26px auto 0;padding:0 24px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr);gap:18px 40px;align-items:center;}
+.subblock .sub{font-size:16.5px;line-height:1.55;color:var(--body);max-width:560px;}
+.telrow{border:1.5px solid var(--line);border-radius:12px;text-align:center;padding:12px;font-size:15px;font-weight:700;color:var(--ink);}
+.telrow a{color:var(--ink);text-decoration:none;}
+@media (max-width:860px){ .hero{min-height:92svh;} .hero .content{padding-bottom:26px;} .hero-cta{max-width:none;} .subblock{grid-template-columns:1fr;} }
 
 /* Kostenlos-Leiste */
 .icons{max-width:1060px;margin:30px auto 0;padding:0 24px;}
@@ -312,34 +316,35 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   </div>
 </header>
 
-<div class="aktlogo rv">
-  <span class="row"><span class="b1">ALT</span><span class="mid">GEGEN</span><span class="b2">NEU</span></span>
-  <span class="sub">Die Küchen-Tauschaktion</span>
-</div>
-
-<!-- Hero -->
+<!-- Hero: Vollbild-Kundenfoto, ALT-GEGEN-NEU-Lockup direkt oben auf dem Bild.
+     Foto: echtes Kundenpaar (von Maurice geliefert 03.09.) als /assets/v4-paar.webp -->
 <div class="hero" id="start">
-  <div>
+  <img class="bg" src="/assets/v4-paar.webp" alt="Ehepaar in seiner neuen dunklen Inselküche" fetchpriority="high">
+  <div class="shade"></div>
+  <div class="aktlogo">
+    <span class="row"><span class="b1">ALT</span><span class="mid">GEGEN</span><span class="b2">NEU</span></span>
+    <span class="sub">Die Küchen-Tauschaktion</span>
+  </div>
+  <div class="badge"><small>BIS ZU</small><b>4.000&nbsp;€</b><span class="t">TAUSCHPRÄMIE*</span></div>
+  <div class="content">
     <h1 class="rv">Ihre neue Traumküche wartet! <span class="red">Und die alte ist noch Geld wert.</span></h1>
-    <p class="sub rv rv-d1">Wir nehmen Ihre alte Küche in Zahlung und schreiben Ihnen bis zu 4.000&nbsp;€ Tauschprämie gut. Abbau, Lieferung und Montage: alles inklusive und kostenfrei.</p>
-    <ul class="checks rv rv-d2">
+    <ul class="checks rv rv-d1">
       <li><b>✓</b>Bis zu 4.000&nbsp;€ Prämie für Ihre alte Küche*</li>
       <li><b>✓</b>Kostenloser Abbau &amp; Mitnahme Ihrer Altküche</li>
       <li><b>✓</b>0&nbsp;% Finanzierung bis 60 Monate¹</li>
     </ul>
-    <div class="hero-cta rv rv-d3">
+    <div class="hero-cta rv rv-d2">
       <a class="btn-rot" href="/alt-gegen-neu-formular/">IN 60 SEKUNDEN PRÄMIE SICHERN</a>
       <span class="micro">kostenlos &amp; unverbindlich</span>
       <div class="grow"><span>G</span><span class="st">★★★★</span> 4,2 / 5 · 534 Bewertungen</div>
     </div>
-    <div class="telrow rv rv-d3">☎&#xFE0E; Oder rufen Sie uns an: <a href="tel:+497821965773"><b>07821 / 965773</b></a></div>
   </div>
-  <div class="heroimg rv rv-d1">
-    <!-- BILD-HINWEIS: hero-paar-wow.webp ist der bisherige Platzhalter.
-         Sobald die Online-Freigabe des echten Kundenpaars vorliegt: gegen /assets/v4-paar.webp tauschen. -->
-    <img src="/assets/hero-paar-wow.webp" alt="Paar freut sich über die neue Küche" fetchpriority="high">
-    <div class="badge"><small>BIS ZU</small><b>4.000&nbsp;€</b><span class="t">TAUSCHPRÄMIE*</span></div>
-  </div>
+</div>
+
+<!-- Sub + Telefon unterm Hero -->
+<div class="subblock rv">
+  <p class="sub">Wir nehmen Ihre alte Küche in Zahlung und schreiben Ihnen bis zu 4.000&nbsp;€ Tauschprämie gut. Abbau, Lieferung und Montage: alles inklusive und kostenfrei.</p>
+  <div class="telrow">☎&#xFE0E; Oder rufen Sie uns an: <a href="tel:+497821965773"><b>07821 / 965773</b></a></div>
 </div>
 
 <!-- Kostenlos-Leiste -->
