@@ -67,7 +67,7 @@
     [data-rsp~="cols3"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important;}
   }
   @media (max-width: 720px){
-    [data-rsp~="progrow"]{justify-content:center !important;}
+    [data-rsp~="progrow"]{justify-content:space-between !important;}
     [data-rsp~="form-proof"]{font-size:12px !important;gap:6px !important;}
     [data-rsp~="header"]{padding:12px 16px !important;gap:12px !important;}
     [data-rsp~="header"] img{height:42px !important;}
@@ -101,7 +101,7 @@
     [data-rsp~="dash"]{display:none !important;}
   }
   @media (max-width: 720px){
-    [data-rsp~="progrow"]{justify-content:center !important;}
+    [data-rsp~="progrow"]{justify-content:space-between !important;}
     [data-rsp~="form-proof"]{font-size:12px !important;gap:6px !important;}
     [data-rsp~="header"]{padding:12px 16px !important;gap:12px !important;}
     [data-rsp~="header"] img{height:42px !important;}
@@ -125,6 +125,79 @@
     [data-rsp~="snav-r"]{right:4px !important;}
   }
   .hg-glow { box-shadow: 0 0 18px 4px rgba(227,6,19,0.30); border-radius: 999px; }
+  /* ===== v4-Theme-Angleichung (Landingpage-Look) ===== */
+  [data-rsp~="progrow"]{justify-content:space-between !important;}
+  .plz-anim .pa-c{stroke-dasharray:145;stroke-dashoffset:145;animation:paCircle 520ms cubic-bezier(0.23,1,0.32,1) forwards;}
+  .plz-anim .pa-p{stroke-dasharray:44;stroke-dashoffset:44;animation:paCheck 380ms cubic-bezier(0.23,1,0.32,1) 380ms forwards;}
+  @keyframes paCircle{to{stroke-dashoffset:0;}}
+  @keyframes paCheck{to{stroke-dashoffset:0;}}
+  @media (prefers-reduced-motion: reduce){ .plz-anim .pa-c,.plz-anim .pa-p{animation:none;stroke-dashoffset:0;} }
+  @media (max-width:560px){ [data-rsp~="gbar"] > div{padding:8px 16px !important;font-size:12px !important;} }
+  /* Zustand-Schritt an v4 angleichen */
+  [data-rsp~="zustand-nav"] button{border-radius:10px !important;font-size:16px !important;font-weight:600 !important;padding:16px 22px !important;box-shadow:none !important;}
+  [data-rsp~="zustand-nav"] button:first-child{background:#fff !important;border:1.5px solid #d8deea !important;color:#101d33 !important;}
+  [data-rsp~="zustand-nav"] button:last-child{background:#e6091a !important;border:0 !important;color:#fff !important;box-shadow:inset 0 1px 0 rgba(255,255,255,0.24),0 2px 0 #a8040e !important;}
+  @media (hover:hover) and (pointer:fine){
+    [data-rsp~="zustand-nav"] button:first-child:hover{border-color:#101d33 !important;}
+    [data-rsp~="zustand-nav"] button:last-child:hover{background:#d80815 !important;}
+  }
+  [data-rsp~="qwrap"] textarea,[data-rsp~="qwrap"] select,[data-rsp~="qwrap"] input{border-radius:10px !important;border-width:1.5px !important;font-size:16px !important;font-weight:500 !important;}
+  [data-rsp~="qwrap"] label[style*="dashed"]{border-radius:10px !important;border-width:1.5px !important;}
+  [data-rsp~="qwrap"] label[style*="dashed"] span{font-weight:500 !important;font-size:15px !important;}
+  [data-rsp~="qwrap"] h2{font-size:26px !important;}
+  [data-rsp~="qwrap"] strong{font-weight:600 !important;font-size:14.5px !important;}
+  /* Weniger Fettung */
+  [data-rsp~="qwrap"] h2,h2,h3{font-weight:700 !important;}
+  [data-rsp~="qwrap"] button span,[data-rsp~="tilelabel"]{font-weight:500 !important;}
+  [data-rsp~="progrow"] span{font-weight:600 !important;}
+  [data-rsp~="qnav"] button{font-weight:600 !important;}
+  .backlink{display:inline-flex;align-items:center;gap:10px;font-size:18px;font-weight:400;color:#2c4a5e;text-decoration:none;line-height:1.2;}
+  .backlink span{font-size:22px;line-height:1;}
+  [data-rsp~="backlink"]{margin-bottom:10px !important;}
+  .backlink:hover{color:#101d33;}
+  img[src*="kuechenformen/"]{object-fit:contain !important;padding:0 !important;box-sizing:border-box;background:#efefef;}
+  [data-rsp~="tilelabel"],[data-rsp~="qwrap"] button span{font-weight:500 !important;}
+  :root{
+    --radius-sm:3px; --radius-md:6px; --radius-lg:10px; --radius-xl:12px; --radius-2xl:14px;
+    --hg-blue:#101d33; --blue-600:#101d33; --blue-700:#0b1524; --blue-800:#0b1524;
+    --blue-100:#e4eaf0; --blue-50:#eef2f9;
+    --text-heading:#101d33; --text-body:#3c4557; --text-muted:#5a6478; --text-link:#101d33; --text-link-hover:#0b1524;
+    --grey-50:#f9fafc; --grey-100:#f4f6f9; --border-subtle:#e3e8f1; --border-default:#d8deea;
+    --surface-card:#ffffff;
+  }
+  body{background:#ffffff;}
+  label,[data-rsp~="qwrap"] label{font-weight:600 !important;}
+  [data-rsp~="consentbox"],[data-rsp~="consentbox"] span{font-weight:400 !important;}
+  label span,label > span:first-child{font-weight:600 !important;}
+  /* Karten flacher, wie in v4 */
+  [data-rsp~="card"]{box-shadow:0 12px 30px -18px rgba(16,29,51,0.25) !important;border:1px solid #e3e8f1 !important;}
+  /* Eyebrows ohne Pill */
+  [data-rsp~="eyebrow"],.hg-eyebrow{background:none !important;border-radius:0 !important;padding:0 !important;letter-spacing:0.18em !important;}
+  /* Primäre Aktionen in Aktions-Rot mit Standkante (wie Hero-CTA) */
+  [data-rsp~="submitwrap"] button,.hg-glow > button{
+    background:#e6091a !important;border-color:#e6091a !important;color:#fff !important;
+    border-radius:10px !important;font-weight:800 !important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.28),0 2px 0 #a8040e,0 16px 30px -14px rgba(227,6,19,0.6) !important;
+    transition:background 140ms ease-out,transform 140ms cubic-bezier(0.23,1,0.32,1),box-shadow 140ms cubic-bezier(0.23,1,0.32,1) !important;
+  }
+  @media (hover:hover) and (pointer:fine){
+    [data-rsp~="submitwrap"] button:hover,.hg-glow > button:hover{
+      background:#d80815 !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.24),0 2px 0 #a8040e,0 10px 20px -14px rgba(16,29,51,0.35) !important;
+    }
+  }
+  [data-rsp~="submitwrap"] button:active,.hg-glow > button:active{transform:translateY(1px);}
+  [data-rsp~="finalnav"] > button:hover{border-color:#101d33 !important;}
+  [data-rsp~="submitwrap"] button,[data-rsp~="submitwrap"] button:disabled{opacity:1 !important;cursor:pointer !important;filter:none !important;}
+  [data-rsp~="submitwrap"] button *{color:#fff !important;}
+  /* Zurück-Button bleibt sekundär */
+  [data-rsp~="qnav"] button:not([style*="--hg-red"]){background:#fff !important;color:#101d33 !important;border:1.5px solid #d8deea !important;border-radius:10px !important;box-shadow:none !important;font-weight:700 !important;}
+  @media (hover:hover) and (pointer:fine){ [data-rsp~="qnav"] button:not([style*="--hg-red"]):hover{border-color:#101d33 !important;background:#fff !important;} }
+  [data-rsp~="qnav"] button[style*="--hg-red"]{background:#e6091a !important;color:#fff !important;border:0 !important;border-radius:10px !important;box-shadow:inset 0 1px 0 rgba(255,255,255,0.24),0 2px 0 #a8040e !important;}
+  @media (hover:hover) and (pointer:fine){ [data-rsp~="qnav"] button[style*="--hg-red"]:hover{background:#d80815 !important;} }
+  .hg-glow{box-shadow:none !important;border-radius:10px !important;}
+  /* Fortschritt in Rot */
+  div[style*="height: 100%"][style*="var(--hg-blue)"]{background:#e6091a !important;}
   </style>
 </helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#034EA3"></rect><rect x="28" y="30" width="44" height="8" rx="4" fill="#fff"></rect><rect x="28" y="46" width="44" height="8" rx="4" fill="#fff" opacity="0.7"></rect><rect x="28" y="62" width="44" height="8" rx="4" fill="#E30613"></rect></svg></template>
@@ -132,10 +205,17 @@
 <header style="background:var(--hg-white);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-xs);">
   <div data-rsp="header" style="max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
     <a href="/alt-gegen-neu/" style="display:block;"><img loading="eager" decoding="async" src="/assets/logo.webp" alt="Küchen Hugelmann – interliving" style="height:52px;display:block;"></a>
-      <span data-rsp="form-proof" style="display:inline-flex;margin-left:auto;align-items:center;gap:7px;font-size:13px;font-weight:var(--fw-bold);color:var(--text-heading);white-space:nowrap;"><svg width="15" height="15" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path></svg><span style="color:#f5a623;letter-spacing:1px;">★★★★</span>4,2 · 534 Bewertungen</span>
+      <a data-rsp="hdr-tel" href="tel:+497821965773" aria-label="Anrufen: 07821 965773" style="margin-left:auto;width:52px;height:52px;border-radius:50%;background:#eef2f9;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none;"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#2c4a5e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
     </div>
   </header>
-  <main style="flex:1;display:flex;flex-direction:column;align-items:center;gap:28px;padding:56px 32px 72px;">
+  <div data-rsp="gbar" style="border-bottom:1px solid var(--border-subtle);background:#fff;">
+    <div style="max-width:1200px;margin:0 auto;padding:9px 32px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:var(--text-muted);">
+      <span class="gstars" aria-label="4,2 von 5 Sternen" style="position:relative;display:inline-block;color:#dfe4ee;letter-spacing:1.5px;line-height:1;font-size:14px;"><i style="font-style:normal;">★★★★★</i><em style="position:absolute;left:0;top:0;width:84%;overflow:hidden;white-space:nowrap;color:#f5a623;font-style:normal;">★★★★★</em></span>
+      <svg viewBox="0 0 48 48" width="15" height="15" aria-hidden="true" style="flex:none;display:block;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+      <span><b style="font-weight:700;color:#101d33;">4,2 von 5</b> bei Google · 547 Bewertungen</span>
+    </div>
+  </div>
+  <main style="flex:1;display:flex;flex-direction:column;align-items:center;gap:22px;padding:22px 32px 72px;">
   <div style="text-align:center;display:flex;flex-direction:column;gap:10px;max-width:660px;">
     
     
@@ -144,11 +224,12 @@
   <div data-rsp="qwrap" style="width: 686px; max-width: 1000px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px">
     <sc-if value="{{ showQuiz }}" hint-placeholder-val="{{ true }}">
       <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;">
-        <div data-rsp="progrow" style="display:flex;justify-content:space-between;align-items:center;">
-          <span style="font-size:14px;font-weight:var(--fw-bold);color:var(--hg-blue);">{{ progressLabel }}</span>
-          
+        <a class="backlink" data-rsp="backlink" href="/alt-gegen-neu/" style="align-self:flex-start;margin-bottom:2px;"><span aria-hidden="true">‹</span>Zurück zur Aktion</a>
+        <div data-rsp="progrow" style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
+          <span style="font-size:15px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;">{{ stepOf }}</span>
+          <span style="font-size:15px;color:var(--text-muted);white-space:nowrap;">{{ stepName }}</span>
         </div>
-        <div style="height:8px;background:var(--grey-200);border-radius:var(--radius-pill);overflow:hidden;">
+        <div style="height:9px;background:#e3e8f1;border-radius:var(--radius-pill);overflow:hidden;margin-top:4px;">
           <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);transition:width 320ms cubic-bezier(0.4,0,0.2,1);width:{{ progressPct }};"></div>
         </div>
       </div>
@@ -207,13 +288,55 @@
       </div>
       <a href="/alt-gegen-neu/" style="align-self:center;font-size:14px;font-weight:var(--fw-semibold);">‹ Zurück zur Aktionsseite</a>
     </sc-if>
+    <sc-if value="{{ showPlz }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;">
+        <a class="backlink" data-rsp="backlink" href="/alt-gegen-neu/" style="align-self:flex-start;margin-bottom:2px;"><span aria-hidden="true">‹</span>Zurück zur Aktion</a>
+        <div data-rsp="progrow" style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
+          <span style="font-size:15px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;">{{ stepOf }}</span>
+          <span style="font-size:15px;color:var(--text-muted);white-space:nowrap;">{{ stepName }}</span>
+        </div>
+        <div style="height:9px;background:#e3e8f1;border-radius:var(--radius-pill);overflow:hidden;margin-top:4px;">
+          <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);transition:width 320ms cubic-bezier(0.4,0,0.2,1);width:{{ progressPct }};"></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;text-align:center;">
+        <h3 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:26px;color:var(--text-heading);letter-spacing:var(--ls-tight);">Liegen Sie im Aktionsgebiet?</h3>
+        <span style="font-size:15px;color:var(--text-muted);">Abbau, Mitnahme und Montage übernehmen wir kostenfrei im Umkreis von 50&nbsp;km um Lahr.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;max-width:420px;margin:0 auto;">
+        <label for="plzstep-input" style="width:100%;display:flex;flex-direction:column;gap:7px;">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);">Ihre Postleitzahl</span>
+          <span style="position:relative;display:block;">
+            <input id="plzstep-input" class="plzfield" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="77933" value="{{ plzValue }}" onChange="{{ onPlzStep }}" onKeyDown="{{ onPlzKey }}" aria-describedby="plzstep-hint" style="width:100%;box-sizing:border-box;border:1.5px solid {{ plzBorder }};border-radius:10px;background:#fff;padding:18px 52px 18px 20px;font-family:var(--font-sans);font-size:26px;font-weight:600;letter-spacing:0.22em;color:#101d33;outline:none;transition:border-color 160ms ease-out,box-shadow 160ms ease-out;">
+            <span aria-hidden="true" style="position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:600;color:var(--text-muted);">{{ plzCount }}</span>
+          </span>
+          <span id="plzstep-hint" style="font-size:13px;color:var(--text-muted);">5-stellige PLZ eingeben, wir prüfen automatisch.</span>
+        </label>
+        <sc-if value="{{ plzOk }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <svg class="plz-anim" width="76" height="76" viewBox="0 0 52 52" aria-hidden="true"><circle class="pa-c" cx="26" cy="26" r="23" fill="none" stroke="#1d9e5f" stroke-width="3"/><path class="pa-p" d="M15 27.5 23 35 38 19" fill="none" stroke="#1d9e5f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:15px;font-weight:600;color:#1d9e5f;">Perfekt, Sie liegen im Aktionsgebiet.</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{ plzBad }}" hint-placeholder-val="{{ false }}">
+          <span style="font-size:14.5px;color:var(--hg-red);text-align:center;">{{ plzMsg }}</span>
+        </sc-if>
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
+          <button onClick="{{ goBack }}" style="display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid #d8deea;border-radius:10px;padding:16px 22px;cursor:pointer;font-family:var(--font-sans);font-size:16px;font-weight:600;color:#101d33;"><span aria-hidden="true">‹</span>Zurück</button>
+          <span data-rsp="submitwrap" style="display:inline-block;">
+            <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="primary" size="lg" onClick="{{ plzCheck }}" hint-size="auto,52px">Weiter</x-import>
+          </span>
+        </div>
+      </div>
+    </sc-if>
     <sc-if value="{{ showZustand }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;">
-        <div style="display:flex;justify-content:space-between;align-items:center;">
-          <span style="font-size:14px;font-weight:var(--fw-bold);color:var(--hg-blue);">Frage 8 von 8</span>
+        <div data-rsp="progrow" style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
+          <span style="font-size:15px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;">{{ stepOf }}</span>
+          <span style="font-size:15px;color:var(--text-muted);white-space:nowrap;">{{ stepName }}</span>
         </div>
-        <div style="height:8px;background:var(--grey-200);border-radius:var(--radius-pill);overflow:hidden;">
-          <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);transition:width 320ms cubic-bezier(0.4,0,0.2,1);width:88%;"></div>
+        <div style="height:9px;background:#e3e8f1;border-radius:var(--radius-pill);overflow:hidden;margin-top:4px;">
+          <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);transition:width 320ms cubic-bezier(0.4,0,0.2,1);width:{{ progressPct }};"></div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;text-align:center;">
@@ -241,7 +364,7 @@
           <span style="font-size:15px;color:var(--hg-red);font-weight:var(--fw-semibold);text-align:center;">Bitte füllen Sie die drei Auswahlfelder aus.</span>
         </sc-if>
         <div data-rsp="zustand-nav" style="display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:stretch;margin-top:4px;">
-          <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:var(--hg-white);border:1px solid var(--border-default);border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:17px;font-weight:var(--fw-bold);color:var(--text-heading);box-shadow:var(--shadow-xs);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="border-color:var(--hg-blue);color:var(--hg-blue);">←&nbsp;Zurück</button>
+          <button onClick="{{ zustandBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:var(--hg-white);border:1px solid var(--border-default);border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:17px;font-weight:var(--fw-bold);color:var(--text-heading);box-shadow:var(--shadow-xs);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="border-color:var(--hg-blue);color:var(--hg-blue);">←&nbsp;Zurück</button>
           <button onClick="{{ zustandNext }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-red);border:none;border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:19px;font-weight:var(--fw-bold);color:#fff;box-shadow:0 0 20px 4px rgba(227,6,19,0.28);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:0 0 26px 7px rgba(227,6,19,0.38);">Weiter&nbsp;→</button>
         </div>
       </div>
@@ -249,17 +372,17 @@
     </sc-if>
     <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;">
-          <span style="font-size:14px;font-weight:var(--fw-bold);color:var(--hg-blue);">Letzter Schritt</span>
-          
+        <div data-rsp="progrow" style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
+          <span style="font-size:15px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;">{{ stepOf }}</span>
+          <span style="font-size:15px;color:var(--text-muted);white-space:nowrap;">{{ stepName }}</span>
         </div>
-        <div style="height:8px;background:var(--grey-200);border-radius:var(--radius-pill);overflow:hidden;">
-          <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);width:100%;"></div>
+        <div style="height:9px;background:#e3e8f1;border-radius:var(--radius-pill);overflow:hidden;margin-top:4px;">
+          <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);transition:width 320ms cubic-bezier(0.4,0,0.2,1);width:{{ progressPct }};"></div>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;">
-        <h3 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 26px; color: var(--text-heading); letter-spacing: var(--ls-tight); text-align: center">Nur noch Ihre Kontaktdaten</h3>
-        <span style="font-size: 15px; color: var(--text-muted); text-align: center">Damit wir Ihnen sagen können, wie viel Ihre alte Küche wert ist.</span>
+        <h3 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 26px; color: var(--text-heading); letter-spacing: var(--ls-tight); text-align: center">Fast fertig: wie erreichen wir Sie?</h3>
+        <span style="font-size: 15px; color: var(--text-muted); text-align: center">Wir melden uns innerhalb von 24 Stunden zur Terminvereinbarung für Ihren Küchenplanungstermin. Wir rufen von unserer Festnetznummer aus an.</span>
       </div>
       
       
@@ -267,15 +390,9 @@
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" name="vorname" autoComplete="given-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" name="nachname" autoComplete="family-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Telefonnummer" type="tel" placeholder="z.B. 07821 123456" name="telefon" autoComplete="tel" inputMode="tel" required="{{ true }}" onChange="{{ onTel }}" error="{{ errTel }}" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="PLZ (optional)" placeholder="z.B. 77933" name="plz" autoComplete="postal-code" inputMode="numeric" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
       </div>
       <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" name="email" autoComplete="email" inputMode="email" autoCapitalize="none" spellCheck="{{ false }}" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
-      <div data-rsp="finalvalue" style="display:flex;flex-wrap:wrap;gap:8px 22px;background:var(--blue-50);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:13px 16px;">
-        <span style="display:flex;align-items:flex-start;gap:7px;font-size:13px;line-height:1.35;color:var(--text-muted);"><span style="width:14px;height:14px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:2px;">✓</span>Persönliche Prämien-Einschätzung</span>
-        <span style="display:flex;align-items:flex-start;gap:7px;font-size:13px;line-height:1.35;color:var(--text-muted);"><span style="width:14px;height:14px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:2px;">✓</span>Kostenlose Planung im Küchenzentrum</span>
-        <span style="display:flex;align-items:flex-start;gap:7px;font-size:13px;line-height:1.35;color:var(--text-muted);"><span style="width:14px;height:14px;border-radius:50%;background:var(--hg-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:var(--fw-bold);flex-shrink:0;margin-top:2px;">✓</span>Preis 2026, auch bei Einbau 2027</span>
-      </div>
-      <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;line-height:var(--lh-normal);color:var(--text-body);background:var(--grey-50);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:14px 16px;">
+      <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13.5px;font-weight:400;line-height:1.5;color:var(--text-muted);background:none;border:0;padding:0;max-width:560px;margin:0 auto;">
         <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="width:20px;height:20px;margin:1px 0 0;accent-color:var(--hg-blue);cursor:pointer;flex-shrink:0;">
         <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
       </label>
@@ -283,49 +400,36 @@
         <p style="margin:-14px 0 0;font-size:13px;color:var(--hg-red);font-weight:var(--fw-semibold);">Bitte bestätigen Sie die Einwilligung, damit wir Sie anrufen dürfen.</p>
       </sc-if>
       <sc-if value="{{ consentMissing }}" hint-placeholder-val="{{ true }}">
-        <p style="margin:0;text-align:center;font-size:14px;font-weight:var(--fw-semibold);color:var(--text-muted);">Bitte bestätigen Sie zuerst die Einwilligung oben.</p>
       </sc-if>
       <div style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;">
+        <div data-rsp="finalnav" style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
+        <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1.5px solid #d8deea;border-radius:10px;padding:16px 22px;cursor:pointer;font-family:var(--font-sans);font-size:16px;font-weight:600;color:#101d33;"><span aria-hidden="true">‹</span>Zurück</button>
         <span data-rsp="submitwrap" style="display:inline-block;">
           <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="primary" size="lg" onClick="{{ submitForm }}" disabled="{{ sending }}" hint-size="auto,52px">{{ submitLabel }}</x-import>
         </span>
-        <span style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-muted);text-align:center;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--hg-blue)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          <span><strong style="color:var(--text-body);">Kostenfrei &amp; unverbindlich.</strong> Ihre Daten werden nicht an Dritte weitergegeben.</span>
-        </span>
-      <div data-rsp="finalrainer" style="display:flex;align-items:center;gap:18px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:18px 22px;">
-        <img loading="lazy" decoding="async" src="/assets/rainer-hugelmann.webp" alt="Rainer Hugelmann, Inhaber" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 22%;flex-shrink:0;">
-        <span style="display:flex;flex-direction:column;gap:5px;">
-          <span style="font-size:15px;line-height:var(--lh-relaxed);color:var(--text-body);font-style:italic;">„Ihre Angaben landen direkt bei meinem Team in Lahr. Kein Callcenter, keine Weitergabe an Dritte."</span>
-          <span style="font-size:14px;font-weight:var(--fw-bold);color:var(--text-heading);">Rainer Hugelmann · Inhaber</span>
-        </span>
-      </div>
+        </div>
       
       </div>
     </sc-if>
   </div>
-  <div style="display:flex;gap:28px;align-items:center;font-size:14px;color:var(--text-muted);flex-wrap:wrap;justify-content:center;">
-    <span style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>100&nbsp;% kostenlos</span>
-    <span style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Unverbindlich</span>
-    <span style="display:flex;align-items:center;gap:8px;"><span style="color:var(--success);font-weight:var(--fw-bold);">✓</span>Familienbetrieb seit über 70 Jahren</span>
-  </div>
 
 </main><footer style="background:var(--grey-700);color:rgba(255,255,255,0.7);text-align:center;padding:20px 32px;font-size:13px;">
-  interliving – Möbel Hugelmann GmbH · Rainer-Haungs-Straße 1, 77933 Lahr · <a href="https://www.hugelmann.de/impressum" style="color:rgba(255,255,255,0.7);">Impressum</a> · <a href="https://www.hugelmann.de/datenschutz" style="color:rgba(255,255,255,0.7);">Datenschutz</a>
+  interliving – Möbel Hugelmann GmbH · Rainer-Haungs-Straße 1, 77933 Lahr
 </footer>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;spotsLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:9,&quot;min&quot;:1,&quot;max&quot;:30,&quot;section&quot;:&quot;Aktion&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;dankeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;/alt-gegen-neu-danke/&quot;,&quot;section&quot;:&quot;Funnel&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { step: 1, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
+  state = { step: 1, plzStatus: null, inZustand: false, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
+  shorts = ['Zeitpunkt','Alte Küche','Küchenform','Küchenstil','Farbstil','Budget','Finanzierung'];
   questions = [
-    { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Weiß ich noch nicht'], files: ['/assets/kuechenformen/einzeilig.webp', '/assets/kuechenformen/zweizeilig.webp', '/assets/kuechenformen/l-form.webp', '/assets/kuechenformen/u-form.webp', '/assets/kuechenformen/insel.webp', null], imgs: 'form', qmarkLast: true },
+    { title: 'Wann benötigen Sie die neue Küche?', sub: 'Ganz unverbindlich - Sie bestimmen das Tempo.', options: ['Schnellstmöglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später'] },
+    { title: 'Möchten Sie Ihre alte Küche in Zahlung geben?', sub: 'Kostenfreie Demontage, Abholung und eine Tauschprämie für Ihre alte Küche.', options: ['Ja', 'Nein', 'Ich besitze keine alte Küche'] },
+    { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Weiß ich noch nicht'], files: ['/assets/kuechenformen/einzeilig.svg', '/assets/kuechenformen/zweizeilig.svg', '/assets/kuechenformen/l-form.svg', '/assets/kuechenformen/u-form.svg', '/assets/kuechenformen/insel.svg', null], imgs: 'form', qmarkLast: true },
     { title: 'Welchen Küchenstil wünschen Sie sich?', sub: 'Wählen Sie den Stil, der Ihnen am besten gefällt.', options: ['Hochglanz', 'Matt', 'Massivholz', 'Landhaus', 'Weiß ich noch nicht'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
     { title: 'Welchen Farbstil bevorzugen Sie?', sub: 'Hell, dunkel oder farbig – was passt zu Ihrem Zuhause?', options: ['Hell', 'Dunkel', 'Farbig', 'Weiß ich noch nicht'], files: ['/assets/farbstile/hell.webp', '/assets/farbstile/dunkel.webp', '/assets/farbstile/farbig.webp', null], imgs: 'farbe', qmarkLast: true },
-    { title: 'Wünschen Sie eine Finanzierung?', sub: 'Aktuell mit 0% Zinsen möglich.\n', options: ['Ja, bis zu 60 Monate', 'Ja, mehr als 60 Monate', 'Weiß ich noch nicht', 'Nein'] },
-    { title: 'Wann benötigen Sie die neue Küche?', sub: 'Ganz unverbindlich - Sie bestimmen das Tempo.', options: ['Schnellstmöglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später'] },
     { title: 'Welches Budget planen Sie für Ihre neue Küche?', sub: 'Die Prämie und die 0%-Finanzierung gelten für jedes Budget.', options: ['Bis 10.000 €', '10.000 bis 15.000 €', '15.000 bis 25.000 €', 'Über 25.000 €'] },
-    { title: 'Möchten Sie Ihre alte Küche in Zahlung geben?', sub: 'Kostenfreie Demontage, Abholung und eine Tauschprämie für Ihre alte Küche.', options: ['Ja', 'Nein', 'Ich besitze keine alte Küche'] },
+    { title: 'Wünschen Sie eine Finanzierung?', sub: 'Aktuell mit 0% Zinsen möglich.\n', options: ['Ja, bis zu 60 Monate', 'Ja, mehr als 60 Monate', 'Weiß ich noch nicht', 'Nein'] },
   ];
   formIcon(kind) {
     const e = React.createElement;
@@ -342,14 +446,10 @@ class Component extends DCLogic {
   ga(name, params) {
     try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) {}
   }
-  fb(name, params) {
-    // Meta Custom Event (sichtbar im Events Manager); fbq-Stub queued auch vor Skript-Load
-    try { if (typeof window.fbq === 'function') window.fbq('trackCustom', name, params || {}); } catch (e) {}
-  }
   stepName(step) {
     const q = this.questions[step - 1];
     if (q) return q.title;
-    if (step === 8 && this.state.answers[7] === 0) return 'Zustand der alten Küche';
+    if (step === 9 && this.state.answers[2] === 0) return 'Zustand der alten Küche';
     return 'Kontaktdaten';
   }
   applyAutofill() {
@@ -375,14 +475,28 @@ class Component extends DCLogic {
   componentDidUpdate() {
     if (this.state.step >= 8) setTimeout(() => this.applyAutofill(), 60);
   }
+  plzEval() {
+    const p = String((this.state.form && this.state.form.plz) || '');
+    if (!/^\d{5}$/.test(p)) { this.setState({ plzStatus: 'bad' }); return; }
+    const n = parseInt(p, 10);
+    const ok = p.indexOf('77') === 0 || (n >= 76437 && n <= 76599) || (n >= 79098 && n <= 79429) || (n >= 78050 && n <= 78199) || (n >= 78700 && n <= 78737);
+    if (!ok) { this.setState({ plzStatus: 'bad' }); this.ga('plz_check_out', { plz: p }); return; }
+    this.setState({ plzStatus: 'ok' });
+    this.ga('plz_check_ok', { plz: p });
+    setTimeout(() => this.setState({ step: 9 }, () => this.trackStep(9)), 1400);
+  }
   componentDidMount() {
     setTimeout(() => this.applyAutofill(), 300);
+    try {
+      var qp = new URLSearchParams(location.search).get('plz');
+      var saved = qp || localStorage.getItem('agn_plz');
+      if (saved && /^\d{5}$/.test(saved)) this.setState(s => ({ form: { ...s.form, plz: saved } }), () => { if (this.state.step === 8) this.plzEval(); });
+    } catch (e) {}
     this.ga('funnel_start', { funnel: 'alt_gegen_neu' });
     this.trackStep(1);
   }
   trackStep(step) {
     this.ga('funnel_step', { funnel: 'alt_gegen_neu', step_number: step, step_name: this.stepName(step) });
-    this.fb('AGN_Quiz_Schritt_' + step, { funnel: 'alt_gegen_neu', step_number: step, step_name: this.stepName(step) });
   }
   pick(idx) {
     const step = this.state.step;
@@ -393,7 +507,11 @@ class Component extends DCLogic {
       step_name: this.stepName(step),
       answer: q ? (q.options[idx] || String(idx)) : String(idx)
     });
-    this.setState(s => ({ answers: { ...s.answers, [step]: idx }, step: step + 1 }), () => this.trackStep(this.state.step));
+    if (step === 2 && idx === 0) {
+      this.setState(s => ({ answers: { ...s.answers, [step]: idx }, inZustand: true }), () => this.trackStep(2.5));
+      return;
+    }
+    this.setState(s => ({ answers: { ...s.answers, [step]: idx }, inZustand: false, step: step + 1 }), () => this.trackStep(this.state.step));
   }
   submit() {
     const f = this.state.form, errors = {};
@@ -407,7 +525,7 @@ class Component extends DCLogic {
       this.ga('form_error', { funnel: 'alt_gegen_neu', fields: Object.keys(errors).join(',') });
       this.setState({ errors }); return;
     }
-    this.ga('generate_lead', { funnel: 'alt_gegen_neu', budget: this.questions[5].options[this.state.answers[6]] || '', timing: this.questions[4].options[this.state.answers[5]] || '' });
+    this.ga('generate_lead', { funnel: 'alt_gegen_neu', budget: this.questions[5].options[this.state.answers[6]] || '', timing: this.questions[0].options[this.state.answers[1]] || '' });
     try { sessionStorage.setItem('agn_lead_name', f.vorname.trim()); } catch (e) {}
     try { sessionStorage.setItem('agn_lead_ok', '1'); } catch (e) {}
     if (this._sending) return;
@@ -438,7 +556,6 @@ class Component extends DCLogic {
       telefon: f.tel.trim(),
       plz: f.plz.trim(),
       aktion: 'Alt gegen Neu',
-      lp_version: (function () { try { return localStorage.getItem('hg_lp_version') || ''; } catch (e) { return ''; } })(),
       kuechenform: answer(0),
       kuechenstil: answer(1),
       farbstil: answer(2),
@@ -490,7 +607,7 @@ class Component extends DCLogic {
       this.setState(st => ({ errors: { ...st.errors, zustand: true } }));
       return;
     }
-    this.setState({ step: 9 }, () => this.trackStep(9));
+    this.setState({ inZustand: false, step: 3 }, () => this.trackStep(3));
   }
   selStyle(v) {
     return {
@@ -511,16 +628,30 @@ class Component extends DCLogic {
   }
   renderVals() {
     const { step, answers, errors } = this.state;
-    const showQuiz = step <= 7;
+    const inZustand = !!this.state.inZustand;
+    const showQuiz = step <= 7 && !inZustand;
     const q = showQuiz ? this.questions[step - 1] : this.questions[0];
     const selected = answers[step];
-    const needsZustand = answers[7] === 0;
+    const needsZustand = answers[2] === 0;
     const foto = this.state.foto;
     return {
       spotsLeft: this.props.spotsLeft ?? 9,
       showQuiz,
-      showZustand: step === 8 && needsZustand,
-      showForm: step === 9 || (step === 8 && !needsZustand),
+      showPlz: step === 8 && !inZustand,
+      showZustand: inZustand,
+      showForm: step === 9 && !inZustand,
+      plzValue: this.state.form.plz || '',
+      plzOk: this.state.plzStatus === 'ok',
+      plzBad: this.state.plzStatus === 'bad',
+      plzMsg: 'Ihre PLZ liegt außerhalb unseres Aktionsgebiets. Rufen Sie uns gern an: 07821 / 965773.',
+      plzCount: (this.state.form.plz || '').length + '/5',
+      plzBorder: this.state.plzStatus === 'ok' ? '#1d9e5f' : (this.state.plzStatus === 'bad' ? '#E30613' : '#d8deea'),
+      onPlzKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); this.plzEval(); } },
+      onPlzStep: (e) => {
+        const v = String(e.target.value || '').replace(/\D/g,'').slice(0,5);
+        this.setState(s => ({ form: { ...s.form, plz: v }, plzStatus: null }), () => { if (v.length === 5) setTimeout(() => this.plzEval(), 220); });
+      },
+      plzCheck: () => this.plzEval(),
       stepTotal: needsZustand ? 8 : 7,
       zustandSelect: React.createElement('select', {
         value: this.state.zustand || '', onChange: this.sel('zustand'),
@@ -547,7 +678,14 @@ class Component extends DCLogic {
       fotoPreview: foto ? React.createElement('img', { src: foto.url, alt: 'Foto der alten Küche', style: { width: '100%', height: 'auto', display: 'block' } }) : null,
       errZustand: !!errors.zustand,
       zustandNext: () => this.zustandNext(),
-      stepNum: step, progressPct: Math.round(((step - 1) / (needsZustand ? 8 : 7)) * 100) + '%',
+      stepOf: 'Schritt ' + Math.min(step, 9) + ' von 9',
+      stepName: (() => {
+        if (inZustand) return 'Alte Küche';
+        if (step <= 7) return this.shorts[step - 1] || '';
+        if (step === 8) return 'Aktionsgebiet';
+        return 'Kontaktdaten';
+      })(),
+      stepNum: step, progressPct: Math.round((Math.min(step - 1, 8) / 8) * 100) + '%',
       progressLabel: (() => {
         const total = needsZustand ? 9 : 8;
         const left = total - step;
@@ -576,6 +714,7 @@ class Component extends DCLogic {
         noCheck: selected !== i,
       })),
       canBack: step > 1,
+      zustandBack: () => this.setState({ inZustand: false }, () => this.trackStep(2)),
       goBack: () => { this.ga('funnel_back', { funnel: 'alt_gegen_neu', step_number: this.state.step }); this.setState(s => ({ step: Math.max(1, s.step - 1) }), () => this.trackStep(this.state.step)); },
       canForward: selected != null,
       goForward: () => this.pick(selected),
@@ -587,7 +726,7 @@ class Component extends DCLogic {
       submitForm: () => this.submit(),
       sending: !!this.state.sending || !this.state.consent,
       consentMissing: !this.state.consent,
-      submitLabel: this.state.sending ? 'Wird gesendet …' : 'Jetzt Anfrage senden',
+      submitLabel: this.state.sending ? 'Wird gesendet …' : 'Jetzt Formular senden (kostenfrei & unverbindlich)',
     };
   }
 }
