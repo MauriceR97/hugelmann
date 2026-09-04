@@ -495,8 +495,13 @@ class Component extends DCLogic {
     this.ga('funnel_start', { funnel: 'alt_gegen_neu' });
     this.trackStep(1);
   }
+  fb(name, params) {
+    // Meta Custom Event (Events Manager); fbq-Stub queued auch vor Skript-Load
+    try { if (typeof window.fbq === 'function') window.fbq('trackCustom', name, params || {}); } catch (e) {}
+  }
   trackStep(step) {
     this.ga('funnel_step', { funnel: 'alt_gegen_neu', step_number: step, step_name: this.stepName(step) });
+    this.fb('AGN_Quiz_Schritt_' + String(step).replace('.', '_'), { funnel: 'alt_gegen_neu', step_number: step, step_name: this.stepName(step) });
   }
   pick(idx) {
     const step = this.state.step;
@@ -549,6 +554,7 @@ class Component extends DCLogic {
     const fields = Object.assign({}, trk, {
       event_name: 'Lead',
       event_id: evid,
+      lp_version: (function () { try { return localStorage.getItem('hg_lp_version') || ''; } catch (e) { return ''; } })(),
       event_source_url: location.origin + '/alt-gegen-neu-danke/',
       vorname: f.vorname.trim(),
       nachname: f.nachname.trim(),
