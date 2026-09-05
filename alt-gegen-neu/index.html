@@ -848,6 +848,44 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 .ort{background:#fff;padding-top:56px;}
 @media (max-width:640px){ #gal-sec{padding-bottom:42px;} .haus{padding-top:42px;padding-bottom:42px;} .ort{padding-top:42px;} }
 @media (max-width:640px){ .wegz{padding-top:40px;padding-bottom:40px;} }
+/* Zusammenfassung kompakt, passt ohne Scrollen ins Bild */
+.kw-end-head{padding:16px 18px 14px;}
+.kw-end-ok{width:38px;height:38px;margin-bottom:8px;box-shadow:none;}
+.kw-end-ok svg{width:20px;height:20px;}
+.kw-end-lb{font-size:10.5px;margin-bottom:4px;}
+.kw-end-h{font-size:17px;}
+.kw-end-body{padding:14px 18px 18px;}
+.kw-end-list{margin:0 0 12px;}
+.kw-end-list li{padding:7px 0;font-size:14px;gap:9px;}
+.kw-end-list li i{width:19px;height:19px;font-size:11px;}
+.kw-end-list li b{font-size:10.5px;}
+.kw-end-praemie{padding:9px 12px;margin-bottom:12px;}
+.kw-end-praemie span{font-size:11.5px;}
+.kw-end-praemie b{font-size:18px;}
+.kw-end-note{font-size:12.5px;margin-bottom:12px;}
+.kw-end .btn-rot{padding:13px 18px;font-size:15px;}
+.kw-end-micro{font-size:11px;margin-top:8px;}
+.kw-again{margin-top:10px;font-size:12.5px;}
+@media (max-width:640px){ .kw-end-h{font-size:16px;} .kw-end-list li{font-size:13.5px;padding:6px 0;} .kw-end-note{font-size:12px;} }
+/* Zusammenfassung: alles in einem Screen */
+.kw-end-ok{display:none;}
+.kw-end-head{padding:13px 16px 12px;display:flex;flex-direction:column;gap:2px;}
+.kw-end-lb{margin:0;}
+.kw-end-h{font-size:16px;}
+.kw-end-body{padding:12px 16px 14px;}
+.kw-end-list{margin:0 0 10px;}
+.kw-end-list li{padding:6px 0;font-size:13.5px;}
+.kw-end-praemie{margin-bottom:10px;padding:8px 11px;}
+.kw-end-praemie b{font-size:17px;}
+.kw-end-note{display:none;}
+.kw-end-foot{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px;flex-wrap:wrap;}
+.kw-end-micro{margin-top:0;}
+.kw-again{margin-top:0;}
+/* Ergebnisliste zweispaltig, ohne Status-Label */
+.kw-end-list{display:grid;grid-template-columns:1fr 1fr;column-gap:14px;row-gap:0;}
+.kw-end-list li{border-bottom:0;padding:5px 0;font-size:13.5px;}
+.kw-end-list li b{display:none;}
+.kw-end-list li.none{grid-column:span 2;}
 </style>
 </head>
 <body>
@@ -1018,8 +1056,10 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
           <div class="kw-end-praemie"><span>Ihre alte Küche zahlt mit</span><b>bis 4.000&nbsp;€*</b></div>
           <p class="kw-end-note" id="kw-end-tx">Ihr Küchenberater plant genau diese Punkte in Ihre neue Küche ein und nennt Ihnen im Termin Ihre Prämie.</p>
           <a class="btn-rot" id="kw-cta" href="/alt-gegen-neu-formular/"><span>Jetzt Termin anfragen</span><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h14"/><path d="m12.5 5.5 6.5 6.5-6.5 6.5"/></svg></a>
-          <span class="kw-end-micro">Kostenlos &amp; unverbindlich · Antwort innerhalb von 24 Stunden</span>
-          <button type="button" class="kw-again" id="kw-again">Auswahl ändern</button>
+          <div class="kw-end-foot">
+            <span class="kw-end-micro">Kostenlos &amp; unverbindlich</span>
+            <button type="button" class="kw-again" id="kw-again">Auswahl ändern</button>
+          </div>
           </div>
         </div>
       </div>
@@ -1581,14 +1621,23 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
     if(i>=W.length){
       card.hidden=true; act.hidden=true; dots.hidden=true; picked.hidden=true; hint.hidden=true; head.hidden=true; end.hidden=false;
       endList.innerHTML = chosen.length
-        ? chosen.map(function(t){ return '<li><i>✓<\/i>'+t+'<b>eingeplant<\/b><\/li>'; }).join('')
+        ? chosen.map(function(t){ return '<li><i>✓<\/i>'+t+'<\/li>'; }).join('')
         : '<li class="none"><i>–<\/i>Noch keine Schwerpunkte gesetzt<\/li>';
       document.getElementById('kw-end-h').textContent = chosen.length ? 'Das nehmen wir mit in die Planung' : 'Wir starten ganz von vorne';
       endTx.textContent = chosen.length
         ? 'Ihr Küchenberater plant genau diese Punkte ein und nennt Ihnen im Termin Ihre Prämie.'
         : 'Kein Problem: Im Termin gehen wir Ihre Wünsche gemeinsam durch.';
       cta.querySelector('span').textContent = 'Jetzt Termin anfragen';
-      marks(); return;
+      marks();
+      try {
+        var sec = document.getElementById('kw-end') || document.getElementById('kw-deck');
+        if (sec) {
+          void sec.offsetHeight;
+          var y = sec.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop || 0) - 76;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      } catch(e){}
+      return;
     }
     var w=W[i];
     img.src=w.i; img.alt=w.t; tEl.textContent=w.t;
