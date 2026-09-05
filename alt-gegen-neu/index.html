@@ -163,7 +163,9 @@ section{padding:64px 0;}
 .opts a::after{content:"→";color:var(--rot);font-weight:800;flex:none;}
 .opts a:active{background:#fde3e4;border-color:var(--rot);}
 @media (hover:hover) and (pointer:fine){ .opts a:hover{border-color:var(--rot);background:#fef0f1;} }
-.cardfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;font-size:12.5px;color:var(--muted);}
+.cardfoot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 14px;margin-top:16px;font-size:12.5px;color:var(--muted);}
+.cardfoot > span,.cardfoot > b{white-space:nowrap;}
+@media (max-width:420px){ .cardfoot{font-size:12px;} }
 .cardfoot b{color:var(--rot);}
 
 /* Trio */
@@ -513,21 +515,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   .st-pills > span{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,0.96);border-radius:999px;padding:8px 13px;font-size:11.5px;font-weight:600;line-height:1.25;color:var(--ink);box-shadow:0 8px 18px -12px rgba(16,29,51,0.6);}
   .st-pills b{flex:none;font-size:15px;font-weight:900;color:var(--rot);letter-spacing:-0.01em;}
 }
-/* PLZ-Karte in Navy */
-#plz-card{background:#2c4a5e;box-shadow:0 30px 60px -22px rgba(44,74,94,0.42);}
-#plz-card h3{color:#fff;}
-#plz-card .hint{color:rgba(255,255,255,0.78);}
-#plz-card .plz-lb{color:rgba(255,255,255,0.62);}
-#plz-card .plz-field input{border-color:rgba(255,255,255,0.24);background:rgba(255,255,255,0.08);color:#fff;}
-#plz-card .plz-field input::placeholder{color:rgba(255,255,255,0.42);}
-#plz-card .plz-field input:focus{border-color:#fff;background:rgba(255,255,255,0.14);box-shadow:0 0 0 3px rgba(255,255,255,0.18);}
-#plz-card.is-ok .plz-field input{border-color:#5fd39a;background:rgba(95,211,154,0.16);}
-#plz-card.is-bad .plz-field input{border-color:#ff8f96;background:rgba(255,143,150,0.14);}
-#plz-card .plz-msg{color:rgba(255,255,255,0.75);}
-#plz-card.is-ok .plz-msg{color:#7fe0ae;}
-#plz-card.is-bad .plz-msg{color:#ffb0b5;}
-#plz-card .cardfoot{color:rgba(255,255,255,0.7);border-top:1px solid rgba(255,255,255,0.14);padding-top:14px;}
-#plz-card .cardfoot b{color:#fff;}
 /* Hero-CTA: Pfeil nudge */
 .hero-cta .btn-rot .cta-ico,.hero-bot > .btn-rot .cta-ico{animation:ctaNudge 2.4s cubic-bezier(0.4,0,0.2,1) infinite;}
 @keyframes ctaNudge{
@@ -799,6 +786,68 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 .kw-end-praemie span{font-size:12.5px;font-weight:700;color:var(--muted);line-height:1.35;}
 .kw-end-praemie b{font-size:21px;font-weight:900;color:var(--rot);white-space:nowrap;letter-spacing:-0.01em;}
 @media (max-width:640px){ .kw-end-head{padding:22px 16px 18px;} .kw-end-body{padding:18px 16px 20px;} .kw-end-h{font-size:20px;} }
+/* Problem-X im Kreis, freistehendes Deck, Zähler auf der Karte, Buttons außen */
+.kw-plist li i{width:26px;height:26px;border-radius:50%;background:#fdecec;display:flex;align-items:center;justify-content:center;font-size:12px;margin-bottom:9px;}
+.kw-deck{background:none;border:0;box-shadow:none;padding:0;max-width:420px;}
+.kw-count{position:absolute;top:14px;right:14px;z-index:4;background:rgba(11,18,30,0.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:800;letter-spacing:0.04em;}
+.kw-act{left:14px;right:14px;bottom:16px;justify-content:space-between;gap:0;}
+@media (max-width:640px){ .kw-deck{max-width:340px;} .kw-count{top:11px;right:11px;font-size:11.5px;padding:4px 10px;} .kw-act{left:12px;right:12px;bottom:14px;} }
+/* Sektion tiefer, Frage auf dem Bild, kurze Labels zwischen den Buttons */
+.kw{padding-top:64px;margin-top:26px;}
+.kw-ask{position:absolute;left:0;right:0;top:0;z-index:3;padding:18px 16px 34px;text-align:center;font-size:clamp(18px,2.4vw,23px);font-weight:900;line-height:1.2;letter-spacing:-0.015em;color:#fff;background:linear-gradient(180deg,rgba(11,18,30,0.72) 0%,rgba(11,18,30,0.34) 58%,rgba(11,18,30,0) 100%);text-shadow:0 1px 10px rgba(11,18,30,0.5);}
+.kw-count{background:var(--rot);color:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;top:16px;right:16px;z-index:5;}
+.kw-cap{display:none;}
+.kw-label{flex:1;text-align:center;font-size:17px;font-weight:900;text-transform:uppercase;letter-spacing:0.08em;color:#fff;text-shadow:0 2px 12px rgba(11,18,30,0.7);padding:0 8px;}
+.kw-act{align-items:center;}
+.kw-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;background:linear-gradient(0deg,rgba(11,18,30,0.72) 0%,rgba(11,18,30,0.3) 55%,rgba(11,18,30,0) 100%);z-index:1;}
+.kw-count,.kw-stamp,.kw-act{z-index:5;}
+@media (max-width:640px){ .kw{padding-top:52px;margin-top:20px;} .kw-label{font-size:16px;} .kw-ask{padding:15px 14px 30px;} }
+/* Frage über der Karte, sichtbar angebunden */
+.kw-ask{position:relative;text-align:center;padding-bottom:26px;}
+.kw-ask span{display:inline-block;font-size:clamp(20px,2.7vw,27px);font-weight:900;line-height:1.15;letter-spacing:-0.02em;color:var(--ink);}
+.kw-ask::after{content:"";position:absolute;left:50%;bottom:0;width:2px;height:20px;background:linear-gradient(180deg,#c3ccdb,rgba(195,204,219,0));transform:translateX(-50%);}
+.kw-ask::before{content:"";position:absolute;left:50%;bottom:16px;width:9px;height:9px;border-radius:50%;background:#fff;border:2px solid #c3ccdb;transform:translateX(-50%) translateY(50%);z-index:1;}
+.kw-card::before{content:"";position:absolute;left:0;right:0;top:0;height:26%;background:linear-gradient(180deg,rgba(11,18,30,0.34) 0%,rgba(11,18,30,0) 100%);z-index:1;}
+@media (max-width:640px){ .kw-ask{padding-bottom:22px;} }
+/* Frage und Karte als eine Einheit */
+.kw-frame{background:#fff;border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 24px 54px -30px rgba(16,29,51,0.32);}
+.kw-ask{position:static;text-align:center;padding:14px 14px 16px;}
+.kw-ask::before,.kw-ask::after{display:none;}
+.kw-ask span{font-size:clamp(19px,2.5vw,24px);}
+.kw-frame .kw-stack .kw-card,.kw-frame .kw-ghost{border-radius:11px;}
+.kw-card::before{display:none;}
+@media (max-width:640px){ .kw-frame{padding:7px;} .kw-ask{padding:12px 12px 14px;} }
+/* Wunsch-Check: Kopf im Seitenvokabular, freistehende Karte */
+.kw-frame{background:none;border:0;padding:0;box-shadow:none;}
+.kw-head{margin-top:44px;}
+.kw-head .eyebrow{color:#157a49;display:inline-flex;align-items:center;gap:8px;}
+.kw-eb svg{width:15px;height:15px;flex:none;display:block;}
+.kw-head h2{font-size:clamp(24px,3.4vw,36px);}
+.kw-deck{max-width:400px;}
+.kw-stack .kw-card,.kw-ghost{border-radius:14px;}
+@media (max-width:640px){ .kw-head{margin-top:32px;} .kw-deck{max-width:330px;} }
+/* Endzustand: Breite und Kopf */
+.kw-dots,.kw-hint,.kw-picked,.kw-end{max-width:400px;margin-left:auto;margin-right:auto;}
+.kw-head[hidden]{display:none !important;}
+@media (max-width:640px){ .kw-dots,.kw-hint,.kw-picked,.kw-end{max-width:330px;} }
+/* Problemband getönt mit Halbkreis-Abschluss, Wunsch-Check auf weiß */
+.kw{background:#fff;padding-top:0;margin-top:0;overflow-x:hidden;}
+.kw-top{position:relative;padding:62px 0 84px;}
+.kw-top::before{content:"";position:absolute;left:50%;transform:translateX(-50%);top:0;width:100vw;height:100%;background:#f4f6f9;border-radius:0 0 50% 50%/0 0 70px 70px;z-index:0;}
+.kw-top > *{position:relative;z-index:1;}
+.kw-head{margin-top:64px;}
+@media (max-width:640px){ .kw-top{padding:44px 0 54px;} .kw-top::before{border-radius:0 0 50% 50%/0 0 38px 38px;} .kw-head{margin-top:40px;} }
+/* Sektionsrhythmus: „Ihr Weg zur Prämie" abgesetzt */
+.wegz{background:#f4f6f9;padding-top:52px;padding-bottom:52px;}
+.wegz .quiz-card{box-shadow:0 30px 60px -26px rgba(16,29,51,0.24),0 4px 16px rgba(16,29,51,0.06);border:1px solid #e2e8f2;}
+.preise{background:#fff;}
+.preise .pcard{border-color:#e6eaf1;}
+/* Untere Seitenhälfte: wieder abwechselnde Bänder */
+#gal-sec{background:#f4f6f9;padding-bottom:56px;}
+.haus{background:#f4f6f9;padding-top:56px;padding-bottom:56px;}
+.ort{background:#fff;padding-top:56px;}
+@media (max-width:640px){ #gal-sec{padding-bottom:42px;} .haus{padding-top:42px;padding-bottom:42px;} .ort{padding-top:42px;} }
+@media (max-width:640px){ .wegz{padding-top:40px;padding-bottom:40px;} }
 </style>
 </head>
 <body>
@@ -920,6 +969,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 <!-- Problem & Wunschprofil -->
 <section class="kw">
   <div class="wrap">
+    <div class="kw-top">
     <div class="sec-head rv">
       <span class="eyebrow">Kennen Sie das?</span>
       <h2>Was in einer alten Küche wirklich nervt</h2>
@@ -930,25 +980,27 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       <li><i aria-hidden="true">✗</i><b>Alte E-Geräte</b><span>laut und stromhungrig</span></li>
       <li><i aria-hidden="true">✗</i><b>Dunkle Ecken</b><span>Licht fehlt beim Arbeiten</span></li>
     </ul>
-    <div class="kw-funnel rv" aria-hidden="true"><i></i></div>
+    </div>
     <div class="kw-deck rv" id="kw-deck">
-      <div class="kw-lead">
-        <span class="kw-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 13 12 15.5 18 8"/><path d="M20 12a8 8 0 1 1-3.2-6.4"/></svg>Machen Sie den Küchen-Check</span>
-        <h3>Worauf legen Sie Wert?</h3>
+      <div class="sec-head kw-head">
+        <span class="eyebrow kw-eb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5 10 18 19.5 6.5"/></svg>Ihr Wunsch-Check</span>
+        <h2>Worauf legen Sie Wert?</h2>
+        <p>Wir planen Ihre Schwerpunkte in die neue Küche ein.</p>
       </div>
-      <span class="kw-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14"/><path d="m5.5 12.5 6.5 6.5 6.5-6.5"/></svg></span>
       <div class="kw-stack" id="kw-stack">
       <span class="kw-ghost g2" aria-hidden="true"></span>
       <span class="kw-ghost g1" aria-hidden="true"></span>
       <div class="kw-card" id="kw-card">
+        <span class="kw-count" id="kw-count">1/5</span>
         <span class="kw-stamp yes" aria-hidden="true">Wichtig</span>
         <span class="kw-stamp no" aria-hidden="true">Unwichtig</span>
-        <img id="kw-img" src="/assets/wunsch/stauraum.webp" alt="Viel Stauraum">
-        <div class="kw-cap"><b id="kw-t">Viel Stauraum</b><small id="kw-s">Vollauszüge und Apothekerschrank statt tiefer Unterschränke</small></div>
+        <img id="kw-img" src="/assets/wunsch/stauraum.webp" alt="Stauraum">
         <div class="kw-act">
           <button type="button" class="kw-no" id="kw-no" aria-label="Unwichtig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5"/></svg></button>
+          <b class="kw-label" id="kw-t">Stauraum</b>
           <button type="button" class="kw-yes" id="kw-yes" aria-label="Wichtig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5 10 18 19.5 6.5"/></svg></button>
         </div>
+      </div>
       </div>
       </div>
       <div class="kw-dots" id="kw-dots" aria-hidden="true"></div>
@@ -976,12 +1028,12 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 </section>
 
 <!-- Quiz-Teaser -->
-<section>
+<section class="wegz">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Ihr Weg zur Prämie</span>
       <h2>Was ist Ihre alte Küche wert?</h2>
-      <p>Erst kurz das Aktionsgebiet prüfen, danach beantworten Sie 7 kurze Fragen. Ihr Küchenberater rechnet Ihnen unverbindlich aus, was Ihre alte Küche beim Tausch bringt.</p>
+      <p>Kurz prüfen, ob Sie im Aktionsgebiet liegen. Anschließend machen Sie in 60 Sekunden ein paar unverbindliche Angaben zu Ihrer Küche, und Ihr Küchenberater rechnet aus, was Ihre alte Küche beim Tausch bringt.</p>
     </div>
     <div class="quiz-card rv" id="plz-card" data-form-url="/alt-gegen-neu-formular/">
       <h3>Liegt Ihre Küche im Aktionsgebiet?</h3>
@@ -1133,7 +1185,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 </section>
 
 <!-- Kundenküchen-Galerie (NEU · Wassermann-Adaption) -->
-<section class="preise" style="padding-top:48px;">
+<section class="preise" id="gal-sec" style="padding-top:48px;">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Zuletzt getauscht</span>
@@ -1291,7 +1343,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
     <div class="final rv">
       <span class="pill">Begrenzt auf 30 Plätze · nur bis 31.12.2026</span>
       <h2>Ihre alte Küche geht.<br>Bis zu 4.000&nbsp;€ bleiben.</h2>
-      <p>Wir können Abbau, Mitnahme und Montage nur für eine begrenzte Zahl an Küchen zusätzlich einplanen. Beantworten Sie jetzt 7 kurze Fragen und lassen Sie sich unverbindlich ausrechnen, was Ihre Küche wert ist.</p>
+      <p>Wir können Abbau, Mitnahme und Montage nur für eine begrenzte Zahl an Küchen zusätzlich einplanen. Beantworten Sie jetzt ein paar kurze Fragen und lassen Sie sich unverbindlich ausrechnen, was Ihre Küche wert ist.</p>
       <div class="btns">
         <a class="b1" href="/alt-gegen-neu-formular/">Jetzt kostenlos Platz sichern&nbsp;→</a>
         <a class="b2" href="tel:+497821965773">Oder anrufen: 07821 / 965773</a>
@@ -1514,12 +1566,12 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 <script>
 (function(){
   var deck=document.getElementById('kw-deck'); if(!deck)return;
-  var W=[{"t":"Viel Stauraum","s":"Vollauszüge und Apothekerschrank statt tiefer Unterschränke","i":"/assets/wunsch/stauraum.webp"},{"t":"Moderne Geräte","s":"Induktion mit Abschaltautomatik, Dampfgarer, klare Bedienung","i":"/assets/wunsch/ergonomie.webp"},{"t":"Tolles Lichtsystem","s":"Blendfrei über Arbeitsfläche, Schubladen und Schränken","i":"/assets/wunsch/licht.webp"},{"t":"Pflegeleicht","s":"Matte Anti-Fingerprint-Fronten, einmal wischen und fertig","i":"/assets/wunsch/pflegeleicht.webp"},{"t":"Ergonomisch","s":"Backofen auf Arbeitshöhe, Geschirrspüler erhöht, kein Bücken","i":"/assets/wunsch/ergonomie-ofen.webp"}];
-  var card=document.getElementById('kw-card'),img=document.getElementById('kw-img'),tEl=document.getElementById('kw-t'),sEl=document.getElementById('kw-s'),
+  var W=[{"t":"Stauraum","i":"/assets/wunsch/stauraum.webp"},{"t":"E-Geräte","i":"/assets/wunsch/ergonomie.webp"},{"t":"Licht","i":"/assets/wunsch/licht.webp"},{"t":"Pflegeleicht","i":"/assets/wunsch/pflegeleicht.webp"},{"t":"Ergonomie","i":"/assets/wunsch/ergonomie-ofen.webp"}];
+  var card=document.getElementById('kw-card'),img=document.getElementById('kw-img'),tEl=document.getElementById('kw-t'),
       dots=document.getElementById('kw-dots'),act=document.querySelector('.kw-act'),
       picked=document.getElementById('kw-picked'),end=document.getElementById('kw-end'),endList=document.getElementById('kw-end-list'),endTx=document.getElementById('kw-end-tx'),cta=document.getElementById('kw-cta');
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var stack=document.getElementById('kw-stack'),left=document.getElementById('kw-left'),hint=document.getElementById('kw-hint'),lead=document.querySelector('.kw-lead'),arrow=document.querySelector('.kw-arrow');
+  var stack=document.getElementById('kw-stack'),head=document.querySelector('.kw-head'),count=document.getElementById('kw-count'),left=document.getElementById('kw-left'),hint=document.getElementById('kw-hint'),lead=null,arrow=null;
   var i=0,chosen=[],busy=false;
   W.forEach(function(){ dots.appendChild(document.createElement('i')); });
   function marks(){
@@ -1527,7 +1579,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   }
   function paint(){
     if(i>=W.length){
-      card.hidden=true; act.hidden=true; dots.hidden=true; picked.hidden=true; hint.hidden=true; lead.hidden=true; arrow.hidden=true; end.hidden=false;
+      card.hidden=true; act.hidden=true; dots.hidden=true; picked.hidden=true; hint.hidden=true; head.hidden=true; end.hidden=false;
       endList.innerHTML = chosen.length
         ? chosen.map(function(t){ return '<li><i>✓<\/i>'+t+'<b>eingeplant<\/b><\/li>'; }).join('')
         : '<li class="none"><i>–<\/i>Noch keine Schwerpunkte gesetzt<\/li>';
@@ -1539,7 +1591,8 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       marks(); return;
     }
     var w=W[i];
-    img.src=w.i; img.alt=w.t; tEl.textContent=w.t; sEl.textContent=w.s;
+    img.src=w.i; img.alt=w.t; tEl.textContent=w.t;
+    if(count) count.textContent=(i+1)+'/'+W.length;
     var rest=W.length-i;
     if(left) left.textContent = rest===1 ? 'letzte Karte' : rest+' offen';
     stack.className='kw-stack'+(rest<=1?' last':(rest===2?' pre-last':''));
@@ -1618,20 +1671,13 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       setTimeout(function(){ yes.classList.remove('pulse'); },900);
       setTimeout(function(){ if(touched)return; no.classList.add('pulse'); },1000);
       setTimeout(function(){ no.classList.remove('pulse'); },1700);
-      setTimeout(function(){
-        if(touched||busy)return;
-        card.classList.add('demo','hint-y');
-        card.style.transform='translateX(46%) rotate(5deg)';
-        setTimeout(function(){ card.style.transform=''; card.classList.remove('hint-y'); },900);
-        setTimeout(function(){ card.classList.remove('demo'); },1600);
-      },1900);
     }
     new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) play(); }); },{threshold:0.5}).observe(deck);
   })();
   document.getElementById('kw-yes').addEventListener('click',function(){ advance('y'); });
   document.getElementById('kw-no').addEventListener('click',function(){ advance('n'); });
   document.getElementById('kw-again').addEventListener('click',function(){
-    i=0; chosen=[]; picked.innerHTML=''; picked.hidden=false; hint.hidden=false; lead.hidden=false; arrow.hidden=false; endList.innerHTML=''; card.hidden=false; act.hidden=false; dots.hidden=false; end.hidden=true;
+    i=0; chosen=[]; picked.innerHTML=''; picked.hidden=false; hint.hidden=false; head.hidden=false; endList.innerHTML=''; card.hidden=false; act.hidden=false; dots.hidden=false; end.hidden=true;
     try{ localStorage.removeItem('agn_wuensche'); }catch(e){}
     paint();
   });
