@@ -288,47 +288,6 @@
       </div>
       <a href="/alt-gegen-neu/" style="align-self:center;font-size:14px;font-weight:var(--fw-semibold);">‹ Zurück zur Aktionsseite</a>
     </sc-if>
-    <sc-if value="{{ showPlz }}" hint-placeholder-val="{{ false }}">
-      <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;">
-        <a class="backlink" data-rsp="backlink" href="/alt-gegen-neu/" style="align-self:flex-start;margin-bottom:2px;"><span aria-hidden="true">‹</span>Zurück zur Aktion</a>
-        <div data-rsp="progrow" style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
-          <span style="font-size:15px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;">{{ stepOf }}</span>
-          <span style="font-size:15px;color:var(--text-muted);white-space:nowrap;">{{ stepName }}</span>
-        </div>
-        <div style="height:9px;background:#e3e8f1;border-radius:var(--radius-pill);overflow:hidden;margin-top:4px;">
-          <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);transition:width 320ms cubic-bezier(0.4,0,0.2,1);width:{{ progressPct }};"></div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:6px;text-align:center;">
-        <h3 style="margin:0;font-family:var(--font-display);font-weight:700;font-size:26px;color:var(--text-heading);letter-spacing:var(--ls-tight);">Liegen Sie im Aktionsgebiet?</h3>
-        <span style="font-size:15px;color:var(--text-muted);">Abbau, Mitnahme und Montage übernehmen wir kostenfrei im Umkreis von 50&nbsp;km um Lahr.</span>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;max-width:420px;margin:0 auto;">
-        <label for="plzstep-input" style="width:100%;display:flex;flex-direction:column;gap:7px;">
-          <span style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);">Ihre Postleitzahl</span>
-          <span style="position:relative;display:block;">
-            <input id="plzstep-input" class="plzfield" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="77933" value="{{ plzValue }}" onChange="{{ onPlzStep }}" onKeyDown="{{ onPlzKey }}" aria-describedby="plzstep-hint" style="width:100%;box-sizing:border-box;border:1.5px solid {{ plzBorder }};border-radius:10px;background:#fff;padding:18px 52px 18px 20px;font-family:var(--font-sans);font-size:26px;font-weight:600;letter-spacing:0.22em;color:#101d33;outline:none;transition:border-color 160ms ease-out,box-shadow 160ms ease-out;">
-            <span aria-hidden="true" style="position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:600;color:var(--text-muted);">{{ plzCount }}</span>
-          </span>
-          <span id="plzstep-hint" style="font-size:13px;color:var(--text-muted);">5-stellige PLZ eingeben, wir prüfen automatisch.</span>
-        </label>
-        <sc-if value="{{ plzOk }}" hint-placeholder-val="{{ false }}">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-            <svg class="plz-anim" width="76" height="76" viewBox="0 0 52 52" aria-hidden="true"><circle class="pa-c" cx="26" cy="26" r="23" fill="none" stroke="#1d9e5f" stroke-width="3"/><path class="pa-p" d="M15 27.5 23 35 38 19" fill="none" stroke="#1d9e5f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span style="font-size:15px;font-weight:600;color:#1d9e5f;">Perfekt, Sie liegen im Aktionsgebiet.</span>
-          </div>
-        </sc-if>
-        <sc-if value="{{ plzBad }}" hint-placeholder-val="{{ false }}">
-          <span style="font-size:14.5px;color:var(--hg-red);text-align:center;">{{ plzMsg }}</span>
-        </sc-if>
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
-          <button onClick="{{ goBack }}" style="display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid #d8deea;border-radius:10px;padding:16px 22px;cursor:pointer;font-family:var(--font-sans);font-size:16px;font-weight:600;color:#101d33;"><span aria-hidden="true">‹</span>Zurück</button>
-          <span data-rsp="submitwrap" style="display:inline-block;">
-            <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="primary" size="lg" onClick="{{ plzCheck }}" hint-size="auto,52px">Weiter</x-import>
-          </span>
-        </div>
-      </div>
-    </sc-if>
     <sc-if value="{{ showZustand }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;">
         <div data-rsp="progrow" style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
@@ -390,6 +349,7 @@
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" name="vorname" autoComplete="given-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" name="nachname" autoComplete="family-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Telefonnummer" type="tel" placeholder="z.B. 07821 123456" name="telefon" autoComplete="tel" inputMode="tel" required="{{ true }}" onChange="{{ onTel }}" error="{{ errTel }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Postleitzahl" placeholder="z.B. 77933" name="plz" autoComplete="postal-code" inputMode="numeric" required="{{ true }}" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
       </div>
       <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" name="email" autoComplete="email" inputMode="email" autoCapitalize="none" spellCheck="{{ false }}" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
       <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13.5px;font-weight:400;line-height:1.5;color:var(--text-muted);background:none;border:0;padding:0;max-width:560px;margin:0 auto;">
@@ -420,7 +380,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;spotsLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:9,&quot;min&quot;:1,&quot;max&quot;:30,&quot;section&quot;:&quot;Aktion&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;dankeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;/alt-gegen-neu-danke/&quot;,&quot;section&quot;:&quot;Funnel&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { step: 1, plzStatus: null, inZustand: false, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
+  state = { step: 1, inZustand: false, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
   shorts = ['Zeitpunkt','Alte Küche','Küchenform','Küchenstil','Farbstil','Budget','Finanzierung'];
   questions = [
     { title: 'Wann benötigen Sie die neue Küche?', sub: 'Ganz unverbindlich - Sie bestimmen das Tempo.', options: ['Schnellstmöglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später'] },
@@ -449,7 +409,7 @@ class Component extends DCLogic {
   stepName(step) {
     const q = this.questions[step - 1];
     if (q) return q.title;
-    if (step === 9 && this.state.answers[2] === 0) return 'Zustand der alten Küche';
+    if (step === 8.5) return 'Zustand der alten Küche';
     return 'Kontaktdaten';
   }
   applyAutofill() {
@@ -475,22 +435,12 @@ class Component extends DCLogic {
   componentDidUpdate() {
     if (this.state.step >= 8) setTimeout(() => this.applyAutofill(), 60);
   }
-  plzEval() {
-    const p = String((this.state.form && this.state.form.plz) || '');
-    if (!/^\d{5}$/.test(p)) { this.setState({ plzStatus: 'bad' }); return; }
-    const n = parseInt(p, 10);
-    const ok = p.indexOf('77') === 0 || (n >= 76437 && n <= 76599) || (n >= 79098 && n <= 79429) || (n >= 78050 && n <= 78199) || (n >= 78700 && n <= 78737);
-    if (!ok) { this.setState({ plzStatus: 'bad' }); this.ga('plz_check_out', { plz: p }); return; }
-    this.setState({ plzStatus: 'ok' });
-    this.ga('plz_check_ok', { plz: p });
-    setTimeout(() => this.setState({ step: 9 }, () => this.trackStep(9)), 1400);
-  }
   componentDidMount() {
     setTimeout(() => this.applyAutofill(), 300);
     try {
       var qp = new URLSearchParams(location.search).get('plz');
       var saved = qp || localStorage.getItem('agn_plz');
-      if (saved && /^\d{5}$/.test(saved)) this.setState(s => ({ form: { ...s.form, plz: saved } }), () => { if (this.state.step === 8) this.plzEval(); });
+      if (saved && /^\d{5}$/.test(saved)) this.setState(s => ({ form: { ...s.form, plz: saved } }));
     } catch (e) {}
     this.ga('funnel_start', { funnel: 'alt_gegen_neu' });
     this.trackStep(1);
@@ -523,14 +473,14 @@ class Component extends DCLogic {
     if (f.vorname.trim().length < 2) errors.vorname = 'Bitte geben Sie Ihren Vornamen an.';
     if (f.nachname.trim().length < 2) errors.nachname = 'Bitte geben Sie Ihren Nachnamen an.';
     if (f.tel.trim().length < 6) errors.tel = 'Bitte geben Sie Ihre Telefonnummer an.';
-    if (f.plz.trim() && !/^\d{4,5}$/.test(f.plz.trim())) errors.plz = 'Bitte prüfen Sie die Postleitzahl.';
+    if (!/^\d{5}$/.test(f.plz.trim())) errors.plz = 'Bitte geben Sie Ihre Postleitzahl an.';
     if (!/^\S+@\S+\.\S+$/.test(f.email.trim())) errors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse an.';
     if (!this.state.consent) errors.consent = true;
     if (Object.keys(errors).length) {
       this.ga('form_error', { funnel: 'alt_gegen_neu', fields: Object.keys(errors).join(',') });
       this.setState({ errors }); return;
     }
-    this.ga('generate_lead', { funnel: 'alt_gegen_neu', budget: this.questions[5].options[this.state.answers[6]] || '', timing: this.questions[0].options[this.state.answers[1]] || '' });
+    this.ga('generate_lead', { funnel: 'alt_gegen_neu', budget: this.questions[5].options[this.state.answers[6]] || '', timing: this.questions[0].options[this.state.answers[1]] || '', wuensche: (function () { try { return (JSON.parse(localStorage.getItem('agn_wuensche') || '[]') || []).join(', '); } catch (e) { return ''; } })() });
     try { sessionStorage.setItem('agn_lead_name', f.vorname.trim()); } catch (e) {}
     try { sessionStorage.setItem('agn_lead_ok', '1'); } catch (e) {}
     if (this._sending) return;
@@ -562,13 +512,14 @@ class Component extends DCLogic {
       telefon: f.tel.trim(),
       plz: f.plz.trim(),
       aktion: 'Alt gegen Neu',
-      kuechenform: answer(0),
-      kuechenstil: answer(1),
-      farbstil: answer(2),
-      finanzierung: answer(3),
-      zeitrahmen: answer(4),
+      kuechenform: answer(2),
+      kuechenstil: answer(3),
+      farbstil: answer(4),
+      finanzierung: answer(6),
+      zeitrahmen: answer(0),
       budget: answer(5),
-      alte_kueche: answer(6),
+      alte_kueche: answer(1),
+      wuensche: (function () { try { return (JSON.parse(localStorage.getItem('agn_wuensche') || '[]') || []).join(', '); } catch (e) { return ''; } })(),
       alte_kueche_zustand: this.state.zustand || '',
       alte_kueche_form: this.state.altForm || '',
       alte_kueche_geraete: this.state.geraete || '',
@@ -643,21 +594,8 @@ class Component extends DCLogic {
     return {
       spotsLeft: this.props.spotsLeft ?? 9,
       showQuiz,
-      showPlz: step === 8 && !inZustand,
       showZustand: inZustand,
-      showForm: step === 9 && !inZustand,
-      plzValue: this.state.form.plz || '',
-      plzOk: this.state.plzStatus === 'ok',
-      plzBad: this.state.plzStatus === 'bad',
-      plzMsg: 'Ihre PLZ liegt außerhalb unseres Aktionsgebiets. Rufen Sie uns gern an: 07821 / 965773.',
-      plzCount: (this.state.form.plz || '').length + '/5',
-      plzBorder: this.state.plzStatus === 'ok' ? '#1d9e5f' : (this.state.plzStatus === 'bad' ? '#E30613' : '#d8deea'),
-      onPlzKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); this.plzEval(); } },
-      onPlzStep: (e) => {
-        const v = String(e.target.value || '').replace(/\D/g,'').slice(0,5);
-        this.setState(s => ({ form: { ...s.form, plz: v }, plzStatus: null }), () => { if (v.length === 5) setTimeout(() => this.plzEval(), 220); });
-      },
-      plzCheck: () => this.plzEval(),
+      showForm: step === 8 && !inZustand,
       stepTotal: needsZustand ? 8 : 7,
       zustandSelect: React.createElement('select', {
         value: this.state.zustand || '', onChange: this.sel('zustand'),
@@ -684,14 +622,13 @@ class Component extends DCLogic {
       fotoPreview: foto ? React.createElement('img', { src: foto.url, alt: 'Foto der alten Küche', style: { width: '100%', height: 'auto', display: 'block' } }) : null,
       errZustand: !!errors.zustand,
       zustandNext: () => this.zustandNext(),
-      stepOf: 'Schritt ' + Math.min(step, 9) + ' von 9',
+      stepOf: 'Schritt ' + Math.min(step, 8) + ' von 8',
       stepName: (() => {
         if (inZustand) return 'Alte Küche';
         if (step <= 7) return this.shorts[step - 1] || '';
-        if (step === 8) return 'Aktionsgebiet';
         return 'Kontaktdaten';
       })(),
-      stepNum: step, progressPct: Math.round((Math.min(step - 1, 8) / 8) * 100) + '%',
+      stepNum: step, progressPct: Math.round((Math.min(step - 1, 7) / 7) * 100) + '%',
       progressLabel: (() => {
         const total = needsZustand ? 9 : 8;
         const left = total - step;

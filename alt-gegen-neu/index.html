@@ -344,8 +344,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   .hero-bot > .btn-rot b{font-size:15px;font-weight:800;}
   .hero-bot > .btn-rot small{font-size:10.5px;font-weight:600;color:rgba(255,255,255,0.85);margin-top:2px;}
   .hero > div:first-child > .checks,.hero > div:first-child > .hero-cta{display:none;}
-  .hero > div:first-child > .presse{margin-top:0;padding-top:14px;text-align:center;}
-  .presse-row{justify-content:center;gap:14px 18px;}
   .badge{display:none;}
 }
 .hdr-prog{position:absolute;left:0;right:0;bottom:-1px;height:3px;overflow:hidden;pointer-events:none;}
@@ -555,23 +553,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 .ba-rev figcaption a{margin-left:auto;font-size:12.5px;font-weight:700;color:var(--navy);text-decoration:none;white-space:nowrap;}
 .ba-rev figcaption a:hover{text-decoration:underline;text-underline-offset:2px;}
 @media (max-width:860px){ .ba-rev{margin:-30px auto 0;padding:18px;} .ba-rev blockquote{font-size:15px;} .ba-rev figcaption a{margin-left:0;flex-basis:100%;} .ba-rev figcaption{flex-wrap:wrap;} }
-/* Presse-Leiste über dem Hero-CTA */
-.presse{max-width:430px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line);}
-.presse-mob{display:none;}
-@media (max-width:860px){ .presse-mob{display:block;max-width:none;margin:18px 24px 0;padding-top:16px;text-align:center;} .presse-mob .presse-row{justify-content:center;gap:14px 18px;} }
-.presse-lb{display:block;font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:9px;}
-.presse-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;}
-.presse-row img{height:21px;width:auto;max-width:160px;object-fit:contain;opacity:0.8;}
-@media (max-width:860px){ .presse{max-width:none;} .presse-row img{height:19px;max-width:130px;} }
-/* Presse mobil: eine Zeile, Endlos-Lauf */
-@media (max-width:860px){
-  .presse-mob{margin:18px 0 0;padding-top:16px;overflow:hidden;}
-  .presse-mob .presse-lb{margin-bottom:16px;}
-  .presse-mob .presse-row{display:flex;flex-wrap:nowrap;justify-content:flex-start;width:max-content;gap:0;animation:presseRun 22s linear infinite;}
-  .presse-mob .presse-row img{flex:none;height:19px;max-width:none;margin:0 18px;}
-  @keyframes presseRun{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
-  @media (prefers-reduced-motion: reduce){ .presse-mob .presse-row{animation:none;} }
-}
 /* Ergebniskarte */
 .ck-res{position:relative;overflow:hidden;}
 .ck-res::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--rot);}
@@ -918,15 +899,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       <li><b>✓</b>Kostenloser Abbau &amp; Mitnahme Ihrer Altküche</li>
       <li><b>✓</b>0&nbsp;% Finanzierung bis 60 Monate¹</li>
     </ul>
-    <div class="presse rv rv-d2">
-      <span class="presse-lb">Bekannt aus</span>
-      <div class="presse-row">
-        <img loading="lazy" src="/assets/presse/lahrer-zeitung.png" alt="Lahrer Zeitung">
-        <img loading="lazy" src="/assets/presse/badische-zeitung.png" alt="Badische Zeitung">
-        <img loading="lazy" src="/assets/presse/lahrer-anzeiger.png" alt="Lahrer Anzeiger">
-        <img loading="lazy" src="/assets/presse/offenburger-tageblatt.png" alt="Offenburger Tageblatt">
-      </div>
-    </div>
     <div class="hero-cta rv rv-d3">
       <a class="btn-rot" href="/alt-gegen-neu-formular/"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h14"/><path d="m12.5 5.5 6.5 6.5-6.5 6.5"/></svg><span>Jetzt Küchenprämie anfragen</span></a>
       <span class="micro">kostenlos &amp; unverbindlich</span>
@@ -960,19 +932,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   </div>
 </div>
 
-<div class="presse presse-mob">
-  <span class="presse-lb">Bekannt aus</span>
-  <div class="presse-row">
-    <img loading="lazy" src="/assets/presse/lahrer-zeitung.png" alt="Lahrer Zeitung">
-    <img loading="lazy" src="/assets/presse/badische-zeitung.png" alt="Badische Zeitung">
-    <img loading="lazy" src="/assets/presse/lahrer-anzeiger.png" alt="Lahrer Anzeiger">
-    <img loading="lazy" src="/assets/presse/offenburger-tageblatt.png" alt="Offenburger Tageblatt">
-    <img loading="lazy" aria-hidden="true" src="/assets/presse/lahrer-zeitung.png" alt="Lahrer Zeitung">
-    <img loading="lazy" aria-hidden="true" src="/assets/presse/badische-zeitung.png" alt="Badische Zeitung">
-    <img loading="lazy" aria-hidden="true" src="/assets/presse/lahrer-anzeiger.png" alt="Lahrer Anzeiger">
-    <img loading="lazy" aria-hidden="true" src="/assets/presse/offenburger-tageblatt.png" alt="Offenburger Tageblatt">
-  </div>
-</div>
 <!-- Wir suchen 30 Kunden -->
 <section class="such">
   <div class="wrap">
