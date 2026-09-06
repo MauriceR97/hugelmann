@@ -146,6 +146,82 @@
   [data-rsp~="qwrap"] label[style*="dashed"] span{font-weight:500 !important;font-size:15px !important;}
   [data-rsp~="qwrap"] h2{font-size:26px !important;}
   [data-rsp~="qwrap"] strong{font-weight:600 !important;font-size:14.5px !important;}
+  [data-rsp~="split"] > *:nth-child(3){grid-column:span 2;}
+  /* Absenden mobil über Zurück */
+  @media (max-width:560px){
+    [data-rsp~="finalnav"]{flex-direction:column-reverse;align-items:stretch;gap:10px;}
+    [data-rsp~="finalnav"] > button{width:100%;}
+    [data-rsp~="finalnav"] [data-rsp~="submitwrap"]{width:100%;}
+    [data-rsp~="finalnav"] [data-rsp~="submitwrap"] button{width:100%;}
+  }
+  .privnote{display:flex;align-items:flex-start;gap:9px;max-width:560px !important;width:100%;margin:0 auto;font-size:13px;line-height:1.5;color:var(--text-muted);}
+  .privnote svg{flex:none;width:16px;height:16px;margin-top:1px;color:var(--hg-blue);}
+  /* ================= v2: Editorial-Fragebogen ================= */
+  body{background:#f6f3ee !important;}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(1100px 520px at 12% -10%, rgba(3,78,163,0.07), transparent 62%),
+               radial-gradient(900px 480px at 100% 0%, rgba(227,6,19,0.05), transparent 60%);}
+  main{position:relative;z-index:1;}
+  [data-rsp~="header"]{background:rgba(246,243,238,0.86) !important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid #e5ded3 !important;}
+  [data-rsp~="gbar"]{background:none !important;border-bottom:1px solid #e5ded3 !important;}
+
+  /* Bogen als Papierkarte */
+  [data-rsp~="qwrap"]{position:relative;background:#fff;border:1px solid #e7e0d5;border-radius:16px;
+    box-shadow:0 30px 60px -40px rgba(31,26,20,0.45),0 2px 0 #efe9df;padding:38px 44px 34px !important;gap:26px !important;margin-top:26px;}
+  [data-rsp~="qwrap"]::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;border-radius:16px 16px 0 0;
+    background:linear-gradient(90deg,var(--hg-blue) 0%,var(--hg-blue) 62%,var(--hg-red) 62%,var(--hg-red) 100%);}
+
+  /* Fortschritt: segmentierte Ticks */
+  [data-rsp~="progrow"] + div{height:8px !important;background:#e9e2d7 !important;border-radius:0 !important;
+    -webkit-mask:repeating-linear-gradient(90deg,#000 0 calc(12.5% - 5px),transparent calc(12.5% - 5px) 12.5%);
+    mask:repeating-linear-gradient(90deg,#000 0 calc(12.5% - 5px),transparent calc(12.5% - 5px) 12.5%);}
+  [data-rsp~="progrow"] + div > div{border-radius:0 !important;background:var(--hg-blue) !important;}
+  [data-rsp~="progrow"] span:first-child{font-size:11.5px !important;letter-spacing:0.2em !important;color:#a08e73 !important;}
+  [data-rsp~="progrow"] span:last-child{font-size:13px !important;font-weight:700 !important;color:var(--hg-blue) !important;
+    text-transform:uppercase;letter-spacing:0.12em;}
+
+  /* Frage: redaktionell, linksbündig */
+  [data-rsp~="qwrap"] > div:nth-child(2){text-align:left !important;gap:8px !important;}
+  [data-rsp~="qwrap"] h2{font-size:38px !important;line-height:1.08 !important;letter-spacing:-0.025em !important;
+    color:#1b1610 !important;text-align:left !important;max-width:22ch;}
+  [data-rsp~="qwrap"] > div:nth-child(2) > span{font-size:16px !important;color:#7c6b53 !important;text-align:left !important;max-width:52ch;}
+
+  /* Antworten: numerierte Zeilen */
+  [data-rsp~="qwrap"] div[style*="max-width: 560px"],[data-rsp~="qwrap"] div[style*="max-width:560px"]{counter-reset:opt;max-width:none !important;}
+  [data-rsp~="qwrap"] button[style*="justify-content: space-between"]{counter-increment:opt;border:1px solid #e7e0d5 !important;
+    border-radius:12px !important;padding:17px 20px 17px 62px !important;box-shadow:none !important;background:#fdfcfa !important;
+    font-size:17px !important;font-weight:600 !important;position:relative;}
+  [data-rsp~="qwrap"] button[style*="justify-content: space-between"]::before{content:counter(opt);position:absolute;left:18px;top:50%;
+    transform:translateY(-50%);width:26px;height:26px;border-radius:7px;background:#f0ece4;color:#8b7a60;
+    font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:all 150ms cubic-bezier(0.4,0,0.2,1);}
+  @media (hover:hover) and (pointer:fine){
+    [data-rsp~="qwrap"] button[style*="justify-content: space-between"]:hover{border-color:var(--hg-blue) !important;background:#fff !important;transform:none !important;}
+    [data-rsp~="qwrap"] button[style*="justify-content: space-between"]:hover::before{background:var(--hg-blue);color:#fff;}
+  }
+
+  [data-rsp~="consentbox"],.privnote{max-width:none !important;margin:0 !important;}
+  [data-rsp~="qwrap"] h3{font-size:32px !important;line-height:1.1 !important;letter-spacing:-0.022em !important;color:#1b1610 !important;text-align:left !important;max-width:24ch;}
+  [data-rsp~="qwrap"] h3 + span,[data-rsp~="qwrap"] h3 ~ span{text-align:left !important;}
+  @media (max-width:720px){ [data-rsp~="qwrap"] h3{font-size:24px !important;max-width:none;} }
+  /* Bildkacheln (Küchenform/Stil/Farbe) */
+  [data-rsp~="qwrap"] img[src*="kuechenformen/"],[data-rsp~="qwrap"] img[src*="stil/"],[data-rsp~="qwrap"] img[src*="farben/"]{border-radius:12px 12px 0 0 !important;}
+
+  /* Eingaben */
+  [data-rsp~="qwrap"] input[type="text"],[data-rsp~="qwrap"] input[type="tel"],[data-rsp~="qwrap"] input[type="email"],
+  [data-rsp~="qwrap"] select,[data-rsp~="qwrap"] textarea{background:#fdfcfa !important;border-color:#e2dad0 !important;border-radius:12px !important;}
+  [data-rsp~="qwrap"] label > span:first-child{letter-spacing:0.1em !important;text-transform:uppercase;font-size:11.5px !important;color:#8b7a60 !important;}
+
+  /* Buttons */
+  [data-rsp~="submitwrap"] button,[data-rsp~="qnav"] button[style*="--hg-red"]{border-radius:12px !important;letter-spacing:0.01em;}
+  [data-rsp~="qnav"] button:not([style*="--hg-red"]),[data-rsp~="finalnav"] > button{background:none !important;border:1px solid #ddd4c7 !important;border-radius:12px !important;color:#7c6b53 !important;}
+  .backlink{color:#8b7a60 !important;font-size:14px !important;}
+  .privnote svg{color:#8b7a60 !important;}
+
+  @media (max-width:720px){
+    [data-rsp~="qwrap"]{padding:24px 20px 26px !important;border-radius:14px;margin-top:14px;}
+    [data-rsp~="qwrap"] h2{font-size:27px !important;max-width:none;}
+    [data-rsp~="qwrap"] button[style*="justify-content: space-between"]{padding:15px 16px 15px 54px !important;font-size:16px !important;}
+  }
   /* Weniger Fettung */
   [data-rsp~="qwrap"] h2,h2,h3{font-weight:700 !important;}
   [data-rsp~="qwrap"] button span,[data-rsp~="tilelabel"]{font-weight:500 !important;}
@@ -348,14 +424,15 @@
       <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" name="vorname" autoComplete="given-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" name="nachname" autoComplete="family-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" name="email" autoComplete="email" inputMode="email" autoCapitalize="none" spellCheck="{{ false }}" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Telefonnummer" type="tel" placeholder="z.B. 07821 123456" name="telefon" autoComplete="tel" inputMode="tel" required="{{ true }}" onChange="{{ onTel }}" error="{{ errTel }}" hint-size="100%,72px"></x-import>
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Postleitzahl" placeholder="z.B. 77933" name="plz" autoComplete="postal-code" inputMode="numeric" required="{{ true }}" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
       </div>
-      <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse" type="email" placeholder="ihre@email.de" name="email" autoComplete="email" inputMode="email" autoCapitalize="none" spellCheck="{{ false }}" required="{{ true }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
       <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13.5px;font-weight:400;line-height:1.5;color:var(--text-muted);background:none;border:0;padding:0;max-width:560px;margin:0 auto;">
         <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="width:20px;height:20px;margin:1px 0 0;accent-color:var(--hg-blue);cursor:pointer;flex-shrink:0;">
         <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
       </label>
+      <p class="privnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg><span>Einmalige Kontaktaufnahme zu Ihrer Anfrage. Keine Werbeanrufe, kein Newsletter, keine Weitergabe Ihrer Daten an Dritte.</span></p>
       <sc-if value="{{ errConsent }}" hint-placeholder-val="{{ false }}">
         <p style="margin:-14px 0 0;font-size:13px;color:var(--hg-red);font-weight:var(--fw-semibold);">Bitte bestätigen Sie die Einwilligung, damit wir Sie anrufen dürfen.</p>
       </sc-if>
@@ -628,7 +705,7 @@ class Component extends DCLogic {
         if (step <= 7) return this.shorts[step - 1] || '';
         return 'Kontaktdaten';
       })(),
-      stepNum: step, progressPct: Math.round((Math.min(step - 1, 7) / 7) * 100) + '%',
+      stepNum: step, progressPct: Math.round((Math.min(step, 8) / 8) * 100) + '%',
       progressLabel: (() => {
         const total = needsZustand ? 9 : 8;
         const left = total - step;
