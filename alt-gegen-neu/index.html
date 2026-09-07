@@ -917,6 +917,90 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   .vhero-tel{margin-top:12px;text-align:center;font-size:13.5px;color:var(--muted);}
   .vhero-tel a{color:var(--ink);text-decoration:none;}
 }
+/* Kundenküchen-Rail */
+/* Rail */
+.kr-shell{position:relative;}
+.kr{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 24px 14px;margin:0 -24px;scrollbar-width:none;-ms-overflow-style:none;}
+.kr::-webkit-scrollbar{display:none;}
+.kr-card{position:relative;flex:0 0 auto;width:198px;aspect-ratio:9/16;scroll-snap-align:start;padding:0;border:0;border-radius:12px;overflow:hidden;background:#0b121e;cursor:pointer;font:inherit;color:#fff;box-shadow:0 14px 30px -20px rgba(16,29,51,0.5);transition:transform 200ms var(--ease-out),box-shadow 200ms var(--ease-out);}
+.kr-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.kr-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,18,30,0.28) 0%,rgba(11,18,30,0) 34%,rgba(11,18,30,0.72) 100%);}
+.kr-play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);z-index:2;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,0.94);color:var(--rot);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px -10px rgba(11,18,30,0.6);transition:transform 200ms var(--ease-out);}
+.kr-play svg{width:22px;height:22px;margin-left:2px;}
+.kr-meta{position:absolute;left:12px;right:12px;bottom:11px;z-index:2;display:flex;flex-direction:column;gap:2px;text-align:left;}
+.kr-meta b{font-size:14.5px;font-weight:700;letter-spacing:-0.01em;}
+.kr-meta i{font-style:normal;font-size:11.5px;font-weight:500;color:rgba(255,255,255,0.82);}
+@media (hover:hover) and (pointer:fine){
+  .kr-card:hover{transform:translateY(-3px);box-shadow:0 24px 40px -22px rgba(16,29,51,0.5);}
+  .kr-card:hover .kr-play{transform:translate(-50%,-50%) scale(1.08);}
+}
+.kr-card:focus-visible{outline:3px solid rgba(3,78,163,0.4);outline-offset:2px;}
+.kr-all{background:#f4f6fa;color:var(--ink);border:1px solid var(--line);box-shadow:none;}
+.kr-all::after{display:none;}
+.kr-allin{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;}
+.kr-allnum{font-size:34px;font-weight:800;letter-spacing:-0.03em;color:var(--rot);}
+.kr-alltxt{font-size:14.5px;font-weight:700;line-height:1.3;text-align:center;}
+.kr-allico{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;}
+.kr-allico svg{width:16px;height:16px;}
+.kr-arrow{position:absolute;top:calc(50% - 7px);transform:translateY(-50%);z-index:5;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,0.96);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center;padding:0 0 3px;box-shadow:0 12px 26px -14px rgba(16,29,51,0.5);}
+.kr-arrow.prev{left:-14px;} .kr-arrow.next{right:-14px;}
+.kr-arrow[disabled]{opacity:0.3;cursor:default;}
+@media (min-width:861px) and (hover:hover) and (pointer:fine){ .kr-arrow{display:flex;} }
+.kr-hint{display:flex;align-items:center;gap:7px;margin-top:4px;font-size:12.5px;font-weight:600;color:var(--muted);}
+@media (max-width:640px){
+  section{padding:40px 0 48px;}
+  .sec-head h2{font-size:26px;}
+  .kr-card{width:min(63vw,220px);}
+  .kr{padding:4px 18px 14px;margin:0 -18px;}
+  .wrap{padding:0 18px;}
+}
+
+/* Feed-Player */
+.fp{position:fixed;inset:0;z-index:300;background:#05080e;display:none;}
+.fp.on{display:block;}
+.fp-scroll{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;-ms-overflow-style:none;}
+.fp-scroll::-webkit-scrollbar{display:none;}
+.fp-item{position:relative;height:100%;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.fp-item img,.fp-item video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#05080e;}
+.fp-item video{z-index:2;}
+.fp-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:76px;height:76px;border-radius:50%;border:0;background:rgba(255,255,255,0.95);color:var(--rot);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 18px 36px -16px rgba(5,8,14,0.8);}
+.fp-play svg{width:32px;height:32px;margin-left:3px;}
+.fp-item.playing .fp-play,.fp-item.playing .shade,.fp-item.playing .fp-cap{display:none;}
+.fp-item .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,14,0.55) 0%,rgba(5,8,14,0) 26%,rgba(5,8,14,0) 58%,rgba(5,8,14,0.8) 100%);pointer-events:none;}
+.fp-cap{position:absolute;left:20px;right:80px;bottom:26px;z-index:3;color:#fff;display:flex;flex-direction:column;gap:4px;}
+.fp-cap span{font-size:11.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#ff5f6a;}
+.fp-cap b{font-size:23px;font-weight:800;letter-spacing:-0.02em;}
+.fp-cap i{font-style:normal;font-size:14px;color:rgba(255,255,255,0.82);}
+.fp-cta{position:absolute;right:16px;bottom:26px;z-index:4;display:inline-flex;align-items:center;gap:8px;background:var(--rot);color:#fff;text-decoration:none;border-radius:10px;padding:13px 16px;font-size:14px;font-weight:700;box-shadow:0 14px 30px -14px rgba(227,6,19,0.7);}
+.fp-x{position:absolute;right:14px;top:14px;z-index:6;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,0.14);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.fp-x svg{width:18px;height:18px;}
+.fp-swipe{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);z-index:5;color:rgba(255,255,255,0.8);font-size:12.5px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:4px;animation:fpUp 1.9s var(--ease-out) infinite;pointer-events:none;}
+.fp-swipe svg{width:18px;height:18px;}
+@keyframes fpUp{0%,100%{transform:translateX(-50%) translateY(0);opacity:0.85;}50%{transform:translateX(-50%) translateY(-7px);opacity:1;}}
+@media (min-width:861px){
+  /* Desktop: Medium, Beschriftung und CTA als eine Spalte statt vier absolute Elemente */
+  .fp-item{display:grid;grid-template-columns:min(46vh,430px);grid-template-rows:minmax(0,1fr) auto auto;justify-content:center;align-content:center;gap:14px;padding:30px 0 34px;}
+  .fp-item > img,.fp-item > video{position:static;grid-area:1/1;width:100%;height:100%;min-height:0;border-radius:14px;}
+  .fp-item .shade{display:none;}
+  .fp-play{position:static;grid-area:1/1;align-self:center;justify-self:center;}
+  .fp-cap{position:static;grid-area:2/1;left:auto;right:auto;bottom:auto;width:100%;}
+  .fp-cta{position:static;grid-area:3/1;justify-self:start;}
+  .fp-swipe{display:none;}
+}
+@media (prefers-reduced-motion:reduce){ .fp-swipe{animation:none;} }
+
+.fp-bars{position:absolute;left:14px;right:14px;top:12px;z-index:7;display:flex;gap:4px;}
+.fp-bar{flex:1;height:2.5px;border-radius:2px;background:rgba(255,255,255,0.3);overflow:hidden;}
+.fp-bar i{display:block;height:100%;width:0;background:#fff;border-radius:2px;transition:width 140ms linear;}
+.fp-mute{position:absolute;right:64px;top:14px;z-index:8;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,0.14);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.fp-mute svg{width:19px;height:19px;}
+.fp-mute .off{display:none;}
+.fp-mute[data-muted="1"] .on{display:none;}
+.fp-mute[data-muted="1"] .off{display:block;}
+.fp-x,.fp-mute{top:26px;}
+@media (min-width:861px){
+  .fp-bars{left:50%;transform:translateX(-50%);width:min(46vh,430px);}
+}
 </style>
 </head>
 <body>
@@ -1255,24 +1339,72 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   </div>
 </section>
 
-<!-- Kundenküchen-Galerie (NEU · Wassermann-Adaption) -->
+<!-- Kundenküchen-Rail (Story-Feed) -->
 <section class="preise" id="gal-sec" style="padding-top:48px;">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">Zuletzt getauscht</span>
-      <h2>Echte Küchen, die wir zuletzt eingebaut haben</h2>
-      <p>Küchen, die unser Montageteam in den vergangenen Monaten in der Region montiert hat.</p>
+      <span class="eyebrow">Zuletzt eingebaut</span>
+      <h2>Küchen, die unser Team gerade montiert hat</h2>
+      <p>Kurze Rundgänge, aufgenommen von unserem Monteur am Tag der Fertigstellung. Tippen Sie auf eine Küche, danach wischen Sie durch alle 22.</p>
     </div>
-    <!-- ⚠️ ORTE = PLATZHALTER: Vor Livegang echte Orte der jeweiligen Kundenküche eintragen
-         (nur mit Freigabe) – oder figcaption auf „Kundenküche aus der Region" lassen. -->
-    <div class="gal rv">
-      <figure><img loading="lazy" src="/assets/kundenkuechen/kueche-01.webp" alt="Kundenküche in Offenburg"><figcaption>Offenburg</figcaption></figure>
-      <figure><img loading="lazy" src="/assets/kundenkuechen/kueche-02.webp" alt="Kundenküche in Ettenheim"><figcaption>Ettenheim</figcaption></figure>
-      <figure><img loading="lazy" src="/assets/kundenkuechen/kueche-03.webp" alt="Kundenküche in Friesenheim"><figcaption>Friesenheim</figcaption></figure>
-      <figure><img loading="lazy" src="/assets/kundenkuechen/kueche-04.webp" alt="Kundenküche in Emmendingen"><figcaption>Emmendingen</figcaption></figure>
-      <figure><img loading="lazy" src="/assets/kundenkuechen/kueche-05.webp" alt="Kundenküche in Gengenbach"><figcaption>Gengenbach</figcaption></figure>
-      <figure><img loading="lazy" src="/assets/kundenkuechen/kueche-06.webp" alt="Kundenküche in Herbolzheim"><figcaption>Herbolzheim</figcaption></figure>
+    <div class="kr-shell">
+      <div class="kr" id="kr">
+      <button type="button" class="kr-card" data-i="0" aria-label="Video ansehen: Küche in Ettenheim, Betonoptik in U-Form">
+        <img loading="lazy" decoding="async" src="/assets/kuechen/kueche-betonoptik-u-form-schwarze-granit-arbeitsplatte-glasvitrinen-led-deckenleuchte.webp" alt="Küche in Ettenheim: Betonoptik in U-Form">
+        <span class="kr-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+        <span class="kr-meta"><b>Ettenheim</b><i>Betonoptik in U-Form</i></span>
+      </button>
+      <button type="button" class="kr-card" data-i="1" aria-label="Video ansehen: Küche in Kippenheim, Landhaus in Dunkelblau">
+        <img loading="lazy" decoding="async" src="/assets/kuechen/kueche-dunkelblau-landhaus-kassettenfronten-holz-rueckwand-unterbauleuchten.webp" alt="Küche in Kippenheim: Landhaus in Dunkelblau">
+        <span class="kr-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+        <span class="kr-meta"><b>Kippenheim</b><i>Landhaus in Dunkelblau</i></span>
+      </button>
+      <button type="button" class="kr-card" data-i="2" aria-label="Video ansehen: Küche in Friesenheim, Grau Hochglanz, grifflos">
+        <img loading="lazy" decoding="async" src="/assets/kuechen/kueche-grau-hochglanz-grifflos-hochschraenke-schwarzer-backofen-laurus.webp" alt="Küche in Friesenheim: Grau Hochglanz, grifflos">
+        <span class="kr-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+        <span class="kr-meta"><b>Friesenheim</b><i>Grau Hochglanz, grifflos</i></span>
+      </button>
+      <button type="button" class="kr-card" data-i="3" aria-label="Video ansehen: Küche in Seelbach, Eiche mit Marmoroptik-Insel">
+        <img loading="lazy" decoding="async" src="/assets/kuechen/kueche-kochinsel-eiche-marmoroptik-arbeitsplatte-muldenluefter-offene-holzregale.webp" alt="Küche in Seelbach: Eiche mit Marmoroptik-Insel">
+        <span class="kr-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+        <span class="kr-meta"><b>Seelbach</b><i>Eiche mit Marmoroptik-Insel</i></span>
+      </button>
+      <button type="button" class="kr-card" data-i="4" aria-label="Video ansehen: Küche in Gengenbach, Salbeigrün mit Kochinsel">
+        <img loading="lazy" decoding="async" src="/assets/kuechen/kueche-salbeigruen-kochinsel-schwarze-steinplatte-holzhaus-mit-galerie.webp" alt="Küche in Gengenbach: Salbeigrün mit Kochinsel">
+        <span class="kr-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+        <span class="kr-meta"><b>Gengenbach</b><i>Salbeigrün mit Kochinsel</i></span>
+      </button>
+      <button type="button" class="kr-card" data-i="5" aria-label="Video ansehen: Küche in Offenburg, Schwarz-Weiß mit Gartenblick">
+        <img loading="lazy" decoding="async" src="/assets/kuechen/kueche-schwarz-weiss-steinoptik-arbeitsplatte-schwarze-armatur-gartenblick.webp" alt="Küche in Offenburg: Schwarz-Weiß mit Gartenblick">
+        <span class="kr-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+        <span class="kr-meta"><b>Offenburg</b><i>Schwarz-Weiß mit Gartenblick</i></span>
+      </button>
+      <button type="button" class="kr-card" data-i="6" aria-label="Video ansehen: Küche in Herbolzheim, Weiß unter der Dachschräge">
+        <img loading="lazy" decoding="async" src="/assets/kuechen/kueche-weiss-dachschraege-schwarze-griffe-betonoptik-arbeitsplatte-grauer-boden.webp" alt="Küche in Herbolzheim: Weiß unter der Dachschräge">
+        <span class="kr-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+        <span class="kr-meta"><b>Herbolzheim</b><i>Weiß unter der Dachschräge</i></span>
+      </button>
+      <button type="button" class="kr-card" data-i="7" aria-label="Video ansehen: Küche in Lahr, Schmale Zeile, grifflos">
+        <img loading="lazy" decoding="async" src="/assets/kuechen/kueche-weiss-grifflos-schmale-zeile-miele-backofen-eichenparkett.webp" alt="Küche in Lahr: Schmale Zeile, grifflos">
+        <span class="kr-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+        <span class="kr-meta"><b>Lahr</b><i>Schmale Zeile, grifflos</i></span>
+      </button>
+      <button type="button" class="kr-card kr-all" data-i="8" aria-label="Alle 22 Küchen ansehen">
+        <span class="kr-allin">
+          <span class="kr-allnum">+14</span>
+          <span class="kr-alltxt">Alle 22 Küchen<br>ansehen</span>
+          <span class="kr-allico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h14"/><path d="m12.5 5.5 6.5 6.5-6.5 6.5"/></svg></span>
+        </span>
+      </button>
+      </div>
+      <button type="button" class="kr-arrow prev" id="kr-prev" aria-label="Zurück">‹</button>
+      <button type="button" class="kr-arrow next" id="kr-next" aria-label="Weiter">›</button>
     </div>
+    <div class="kr-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M5 12h14"/><path d="m14 7 5 5-5 5"/></svg>
+      22 Küchen insgesamt · seitlich wischen
+    </div>
+  </div>
   </div>
 </section>
 
@@ -1776,6 +1908,139 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   }
   box.addEventListener('click',start);
   box.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); start(); } });
+})();
+</script>
+<div class="fp" id="fp">
+  <div class="fp-scroll" id="fp-scroll"></div>
+  <div class="fp-bars" id="fp-bars"></div>
+  <button type="button" class="fp-mute" id="fp-mute" data-muted="0" aria-label="Ton aus/an">
+    <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M19 6.5a8 8 0 0 1 0 11"/></svg>
+    <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>
+  </button>
+  <button type="button" class="fp-x" id="fp-x" aria-label="Schließen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="fp-swipe" id="fp-swipe">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+    Wischen für die nächste Küche
+  </div>
+</div>
+<script>
+(function(){
+  var DATA=[{"n":"01","ort":"Ettenheim","typ":"Betonoptik in U-Form","thumb":"/assets/kuechen/kueche-betonoptik-u-form-schwarze-granit-arbeitsplatte-glasvitrinen-led-deckenleuchte.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-betonoptik-u-form-schwarze-granit-arbeitsplatte-glasvitrinen-led-deckenleuchte.mp4"},{"n":"02","ort":"Kippenheim","typ":"Landhaus in Dunkelblau","thumb":"/assets/kuechen/kueche-dunkelblau-landhaus-kassettenfronten-holz-rueckwand-unterbauleuchten.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-dunkelblau-landhaus-kassettenfronten-holz-rueckwand-unterbauleuchten.mp4"},{"n":"03","ort":"Friesenheim","typ":"Grau Hochglanz, grifflos","thumb":"/assets/kuechen/kueche-grau-hochglanz-grifflos-hochschraenke-schwarzer-backofen-laurus.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-grau-hochglanz-grifflos-hochschraenke-schwarzer-backofen-laurus.mp4"},{"n":"04","ort":"Seelbach","typ":"Eiche mit Marmoroptik-Insel","thumb":"/assets/kuechen/kueche-kochinsel-eiche-marmoroptik-arbeitsplatte-muldenluefter-offene-holzregale.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-kochinsel-eiche-marmoroptik-arbeitsplatte-muldenluefter-offene-holzregale.mp4"},{"n":"05","ort":"Gengenbach","typ":"Salbeigrün mit Kochinsel","thumb":"/assets/kuechen/kueche-salbeigruen-kochinsel-schwarze-steinplatte-holzhaus-mit-galerie.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-salbeigruen-kochinsel-schwarze-steinplatte-holzhaus-mit-galerie.mp4"},{"n":"06","ort":"Offenburg","typ":"Schwarz-Weiß mit Gartenblick","thumb":"/assets/kuechen/kueche-schwarz-weiss-steinoptik-arbeitsplatte-schwarze-armatur-gartenblick.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-schwarz-weiss-steinoptik-arbeitsplatte-schwarze-armatur-gartenblick.mp4"},{"n":"07","ort":"Herbolzheim","typ":"Weiß unter der Dachschräge","thumb":"/assets/kuechen/kueche-weiss-dachschraege-schwarze-griffe-betonoptik-arbeitsplatte-grauer-boden.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-dachschraege-schwarze-griffe-betonoptik-arbeitsplatte-grauer-boden.mp4"},{"n":"08","ort":"Lahr","typ":"Schmale Zeile, grifflos","thumb":"/assets/kuechen/kueche-weiss-grifflos-schmale-zeile-miele-backofen-eichenparkett.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-grifflos-schmale-zeile-miele-backofen-eichenparkett.mp4"},{"n":"09","ort":"Emmendingen","typ":"Weiß mit Holz-Arbeitsplatte","thumb":"/assets/kuechen/kueche-weiss-grifflos-schwarze-griffleisten-holz-arbeitsplatte-halbinsel.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-grifflos-schwarze-griffleisten-holz-arbeitsplatte-halbinsel.mp4"},{"n":"10","ort":"Meißenheim","typ":"U-Form mit Halbinsel","thumb":"/assets/kuechen/kueche-weiss-grifflos-u-form-halbinsel-anthrazit-arbeitsplatte-muldenluefter.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-grifflos-u-form-halbinsel-anthrazit-arbeitsplatte-muldenluefter.mp4"},{"n":"11","ort":"Mahlberg","typ":"Hochglanz mit Marmor-Rückwand","thumb":"/assets/kuechen/kueche-weiss-hochglanz-halbinsel-marmor-rueckwand-ausstellungsfenster-hugelmann.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-hochglanz-halbinsel-marmor-rueckwand-ausstellungsfenster-hugelmann.mp4"},{"n":"12","ort":"Schuttertal","typ":"Weiß mit Holz und Terracotta","thumb":"/assets/kuechen/kueche-weiss-holz-arbeitsplatte-edelstahl-backofen-schraeghaube-terracotta-fliesen.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-holz-arbeitsplatte-edelstahl-backofen-schraeghaube-terracotta-fliesen.mp4"},{"n":"13","ort":"Rust","typ":"Kochinsel vor Natursteinwand","thumb":"/assets/kuechen/kueche-weiss-kochinsel-holz-arbeitsplatte-natursteinwand-diagonale-bodenfliesen.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-kochinsel-holz-arbeitsplatte-natursteinwand-diagonale-bodenfliesen.mp4"},{"n":"14","ort":"Ringsheim","typ":"Kochinsel mit Vitrinen","thumb":"/assets/kuechen/kueche-weiss-kochinsel-holzplatte-mit-spuele-vitrinen-haengeschraenke-montagetag.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-kochinsel-holzplatte-mit-spuele-vitrinen-haengeschraenke-montagetag.mp4"},{"n":"15","ort":"Kappel-Grafenhausen","typ":"L-Form in Betonoptik","thumb":"/assets/kuechen/kueche-weiss-l-form-schwarze-griffe-betonoptik-arbeitsplatte-offene-regale.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-l-form-schwarze-griffe-betonoptik-arbeitsplatte-offene-regale.mp4"},{"n":"16","ort":"Kehl","typ":"Anthrazit mit Kaffeebar","thumb":"/assets/kuechen/kueche-anthrazit-betonoptik-kochinsel-gruene-wand-kaffeebar-nische-eiche-schwarze-pendelleuchten.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-anthrazit-betonoptik-kochinsel-gruene-wand-kaffeebar-nische-eiche-schwarze-pendelleuchten.mp4"},{"n":"17","ort":"Achern","typ":"Landhaus mit Theke","thumb":"/assets/kuechen/kueche-hell-landhaus-u-form-mit-theke-induktion-weisse-fliesen-holzdecke.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-hell-landhaus-u-form-mit-theke-induktion-weisse-fliesen-holzdecke.mp4"},{"n":"18","ort":"Oberkirch","typ":"Halbinsel im Wohnraum","thumb":"/assets/kuechen/kueche-weiss-halbinsel-anthrazit-arbeitsplatte-offener-wohnraum-schwarzer-backofen.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-halbinsel-anthrazit-arbeitsplatte-offener-wohnraum-schwarzer-backofen.mp4"},{"n":"19","ort":"Hausach","typ":"Hochglanz mit Calacatta-Marmor","thumb":"/assets/kuechen/kueche-weiss-hochglanz-calacatta-marmor-rueckwand-und-inselplatte-edelstahl-armatur.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-hochglanz-calacatta-marmor-rueckwand-und-inselplatte-edelstahl-armatur.mp4"},{"n":"20","ort":"Haslach","typ":"Hochglanz unter der Dachschräge","thumb":"/assets/kuechen/kueche-weiss-hochglanz-grifflos-dachschraege-dunkle-arbeitsplatte-muldenluefter-eichenboden.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-hochglanz-grifflos-dachschraege-dunkle-arbeitsplatte-muldenluefter-eichenboden.mp4"},{"n":"21","ort":"Elzach","typ":"Landhaus im Blockhaus","thumb":"/assets/kuechen/kueche-weiss-landhaus-blockhaus-holzwaende-hochschraenke-anthrazit-fliesen.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-weiss-landhaus-blockhaus-holzwaende-hochschraenke-anthrazit-fliesen.mp4"},{"n":"22","ort":"Zell am Harmersbach","typ":"Landhaus in Olivgrün","thumb":"/assets/kuechen/kueche-hell-olive-gruen-landhaus-u-form-holz-arbeitsplatte-muldenluefter-ausstellungsfenster-hugelmann.webp","video":"https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/kueche-hell-olive-gruen-landhaus-u-form-holz-arbeitsplatte-muldenluefter-ausstellungsfenster-hugelmann.mp4"}];
+  var kr=document.getElementById('kr'),prev=document.getElementById('kr-prev'),next=document.getElementById('kr-next');
+  function step(){ var c=kr.querySelector('.kr-card'); return c?(c.offsetWidth+12)*Math.max(1,Math.floor(kr.clientWidth/(c.offsetWidth+12))-1):300; }
+  function updArrows(){ prev.disabled=kr.scrollLeft<8; next.disabled=kr.scrollLeft+kr.clientWidth>=kr.scrollWidth-8; }
+  prev.addEventListener('click',function(){ kr.scrollBy({left:-step(),behavior:'smooth'}); });
+  next.addEventListener('click',function(){ kr.scrollBy({left:step(),behavior:'smooth'}); });
+  kr.addEventListener('scroll',function(){ clearTimeout(kr._t); kr._t=setTimeout(updArrows,60); },{passive:true});
+  updArrows();
+
+  var fp=document.getElementById('fp'),sc=document.getElementById('fp-scroll'),bars=document.getElementById('fp-bars'),swipe=document.getElementById('fp-swipe');
+  sc.innerHTML=DATA.map(function(d,i){
+    return '<div class="fp-item" data-i="'+i+'">'+
+      '<img src="'+d.thumb+'" alt="Küche in '+d.ort+'" loading="lazy">'+
+      '<div class="shade"></div>'+
+      '<div class="fp-cap"><span>Küche '+d.n+'</span><b>'+d.ort+'</b><i>'+d.typ+'</i></div>'+
+      '<button type="button" class="fp-play" aria-label="Video abspielen"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>'+
+      '<a class="fp-cta" href="/alt-gegen-neu-formular/">Jetzt Küche planen</a>'+
+    '</div>';
+  }).join('');
+  var slides=[].slice.call(sc.querySelectorAll('.fp-item'));
+  bars.innerHTML=DATA.map(function(){ return '<span class="fp-bar"><i></i></span>'; }).join('');
+  var barEls=[].slice.call(bars.querySelectorAll('.fp-bar i'));
+  var cur=0, muted=false, isOpen=false;
+
+  function setBars(i,pct){
+    barEls.forEach(function(el,n){ el.style.width = n<i ? '100%' : (n===i ? (pct||0)+'%' : '0%'); });
+  }
+  function mount(i){
+    var s=slides[i]; if(!s)return null;
+    var v=s.querySelector('video');
+    if(v)return v;
+    v=document.createElement('video');
+    v.src=DATA[i].video; v.playsInline=true; v.setAttribute('playsinline',''); v.preload='auto'; v.muted=muted;
+    v.addEventListener('timeupdate',function(){ if(cur===i&&v.duration) setBars(i, Math.min(100, v.currentTime/v.duration*100)); });
+    v.addEventListener('ended',function(){ if(cur===i) goNext(); });
+    s.insertBefore(v,s.firstChild);
+    return v;
+  }
+  function start(i){
+    var s=slides[i]; if(!s||!isOpen)return;
+    var v=mount(i);
+    s.classList.add('playing');
+    if(v){ var p=v.play(); if(p&&p.catch)p.catch(function(){ v.muted=true; muted=true; syncMute(); v.play(); }); }
+    if(window.gtag) gtag('event','kuechen_video_play',{kueche:DATA[i].ort});
+  }
+  function stop(i){
+    var s=slides[i]; if(!s)return;
+    var v=s.querySelector('video');
+    if(v){ v.pause(); try{ v.currentTime=0; }catch(e){} }
+    s.classList.remove('playing');
+  }
+  function goTo(i,autoplay){
+    if(i<0)i=0;
+    if(i>slides.length-1){ close(); return; }
+    if(i!==cur) stop(cur);
+    cur=i;
+    sc.scrollTop=slides[i].offsetTop;
+    setBars(i,0);
+    if(autoplay) start(i); else { slides[i].classList.remove('playing'); }
+    if(i>0&&swipe) swipe.style.display='none';
+    if(slides[i+1]) mount(i+1);
+  }
+  function goNext(){ goTo(cur+1,true); }
+  function goPrev(){ goTo(cur-1,true); }
+  function syncMute(){
+    var b=document.getElementById('fp-mute');
+    if(b) b.setAttribute('data-muted', muted?'1':'0');
+    slides.forEach(function(s){ var v=s.querySelector('video'); if(v)v.muted=muted; });
+  }
+  function open(i){
+    fp.classList.add('on'); document.body.style.overflow='hidden';
+    if(swipe) swipe.style.display='';
+    isOpen=true;
+    goTo(i,true);
+  }
+  function close(){
+    isOpen=false;
+    fp.classList.remove('on'); document.body.style.overflow='';
+    slides.forEach(function(s){
+      var v=s.querySelector('video');
+      s.classList.remove('playing');
+      if(v){ v.pause(); v.removeAttribute('src'); try{ v.load(); }catch(e){} v.remove(); }
+    });
+    setBars(0,0);
+  }
+  sc.addEventListener('click',function(e){
+    if(e.target.closest('.fp-cta'))return;
+    var btn=e.target.closest('.fp-play');
+    if(btn){ start(parseInt(btn.closest('.fp-item').getAttribute('data-i'),10)); return; }
+    var r=sc.getBoundingClientRect(), x=e.clientX-r.left;
+    if(x < r.width*0.32) goPrev(); else if(x > r.width*0.68) goNext();
+    else { var s=slides[cur], v=s&&s.querySelector('video');
+      if(!v||!s.classList.contains('playing')) start(cur);
+      else if(v.paused) v.play(); else v.pause(); }
+  });
+  sc.addEventListener('scroll',function(){
+    clearTimeout(sc._t);
+    sc._t=setTimeout(function(){
+      var i=Math.round(sc.scrollTop/Math.max(1,sc.clientHeight));
+      if(i!==cur&&slides[i]) goTo(i,true);
+    },90);
+  },{passive:true});
+  [].forEach.call(document.querySelectorAll('.kr-card'),function(b){
+    b.addEventListener('click',function(){ open(parseInt(b.getAttribute('data-i'),10)); });
+  });
+  document.getElementById('fp-x').addEventListener('click',close);
+  var mb=document.getElementById('fp-mute');
+  if(mb) mb.addEventListener('click',function(){ muted=!muted; syncMute(); });
+  document.addEventListener('keydown',function(e){
+    if(!fp.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    else if(e.key==='ArrowDown'||e.key==='ArrowRight'){ e.preventDefault(); goNext(); }
+    else if(e.key==='ArrowUp'||e.key==='ArrowLeft'){ e.preventDefault(); goPrev(); }
+  });
 })();
 </script>
 </body>
