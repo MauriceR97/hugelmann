@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/alt-gegen-neu/", "permanent": true }
+  ]
+}
