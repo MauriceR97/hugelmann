@@ -8,6 +8,8 @@
 <body>
 <x-dc>
 <helmet>
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
   <meta name="description" content="In 2 Minuten Ihren Aktionsplatz sichern: ein paar kurze Fragen, danach meldet sich Ihr persönlicher Küchenberater. Kostenlos und unverbindlich.">
   <link rel="canonical" href="https://kueche-hugelmann.de/alt-gegen-neu-formular/">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -482,6 +484,7 @@ class Component extends DCLogic {
   }
   ga(name, params) {
     try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) {}
+    try { if (typeof window.va === 'function') window.va('event', { name: name, data: params || {} }); } catch (e) {}
   }
   stepName(step) {
     const q = this.questions[step - 1];
