@@ -898,19 +898,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   .vhero{display:block;padding:0 0 26px;}
   .vhero-media{position:relative;background:#0b121e;overflow:hidden;cursor:pointer;}
   .vhero-media img{width:100%;height:auto;aspect-ratio:1080/1920;object-fit:cover;display:block;}
-  .vhero-dur{position:absolute;right:12px;top:12px;z-index:2;background:rgba(11,18,30,0.6);color:#fff;border-radius:6px;padding:4px 9px;font-size:11.5px;font-weight:700;letter-spacing:0.03em;pointer-events:none;}
-  .vhero-media.playing{cursor:default;}
-  .vhero-media.playing .vhero-dur,.vhero-media.playing .vhero-ring{display:none;}
-  .vhero-ring{position:absolute;left:50%;top:32.4%;transform:translate(-50%,-50%);width:10.5%;aspect-ratio:1;z-index:2;pointer-events:none;}
-  .vhero-ring i{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,0.95);opacity:0;animation:vhPulse 4.2s cubic-bezier(0.23,1,0.32,1) infinite;}
-  .vhero-ring i:last-child{display:none;}
-  @keyframes vhPulse{
-    0%{transform:scale(1);opacity:0.85;}
-    55%{transform:scale(1.7);opacity:0;}
-    100%{transform:scale(1.7);opacity:0;}
-  }
-  @media (prefers-reduced-motion: reduce){ .vhero-ring{display:none;} }
-  .vhero-media video{width:100%;height:auto;display:block;}
   .vhero-cta{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 20px 0;}
   .vhero-cta .btn-rot{display:flex;width:100%;justify-content:center;padding:15px 18px;font-size:16.5px;}
   .vhero-cta .micro{font-size:12.5px;font-weight:600;color:var(--muted);}
@@ -1033,10 +1020,11 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 </div>
 
 <div class="vhero">
-  <div class="vhero-media" id="vhero-media" data-src="https://res.cloudinary.com/dusdhljtc/video/upload/v1788729770/Hugelmann-Long-Ad.webm" data-type="video/webm" role="button" tabindex="0" aria-label="Aktionsvideo abspielen">
-    <img src="/assets/lp-video-thumb-mobil.webp" alt="Alt gegen Neu: Küchensonderaktion in Lahr – bis zu 4.000 € Tauschprämie" fetchpriority="high">
-    <span class="vhero-ring" aria-hidden="true"><i></i><i></i></span>
-    <span class="vhero-dur">1:35</span>
+  <div class="vhero-media" id="vhero-media">
+    <picture>
+      <source media="(max-width:860px)" srcset="/assets/lp-hero-mobil.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Alt gegen Neu: Küchensonderaktion in Lahr, bis zu 4.000 € Tauschprämie" fetchpriority="high">
+    </picture>
   </div>
   <div class="vhero-cta">
     <a class="btn-rot" href="/alt-gegen-neu-formular/"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h14"/><path d="m12.5 5.5 6.5 6.5-6.5 6.5"/></svg><span>Jetzt Küchenprämie anfragen</span></a>
@@ -1321,7 +1309,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       <h2>Aus der Küche von damals wird die Küche für die nächsten 20 Jahre</h2>
     </div>
     <div class="ba-reveal rv" id="ba-reveal">
-      <img class="ba-layer ba-old" loading="lazy" src="/assets/vorher-kueche.webp" alt="Küche vor dem Tausch">
+      <img class="ba-layer ba-old" loading="lazy" src="/assets/vorher-kueche-1600.webp" alt="Küche vor dem Tausch">
       <img class="ba-layer ba-new" loading="lazy" src="/assets/nachher-kueche.webp" alt="Neue Küche nach dem Tausch">
       <span class="ba-line" aria-hidden="true"></span>
       <span class="ba-pill ba-pill-l">Vorher</span>
@@ -1424,21 +1412,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   </div>
 </section>
 
-<!-- Tauschgeschichten -->
-<section>
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Echte Tauschgeschichten</span>
-      <h2>So lief es bei Nachbarn aus der Region</h2>
-    </div>
-    <div class="tsts">
-      <div class="tst rv"><img loading="lazy" src="/assets/testimonials/renate.webp" alt="Renate in ihrer neuen Landhausküche"><div><span class="tst-st" aria-label="5 von 5 Sternen">★★★★★</span><b>Renate</b><span class="meta">Ettenheim · Reihenhaus, Küche von 1998</span><p>„Ich wollte vorher noch Boden und Wände machen lassen. Die neue Küche wurde bei Hugelmann eingelagert, bis ich fertig war. Nach knapp drei Wochen habe ich angerufen und kurz darauf stand sie."</p></div></div>
-      <div class="tst rv rv-d1"><img loading="lazy" src="/assets/testimonials/bernd-ute.webp" alt="Bernd und Ute an ihrer neuen Kochinsel"><div><span class="tst-st" aria-label="5 von 5 Sternen">★★★★★</span><b>Bernd &amp; Ute</b><span class="meta">Friesenheim · Einfamilienhaus, Küche von 1994</span><p>„Was mir gefiel: Es wurde nichts schöngeredet. Als wir zu große Schränke wollten, hat der Berater offen gesagt, dass das im Raum nicht funktioniert."</p></div></div>
-      <div class="tst rv rv-d2"><img loading="lazy" src="/assets/testimonials/christa.webp" alt="Christa in ihrer neuen zweizeiligen Küche"><div><span class="tst-st" aria-label="5 von 5 Sternen">★★★★★</span><b>Christa</b><span class="meta">Kippenheim · Eigentumswohnung, 3. OG</span><p>„Bei uns im Altbau ist das Treppenhaus eng. Die haben das vorher angeschaut und mit dem Aufzug geplant. Kein Kratzer an der Wand."</p></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- Möbelhaus -->
 <section class="haus">
   <div class="wrap">
@@ -1449,9 +1422,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
     </div>
     <div class="haus-split rv">
       <div class="haus-vid">
-        <video preload="auto" muted playsinline>
-          <source src="/assets/hero-mobil.webm" type="video/webm">
-        </video>
+        <video preload="none" muted playsinline data-lazysrc="https://res.cloudinary.com/dusdhljtc/video/upload/f_auto,q_auto/hero-mobil.webm" data-lazytype="video/webm"></video>
       </div>
       <div class="haus-facts">
         <div class="hf"><b>14.000</b><span>qm Ausstellung auf vier Etagen</span></div>
@@ -1892,27 +1863,21 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
   var v=document.querySelector('.haus-vid video');
   if(!v)return;
   v.muted=true; v.loop=false; v.setAttribute('playsinline','');
-  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ v.play&&v.play(); } else { v.pause&&v.pause(); } }); },{threshold:0.4});
-  io.observe(v);
-})();
-</script>
-<script>
-(function(){
-  var box=document.getElementById('vhero-media'); if(!box)return;
-  var started=false;
-  function start(){
-    if(started)return; started=true;
-    var v=document.createElement('video');
-    v.controls=true; v.autoplay=true; v.playsInline=true; v.setAttribute('playsinline',''); v.preload='auto';
-    var s=document.createElement('source'); s.src=box.getAttribute('data-src'); s.type=box.getAttribute('data-type')||'video/mp4';
-    v.appendChild(s);
-    var img=box.querySelector('img'); if(img) img.style.display='none';
-    box.classList.add('playing'); box.appendChild(v);
-    var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){ v.muted=true; v.play(); });
-    if(window.gtag) gtag('event','video_play',{video_title:'LP Aktionsvideo'});
+  var loaded=false;
+  function load(){
+    if(loaded)return; loaded=true;
+    var s=document.createElement('source');
+    s.src=v.getAttribute('data-lazysrc'); s.type=v.getAttribute('data-lazytype')||'video/mp4';
+    v.appendChild(s); v.preload='auto'; v.load();
   }
-  box.addEventListener('click',start);
-  box.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); start(); } });
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting){ if(v.pause)v.pause(); return; }
+      load();
+      if(e.intersectionRatio>0.3 && v.play) v.play();
+    });
+  },{threshold:[0,0.3,0.6],rootMargin:'200px 0px'});
+  io.observe(v);
 })();
 </script>
 <div class="fp" id="fp">
@@ -1965,7 +1930,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
     var v=s.querySelector('video');
     if(v)return v;
     v=document.createElement('video');
-    v.src=DATA[i].video; v.playsInline=true; v.setAttribute('playsinline',''); v.preload='auto'; v.muted=muted;
+    v.src=DATA[i].video; v.playsInline=true; v.setAttribute('playsinline',''); v.preload=(i===cur?'auto':'metadata'); v.muted=muted;
     s.classList.add('loading');
     v.addEventListener('playing',function(){ s.classList.remove('loading'); });
     v.addEventListener('canplay',function(){ if(!s.classList.contains('playing')) s.classList.remove('loading'); });
