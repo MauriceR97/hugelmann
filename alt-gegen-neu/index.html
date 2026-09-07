@@ -1001,6 +1001,11 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 @media (min-width:861px){
   .fp-bars{left:50%;transform:translateX(-50%);width:min(46vh,430px);}
 }
+.fp-item .fp-spin{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;width:44px;height:44px;border-radius:50%;border:3px solid rgba(255,255,255,0.28);border-top-color:#fff;animation:fpSpin 780ms linear infinite;display:none;pointer-events:none;}
+.fp-item.loading .fp-spin{display:block;}
+.fp-item.loading .fp-play{display:none;}
+@keyframes fpSpin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+@media (prefers-reduced-motion:reduce){ .fp-item .fp-spin{animation-duration:1600ms;} }
 </style>
 </head>
 <body>
@@ -1942,6 +1947,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       '<img src="'+d.thumb+'" alt="Küche in '+d.ort+'" loading="lazy">'+
       '<div class="shade"></div>'+
       '<div class="fp-cap"><span>Küche '+d.n+'</span><b>'+d.ort+'</b><i>'+d.typ+'</i></div>'+
+      '<span class="fp-spin" aria-hidden="true"></span>'+
       '<button type="button" class="fp-play" aria-label="Video abspielen"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>'+
       '<a class="fp-cta" href="/alt-gegen-neu-formular/">Jetzt Küche planen</a>'+
     '</div>';
@@ -1960,6 +1966,11 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
     if(v)return v;
     v=document.createElement('video');
     v.src=DATA[i].video; v.playsInline=true; v.setAttribute('playsinline',''); v.preload='auto'; v.muted=muted;
+    s.classList.add('loading');
+    v.addEventListener('playing',function(){ s.classList.remove('loading'); });
+    v.addEventListener('canplay',function(){ if(!s.classList.contains('playing')) s.classList.remove('loading'); });
+    v.addEventListener('waiting',function(){ if(s.classList.contains('playing')) s.classList.add('loading'); });
+    v.addEventListener('error',function(){ s.classList.remove('loading'); });
     v.addEventListener('timeupdate',function(){ if(cur===i&&v.duration) setBars(i, Math.min(100, v.currentTime/v.duration*100)); });
     v.addEventListener('ended',function(){ if(cur===i) goNext(); });
     s.insertBefore(v,s.firstChild);
@@ -1969,6 +1980,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
     var s=slides[i]; if(!s||!isOpen)return;
     var v=mount(i);
     s.classList.add('playing');
+    if(v&&v.readyState<3) s.classList.add('loading');
     if(v){ var p=v.play(); if(p&&p.catch)p.catch(function(){ v.muted=true; muted=true; syncMute(); v.play(); }); }
     if(window.gtag) gtag('event','kuechen_video_play',{kueche:DATA[i].ort});
   }
@@ -1976,7 +1988,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
     var s=slides[i]; if(!s)return;
     var v=s.querySelector('video');
     if(v){ v.pause(); try{ v.currentTime=0; }catch(e){} }
-    s.classList.remove('playing');
+    s.classList.remove('playing'); s.classList.remove('loading');
   }
   function goTo(i,autoplay){
     if(i<0)i=0;
@@ -2008,6 +2020,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
     slides.forEach(function(s){
       var v=s.querySelector('video');
       s.classList.remove('playing');
+      s.classList.remove('loading');
       if(v){ v.pause(); v.removeAttribute('src'); try{ v.load(); }catch(e){} v.remove(); }
     });
     setBars(0,0);
