@@ -589,6 +589,11 @@ class Component extends DCLogic {
   sendLead(f) {
     const trk = window.REH_TRACK ? window.REH_TRACK.getAll() : {};
     const evid = window.REH_TRACK ? window.REH_TRACK.leadEventId() : '';
+    try {
+      const oaiBody = JSON.stringify({ event_id: evid, source_url: location.origin + '/alt-gegen-neu-danke/' });
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/openai-lead', new Blob([oaiBody], { type: 'application/json' }));
+      else fetch('/api/openai-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: oaiBody, keepalive: true }).catch(function () {});
+    } catch (e) {}
     const a = this.state.answers, q = this.questions;
     const answer = (i) => {
       const idx = a[i + 1];
