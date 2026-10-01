@@ -316,6 +316,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 /* Sticky Mobile-Bar: Anrufen + Platz sichern */
 #sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(16,29,51,0.1);opacity:0;transform:translateY(100%);pointer-events:none;transition:opacity 240ms var(--ease-out),transform 240ms var(--ease-out);}
 #sticky-bar.on{opacity:1;transform:none;pointer-events:auto;}
+#sticky-bar .go{flex:1;}
 #sticky-bar .call{flex:1;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--navy);color:var(--navy);font-weight:800;font-size:15px;padding:14px 8px;border-radius:8px;text-decoration:none;background:#fff;}
 #sticky-bar .go{flex:1.6;display:flex;align-items:center;justify-content:center;background:var(--rot);color:#fff;font-weight:900;font-size:15px;padding:14px 8px;border-radius:8px;text-decoration:none;box-shadow:0 8px 20px -8px rgba(227,6,19,0.5);}
 @media (min-width:761px){ #sticky-bar{display:none;} }
@@ -1006,7 +1007,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
          und rendert als schwarzer Kasten – deshalb hier logo.webp. Bitte auch in v2 prüfen! -->
     <img src="/assets/logo.webp" alt="Interliving Hugelmann, besser wohnen!" style="height:40px;width:auto;display:block;">
     <div style="display:flex;align-items:center;gap:10px;">
-      <a class="tel" href="tel:+497821965773">☎&#xFE0E; 07821 / 965773</a>
       <a class="hdr-cta" href="/alt-gegen-neu-formular/">Platz sichern</a>
     </div>
   </div>
@@ -1024,15 +1024,14 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 <div class="vhero">
   <div class="vhero-media" id="vhero-media">
     <picture>
-      <source media="(max-width:860px)" srcset="/assets/lp-hero-mobil.webp">
-      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Alt gegen Neu: Küchensonderaktion in Lahr, bis zu 4.000 € Tauschprämie" fetchpriority="high">
+      <source media="(max-width:860px)" srcset="/assets/lp-hero-mobil-ade.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Alte Küche ade, hallo Traumküche: dieselbe Küche vorher und nachher. Bis zu 4.000 € Tauschprämie, kostenloser Abbau und Mitnahme, 0 % Finanzierung bis 60 Monate." fetchpriority="high">
     </picture>
   </div>
   <div class="vhero-cta">
     <a class="btn-rot" href="/alt-gegen-neu-formular/"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h14"/><path d="m12.5 5.5 6.5 6.5-6.5 6.5"/></svg><span>Jetzt Küchenprämie anfragen</span></a>
     <span class="micro">kostenlos &amp; unverbindlich</span>
   </div>
-  <div class="vhero-tel">☎&#xFE0E; Oder rufen Sie uns an: <a href="tel:+497821965773"><b>07821 / 965773</b></a></div>
 </div>
 
 <div class="aktlogo rv">
@@ -1055,7 +1054,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       <span class="micro">kostenlos &amp; unverbindlich</span>
       <div class="grow"><span class="st" aria-label="4,2 von 5 Sterne"><i>★★★★★</i><em>★★★★★</em></span><svg class="gicon" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg><span><b>4,2 von 5</b> bei Google · 547 Bewertungen</span></div>
     </div>
-    <div class="telrow rv rv-d3">☎&#xFE0E; Oder rufen Sie uns an: <a href="tel:+497821965773"><b>07821 / 965773</b></a></div>
   </div>
   <div class="heroimg rv rv-d1">
     <div class="aktlogo-mob">
@@ -1456,7 +1454,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
         <img loading="lazy" src="/assets/marken/interliving-kueche.webp" alt="Interliving">
         <img loading="lazy" src="/assets/marken/culineo.webp" alt="Culineo">
         <img loading="lazy" src="/assets/marken/wertkueche.webp" alt="WERT Küche">
-        <img loading="lazy" src="/assets/marken/nolte.webp" alt="Nolte Küchen">
+        <img loading="lazy" src="/assets/marken/nobilia.webp" alt="nobilia">
       </div>
     </div>
   </div>
@@ -1483,12 +1481,10 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
           <div><span>Sonntag</span><b>geschlossen</b></div>
         </div>
         <div class="ok-rows">
-          <div><span>Telefon</span><a href="tel:+497821965773">07821 / 965773</a></div>
           <div><span>E-Mail</span><a href="mailto:info@hugelmann.de">info@hugelmann.de</a></div>
         </div>
         <div class="ok-btns">
           <a class="btn-rot" href="https://www.google.com/maps/dir/?api=1&amp;destination=Rainer-Haungs-Stra%C3%9Fe+1%2C+77933+Lahr" target="_blank" rel="noopener">Route planen</a>
-          <a class="btn-line" href="tel:+497821965773">Anrufen</a>
         </div>
       </div>
     </div>
@@ -1527,7 +1523,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       <p>Wir können Abbau, Mitnahme und Montage nur für eine begrenzte Zahl an Küchen zusätzlich einplanen. Beantworten Sie jetzt ein paar kurze Fragen und lassen Sie sich unverbindlich ausrechnen, was Ihre Küche wert ist.</p>
       <div class="btns">
         <a class="b1" href="/alt-gegen-neu-formular/">Jetzt kostenlos Platz sichern&nbsp;→</a>
-        <a class="b2" href="tel:+497821965773">Oder anrufen: 07821 / 965773</a>
       </div>
       <span class="fine">Kostenlos &amp; unverbindlich · in 2 Minuten erledigt</span>
     </div>
@@ -1556,7 +1551,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 <footer>
   <div class="wrap">
     <img loading="lazy" src="/assets/logo-weiss.webp" alt="Interliving Hugelmann" style="height:40px;width:auto;">
-    <p style="margin-top:12px;">Küchen Hugelmann · Rainer-Haungs-Straße 1, 77933 Lahr · Tel. 07821 / 965773</p>
+    <p style="margin-top:12px;">Küchen Hugelmann · Rainer-Haungs-Straße 1, 77933 Lahr</p>
     <div class="foot-links">
       <a href="https://www.hugelmann.de/impressum" target="_blank" rel="noopener">Impressum</a>
       <a href="https://www.hugelmann.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
@@ -1572,7 +1567,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 
 <!-- Sticky Mobile-Bar: Anrufen + Platz sichern (NEU · Wassermann-Adaption) -->
 <div id="sticky-bar">
-  <a class="call" href="tel:+497821965773">☎&#xFE0E; Anrufen</a>
   <a class="go" href="/alt-gegen-neu-formular/">Platz sichern</a>
 </div>
 
@@ -1659,9 +1653,13 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       if(done)return; done=true;
       setTimeout(function(){ window.location.href=url+(url.indexOf('?')>-1?'&':'?')+'plz='+p; },900);
     }else{
-      card.classList.add('is-bad');
-      msg.textContent='Ihre PLZ liegt außerhalb unseres Aktionsgebiets. Rufen Sie uns gern an: 07821 / 965773.';
+      // Außerhalb: nicht blockieren, Lead trotzdem ins Formular leiten
+      card.classList.add('is-ok');
+      msg.textContent='Danke! Wir prüfen Ihre Anfrage persönlich. Weiter zu den Fragen …';
+      try{ localStorage.setItem('agn_plz',p); }catch(e){}
       try{ if(window.gtag) gtag('event','plz_check_out',{plz:p}); }catch(e){}
+      if(done)return; done=true;
+      setTimeout(function(){ window.location.href=url+(url.indexOf('?')>-1?'&':'?')+'plz='+p+'&gebiet=out'; },1100);
     }
   }
   form.addEventListener('submit',function(e){ e.preventDefault(); check(false); });
