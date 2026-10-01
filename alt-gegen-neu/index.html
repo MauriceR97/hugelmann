@@ -996,6 +996,17 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 .fp-item.loading .fp-play{display:none;}
 @keyframes fpSpin{to{transform:translate(-50%,-50%) rotate(360deg);}}
 @media (prefers-reduced-motion:reduce){ .fp-item .fp-spin{animation-duration:1600ms;} }
+/* Problem-Foto mit Markierungen */
+.nv{position:relative;max-width:820px;margin:6px auto 0;container-type:inline-size;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -34px rgba(16,29,51,0.45);}
+.nv img{display:block;width:100%;height:auto;}
+.nv-l{position:absolute;z-index:2;background:#fff;color:var(--ink);font-weight:800;letter-spacing:-0.01em;line-height:1.2;padding:0.24em 0.42em 0.26em;border-radius:0.22em;box-shadow:0 0.4em 1em -0.5em rgba(16,29,51,0.55);white-space:nowrap;box-sizing:border-box;padding-bottom:0.36em;}
+.nv-m{position:absolute;z-index:3;width:4.6cqw;height:4.6cqw;margin:-2.3cqw 0 0 -2.3cqw;border-radius:50%;background:var(--rot);box-shadow:0 0 0 0.55cqw rgba(255,255,255,0.95),0 0.6cqw 1.6cqw rgba(0,0,0,0.35);}
+.nv-m::before,.nv-m::after{content:"";position:absolute;left:50%;top:50%;width:52%;height:0.55cqw;margin:-0.275cqw 0 0 -26%;background:#fff;border-radius:2px;transform:rotate(45deg);}
+.nv-m::after{transform:rotate(-45deg);}
+.nv.rv .nv-l,.nv.rv .nv-m{opacity:0;transform:scale(0.85);transition:opacity 260ms var(--ease-out) var(--d),transform 320ms var(--ease-out) var(--d);}
+.nv.rv.in .nv-l,.nv.rv.in .nv-m{opacity:1;transform:none;}
+@media (prefers-reduced-motion: reduce){ .nv.rv .nv-l,.nv.rv .nv-m{opacity:1;transform:none;transition:none;} }
+@media (max-width:640px){ .nv{border-radius:10px;margin-left:-4px;margin-right:-4px;} }
 </style>
 </head>
 <body>
@@ -1120,12 +1131,17 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       <span class="eyebrow">Kennen Sie das?</span>
       <h2>Was in einer alten Küche wirklich nervt</h2>
     </div>
-    <ul class="kw-plist rv">
-      <li><i aria-hidden="true">✗</i><b>Alte Fronten</b><span>nicht mehr zeitgemäß</span></li>
-      <li><i aria-hidden="true">✗</i><b>Unergonomisch</b><span>ständiges Bücken</span></li>
-      <li><i aria-hidden="true">✗</i><b>Alte E-Geräte</b><span>laut und stromhungrig</span></li>
-      <li><i aria-hidden="true">✗</i><b>Dunkle Ecken</b><span>Licht fehlt beim Arbeiten</span></li>
-    </ul>
+    <figure class="nv rv" aria-label="Typische Probleme einer alten Küche">
+      <img src="/assets/nervt-alte-kueche.webp" width="1000" height="800" loading="lazy" alt="Frau kniet vor einem alten Unterschrank und sucht Töpfe: alte Fronten, fehlender Stauraum, alte E-Geräte, unergonomisch.">
+      <span class="nv-m" style="left:86.8%;top:31.25%;--d:0ms;"></span>
+      <span class="nv-l" style="left:53.2%;top:31.2%;width:29%;font-size:3.4cqw;--d:80ms;">Alte E-Geräte</span>
+      <span class="nv-m" style="left:69.7%;top:54%;--d:220ms;"></span>
+      <span class="nv-l" style="left:71.4%;top:51.4%;width:18.6%;font-size:3cqw;line-height:1.08;--d:300ms;">Fehlender<br>Stauraum</span>
+      <span class="nv-m" style="left:16%;top:68.75%;--d:440ms;"></span>
+      <span class="nv-l" style="left:18%;top:66.2%;width:33.6%;font-size:4cqw;--d:520ms;">Unergonomisch</span>
+      <span class="nv-m" style="left:73.3%;top:78.4%;--d:660ms;"></span>
+      <span class="nv-l" style="left:48.4%;top:77.7%;width:22%;font-size:2.9cqw;--d:740ms;">Alte Fronten</span>
+    </figure>
     </div>
     <div class="kw-deck rv" id="kw-deck">
       <div class="sec-head kw-head">
