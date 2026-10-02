@@ -284,6 +284,15 @@
     [data-rsp~="qwrap"] button[style*="justify-content: space-between"]{padding:15px 16px 15px 54px !important;font-size:16px !important;}
   }
   @media (max-width:560px){ [data-rsp~="berater-fig"]{width:104px !important;margin-left:12px !important;} [data-rsp~="berater-fig"] img{width:84px !important;height:84px !important;} }
+  [data-rsp~="stack-pill"],[data-rsp~="stack-pill"] *{color:#fff !important;}
+  [data-rsp~="vs-car"]::-webkit-scrollbar{display:none;}
+  [data-rsp~="vs-slide"] b,[data-rsp~="vs-slide"] > span{color:#fff !important;}
+  [data-rsp~="vs-chips"] > span{color:#3c4557 !important;}
+  @media (max-width:560px){ [data-rsp~="if-opts"]{grid-template-columns:1fr !important;} [data-rsp~="if-opts"] > button{flex-direction:row !important;align-items:center !important;padding:16px !important;} }
+  [data-rsp~="vs-pkg"] b{color:#101d33 !important;} [data-rsp~="vs-pkg"] > span > span{color:#3c4557 !important;}
+  @media (max-width:400px){ [data-rsp~="vs-btns"]{grid-template-columns:1fr !important;} [data-rsp~="vs-plus"]{width:84px !important;height:84px !important;} }
+  [data-rsp~="next3"] b{color:#101d33 !important;font-weight:700 !important;} [data-rsp~="next3"] span > span{color:#5a6478 !important;}
+  [data-rsp~="kt-div"] > span > span:last-child{color:#034EA3 !important;}
   /* Weniger Fettung */
   [data-rsp~="qwrap"] h2,h2,h3{font-weight:700 !important;}
   [data-rsp~="qwrap"] button span,[data-rsp~="tilelabel"]{font-weight:500 !important;}
@@ -489,7 +498,7 @@
     <sc-if value="{{ showHilfe }}" hint-placeholder-val="{{ false }}">
       <div data-rsp="qhead" style="display:flex;flex-direction:column;gap:10px;text-align:left;max-width:720px;width:100%;margin:0 auto;">
         <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#1d9e5f;">Das macht es uns leichter, konkret zu werden</span>
-        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Womit können wir Ihnen <span style="color:#034EA3;">helfen</span>?</h2>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Was passt Ihnen am <span style="color:#034EA3;">Angebot</span> noch nicht?</h2>
         <span style="font-size:15px;color:var(--text-muted);">Mehrfachauswahl möglich.</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;">
@@ -511,8 +520,8 @@
     </sc-if>
     <sc-if value="{{ showUnterlagen }}" hint-placeholder-val="{{ false }}">
       <div data-rsp="qhead" style="display:flex;flex-direction:column;gap:10px;text-align:left;max-width:720px;width:100%;margin:0 auto;">
-        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Haben Sie schon <span style="color:#034EA3;">Planungsunterlagen</span> für uns?</h2>
-        <span style="font-size:15px;color:var(--text-muted);">Zum Beispiel Ihr Angebot als PDF, einen Grundriss oder Fotos Ihrer Küche.</span>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Haben Sie <span style="color:#034EA3;">Unterlagen</span>, die Sie uns zeigen möchten?</h2>
+        <span style="font-size:15px;color:var(--text-muted);">Zum Beispiel Ihr Angebot, einen Grundriss oder Fotos Ihrer Küche. Das hilft uns bei der Vorbereitung.</span>
       </div>
       <div data-rsp="cols2" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:720px;width:100%;margin:0 auto;">
         <button type="button" onClick="{{ unterlagenJa }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%;text-align:left;font-family:var(--font-sans);background:{{ ulJaBg }};border:1.5px solid {{ ulJaBd }};border-radius:14px;padding:20px;cursor:pointer;transition:border-color 140ms ease-out,background 140ms ease-out;">
@@ -602,6 +611,24 @@
         <button onClick="{{ detailsNext }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-red);border:none;border-radius:12px;padding:18px 24px;cursor:pointer;font-family:var(--font-sans);font-size:18px;font-weight:700;color:#fff;">Weiter&nbsp;→</button>
       </div>
     </sc-if>
+    <sc-if value="{{ showInspFrage }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;text-align:left;">
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#034EA3;">Aus unserer Ausstellung in Lahr</span>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:30px;line-height:1.15;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Möchten Sie passende <span style="color:#034EA3;">Küchen-Inspirationen</span> zu Ihren Angaben sehen?</h2>
+        <span style="font-size:15px;line-height:1.5;color:#5a6478;">Wir suchen Küchen aus unserer Ausstellung heraus, die zu Ihrer Form, Ihrem Stil und Ihrer Farbe passen.</span>
+      </div>
+      <div data-rsp="if-opts" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:720px;width:100%;margin:4px auto 0;">
+        <button type="button" onClick="{{ inspJa }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:20px 18px;border:1.5px solid #034EA3;border-radius:14px;background:#eef4fb;cursor:pointer;text-align:left;font-family:var(--font-sans);" style-hover="background:#e3edf9;">
+          <span aria-hidden="true" style="width:44px;height:44px;border-radius:50%;background:#034EA3;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
+          <span style="display:flex;flex-direction:column;gap:3px;"><b style="font-size:17px;font-weight:700;color:#101d33;">Ja, gerne zeigen</b><span style="font-size:13.5px;color:#5a6478;">Dauert nur ein paar Sekunden</span></span>
+        </button>
+        <button type="button" onClick="{{ inspNein }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:20px 18px;border:1.5px solid #dfe5ee;border-radius:14px;background:#fff;cursor:pointer;text-align:left;font-family:var(--font-sans);" style-hover="border-color:#101d33;">
+          <span aria-hidden="true" style="width:44px;height:44px;border-radius:50%;background:#f4f6f9;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#101d33" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></span>
+          <span style="display:flex;flex-direction:column;gap:3px;"><b style="font-size:17px;font-weight:700;color:#101d33;">Nein, direkt weiter</b><span style="font-size:13.5px;color:#5a6478;">Zu Ihren Kontaktdaten</span></span>
+        </button>
+      </div>
+      <button type="button" onClick="{{ goBack }}" style="align-self:center;background:none;border:0;padding:6px 10px;cursor:pointer;font-family:var(--font-sans);font-size:14.5px;font-weight:600;color:#5a6478;">‹&nbsp;Zurück</button>
+    </sc-if>
     <sc-if value="{{ showMatch }}" hint-placeholder-val="{{ false }}">
       <div data-mfade="1" style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;text-align:left;">
         <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#034EA3;">Aus unserer Ausstellung in Lahr</span>
@@ -672,69 +699,48 @@
     </sc-if>
     <sc-if value="{{ showVorschlag }}" hint-placeholder-val="{{ false }}">
       <sc-if value="{{ hatTreffer }}" hint-placeholder-val="{{ false }}">
-        <h3 style="margin:0 0 -6px;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-align:left;">Einer unserer <span style="color:#034EA3;">Vorschläge</span></h3>
-        <span style="max-width:none;margin:-8px 0 0;font-size:15px;color:#5a6478;">Passend zu Ihren Angaben aus den Kollektionen unserer Marken.</span>
-        <div data-rsp="treffer-card" style="position:relative;width:100%;box-sizing:border-box;display:flex;flex-direction:column;padding-top:{{ stapelPad }};">
-          <sc-if value="{{ hatStapel2 }}" hint-placeholder-val="{{ false }}">
-            <span aria-hidden="true" style="position:absolute;top:0;left:10%;right:10%;height:90px;border-radius:14px;overflow:hidden;background:#d3dbe8;transform:rotate(-1.8deg);box-shadow:0 2px 8px rgba(16,29,51,0.12);"><img data-treffer="1" data-src="{{ stapel2 }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:0.55;filter:saturate(0.7);"></span>
-          </sc-if>
-          <sc-if value="{{ hatStapel1 }}" hint-placeholder-val="{{ false }}">
-            <span aria-hidden="true" style="position:absolute;top:16px;left:5%;right:5%;height:90px;border-radius:15px;overflow:hidden;background:#e3e9f2;transform:rotate(1.2deg);box-shadow:0 2px 8px rgba(16,29,51,0.12);"><img data-treffer="1" data-src="{{ stapel1 }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:0.75;filter:saturate(0.8);"></span>
-            <span style="position:absolute;top:2px;right:2%;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:#034EA3;color:#fff;font-size:12.5px;font-weight:700;box-shadow:0 6px 14px -6px rgba(3,78,163,0.6);">{{ stapelLabel }}</span>
-          </sc-if>
-          <div data-rsp="tr-img" role="button" tabindex="0" aria-label="Bild vergrößern" onClick="{{ zoomAuf }}" style="z-index:1;box-shadow:0 10px 26px -14px rgba(16,29,51,0.45);position:relative;aspect-ratio:3/2;background:#eef1f6;overflow:hidden;border-radius:16px;cursor:zoom-in;">
-            <span style="position:absolute;left:14px;top:12px;z-index:2;color:#fff;font-size:13px;font-weight:700;letter-spacing:0.02em;pointer-events:none;text-shadow:0 1px 8px rgba(16,29,51,0.85),0 0 2px rgba(16,29,51,0.6);">{{ stapelPos }}</span>
-            <span style="position:absolute;right:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:rgba(16,29,51,0.72);color:#fff;font-size:12.5px;font-weight:600;pointer-events:none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Zum Vergrößern tippen</span>
-            <img data-treffer="1" data-src="{{ trefferSrc }}" alt="{{ trefferAlt }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div style="display:flex;flex-direction:column;gap:14px;padding:16px 0 0;">
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;">
-              <div style="display:flex;flex-direction:column;gap:2px;min-width:0;">
-                <span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;">Ihr Küchenvorschlag</span>
-                <b style="font-size:22px;font-weight:800;line-height:1.2;letter-spacing:-0.01em;color:#101d33;">{{ trefferModell }}</b>
-              </div>
-              <sc-if value="{{ hatTrefferLogo }}" hint-placeholder-val="{{ false }}">
-                <img data-treffer="1" data-src="{{ trefferLogo }}" alt="" style="max-height:30px;max-width:120px;width:auto;height:auto;object-fit:contain;display:block;">
+        <div style="display:flex;flex-direction:column;gap:6px;text-align:left;">
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Wir haben passende <span style="color:#034EA3;">Vorschläge</span> für Sie gefunden</h3>
+          <span style="font-size:15px;line-height:1.5;color:#5a6478;">Hier ist der erste. Die weiteren schicken wir Ihnen gern per E-Mail.</span>
+        </div>
+        <sc-for list="{{ vSlides }}" as="vs" hint-placeholder-count="1">
+          <figure data-rsp="vs-fig" style="margin:0;display:flex;flex-direction:column;gap:12px;">
+            <div data-rsp="vs-slide" role="button" tabindex="0" aria-label="{{ vs.aria }}" onClick="{{ vs.zoom }}" style="position:relative;width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#eef1f6;cursor:zoom-in;box-shadow:0 18px 36px -24px rgba(16,29,51,0.6);">
+              <img data-treffer="1" data-src="{{ vs.src }}" alt="{{ vs.modell }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+              <span aria-hidden="true" style="position:absolute;right:12px;top:12px;width:36px;height:36px;border-radius:50%;background:rgba(16,29,51,0.55);display:flex;align-items:center;justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+              <sc-if value="{{ vs.hatLogo }}" hint-placeholder-val="{{ false }}">
+                <span style="position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;height:40px;padding:0 12px;border-radius:9px;background:rgba(255,255,255,0.97);box-shadow:0 4px 12px -6px rgba(16,29,51,0.4);"><img data-treffer="1" data-src="{{ vs.logo }}" alt="" style="max-height:26px;max-width:124px;width:auto;height:auto;object-fit:contain;display:block;"></span>
               </sc-if>
             </div>
-            <div data-rsp="tr-spec" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #edf1f6;border-bottom:1px solid #edf1f6;">
-              <sc-for list="{{ trefferChips }}" as="tc" hint-placeholder-count="3">
-                <div style="display:flex;flex-direction:column;gap:3px;padding:11px 12px 11px {{ tc.pl }};border-left:{{ tc.bl }};">
-                  <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;">{{ tc.lbl }}</span>
-                  <span style="display:flex;align-items:center;gap:6px;font-size:15.5px;font-weight:700;color:#101d33;">
-                    <sc-if value="{{ tc.ok }}" hint-placeholder-val="{{ true }}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 6L9 17l-5-5"></path></svg></sc-if>
-                    <span style="max-width:none;">{{ tc.val }}</span>
-                  </span>
-                </div>
-              </sc-for>
-            </div>
-            <sc-if value="{{ hatGalerie }}" hint-placeholder-val="{{ false }}">
-              <div data-rsp="tr-gal" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;">
-                <sc-for list="{{ trefferGalerie }}" as="tg" hint-placeholder-count="4">
-                  <button type="button" onClick="{{ tg.pick }}" aria-label="{{ tg.label }}" style="flex:none;width:64px;height:64px;padding:0;border-radius:10px;overflow:hidden;border:2px solid {{ tg.bd }};background:#eef1f6;cursor:pointer;">
-                    <img data-treffer="1" data-src="{{ tg.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
-                  </button>
+            <figcaption style="display:flex;flex-direction:column;gap:6px;">
+              <b style="font-size:18px;font-weight:700;line-height:1.25;color:#101d33;">{{ vs.modell }}</b>
+              <span data-rsp="vs-chips" style="display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;">
+                <sc-for list="{{ trefferChips }}" as="tc" hint-placeholder-count="3">
+                  <span style="display:inline-flex;align-items:center;gap:5px;font-size:14px;color:#3c4557;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 6L9 17l-5-5"></path></svg>{{ tc.val }}</span>
                 </sc-for>
-              </div>
-            </sc-if>
-            <div data-rsp="vs-frage" style="display:flex;flex-direction:column;gap:14px;margin-top:6px;">
-              <div data-rsp="vs-q" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;">
-  <div aria-hidden="true" style="display:flex;padding-left:14px;">
+              </span>
+            </figcaption>
+          </figure>
+        </sc-for>
+        <sc-if value="{{ hatStapel1 }}" hint-placeholder-val="{{ false }}">
+          <div data-rsp="vs-pkg" style="display:flex;align-items:center;gap:16px;padding:12px 14px;border-radius:14px;background:#eef4fb;">
+            <div aria-hidden="true" style="display:flex;flex:none;padding-left:14px;">
               <sc-for list="{{ trefferMehr }}" as="tm" hint-placeholder-count="3">
-                <span style="position:relative;display:block;width:58px;height:76px;margin-left:-14px;border-radius:9px;overflow:hidden;border:2px solid #fff;background:#e3e8f1;box-shadow:0 8px 18px -10px rgba(16,29,51,0.45);transform:rotate({{ tm.rot }});">
-                  <img data-treffer="1" data-src="{{ tm.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
-                </span>
+                <span style="display:block;width:58px;height:58px;margin-left:-14px;border-radius:10px;overflow:hidden;border:2.5px solid #fff;background:#dfe5ee;box-shadow:0 6px 14px -8px rgba(16,29,51,0.5);transform:rotate({{ tm.rot }});"><img data-treffer="1" data-src="{{ tm.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"></span>
               </sc-for>
             </div>
-                <b style="max-width:none;font-size:16.5px;font-weight:700;line-height:1.35;color:#101d33;text-wrap:balance;">Möchten Sie diesen Vorschlag und <span style="color:#034EA3;">3 weitere Küchenbeispiele</span> zur Inspiration per E-Mail erhalten?</b>
-              </div>
-              <span style="display:flex;align-items:center;gap:6px;max-width:none;margin-top:-4px;font-size:12.5px;color:#5a6478;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Einmalig, kein Newsletter, kein Spam.</span>
-              <div data-rsp="vs-btns" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-                <button type="button" onClick="{{ vorschlagJa }}" style="display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:13px 18px;border:0;border-radius:12px;background:#E30613;color:#fff;cursor:pointer;font-family:var(--font-sans);font-size:16.5px;font-weight:700;" style-hover="background:#c70511;">Ja, gerne&nbsp;<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></button>
-                <button type="button" onClick="{{ vorschlagNein }}" style="display:flex;align-items:center;justify-content:center;min-height:54px;padding:13px 18px;border:1.5px solid #d4deea;border-radius:12px;background:#fff;color:#101d33;cursor:pointer;font-family:var(--font-sans);font-size:16.5px;font-weight:600;" style-hover="border-color:#101d33;">Nein, danke</button>
-              </div>
-            </div>
+            <span style="display:flex;flex-direction:column;gap:1px;min-width:0;">
+              <b style="font-size:16px;font-weight:700;line-height:1.25;color:#101d33;">{{ stapelLabel }}</b>
+              <span style="font-size:13.5px;line-height:1.35;color:#3c4557;">als Paket per E-Mail, passend zu Ihrem Stil</span>
+            </span>
           </div>
+        </sc-if>
+        <div data-rsp="vs-frage" style="display:flex;flex-direction:column;align-items:stretch;gap:10px;margin-top:2px;">
+          <div data-rsp="vs-btns" style="display:grid;grid-template-columns:1.25fr 1fr;gap:10px;">
+            <button type="button" onClick="{{ vorschlagJa }}" style="display:flex;align-items:center;justify-content:center;gap:9px;min-height:58px;padding:12px 16px;border:0;border-radius:12px;background:#E30613;color:#fff;cursor:pointer;font-family:var(--font-sans);font-size:16.5px;font-weight:700;line-height:1.2;text-align:left;" style-hover="background:#c70511;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Alle per E-Mail erhalten</button>
+            <button type="button" onClick="{{ vorschlagNein }}" style="display:flex;align-items:center;justify-content:center;gap:8px;min-height:58px;padding:12px 16px;border:1.5px solid #d4deea;border-radius:12px;background:#fff;color:#101d33;cursor:pointer;font-family:var(--font-sans);font-size:16px;font-weight:600;line-height:1.2;" style-hover="border-color:#101d33;">Weiter zur Anfrage&nbsp;›</button>
+          </div>
+          <span style="display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;color:#5a6478;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Kostenlos · einmalig · kein Newsletter</span>
         </div>
       </sc-if>
       <button type="button" onClick="{{ goBack }}" style="align-self:center;background:none;border:0;padding:6px 10px;cursor:pointer;font-family:var(--font-sans);font-size:14.5px;font-weight:600;color:#5a6478;">‹&nbsp;Zurück</button>
@@ -748,7 +754,7 @@
     </sc-if>
     <sc-if value="{{ showMail }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;text-align:left;">
-        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Wohin dürfen wir Ihre <span style="color:#034EA3;">Vorschläge</span> senden?</h2>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Wohin dürfen wir Ihre <span style="color:#034EA3;">Vorschläge</span> schicken?</h2>
         <span style="max-width:none;font-size:15px;color:#5a6478;">Sie erhalten diesen Vorschlag und 3 weitere passende Küchenbeispiele zur Inspiration per E-Mail.</span>
       </div>
       <div style="width:100%;display:flex;flex-direction:column;gap:14px;">
@@ -767,18 +773,33 @@
     <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
       <div data-rsp="kontakt-card" style="width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px;">
         <div data-rsp="kh" style="display:block;">
+          <div data-rsp="kt-div" style="display:flex;align-items:center;gap:14px;margin:0 0 18px;">
+            <span aria-hidden="true" style="flex:1;height:1px;background:#dfe5ee;"></span>
+            <span style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <span data-rsp="kt-tag" style="display:block;font-weight:800;font-size:20px;letter-spacing:-0.01em;color:#101d33;line-height:1;white-space:nowrap;">Alt gegen <i style="font-style:normal;font-family:'Caveat',cursive;font-size:24px;line-height:1;color:#ff4a55;">Neu!</i></span>
+              <span style="font-size:11.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#034EA3;white-space:nowrap;">Jetzt kostenfrei anmelden</span>
+            </span>
+            <span aria-hidden="true" style="flex:1;height:1px;background:#dfe5ee;"></span>
+          </div>
           <figure data-rsp="berater-fig" style="float:right;margin:0 0 10px 18px;width:132px;text-align:center;"><img src="/assets/team/berater-telefon.webp" alt="Ihr Küchenberater bei Hugelmann" loading="lazy" style="display:block;width:112px;height:112px;margin:0 auto 8px;border-radius:50%;object-fit:cover;object-position:center 22%;shape-outside:circle(50%);box-shadow:0 14px 30px -16px rgba(16,29,51,0.45);"><figcaption style="display:flex;flex-direction:column;gap:1px;line-height:1.3;"><b style="font-size:14px;font-weight:700;color:#101d33;">Herr Krüger</b><a href="tel:+497821965773" style="font-size:13.5px;color:#034EA3;text-decoration:none;white-space:nowrap;">07821 965773</a></figcaption></figure>
           
-          <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-align:left;">An wen soll sich Ihr <span style="color:#034EA3;">Küchenberater</span> wenden?</h3>
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-align:left;">Jetzt einen von <span style="color:#E30613;">30 freien Plätzen</span> sichern, Vorteile mitnehmen und Ihre Küche planen</h3>
           <span style="max-width:none;display:block;margin-top:8px;font-size:14.5px;line-height:1.5;color:#5a6478;text-align:left;">Wir melden uns innerhalb von 24 Stunden für Ihren kostenfreien Planungstermin, von unserer Festnetznummer.</span>
-          <sc-if value="{{ showInspHinweis }}" hint-placeholder-val="{{ false }}">
-            <div data-rsp="berater-box" style="clear:both;display:flex;align-items:center;gap:14px;margin-top:12px;padding:14px 16px;border-radius:14px;background:#f2f6fc;border:1px solid #e1e9f4;text-align:left;">
-              <span style="display:flex;flex-direction:column;gap:3px;min-width:0;">
-                <span style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;"><b style="max-width:none;font-size:14.5px;font-weight:700;color:#101d33;">Ihre Küche planen wir gemeinsam</b><span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;background:#1d9e5f;color:#fff;font-size:11.5px;font-weight:700;letter-spacing:0.04em;white-space:nowrap;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Kostenfrei &amp; unverbindlich</span></span>
-                <span style="max-width:none;font-size:13.5px;line-height:1.5;color:#3c4557;">Ihre 3 Küchenbeispiele dienen als Inspiration. Die richtige Planung, maßgenau für Ihren Raum, machen wir gemeinsam bei uns im Möbelhaus in Lahr.</span>
-              </span>
+          <div data-rsp="next3" style="clear:both;position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px;padding-top:2px;">
+            <span aria-hidden="true" style="position:absolute;left:16.6%;right:16.6%;top:19px;border-top:2px dashed #cfdbec;"></span>
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;">
+              <span style="width:38px;height:38px;border-radius:50%;background:#034EA3;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px #fff;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              <span style="display:flex;flex-direction:column;gap:1px;"><b style="font-size:14px;font-weight:700;line-height:1.25;color:#101d33;">Formular ausfüllen</b><span style="font-size:12.5px;line-height:1.35;color:#5a6478;">unverbindlich</span></span>
             </div>
-          </sc-if>
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;">
+              <span style="width:38px;height:38px;border-radius:50%;background:#fff;border:2px solid #034EA3;color:#034EA3;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px #fff;box-sizing:border-box;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.3 15.3 8.7 2.7a1 1 0 0 0-1.4 0L2.7 7.3a1 1 0 0 0 0 1.4l12.6 12.6a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4z"/><path d="m7.5 10.5 2-2M10.5 13.5l2-2M13.5 16.5l2-2"/></svg></span>
+              <span style="display:flex;flex-direction:column;gap:1px;"><b style="font-size:14px;font-weight:700;line-height:1.25;color:#101d33;">Planung in Lahr</b><span style="font-size:12.5px;line-height:1.35;color:#5a6478;">kostenfrei &amp; in 3D</span></span>
+            </div>
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;">
+              <span style="width:38px;height:38px;border-radius:50%;background:#fff;border:2px solid #E30613;color:#E30613;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px #fff;box-sizing:border-box;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span style="display:flex;flex-direction:column;gap:1px;"><b style="font-size:14px;font-weight:700;line-height:1.25;color:#101d33;">Prämie sichern</b><span style="font-size:12.5px;line-height:1.35;color:#5a6478;">bis zu 4.000&nbsp;€*</span></span>
+            </div>
+          </div>
         </div>
         <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
           <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" name="vorname" autoComplete="given-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
@@ -835,28 +856,29 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;spotsLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:9,&quot;min&quot;:1,&quot;max&quot;:30,&quot;section&quot;:&quot;Aktion&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;dankeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;/alt-gegen-neu-danke/&quot;,&quot;section&quot;:&quot;Funnel&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   state = { pos: 0, plzFromLp: false, gebietOut: false, answers: {}, galIdx: 0, katalog: null, modulOffen: false, ringFertig: false, hilfe: [], uploads: [], nachricht: '', form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
-  shorts = { phase: 'Planungsstand', angebot: 'Angebot', hilfe: 'Ihr Angebot', unterlagen: 'Unterlagen', details: 'Ihre Angaben', match: 'Passende Küchen', vorschlag: 'Ihr Küchenvorschlag', mail: 'E-Mail', form: 'Küchenform', alt: 'Alte Küche', alter: 'Alte Küche', stil: 'Küchenstil', farbe: 'Farbstil', budget: 'Budget', zeit: 'Zeitpunkt' };
-  stepNo = { phase: 1, angebot: 1.1, hilfe: 1.2, unterlagen: 1.3, details: 4.5, form: 2, stil: 3, farbe: 4, budget: 5, alt: 6, alter: 6.5, zeit: 7, match: 7.5, vorschlag: 7.6, mail: 7.7, kontakt: 8 };
-  hilfeLabels = ['Der Preis ist mir zu hoch', 'Die Planung gefällt mir noch nicht', 'Ausstattung oder Geräte passen nicht', 'Ich möchte eine zweite Meinung', 'Die Lieferzeit ist zu lang', 'Die Beratung hat mich nicht überzeugt'];
-  KW = { phase: 'Küchenplanung', angebot: 'Angebot', form: 'Küchenform', stil: 'Küchenstil', farbe: 'Farbstil', budget: 'Budget', alt: 'alte Küche', alter: 'Küche', zeit: 'neue Küche' };
+  shorts = { phase: 'Planungsstand', angebot: 'Angebot', hilfe: 'Ihr Angebot', unterlagen: 'Unterlagen', details: 'Ihre Angaben', inspfrage: 'Inspiration', match: 'Passende Küchen', vorschlag: 'Ihr Küchenvorschlag', mail: 'E-Mail', form: 'Küchenform', alt: 'Alte Küche', alter: 'Alte Küche', stil: 'Küchenstil', farbe: 'Farbwelt', budget: 'Budget', zeit: 'Zeitpunkt' };
+  stepNo = { phase: 1, angebot: 1.1, hilfe: 1.2, unterlagen: 1.3, details: 4.5, form: 2, stil: 3, farbe: 4, budget: 5, alt: 6, alter: 6.5, zeit: 7, inspfrage: 7.4, match: 7.5, vorschlag: 7.6, mail: 7.7, kontakt: 8 };
+  hilfeLabels = ['Der Preis ist mir zu hoch', 'Die Planung passt noch nicht', 'Geräte oder Ausstattung passen nicht', 'Ich hätte gern eine zweite Meinung', 'Die Lieferzeit ist mir zu lang', 'Ich habe mich nicht gut beraten gefühlt'];
+  KW = { phase: 'Küchenplanung', angebot: 'Angebot', form: 'Küchenform', stil: 'Küchenstil', farbe: 'Farbwelt', budget: 'Budget', alt: 'alte Küche', alter: 'Küche', zeit: 'neue Küche' };
   Q = {
-    unterlagen: { title: 'Haben Sie schon Planungsunterlagen für uns?', options: ['Ja, hochgeladen', 'Nein'] },
-    angebot: { title: 'Haben Sie bereits ein Angebot für Ihre neue Küche?', sub: 'Zum Beispiel von einem anderen Küchenstudio. Gerne prüfen wir es kostenfrei.', options: ['Ja, ich habe ein Angebot', 'Nein, noch nicht'] },
-    phase: { title: 'Wie konkret ist Ihre Küchenplanung schon?', sub: 'Eine Antwort genügt, wir beraten Sie passend.', options: ['Ich suche Inspiration', 'Ich habe konkrete Vorstellungen'], descs: ['', ''], icons: true },
-    form: { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Weiß ich noch nicht'], files: ['/assets/kuechenformen/einzeilig.svg', '/assets/kuechenformen/zweizeilig.svg', '/assets/kuechenformen/l-form.svg', '/assets/kuechenformen/u-form.svg', '/assets/kuechenformen/insel.svg', null], imgs: 'form', qmarkLast: true },
-    alt: { title: 'Möchten Sie Ihre alte Küche in Zahlung geben?', sub: 'Kostenfreie Demontage, Abholung und eine Tauschprämie für Ihre alte Küche.', options: ['Ja', 'Nein', 'Ich besitze keine alte Küche'] },
-    alter: { title: 'Wie alt ist Ihre Küche ungefähr?', sub: 'Eine grobe Schätzung reicht völlig.', note: 'Auch ältere Küchen nehmen wir in Zahlung.', options: ['Unter 10 Jahre', '10 bis 20 Jahre', '20 bis 30 Jahre', 'Über 30 Jahre'] },
-    stil: { title: 'Welchen Küchenstil wünschen Sie sich?', sub: 'Wählen Sie den Stil, der Ihnen am besten gefällt.', options: ['Hochglanz', 'Matt', 'Holzoptik', 'Landhaus', 'Weiß ich noch nicht'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
-    farbe: { title: 'Welchen Farbstil bevorzugen Sie?', sub: 'Hell, dunkel oder farbig – was passt zu Ihrem Zuhause?', options: ['Hell', 'Dunkel', 'Farbig', 'Weiß ich noch nicht'], files: ['/assets/farbstile/hell.webp', '/assets/farbstile/dunkel.webp', '/assets/farbstile/farbig.webp', null], imgs: 'farbe', qmarkLast: true },
-    budget: { title: 'Welches Budget planen Sie für Ihre neue Küche?', sub: 'Die Prämie und die 0%-Finanzierung gelten für jedes Budget.', options: ['Bis 10.000 €', '10.000 bis 15.000 €', '15.000 bis 25.000 €', 'Über 25.000 €'] },
-    zeit: { title: 'Wann benötigen Sie die neue Küche?', sub: 'Ganz unverbindlich, Sie bestimmen das Tempo.', options: ['Schnellstmöglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später'] },
+    unterlagen: { title: 'Haben Sie Unterlagen, die Sie uns zeigen möchten?', options: ['Ja, hochgeladen', 'Nein'] },
+    angebot: { title: 'Haben Sie schon ein Angebot von einem anderen Anbieter?', sub: 'Wir schauen es uns gern an, kostenfrei und ganz in Ruhe.', options: ['Ja, ich habe ein Angebot', 'Nein, noch nicht'] },
+    phase: { title: 'Wie weit sind Sie mit Ihrer Küchenplanung?', sub: 'Ganz gleich, wo Sie stehen: Wir beraten Sie passend.', options: ['Ich suche noch Ideen', 'Ich weiß schon, was ich möchte'], descs: ['', ''], icons: true },
+    form: { title: 'Welche Küchenform passt in Ihren Raum?', sub: 'Wählen Sie, was Ihrem Raum am nächsten kommt.', options: ['Eine Küchenzeile', 'Zwei Zeilen gegenüber', 'L-Form (über Eck)', 'U-Form', 'Mit Kochinsel', 'Weiß ich noch nicht'], files: ['/assets/kuechenformen/einzeilig.svg', '/assets/kuechenformen/zweizeilig.svg', '/assets/kuechenformen/l-form.svg', '/assets/kuechenformen/u-form.svg', '/assets/kuechenformen/insel.svg', null], imgs: 'form', qmarkLast: true },
+    alt: { title: 'Möchten Sie Ihre alte Küche in Zahlung geben?', sub: 'Wir bauen sie kostenfrei ab, nehmen sie mit und schreiben Ihnen eine Tauschprämie gut.', options: ['Ja, gerne', 'Nein', 'Ich habe keine alte Küche'] },
+    alter: { title: 'Wie alt ist Ihre jetzige Küche ungefähr?', sub: 'Eine grobe Schätzung reicht völlig.', note: 'Auch ältere Küchen nehmen wir in Zahlung.', options: ['Unter 10 Jahre', '10 bis 20 Jahre', '20 bis 30 Jahre', 'Über 30 Jahre'] },
+    stil: { title: 'Welcher Küchenstil gefällt Ihnen?', sub: 'Folgen Sie ruhig Ihrem Bauchgefühl.', options: ['Hochglanz', 'Matt', 'Holzoptik', 'Landhaus', 'Weiß ich noch nicht'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
+    farbe: { title: 'Welche Farbwelt passt zu Ihrem Zuhause?', sub: 'Hell und freundlich, dunkel und edel oder mit Farbe.', options: ['Hell', 'Dunkel', 'Farbig', 'Weiß ich noch nicht'], files: ['/assets/farbstile/hell.webp', '/assets/farbstile/dunkel.webp', '/assets/farbstile/farbig.webp', null], imgs: 'farbe', qmarkLast: true },
+    budget: { title: 'Mit welchem Budget planen Sie ungefähr?', sub: 'Eine grobe Richtung genügt. Prämie und 0-%-Finanzierung gelten für jedes Budget.', options: ['Bis 10.000 €', '10.000 bis 15.000 €', '15.000 bis 25.000 €', 'Über 25.000 €'] },
+    zeit: { title: 'Wann soll Ihre neue Küche stehen?', sub: 'Ganz unverbindlich, Sie bestimmen das Tempo.', options: ['So bald wie möglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später, ich plane in Ruhe'] },
   };
   flow(ans) {
     const a = ans || this.state.answers;
     if (a.phase === 1 && a.angebot === 0) return ['phase', 'angebot', 'hilfe', 'unterlagen', 'kontakt'];
-    if (a.phase === 1) return ['phase', 'angebot'].concat(a.angebot === 0 ? ['hilfe'] : [], ['form', 'stil', 'farbe', 'details', 'budget', 'alt']).concat(a.alt === 0 ? ['alter'] : [], ['zeit', 'match'], this.inspSteps(a), ['kontakt']);
-    return ['phase', 'form', 'stil', 'farbe', 'budget', 'alt'].concat(a.alt === 0 ? ['alter'] : [], ['zeit', 'match'], this.inspSteps(a), ['kontakt']);
+    if (a.phase === 1) return ['phase', 'angebot'].concat(a.angebot === 0 ? ['hilfe'] : [], ['form', 'stil', 'farbe', 'details', 'budget', 'alt']).concat(a.alt === 0 ? ['alter'] : [], ['zeit'], this.inspBlock(a), ['kontakt']);
+    return ['phase', 'form', 'stil', 'farbe', 'budget', 'alt'].concat(a.alt === 0 ? ['alter'] : [], ['zeit'], this.inspBlock(a), ['kontakt']);
   }
+  inspBlock(a) { if (!(this.state.katalog && this.state.katalog.kuechen && this.state.katalog.kuechen.length)) return ['match']; return ['inspfrage'].concat(a.inspfrage === 1 ? [] : ['match'].concat(this.inspSteps(a))); }
   inspSteps(a) { if (!(this.state.katalog && this.state.katalog.kuechen && this.state.katalog.kuechen.length)) return []; return ['vorschlag'].concat(a.vorschlag === 0 ? ['mail'] : []); }
   curId() { return this.flow()[this.state.pos] || 'kontakt'; }
   formIcon(kind) {
@@ -1034,10 +1056,11 @@ class Component extends DCLogic {
   }
   stepName(id) {
     if (id === 'kontakt') return 'Kontaktdaten';
+    if (id === 'inspfrage') return 'Küchen-Inspirationen gewünscht?';
     if (id === 'match') return 'Passende Küchen gefunden';
     if (id === 'vorschlag') return 'Küchenvorschlag per E-Mail?';
     if (id === 'mail') return 'E-Mail für Vorschläge';
-    if (id === 'hilfe') return 'Womit können wir helfen?';
+    if (id === 'hilfe') return 'Was passt am Angebot noch nicht?';
     if (id === 'unterlagen') return 'Planungsunterlagen';
     if (id === 'details') return 'Weitere Angaben: Nachricht und Dateien';
     const q = this.Q[id];
@@ -1064,6 +1087,11 @@ class Component extends DCLogic {
     });
   }
   componentDidUpdate() {
+    const _id = this.curId();
+    if (this._lastStepId !== undefined && this._lastStepId !== _id && !this.state.modulOffen) {
+      try { const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
+    }
+    this._lastStepId = _id;
     document.querySelectorAll('img[data-treffer]').forEach(im => { const s = im.getAttribute('data-src'); if (s && s.indexOf('{{') < 0 && im.getAttribute('src') !== s) im.src = s; });
     if (this.curId() === 'kontakt') setTimeout(() => this.applyAutofill(), 60);
     if (!this._vor && this.state.katalog && this.state.answers && this.state.answers.farbe != null) {
@@ -1162,7 +1190,8 @@ class Component extends DCLogic {
       aktion: 'Alt gegen Neu',
       planungsstand: answer('phase'),
       angebot_vorhanden: answer('angebot'),
-      inspiration_mail: this.state.answers.vorschlag === 0 ? 'ja' : (this.state.answers.vorschlag === 1 ? 'nein' : ''),
+      inspiration_gewuenscht: this.state.answers.inspfrage === 0 ? 'ja' : (this.state.answers.inspfrage === 1 ? 'nein' : ''),
+      inspiration_mail: this.state.answers.vorschlag === 0 ? 'ja' : (this.state.answers.vorschlag === 1 || this.state.answers.inspfrage === 1 ? 'nein' : ''),
       inspiration_treffer: (() => { try { if (!this.state.katalog) return ''; const r = this.ringAuswahl(); const k = r[1] || r[0]; return k ? k.id + ' · ' + (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : '') + ' · ' + this.state.katalog.basis + 'f_auto,q_auto,c_fill,g_auto,ar_16:9,w_1280/' + k.bild : ''; } catch (e) { return ''; } })(),
       inspiration_kueche: (() => { try { if (!this.state.katalog) return ''; const r = this.ringAuswahl(); const k = r[1] || r[0]; return k ? (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : '') + ' (' + k.id + ')' : ''; } catch (e) { return ''; } })(),
       angebot_hilfe: (this.state.hilfe || []).join(', '),
@@ -1271,6 +1300,7 @@ class Component extends DCLogic {
     const id = this.curId();
     const isContact = id === 'kontakt';
     const isMatch = id === 'match';
+    const isInspFrage = id === 'inspfrage';
     const isVorschlag = id === 'vorschlag';
     const isMail = id === 'mail';
     const isDetails = id === 'details';
@@ -1284,9 +1314,9 @@ class Component extends DCLogic {
     const chipGroup = (k, lbl) => ({ lbl, chips: this.Q[k].options.map((label, i) => { const on = answers[k] === i; return { label, bd: on ? '#034EA3' : '#dfe5ee', bg: on ? '#034EA3' : '#fff', fg: on ? '#fff' : '#101d33', pick: () => this.setState(s => ({ answers: { ...s.answers, [k]: on ? undefined : i } })) }; }) });
     const q = this.Q[id] || this.Q.form;
     const selected = answers[id];
-    const vis = flow.filter(x => x !== 'alter' && x !== 'kontakt' && x !== 'match' && x !== 'vorschlag' && x !== 'mail');
+    const vis = flow.filter(x => x !== 'alter' && x !== 'kontakt' && x !== 'inspfrage' && x !== 'match' && x !== 'vorschlag' && x !== 'mail');
     const total = vis.length;
-    const dispIdx = id === 'alter' ? vis.indexOf('alt') + 1 : ((id === 'match' || id === 'vorschlag' || id === 'mail') ? vis.length : vis.indexOf(id) + 1);
+    const dispIdx = id === 'alter' ? vis.indexOf('alt') + 1 : ((id === 'inspfrage' || id === 'match' || id === 'vorschlag' || id === 'mail') ? vis.length : vis.indexOf(id) + 1);
     const pct = isContact ? 100 : Math.round(((dispIdx - 1) / total) * 100);
     const sum = ['form', 'stil', 'farbe'].map(k => {
       const i = answers[k];
@@ -1306,7 +1336,7 @@ class Component extends DCLogic {
     if (this.state.plzFromLp && !this.state.gebietOut) sumChips.push('Im Aktionsgebiet');
     return {
       spotsLeft: this.props.spotsLeft ?? 9,
-      showQuiz: !isContact && !isMatch && !isDetails && !isHilfe && !isUnterlagen && !isVorschlag && !isMail,
+      showQuiz: !isContact && !isMatch && !isDetails && !isHilfe && !isUnterlagen && !isVorschlag && !isMail && !isInspFrage,
       showHilfe: isHilfe,
       showUnterlagen: isUnterlagen,
       ulOpen,
@@ -1332,8 +1362,14 @@ class Component extends DCLogic {
       ...(() => { const r = (isVorschlag && this.state.katalog) ? this.ringAuswahl() : []; const k = r[1] || r[0]; if (!k) return { zoomSrc: '', hatGalerie: false, trefferGalerie: [], trefferChips: [], trefferMehr: [], hatTreffer: false, trefferSrc: '', trefferAlt: '', trefferTitel: '', trefferModell: '', trefferTags: '', trefferLogo: '', hatTrefferLogo: false }; const t = [k.stil, k.farbe, (k.form || [])[0]].filter(Boolean).map(x => this.LABEL[x] || x).join(' · '); const lg = ((this.state.katalog && this.state.katalog.logos) || {})[k.marke] || '';
         const rots = ['-5deg', '2deg', '6deg'];
         const mehr = r.filter(x => x && x.id !== k.id).slice(0, 3).map((x, i) => ({ src: this.bildUrl(x), rot: rots[i] }));
-        const nW = mehr.length; return { stapel1: (mehr[0] || {}).src || '', stapel2: (mehr[1] || {}).src || '', hatStapel1: nW > 0, hatStapel2: nW > 1, stapelPad: nW > 1 ? '34px' : (nW > 0 ? '20px' : '0'), stapelLabel: '+' + nW + (nW === 1 ? ' weiterer Vorschlag' : ' weitere Vorschläge'), stapelPos: 'Vorschlag 1 von ' + (nW + 1), trefferMehr: mehr, hatTreffer: true, trefferModell: (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : ''), trefferTags: t, trefferLogo: lg, hatTrefferLogo: !!lg, trefferSrc: this.state.katalog.basis + 'f_auto,q_auto,c_fill,g_auto,ar_3:2,w_1400/' + ([k.bild].concat(k.details || [])[this.state.galIdx || 0] || k.bild),
-        zoomSrc: this.state.katalog.basis + 'f_auto,q_auto,c_limit,w_1800/' + ([k.bild].concat(k.details || [])[this.state.galIdx || 0] || k.bild),
+        const nW = mehr.length;
+        const alle = [k].concat(r.filter(x => x && x.id !== k.id).slice(0, 3));
+        const logos = (this.state.katalog && this.state.katalog.logos) || {};
+        const vi = Math.min(this.state.vIdx || 0, alle.length - 1);
+        const vSlides = alle.slice(0, 1).map((x, i) => { const m = (x.marke_anzeige || x.marke) + (x.modell ? ' ' + x.modell : ''); const l = logos[x.marke] || ''; return { src: this.bildUrl(x), modell: m, logo: l, hatLogo: !!l, nr: (i + 1) + ' / ' + alle.length, aria: 'Vorschlag ' + (i + 1) + ' vergrößern: ' + m, zoom: () => { this.setState({ zoomOffen: true, zoomPick: this.state.katalog.basis + 'f_auto,q_auto,c_limit,w_1800/' + x.bild }); this.ga('vorschlag_bild_zoom', { funnel: 'alt_gegen_neu', vorschlag: i + 1, kueche: m }); } }; });
+        const vDots = alle.map((x, i) => ({ w: i === vi ? '20px' : '7px', bg: i === vi ? '#034EA3' : '#cfd8e5' }));
+        return { plusN: '+' + nW, vSlides, vDots, vAnzahl: alle.length, vScroll: (e) => { const el = e.currentTarget; const f = el && el.firstElementChild; if (!f) return; const w = f.getBoundingClientRect().width + 12; const i = Math.max(0, Math.round(el.scrollLeft / w)); if (i !== (this.state.vIdx || 0)) this.setState({ vIdx: i }); }, stapel1: (mehr[0] || {}).src || '', stapel2: (mehr[1] || {}).src || '', hatStapel1: nW > 0, hatStapel2: nW > 1, stapelPad: nW > 1 ? '34px' : (nW > 0 ? '20px' : '0'), stapelLabel: '+' + nW + (nW === 1 ? ' weiterer Vorschlag' : ' weitere Vorschläge'), stapelPos: 'Vorschlag 1 von ' + (nW + 1), trefferMehr: mehr, hatTreffer: true, trefferModell: (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : ''), trefferTags: t, trefferLogo: lg, hatTrefferLogo: !!lg, trefferSrc: this.state.katalog.basis + 'f_auto,q_auto,c_fill,g_auto,ar_3:2,w_1400/' + ([k.bild].concat(k.details || [])[this.state.galIdx || 0] || k.bild),
+        zoomSrc: this.state.zoomPick || (this.state.katalog.basis + 'f_auto,q_auto,c_limit,w_1800/' + k.bild),
         hatGalerie: (k.details || []).length > 0,
         trefferGalerie: [k.bild].concat(k.details || []).slice(0, 5).map((b, i) => ({ src: this.state.katalog.basis + 'f_auto,q_auto,c_fill,g_auto,ar_1:1,w_200/' + b, bd: (this.state.galIdx || 0) === i ? '#034EA3' : 'transparent', label: i ? 'Detailbild ' + i : 'Hauptbild', pick: () => this.setState({ galIdx: i }) })),
         trefferChips: (() => { const w = this.wunsch(); const c = []; const add = (v, ok, lbl) => c.push({ txt: lbl + ': ' + (this.LABEL[v] || v), lbl, val: this.LABEL[v] || v, ok, pl: c.length ? '14px' : '0', bl: c.length ? '1px solid #edf1f6' : '0' }); const fo = (k.form || []).indexOf(w.fo) > -1 ? w.fo : (k.form || [])[0]; if (fo) add(fo, !!w.fo && fo === w.fo, 'Form'); if (k.stil) add(k.stil, k.stil === w.s, 'Stil'); if (k.farbe) add(k.farbe, k.farbe === w.f, 'Farbe'); return c; })(), trefferAlt: (k.marke_anzeige || k.marke) + ' Küche' + (k.modell ? ' ' + k.modell : ''), trefferTitel: (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : '') + ' · ' + t }; })(),
@@ -1352,6 +1388,9 @@ class Component extends DCLogic {
       weiterZuKontakt: () => this.inspWeiter(),
       acceptMatch: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.match, step_name: this.stepName('match'), answer: 'Ja, gerne präsentieren' }); this.setState(s => ({ pos: s.pos + 1 }), () => this.trackStep(this.curId())); },
       showZustand: false,
+      showInspFrage: isInspFrage,
+      inspJa: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.inspfrage, step_name: this.stepName('inspfrage'), answer: 'Ja' }); this.fb('AGN_Inspiration_Ja', {}); this.setState(s => ({ answers: { ...s.answers, inspfrage: 0 }, pos: s.pos + 1 }), () => this.trackStep(this.curId())); },
+      inspNein: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.inspfrage, step_name: this.stepName('inspfrage'), answer: 'Nein' }); this.setState(s => { const a = { ...s.answers, inspfrage: 1 }; delete a.vorschlag; return { answers: a, pos: s.pos + 1 }; }, () => this.trackStep(this.curId())); },
       showForm: isContact,
       showVorschlag: isVorschlag,
       zoomOffen: !!this.state.zoomOffen && isVorschlag,
