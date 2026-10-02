@@ -864,7 +864,7 @@ class Component extends DCLogic {
     unterlagen: { title: 'Haben Sie Unterlagen, die Sie uns zeigen möchten?', options: ['Ja, hochgeladen', 'Nein'] },
     angebot: { title: 'Haben Sie schon ein Angebot von einem anderen Anbieter?', sub: 'Wir schauen es uns gern an, kostenfrei und ganz in Ruhe.', options: ['Ja, ich habe ein Angebot', 'Nein, noch nicht'] },
     phase: { title: 'Wie weit sind Sie mit Ihrer Küchenplanung?', sub: 'Ganz gleich, wo Sie stehen: Wir beraten Sie passend.', options: ['Ich suche noch Ideen', 'Ich weiß schon, was ich möchte'], descs: ['', ''], icons: true },
-    form: { title: 'Welche Küchenform passt in Ihren Raum?', sub: 'Wählen Sie, was Ihrem Raum am nächsten kommt.', options: ['Eine Küchenzeile', 'Zwei Zeilen gegenüber', 'L-Form (über Eck)', 'U-Form', 'Mit Kochinsel', 'Weiß ich noch nicht'], files: ['/assets/kuechenformen/einzeilig.svg', '/assets/kuechenformen/zweizeilig.svg', '/assets/kuechenformen/l-form.svg', '/assets/kuechenformen/u-form.svg', '/assets/kuechenformen/insel.svg', null], imgs: 'form', qmarkLast: true },
+    form: { title: 'Welche Küchenform können Sie sich vorstellen?', sub: 'Ganz nach Gefühl. Was wirklich in Ihren Raum passt, planen wir gemeinsam.', options: ['Eine Küchenzeile', 'Zwei Zeilen gegenüber', 'L-Form (über Eck)', 'U-Form', 'Mit Kochinsel', 'Weiß ich noch nicht'], files: ['/assets/kuechenformen/einzeilig.svg', '/assets/kuechenformen/zweizeilig.svg', '/assets/kuechenformen/l-form.svg', '/assets/kuechenformen/u-form.svg', '/assets/kuechenformen/insel.svg', null], imgs: 'form', qmarkLast: true },
     alt: { title: 'Möchten Sie Ihre alte Küche in Zahlung geben?', sub: 'Wir bauen sie kostenfrei ab, nehmen sie mit und schreiben Ihnen eine Tauschprämie gut.', options: ['Ja, gerne', 'Nein', 'Ich habe keine alte Küche'] },
     alter: { title: 'Wie alt ist Ihre jetzige Küche ungefähr?', sub: 'Eine grobe Schätzung reicht völlig.', note: 'Auch ältere Küchen nehmen wir in Zahlung.', options: ['Unter 10 Jahre', '10 bis 20 Jahre', '20 bis 30 Jahre', 'Über 30 Jahre'] },
     stil: { title: 'Welcher Küchenstil gefällt Ihnen?', sub: 'Folgen Sie ruhig Ihrem Bauchgefühl.', options: ['Hochglanz', 'Matt', 'Holzoptik', 'Landhaus', 'Weiß ich noch nicht'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
@@ -962,6 +962,31 @@ class Component extends DCLogic {
     if (this._escFn) { document.removeEventListener('keydown', this._escFn); this._escFn = null; }
     this.setState({ modulOffen: false, ringFertig: false });
     this.acceptMatchIntern();
+  }
+  inspMailFelder() {
+    const leer = { inspiration_html: '' };
+    for (let n = 1; n <= 4; n++) { leer['inspiration_bild_' + n] = ''; leer['inspiration_name_' + n] = ''; }
+    try {
+      if (this.state.answers.vorschlag !== 0 || !this.state.katalog) return leer;
+      const r = this.ringAuswahl(); const k = r[1] || r[0]; if (!k) return leer;
+      const alle = [k].concat(r.filter(x => x && x.id !== k.id).slice(0, 3));
+      const B = this.state.katalog.basis;
+      const esc = (s) => String(s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+      const nm = (x) => (x.marke_anzeige || x.marke) + (x.modell ? ' ' + x.modell : '');
+      const out = { ...leer };
+      alle.forEach((x, i) => { out['inspiration_bild_' + (i + 1)] = B + 'f_jpg,q_auto,c_fill,g_auto,' + (i ? 'ar_1:1,w_400/' : 'ar_4:3,w_1200/') + x.bild; out['inspiration_name_' + (i + 1)] = nm(x); });
+      const F = "font-family:Arial,Helvetica,sans-serif;";
+      const klein = alle.slice(1).map((x, i) => '<td width="33%" valign="top" style="padding:' + (i ? '0 0 0 8px' : '0') + ';"><img src="' + out['inspiration_bild_' + (i + 2)] + '" width="180" alt="' + esc(nm(x)) + '" style="display:block;width:100%;max-width:180px;height:auto;border:0;border-radius:8px;"><p style="margin:6px 0 0;' + F + 'font-size:12px;line-height:16px;color:#5a6478;">' + esc(nm(x)) + '</p></td>').join('');
+      out.inspiration_html = '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 28px;"><tr><td style="padding:22px;background:#eef4fb;border-radius:10px;">'
+        + '<p style="margin:0 0 4px;' + F + 'font-size:12px;line-height:16px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#034EA3;">Ihre Küchen-Inspirationen</p>'
+        + '<p style="margin:0 0 16px;' + F + 'font-size:18px;line-height:24px;font-weight:bold;color:#101d33;">Passend zu Ihren Angaben</p>'
+        + '<img src="' + out.inspiration_bild_1 + '" width="556" alt="' + esc(nm(k)) + '" style="display:block;width:100%;max-width:556px;height:auto;border:0;border-radius:8px;">'
+        + '<p style="margin:8px 0 18px;' + F + 'font-size:15px;line-height:20px;font-weight:bold;color:#101d33;">' + esc(nm(k)) + '</p>'
+        + (klein ? '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>' + klein + '</tr></table>' : '')
+        + '<p style="margin:16px 0 0;' + F + 'font-size:13px;line-height:19px;color:#3c4557;">Die Beispiele dienen als Inspiration. Ihre Küche planen wir maßgenau für Ihren Raum, gemeinsam bei uns im Möbelhaus in Lahr.</p>'
+        + '</td></tr></table>';
+      return out;
+    } catch (e) { return leer; }
   }
   acceptMatchIntern() {
     this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.match, step_name: this.stepName('match'), answer: 'Inspiration: weiter zu Kontaktdaten' });
@@ -1194,10 +1219,11 @@ class Component extends DCLogic {
       inspiration_mail: this.state.answers.vorschlag === 0 ? 'ja' : (this.state.answers.vorschlag === 1 || this.state.answers.inspfrage === 1 ? 'nein' : ''),
       inspiration_treffer: (() => { try { if (!this.state.katalog) return ''; const r = this.ringAuswahl(); const k = r[1] || r[0]; return k ? k.id + ' · ' + (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : '') + ' · ' + this.state.katalog.basis + 'f_auto,q_auto,c_fill,g_auto,ar_16:9,w_1280/' + k.bild : ''; } catch (e) { return ''; } })(),
       inspiration_kueche: (() => { try { if (!this.state.katalog) return ''; const r = this.ringAuswahl(); const k = r[1] || r[0]; return k ? (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : '') + ' (' + k.id + ')' : ''; } catch (e) { return ''; } })(),
+      ...this.inspMailFelder(),
       angebot_hilfe: (this.state.hilfe || []).join(', '),
       unterlagen_vorhanden: this.state.answers.unterlagen === 0 ? 'ja' : (this.state.answers.unterlagen === 1 ? 'nein' : ''),
       nachricht: (this.state.nachricht || '').trim(),
-      dateien: (this.state.uploads || []).filter(u => u.st === 'ok').map(u => u.url).join(' , '),
+      inspo_dateien: (this.state.uploads || []).filter(u => u.st === 'ok').map(u => u.url).join(' , '),
       datei_namen: (this.state.uploads || []).map(u => u.name).join(', '),
       kuechenform: answer('form'),
       kuechenstil: answer('stil'),
@@ -1259,7 +1285,7 @@ class Component extends DCLogic {
       fetch('https://api.cloudinary.com/v1_1/' + this.CLOUD + '/auto/upload', { method: 'POST', body: fd })
         .then(r => r.ok ? r.json() : Promise.reject(r.status))
         .then(j => upd({ st: 'ok', url: j.secure_url }))
-        .catch(() => upd({ st: 'err' }));
+        .catch((st) => { upd({ st: 'err' }); this.ga('funnel_upload_error', { funnel: 'alt_gegen_neu', status: String(st) }); });
     });
     this.ga('funnel_upload', { funnel: 'alt_gegen_neu', files: picked.length });
   }
