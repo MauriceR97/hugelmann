@@ -72,6 +72,52 @@
     body { margin: 0; background: var(--grey-50); font-family: var(--font-sans); color: var(--text-body); }
     a { color: var(--text-link); }
     a:hover { color: var(--text-link-hover); }
+  [data-rsp~="tb"] a:hover{color:#ffffff !important;}
+  @media (max-width:560px){ [data-rsp~="tb-in"]{padding:12px 16px 18px !important;} [data-rsp~="tb-tag"]{font-size:13.5px !important;} }
+  [data-rsp~="qhead"] h2{text-align:left !important;}
+  [data-rsp~="qwrap"] h3{text-align:left !important;}
+  [data-rsp~="qwrap"] h3 + span{text-align:left !important;}
+  [data-rsp~="np-foot"] a:hover{text-decoration:underline !important;}
+  @media (max-width:560px){ [data-rsp~="cols2"]{grid-template-columns:1fr !important;} [data-rsp~="cols2"] button{flex-direction:row !important;align-items:center !important;padding:16px !important;} [data-rsp~="match-g"]{gap:6px !important;} }
+  @media (max-width:560px){ [data-rsp~="match-logos"]{justify-content:center !important;gap:14px 22px !important;} }
+  [data-rsp~="qnav"] button[data-rsp~="skiplink"][data-rsp~="skiplink"]{background:none !important;border:0 !important;color:#5a6478 !important;box-shadow:none !important;}
+  @media (max-width:560px){ [data-rsp~="vorteil-g"]{flex-direction:column !important;gap:6px !important;} }
+  @media (max-width:560px){ [data-rsp~="cols2i"] button{min-height:160px !important;padding:20px 10px 18px !important;} }
+  .orb-spin{animation:orbSpin 36s linear infinite;}
+  .orb-spin .orb-up{animation:orbSpin 36s linear infinite reverse;}
+  @keyframes orbSpin{to{transform:rotate(360deg);}}
+  .orb-btn{animation:orbBreath 3.2s ease-in-out infinite;}
+  .orb-btn:hover{animation-play-state:paused;}
+  @keyframes orbBreath{0%,100%{transform:scale(1);box-shadow:0 22px 40px -18px rgba(227,6,19,0.55);}50%{transform:scale(1.045);box-shadow:0 28px 48px -18px rgba(227,6,19,0.7);}}
+  @media (prefers-reduced-motion: reduce){ .orb-spin,.orb-spin .orb-up,.orb-btn{animation:none !important;} }
+  @media (max-width:420px){ [data-rsp~="orb"]{transform:scale(0.84);margin:-30px 0;} }
+  .insp-in{animation:inspIn 460ms cubic-bezier(.23,1,.32,1) both;}
+  @keyframes inspIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion: reduce){ .insp-in{animation:none;} }
+  @media (max-width:560px){ [data-rsp~="insp-mehr"]{grid-template-columns:1fr !important;gap:12px !important;} }
+  [data-rsp~="cta-final"][disabled]{opacity:0.75;cursor:wait;}
+  @media (max-width:560px){ [data-rsp~="kontakt-card"]{padding:0 !important;} [data-rsp~="vorteil-g"]{flex-direction:column !important;align-items:flex-start !important;} }
+  @media (max-width:560px){ [data-rsp~="vs-btns"]{grid-template-columns:1fr !important;} [data-rsp~="vs-frage"]{padding:18px 16px !important;} }
+  .insp-lupe{animation:lupeMove 2.4s ease-in-out infinite;}
+  @keyframes lupeMove{0%{transform:translate(-62%,-55%) rotate(-6deg);}25%{transform:translate(-30%,-80%) rotate(4deg);}50%{transform:translate(-40%,-30%) rotate(-2deg);}75%{transform:translate(-75%,-35%) rotate(6deg);}100%{transform:translate(-62%,-55%) rotate(-6deg);}}
+  @media (prefers-reduced-motion: reduce){ .insp-lupe{animation:none;transform:translate(-50%,-50%);} }
+  @media (max-width:420px){ [data-rsp~="tr-spec"] > div{padding-left:10px !important;padding-right:6px !important;} [data-rsp~="tr-spec"] > div:first-child{padding-left:0 !important;} }
+  @media (max-width:560px){ [data-rsp~="vs-q"]{grid-template-columns:auto minmax(0,1fr) !important;gap:12px !important;} }
+  @media (max-width:560px){
+    [data-rsp~="tr-img"]{aspect-ratio:4/3 !important;border-radius:14px !important;}
+    [data-rsp~="vs-q"] span[style*="width:58px"]{width:46px !important;height:60px !important;margin-left:-12px !important;}
+    [data-rsp~="vs-q"] b{font-size:15.5px !important;}
+    [data-rsp~="tr-spec"] span[style*="font-size:15.5px"]{font-size:14.5px !important;}
+  }
+  .insp-scan{animation:scanIn 420ms cubic-bezier(.23,1,.32,1) 500ms both;}
+  @keyframes scanIn{from{opacity:0;transform:translate(-50%,8px);}to{opacity:1;transform:translate(-50%,0);}}
+  .insp-scan-dot{animation:scanDot 1.1s ease-in-out infinite;}
+  @keyframes scanDot{0%,100%{opacity:1;}50%{opacity:.25;}}
+  @media (prefers-reduced-motion: reduce){ .insp-scan,.insp-scan-dot{animation:none;} }
+  @media (max-width:560px){ [data-rsp~="kh"] > img{width:84px !important;height:84px !important;margin-left:12px !important;} }
+  .zoom-in{animation:zIn 220ms ease-out both;}
+  @keyframes zIn{from{opacity:0;}to{opacity:1;}}
+  @media (prefers-reduced-motion: reduce){ .zoom-in{animation:none;} }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -228,7 +274,7 @@
 
   /* Buttons */
   [data-rsp~="submitwrap"] button,[data-rsp~="qnav"] button[style*="--hg-red"]{border-radius:12px !important;letter-spacing:0.01em;}
-  [data-rsp~="qnav"] button:not([style*="--hg-red"]),[data-rsp~="finalnav"] > button{background:none !important;border:1px solid #ddd4c7 !important;border-radius:12px !important;color:#7c6b53 !important;}
+  [data-rsp~="qnav"] button:not([style*="--hg-red"]):not([data-rsp~="skiplink"]),[data-rsp~="finalnav"] > button{background:none !important;border:1px solid #ddd4c7 !important;border-radius:12px !important;color:#7c6b53 !important;}
   .backlink{color:#8b7a60 !important;font-size:14px !important;}
   .privnote svg{color:#8b7a60 !important;}
 
@@ -237,6 +283,7 @@
     [data-rsp~="qwrap"] h2{font-size:27px !important;max-width:none;}
     [data-rsp~="qwrap"] button[style*="justify-content: space-between"]{padding:15px 16px 15px 54px !important;font-size:16px !important;}
   }
+  @media (max-width:560px){ [data-rsp~="berater-fig"]{width:104px !important;margin-left:12px !important;} [data-rsp~="berater-fig"] img{width:84px !important;height:84px !important;} }
   /* Weniger Fettung */
   [data-rsp~="qwrap"] h2,h2,h3{font-weight:700 !important;}
   [data-rsp~="qwrap"] button span,[data-rsp~="tilelabel"]{font-weight:500 !important;}
@@ -282,21 +329,71 @@
   [data-rsp~="submitwrap"] button,[data-rsp~="submitwrap"] button:disabled{opacity:1 !important;cursor:pointer !important;filter:none !important;}
   [data-rsp~="submitwrap"] button *{color:#fff !important;}
   /* Zurück-Button bleibt sekundär */
-  [data-rsp~="qnav"] button:not([style*="--hg-red"]){background:#fff !important;color:#101d33 !important;border:1.5px solid #d8deea !important;border-radius:10px !important;box-shadow:none !important;font-weight:700 !important;}
-  @media (hover:hover) and (pointer:fine){ [data-rsp~="qnav"] button:not([style*="--hg-red"]):hover{border-color:#101d33 !important;background:#fff !important;} }
+  [data-rsp~="qnav"] button[data-rsp~="skiplink"]{background:none !important;border:0 !important;color:#5a6478 !important;box-shadow:none !important;padding:10px 4px !important;font-size:15px !important;font-weight:600 !important;}
+  [data-rsp~="qnav"] button:not([style*="--hg-red"]):not([data-rsp~="skiplink"]){background:#fff !important;color:#101d33 !important;border:1.5px solid #d8deea !important;border-radius:10px !important;box-shadow:none !important;font-weight:700 !important;}
+  @media (hover:hover) and (pointer:fine){ [data-rsp~="qnav"] button:not([style*="--hg-red"]):not([data-rsp~="skiplink"]):hover{border-color:#101d33 !important;background:#fff !important;} }
   [data-rsp~="qnav"] button[style*="--hg-red"]{background:#e6091a !important;color:#fff !important;border:0 !important;border-radius:10px !important;box-shadow:inset 0 1px 0 rgba(255,255,255,0.24),0 2px 0 #a8040e !important;}
   @media (hover:hover) and (pointer:fine){ [data-rsp~="qnav"] button[style*="--hg-red"]:hover{background:#d80815 !important;} }
   .hg-glow{box-shadow:none !important;border-radius:10px !important;}
   /* Fortschritt in Rot */
   div[style*="height: 100%"][style*="var(--hg-blue)"]{background:#e6091a !important;}
+  /* ================= v3: an Finanzierungs-Funnel angeglichen ================= */
+  body{background:#f4f6f9 !important;}
+  body::before{display:none !important;}
+  [data-rsp~="gbar"]{background:#fff !important;border-bottom:1px solid #dfe5ee !important;}
+  [data-rsp~="qwrap"]{background:#fff !important;border:1px solid #dfe5ee !important;border-radius:16px !important;
+    box-shadow:0 24px 50px -34px rgba(16,29,51,0.35) !important;padding:34px 38px 30px !important;margin-top:8px !important;}
+  [data-rsp~="qwrap"]::before{display:none !important;}
+  [data-rsp~="qwrap"] h2{font-size:32px !important;line-height:1.12 !important;color:#101d33 !important;max-width:none !important;}
+  [data-rsp~="qwrap"] > div:nth-child(2) > span,[data-rsp~="qhead"] > span{color:#5a6478 !important;}
+  [data-rsp~="qwrap"] h3{color:#101d33 !important;}
+  /* Antwortzeilen */
+  [data-rsp~="qwrap"] button[style*="justify-content: space-between"]{border:1.5px solid #dfe5ee !important;background:#fff !important;
+    min-height:64px;transition:border-color 140ms ease-out,background 140ms ease-out !important;}
+  [data-rsp~="qwrap"] button[style*="justify-content: space-between"]::before{background:#eaf1fb !important;color:#034EA3 !important;border-radius:8px !important;}
+  @media (hover:hover) and (pointer:fine){
+    [data-rsp~="qwrap"] button[style*="justify-content: space-between"]:hover{border-color:#034EA3 !important;background:#f7faff !important;}
+    [data-rsp~="qwrap"] button[style*="justify-content: space-between"]:hover::before{background:#034EA3 !important;color:#fff !important;}
+  }
+  /* Bildkacheln */
+  [data-rsp~="cols3"] button{border:1.5px solid #dfe5ee !important;border-radius:12px !important;box-shadow:none !important;transition:border-color 140ms ease-out !important;}
+  @media (hover:hover) and (pointer:fine){ [data-rsp~="cols3"] button:hover{border-color:#034EA3 !important;transform:none !important;} }
+  /* Eingaben */
+  [data-rsp~="qwrap"] input[type="text"],[data-rsp~="qwrap"] input[type="tel"],[data-rsp~="qwrap"] input[type="email"],
+  [data-rsp~="qwrap"] select,[data-rsp~="qwrap"] textarea{background:#fff !important;border-color:#dfe5ee !important;}
+  [data-rsp~="qwrap"] input:focus,[data-rsp~="qwrap"] select:focus,[data-rsp~="qwrap"] textarea:focus{border-color:#034EA3 !important;box-shadow:0 0 0 3px rgba(3,78,163,0.15) !important;}
+  [data-rsp~="qwrap"] label > span:first-child{color:#5a6478 !important;}
+  /* Nebenbuttons + Hinweise */
+  [data-rsp~="qnav"] button:not([style*="--hg-red"]):not([data-rsp~="skiplink"]),[data-rsp~="finalnav"] > button{border:1.5px solid #dfe5ee !important;color:#101d33 !important;background:#fff !important;}
+  @media (hover:hover) and (pointer:fine){ [data-rsp~="qnav"] button:not([style*="--hg-red"]):not([data-rsp~="skiplink"]):hover,[data-rsp~="finalnav"] > button:hover{border-color:#101d33 !important;} }
+  .privnote svg{color:#1d9e5f !important;}
+  [data-rsp~="wunsch-sum"]{background:#eaf1fb !important;border-color:#d4e2f5 !important;}
+  @media (max-width:720px){
+    [data-rsp~="qwrap"]{padding:24px 18px 22px !important;border-radius:14px !important;}
+    [data-rsp~="qwrap"] h2{font-size:25px !important;}
+  }
   </style>
 </helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#034EA3"></rect><rect x="28" y="30" width="44" height="8" rx="4" fill="#fff"></rect><rect x="28" y="46" width="44" height="8" rx="4" fill="#fff" opacity="0.7"></rect><rect x="28" y="62" width="44" height="8" rx="4" fill="#E30613"></rect></svg></template>
 <div style="min-height:100vh;display:flex;flex-direction:column;">
-<header style="background:var(--hg-white);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-xs);">
-  <div data-rsp="header" style="max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-    <a href="/alt-gegen-neu/" style="display:block;"><img loading="eager" decoding="async" src="/assets/logo.webp" alt="Küchen Hugelmann – interliving" style="height:52px;display:block;"></a>
-      <a data-rsp="hdr-tel" href="tel:+497821965773" aria-label="Anrufen: 07821 965773" style="margin-left:auto;width:52px;height:52px;border-radius:50%;background:#eef2f9;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none;"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#2c4a5e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+<header data-rsp="tb" style="background:#034EA3;color:#fff;">
+    <div data-rsp="tb-in" style="max-width:720px;margin:0 auto;padding:14px 22px 20px;box-sizing:border-box;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <a href="/alt-gegen-neu/" aria-label="Zurück zur Aktion" style="display:block;"><img loading="eager" decoding="async" src="/assets/logo-weiss.webp" alt="Küchen Hugelmann – interliving" style="height:34px;width:auto;display:block;"></a>
+        <span style="display:flex;align-items:center;gap:12px;">
+          <span data-rsp="tb-tag" style="font-weight:800;font-size:15px;letter-spacing:-0.01em;white-space:nowrap;">Alt gegen <i style="font-style:normal;font-family:'Caveat',cursive;font-size:24px;line-height:1;color:#ff4a55;">Neu!</i></span>
+        </span>
+      </div>
+      <a href="/alt-gegen-neu/" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:14.5px;color:#cfe0f6;text-decoration:none;"><span aria-hidden="true">‹</span>Zurück zur Aktion</a>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:12px;">
+        <b style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:12.5px;color:#fff;white-space:nowrap;">{{ stepOf }}</b>
+        <span style="font-size:13px;color:#cfe0f6;white-space:nowrap;">{{ stepName }}</span>
+      </div>
+      <div aria-hidden="true" style="display:flex;gap:6px;margin-top:9px;">
+        <sc-for list="{{ progSegs }}" as="sg" hint-placeholder-count="6">
+          <i style="flex:1;height:6px;border-radius:999px;background:{{ sg.bg }};transition:background 260ms cubic-bezier(0.23,1,0.32,1);"></i>
+        </sc-for>
+      </div>
     </div>
   </header>
   <div data-rsp="gbar" style="border-bottom:1px solid var(--border-subtle);background:#fff;">
@@ -306,7 +403,7 @@
       <span><b style="font-weight:700;color:#101d33;">4,2 von 5</b> bei Google · 547 Bewertungen</span>
     </div>
   </div>
-  <main style="flex:1;display:flex;flex-direction:column;align-items:center;gap:22px;padding:22px 32px 72px;">
+  <main style="flex:1;display:flex;flex-direction:column;align-items:center;gap:22px;padding:28px 32px 72px;">
   <div style="text-align:center;display:flex;flex-direction:column;gap:10px;max-width:660px;">
     
     
@@ -314,18 +411,8 @@
   </div>
   <div data-rsp="qwrap" style="width: 686px; max-width: 1000px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px">
     <sc-if value="{{ showQuiz }}" hint-placeholder-val="{{ true }}">
-      <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;">
-        <a class="backlink" data-rsp="backlink" href="/alt-gegen-neu/" style="align-self:flex-start;margin-bottom:2px;"><span aria-hidden="true">‹</span>Zurück zur Aktion</a>
-        <div data-rsp="progrow" style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
-          <span style="font-size:15px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;">{{ stepOf }}</span>
-          <span style="font-size:15px;color:var(--text-muted);white-space:nowrap;">{{ stepName }}</span>
-        </div>
-        <div style="height:9px;background:#e3e8f1;border-radius:var(--radius-pill);overflow:hidden;margin-top:4px;">
-          <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);transition:width 320ms cubic-bezier(0.4,0,0.2,1);width:{{ progressPct }};"></div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:10px;text-align:center;">
-        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:var(--hg-blue);letter-spacing:var(--ls-tight);text-wrap:balance;">{{ qTitle }}</h2>
+      <div data-rsp="qhead" style="display:flex;flex-direction:column;gap:10px;text-align:left;max-width:720px;width:100%;margin:0 auto;">
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:var(--hg-blue);letter-spacing:var(--ls-tight);text-wrap:balance;">{{ qT1 }}<span style="color:#034EA3;">{{ qKw }}</span>{{ qT2 }}</h2>
         <span style="font-size:15px;color:var(--text-muted);">{{ qSub }}</span>
       </div>
       <sc-if value="{{ isListQ }}" hint-placeholder-val="{{ false }}">
@@ -343,18 +430,36 @@
           </sc-for>
         </div>
         <sc-if value="{{ hasQNote }}" hint-placeholder-val="{{ false }}">
-          <p style="margin:2px auto 0;max-width:560px;text-align:center;font-size:14.5px;color:var(--text-muted);">{{ qNote }}</p>
+          <p style="margin:2px auto 0;max-width:720px;width:100%;text-align:left;font-size:14.5px;color:var(--text-muted);">{{ qNote }}</p>
         </sc-if>
+      </sc-if>
+      <sc-if value="{{ isIconQ }}" hint-placeholder-val="{{ false }}">
+        <div data-rsp="cols2i" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:720px;width:100%;margin:0 auto;">
+          <sc-for list="{{ qOptions }}" as="opt" hint-placeholder-count="2">
+            <button onClick="{{ opt.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;width:100%;min-height:190px;text-align:center;font-family:var(--font-sans);background:#fff;border:1.5px solid {{ opt.border }};border-radius:14px;padding:24px 14px 22px;cursor:pointer;transition:border-color 140ms ease-out,background 140ms ease-out;" style-hover="border-color:#034EA3;background:#f7faff;">
+              <sc-if value="{{ opt.showCheck }}" hint-placeholder-val="{{ false }}">
+                <span style="position:absolute;top:12px;right:12px;width:26px;height:26px;border-radius:50%;background:var(--hg-red);display:flex;align-items:center;justify-content:center;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+              </sc-if>
+              <span style="width:68px;height:68px;border-radius:50%;background:#eaf1fb;color:#034EA3;display:flex;align-items:center;justify-content:center;pointer-events:none;">
+                <sc-if value="{{ opt.icoInsp }}" hint-placeholder-val="{{ false }}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5c0-.9.5-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg></sc-if>
+                <sc-if value="{{ opt.icoPlan }}" hint-placeholder-val="{{ false }}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m9 13 2 2 4-4"/></svg></sc-if>
+              </span>
+              <span style="display:flex;flex-direction:column;gap:3px;pointer-events:none;">
+                <span style="font-size:17px;font-weight:700;color:#101d33;line-height:1.3;text-wrap:balance;">{{ opt.label }}</span>
+              </span>
+            </button>
+          </sc-for>
+        </div>
       </sc-if>
       <sc-if value="{{ isTileQ }}" hint-placeholder-val="{{ true }}">
       <div data-rsp="cols3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:720px;width:100%;margin:0 auto;">
         <sc-for list="{{ qOptions }}" as="opt" hint-placeholder-count="0">
-          <button onClick="{{ opt.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;width:100%;aspect-ratio:1/1;overflow:hidden;text-align:center;font-family:var(--font-sans);font-size:15px;font-weight:var(--fw-bold);color:{{ opt.labelColor }};background:var(--hg-white);border:2px solid {{ opt.border }};border-radius:var(--radius-lg);padding:0;cursor:pointer;box-shadow:{{ opt.shadow }};transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-2px);box-shadow:var(--shadow-md);">
+          <button onClick="{{ opt.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;width:100%;aspect-ratio:{{ opt.ratio }};overflow:hidden;text-align:center;font-family:var(--font-sans);font-size:15px;font-weight:var(--fw-bold);color:{{ opt.labelColor }};background:var(--hg-white);border:2px solid {{ opt.border }};border-radius:var(--radius-lg);padding:0;cursor:pointer;box-shadow:{{ opt.shadow }};transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="transform:translateY(-2px);box-shadow:var(--shadow-md);">
             <sc-if value="{{ opt.showCheck }}" hint-placeholder-val="{{ false }}">
               <span style="position:absolute;top:10px;right:10px;z-index:2;width:28px;height:28px;border-radius:50%;background:var(--hg-red);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);pointer-events:none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
             </sc-if>
             <sc-if value="{{ opt.hasImgSrc }}" hint-placeholder-val="{{ false }}">
-              <span style="display:block;flex:1;min-height:0;pointer-events:none;">{{ opt.img }}</span>
+              <span style="display:block;flex:none;aspect-ratio:1/1;overflow:hidden;pointer-events:none;">{{ opt.img }}</span>
             </sc-if>
             <sc-if value="{{ opt.hasSlot }}" hint-placeholder-val="{{ false }}">
               <span style="display:block;flex:1;min-height:0;overflow:hidden;pointer-events:none;">
@@ -362,7 +467,7 @@
               </span>
             </sc-if>
             <sc-if value="{{ opt.qmark }}" hint-placeholder-val="{{ false }}">
-              <span style="display:flex;flex:1;min-height:0;align-items:center;justify-content:center;background:var(--grey-100);pointer-events:none;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--grey-400)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg></span>
+              <span style="display:flex;flex:none;aspect-ratio:1/1;align-items:center;justify-content:center;background:var(--grey-100);pointer-events:none;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--grey-400)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg></span>
             </sc-if>
             <sc-if value="{{ opt.textOnly }}" hint-placeholder-val="{{ false }}">
               <span style="flex:1;"></span>
@@ -380,85 +485,379 @@
           <button onClick="{{ goForward }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-red);border:none;border-radius:14px;padding:18px 28px;cursor:pointer;font-family:var(--font-sans);font-size:19px;font-weight:var(--fw-bold);color:#fff;box-shadow:0 0 20px 4px rgba(227,6,19,0.28);transition:all 150ms cubic-bezier(0.4,0,0.2,1);" style-hover="box-shadow:0 0 26px 7px rgba(227,6,19,0.38);">Weiter&nbsp;→</button>
         </sc-if>
       </div>
-      <a href="/alt-gegen-neu/" style="align-self:center;font-size:14px;font-weight:var(--fw-semibold);">‹ Zurück zur Aktionsseite</a>
+    </sc-if>
+    <sc-if value="{{ showHilfe }}" hint-placeholder-val="{{ false }}">
+      <div data-rsp="qhead" style="display:flex;flex-direction:column;gap:10px;text-align:left;max-width:720px;width:100%;margin:0 auto;">
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#1d9e5f;">Das macht es uns leichter, konkret zu werden</span>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Womit können wir Ihnen <span style="color:#034EA3;">helfen</span>?</h2>
+        <span style="font-size:15px;color:var(--text-muted);">Mehrfachauswahl möglich.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;">
+        <sc-for list="{{ hilfeOpts }}" as="o" hint-placeholder-count="6">
+          <button type="button" onClick="{{ o.toggle }}" aria-pressed="{{ o.pressed }}" style="display:flex;align-items:center;gap:14px;width:100%;min-height:58px;text-align:left;padding:14px 16px;border-radius:12px;border:1.5px solid {{ o.bd }};background:{{ o.bg }};cursor:pointer;font-family:var(--font-sans);font-size:16.5px;font-weight:600;color:#101d33;transition:border-color 140ms ease-out,background 140ms ease-out;">
+            <span style="flex:none;width:24px;height:24px;border-radius:7px;border:1.5px solid {{ o.boxBd }};background:{{ o.boxBg }};display:flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span>{{ o.label }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;max-width:720px;width:100%;margin:0 auto;padding:14px 16px;border-radius:12px;background:#eef8f2;color:#14774a;box-sizing:border-box;">
+        <span style="flex:none;margin-top:1px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
+        <span style="font-size:15px;line-height:1.5;color:#1c3a2c;"><b style="color:#14774a;">Gerne planen wir mit Ihnen kostenfrei zusammen</b> und prüfen Ihr Angebot kostenfrei, abgestimmt auf Ihre Angaben im Formular.</span>
+      </div>
+      <div data-rsp="qnav" style="display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:stretch;margin-top:4px;max-width:720px;width:100%;margin-left:auto;margin-right:auto;">
+        <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1.5px solid #dfe5ee;border-radius:12px;padding:18px 24px;cursor:pointer;font-family:var(--font-sans);font-size:16px;font-weight:600;color:#101d33;">←&nbsp;Zurück</button>
+        <button onClick="{{ hilfeNext }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-red);border:none;border-radius:12px;padding:18px 24px;cursor:pointer;font-family:var(--font-sans);font-size:18px;font-weight:700;color:#fff;">Weiter&nbsp;→</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{ showUnterlagen }}" hint-placeholder-val="{{ false }}">
+      <div data-rsp="qhead" style="display:flex;flex-direction:column;gap:10px;text-align:left;max-width:720px;width:100%;margin:0 auto;">
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Haben Sie schon <span style="color:#034EA3;">Planungsunterlagen</span> für uns?</h2>
+        <span style="font-size:15px;color:var(--text-muted);">Zum Beispiel Ihr Angebot als PDF, einen Grundriss oder Fotos Ihrer Küche.</span>
+      </div>
+      <div data-rsp="cols2" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:720px;width:100%;margin:0 auto;">
+        <button type="button" onClick="{{ unterlagenJa }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%;text-align:left;font-family:var(--font-sans);background:{{ ulJaBg }};border:1.5px solid {{ ulJaBd }};border-radius:14px;padding:20px;cursor:pointer;transition:border-color 140ms ease-out,background 140ms ease-out;">
+          <span style="width:52px;height:52px;border-radius:14px;background:#eaf1fb;color:#034EA3;display:flex;align-items:center;justify-content:center;pointer-events:none;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span>
+          <span style="display:flex;flex-direction:column;gap:3px;pointer-events:none;"><span style="font-size:17.5px;font-weight:700;color:#101d33;">Ja, gerne hochladen</span><span style="font-size:14px;color:#5a6478;">PDF, Grundriss oder Fotos</span></span>
+        </button>
+        <button type="button" onClick="{{ unterlagenNein }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%;text-align:left;font-family:var(--font-sans);background:#fff;border:1.5px solid #dfe5ee;border-radius:14px;padding:20px;cursor:pointer;transition:border-color 140ms ease-out,background 140ms ease-out;" style-hover="border-color:#034EA3;background:#f7faff;">
+          <span style="width:52px;height:52px;border-radius:14px;background:#f4f6f9;color:#5a6478;display:flex;align-items:center;justify-content:center;pointer-events:none;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+          <span style="display:flex;flex-direction:column;gap:3px;pointer-events:none;"><span style="font-size:17.5px;font-weight:700;color:#101d33;">Nein, ich habe nichts</span><span style="font-size:14px;color:#5a6478;">Direkt weiter zu den Kontaktdaten</span></span>
+        </button>
+      </div>
+      <sc-if value="{{ ulOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:8px;max-width:720px;width:100%;margin:0 auto;">
+          <label style="position:relative;display:flex;align-items:center;gap:14px;padding:18px;border:1.5px dashed #b9c6d8;border-radius:12px;background:#f7faff;cursor:pointer;">
+            <span style="flex:none;width:48px;height:48px;border-radius:12px;background:#eaf1fb;color:#034EA3;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 16v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3"/></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <b style="font-size:15.5px;font-weight:700;color:#101d33;">Dateien auswählen</b>
+              <span style="font-size:13px;color:#5a6478;">Angebot als PDF, Grundriss oder Fotos · max. 5 Dateien, je 10 MB</span>
+            </span>
+            <input type="file" multiple accept="image/*,application/pdf" onChange="{{ onUpload }}" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
+          </label>
+          <sc-if value="{{ hasUploads }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <sc-for list="{{ uploads }}" as="u" hint-placeholder-count="1">
+                <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #dfe5ee;border-radius:10px;background:#fff;font-size:14px;">
+                  <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#101d33;font-weight:600;">{{ u.name }}</span>
+                  <span style="flex:none;font-size:13px;font-weight:600;color:{{ u.color }};">{{ u.stTxt }}</span>
+                  <button type="button" onClick="{{ u.remove }}" aria-label="Datei entfernen" style="flex:none;width:30px;height:30px;border:0;border-radius:8px;background:#f4f6f9;color:#5a6478;font-size:17px;line-height:1;cursor:pointer;">×</button>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+      <div data-rsp="qnav" style="display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:stretch;margin-top:4px;max-width:720px;width:100%;margin-left:auto;margin-right:auto;">
+        <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1.5px solid #dfe5ee;border-radius:12px;padding:18px 24px;cursor:pointer;font-family:var(--font-sans);font-size:16px;font-weight:600;color:#101d33;">←&nbsp;Zurück</button>
+        <sc-if value="{{ ulOpen }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ unterlagenNext }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-red);border:none;border-radius:12px;padding:18px 24px;cursor:pointer;font-family:var(--font-sans);font-size:18px;font-weight:700;color:#fff;">Weiter zu den Kontaktdaten&nbsp;→</button>
+        </sc-if>
+      </div>
+    </sc-if>
+    <sc-if value="{{ showDetails }}" hint-placeholder-val="{{ false }}">
+      <div data-rsp="qhead" style="display:flex;flex-direction:column;gap:10px;text-align:left;max-width:720px;width:100%;margin:0 auto;">
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">{{ dT1 }}<span style="color:#034EA3;">Wunschküche</span>{{ dT2 }}</h2>
+        <span style="font-size:15px;color:var(--text-muted);">{{ dSub }}</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;max-width:720px;width:100%;margin:0 auto;">
+        <sc-for list="{{ detailGroups }}" as="g" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;">{{ g.lbl }}</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <sc-for list="{{ g.chips }}" as="c" hint-placeholder-count="4">
+                <button type="button" onClick="{{ c.pick }}" style="min-height:44px;padding:9px 14px;border-radius:10px;border:1.5px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.fg }};font-family:var(--font-sans);font-size:15px;font-weight:600;cursor:pointer;transition:border-color 140ms ease-out,background 140ms ease-out;">{{ c.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <label style="display:flex;flex-direction:column;gap:8px;">
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;">Ihre Nachricht <i style="font-style:normal;font-weight:500;letter-spacing:0;text-transform:none;">(optional)</i></span>
+          <textarea rows="4" value="{{ nachricht }}" onChange="{{ onNachricht }}" placeholder="z.B. Raummaße, Wunschgeräte, was Ihnen wichtig ist …" style="width:100%;box-sizing:border-box;border:1.5px solid #dfe5ee;border-radius:10px;padding:12px 14px;font-family:var(--font-sans);font-size:16px;line-height:1.5;color:#101d33;resize:vertical;outline:none;"></textarea>
+        </label>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;">{{ upLabel }} <i style="font-style:normal;font-weight:500;letter-spacing:0;text-transform:none;">(optional)</i></span>
+          <label style="position:relative;display:flex;align-items:center;gap:14px;padding:18px;border:1.5px dashed #b9c6d8;border-radius:12px;background:#f7faff;cursor:pointer;">
+            <span style="flex:none;width:48px;height:48px;border-radius:12px;background:#eaf1fb;color:#034EA3;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 16v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3"/></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;">
+              <b style="font-size:15.5px;font-weight:700;color:#101d33;">Dateien auswählen</b>
+              <span style="font-size:13px;color:#5a6478;">Fotos, Grundriss oder Angebot als PDF · max. 5 Dateien, je 10 MB</span>
+            </span>
+            <input type="file" multiple accept="image/*,application/pdf" onChange="{{ onUpload }}" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
+          </label>
+          <sc-if value="{{ hasUploads }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <sc-for list="{{ uploads }}" as="u" hint-placeholder-count="1">
+                <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #dfe5ee;border-radius:10px;background:#fff;font-size:14px;">
+                  <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#101d33;font-weight:600;">{{ u.name }}</span>
+                  <span style="flex:none;font-size:13px;font-weight:600;color:{{ u.color }};">{{ u.stTxt }}</span>
+                  <button type="button" onClick="{{ u.remove }}" aria-label="Datei entfernen" style="flex:none;width:30px;height:30px;border:0;border-radius:8px;background:#f4f6f9;color:#5a6478;font-size:17px;line-height:1;cursor:pointer;">×</button>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+      <div data-rsp="qnav" style="display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:stretch;margin-top:4px;max-width:720px;width:100%;margin-left:auto;margin-right:auto;">
+        <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1.5px solid #dfe5ee;border-radius:12px;padding:18px 24px;cursor:pointer;font-family:var(--font-sans);font-size:16px;font-weight:600;color:#101d33;">←&nbsp;Zurück</button>
+        <button onClick="{{ detailsNext }}" style="display:flex;align-items:center;justify-content:center;gap:12px;background:var(--hg-red);border:none;border-radius:12px;padding:18px 24px;cursor:pointer;font-family:var(--font-sans);font-size:18px;font-weight:700;color:#fff;">Weiter&nbsp;→</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{ showMatch }}" hint-placeholder-val="{{ false }}">
+      <div data-mfade="1" style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;text-align:left;">
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#034EA3;">Aus unserer Ausstellung in Lahr</span>
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:30px;line-height:1.15;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Ihre <span style="color:#034EA3;">Küchen-Inspirationen</span>, passend zu Ihren Angaben</h2>
+      </div>
+      <div data-mfade="1" data-rsp="angaben" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:720px;width:100%;margin:0 auto;border:1px solid #dfe5ee;border-radius:14px;background:#fff;overflow:hidden;box-sizing:border-box;">
+        <sc-for list="{{ angabenItems }}" as="ai" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:3px;padding:13px 16px;border-left:{{ ai.bl }};">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;">{{ ai.lbl }}</span>
+            <b style="font-size:16px;font-weight:700;color:{{ ai.col }};">{{ ai.val }}</b>
+          </div>
+        </sc-for>
+      </div>
+      <div data-mfade="1" style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:720px;width:100%;margin:6px auto 0;">
+        <div data-rsp="orb" style="position:relative;width:372px;height:372px;max-width:100%;display:flex;align-items:center;justify-content:center;">
+          <span aria-hidden="true" style="position:absolute;inset:44px;border-radius:50%;border:1.5px dashed #c9d6e8;"></span>
+          <span aria-hidden="true" style="position:absolute;inset:74px;border-radius:50%;background:#eaf1fb;"></span>
+          <div class="orb-spin" aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;">
+            <span class="orb-pos" style="position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(270deg) translateX(166px) rotate(-270deg);"><span class="orb-up" style="position:absolute;left:-50px;top:-20px;width:100px;height:40px;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/nobilia.webp" alt="nobilia" loading="lazy" style="height:14px;width:auto;max-width:90px;object-fit:contain;filter:grayscale(1) contrast(1.3);"></span></span>
+            <span class="orb-pos" style="position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(0deg) translateX(166px) rotate(-0deg);"><span class="orb-up" style="position:absolute;left:-50px;top:-20px;width:100px;height:40px;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/interliving-kueche.webp" alt="Interliving" loading="lazy" style="height:36px;width:auto;max-width:96px;object-fit:contain;filter:grayscale(1) contrast(1.5);"></span></span>
+            <span class="orb-pos" style="position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(90deg) translateX(166px) rotate(-90deg);"><span class="orb-up" style="position:absolute;left:-50px;top:-20px;width:100px;height:40px;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/culineo.webp" alt="Culineo" loading="lazy" style="height:36px;width:auto;max-width:96px;object-fit:contain;filter:grayscale(1) contrast(1.5);"></span></span>
+            <span class="orb-pos" style="position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(180deg) translateX(166px) rotate(-180deg);"><span class="orb-up" style="position:absolute;left:-50px;top:-20px;width:100px;height:40px;display:flex;align-items:center;justify-content:center;"><img src="/assets/marken/wertkueche.webp" alt="WERT" loading="lazy" style="height:36px;width:auto;max-width:96px;object-fit:contain;filter:grayscale(1) contrast(1.5);"></span></span>
+          </div>
+          <button type="button" class="orb-btn" onClick="{{ findeKueche }}" style="position:relative;width:196px;height:196px;border-radius:50%;border:0;background:var(--hg-red);color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-family:var(--font-sans);box-shadow:0 22px 40px -18px rgba(227,6,19,0.6);transition:background 140ms ease-out,transform 160ms cubic-bezier(0.23,1,0.32,1);" style-hover="background:#c70511;transform:scale(1.03);" style-active="transform:scale(0.98);">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <span style="font-size:20px;font-weight:800;letter-spacing:-0.01em;line-height:1.15;text-align:center;">Inspiration<br>starten</span>
+          </button>
+        </div>
+      </div>
+      <div data-mfade="1" data-rsp="qnav" style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:4px;max-width:720px;width:100%;margin-left:auto;margin-right:auto;">
+        <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1.5px solid #dfe5ee;border-radius:12px;padding:16px 22px;cursor:pointer;font-family:var(--font-sans);font-size:16px;font-weight:600;color:#101d33;">←&nbsp;Zurück</button>
+        <button data-rsp="skiplink" onClick="{{ acceptMatch }}" style="background:none;border:0;padding:10px 4px;cursor:pointer;font-family:var(--font-sans);font-size:15px;font-weight:600;color:#5a6478;text-decoration:underline;text-underline-offset:3px;">Ohne Suche weiter zu den Kontaktdaten</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{ modulOffen }}" hint-placeholder-val="{{ false }}">
+      <div id="insp-overlay" class="insp-in" aria-label="Ihre passende Küche" style="position:relative;display:flex;flex-direction:column;gap:6px;max-width:720px;width:100%;margin:0 auto;">
+        <div style="padding:0;width:100%;text-align:left;">
+          <span style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hg-red);">Planung läuft</span>
+          <h2 style="margin:10px 0 0;font-family:var(--font-display);font-weight:800;font-size:26px;line-height:1.1;letter-spacing:-.03em;color:#101d33;">Wir suchen passende Vorschläge für Sie heraus.</h2>
+          <p style="margin:9px 0 0;font-size:15px;line-height:1.55;color:#3c4557;">Aus den Marken, die wir in Lahr ausstellen.</p>
+        </div>
+        <div style="display:grid;place-items:center;overflow-x:clip;overflow-y:visible;">
+          <div id="insp-ring" style="position:relative;width:100%;height:330px;margin-top:76px;transform-style:preserve-3d;">
+            <span class="insp-scan" style="position:absolute;left:50%;top:296px;z-index:300;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;background:#fff;border-radius:999px;padding:8px 14px;box-shadow:0 10px 24px -12px rgba(16,29,51,.45);font-size:13.5px;font-weight:600;color:#101d33;pointer-events:none;transition:opacity 220ms ease-out;"><span class="insp-scan-dot" style="width:8px;height:8px;border-radius:50%;background:#034EA3;"></span>Über 800 Modelle werden durchleuchtet</span>
+            <span class="insp-lupe" aria-hidden="true" style="position:absolute;left:50%;top:150px;z-index:300;pointer-events:none;transition:opacity 220ms ease-out;"><svg width="74" height="74" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="filter:drop-shadow(0 6px 14px rgba(16,29,51,.45));"><circle cx="10.5" cy="10.5" r="6.5" fill="rgba(255,255,255,.18)"/><path d="m20 20-4.6-4.6"/></svg></span>
+            <sc-for list="{{ ringKarten }}" as="rk" hint-placeholder-count="6">
+              <article id="{{ rk.domId }}" style="position:absolute;top:13px;left:50%;width:210px;height:272px;margin-left:-105px;background:#fff;border-radius:18px;overflow:hidden;backface-visibility:hidden;box-shadow:0 16px 38px rgba(16,29,51,.20);opacity:0;transform:scale(.5);">
+                <img class="r-bild" data-src="{{ rk.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;background:#eef1f6;transform:scale(1.06);transition:filter .34s ease-out,transform .4s ease-out;">
+                <span style="position:absolute;left:9px;top:9px;z-index:5;display:inline-flex;align-items:center;height:36px;padding:0 9px;border-radius:9px;background:rgba(255,255,255,.96);box-shadow:0 2px 10px rgba(16,29,51,.20);">
+                  <img class="r-logo" data-src="{{ rk.logo }}" alt="{{ rk.marke }}" style="height:auto;width:auto;max-height:22px;max-width:104px;object-fit:contain;display:block;">
+                </span>
+                <span class="r-glas" style="position:absolute;inset:0;background:rgba(255,255,255,.72);opacity:0;pointer-events:none;"></span>
+                <span class="r-rahmen" style="position:absolute;inset:0;z-index:7;border-radius:18px;border:3px solid #1d9e5f;opacity:0;pointer-events:none;"></span>
+                <span class="r-final" style="position:absolute;inset:0;z-index:6;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .22s ease-out;pointer-events:none;background:rgba(16,29,51,.28);"><span class="r-check" style="width:78px;height:78px;border-radius:50%;background:#1d9e5f;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -10px rgba(16,29,51,.5);transform:scale(.6);transition:transform 360ms cubic-bezier(.16,.84,.26,1.2);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7.5"/></svg></span></span>
+              </article>
+            </sc-for>
+          </div>
+        </div>
+        <div style="padding:0 0 8px;width:100%;min-height:56px;display:flex;flex-direction:column;align-items:center;gap:10px;">
+          <sc-if value="{{ ringFertig }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;text-align:center;font-size:14.5px;font-weight:600;color:#1d9e5f;">Einen Moment, gleich geht es weiter …</p>
+          </sc-if>
+          <sc-if value="{{ ringLaeuft }}" hint-placeholder-val="{{ false }}">
+            <button type="button" onClick="{{ schliesseModul }}" style="background:none;border:0;padding:8px;cursor:pointer;font-family:var(--font-sans);font-size:14px;font-weight:600;color:#5a6478;text-decoration:underline;text-underline-offset:3px;">Suche abbrechen</button>
+          </sc-if>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ showVorschlag }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ hatTreffer }}" hint-placeholder-val="{{ false }}">
+        <h3 style="margin:0 0 -6px;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:26px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-align:left;">Einer unserer <span style="color:#034EA3;">Vorschläge</span></h3>
+        <span style="max-width:none;margin:-8px 0 0;font-size:15px;color:#5a6478;">Passend zu Ihren Angaben aus den Kollektionen unserer Marken.</span>
+        <div data-rsp="treffer-card" style="position:relative;width:100%;box-sizing:border-box;display:flex;flex-direction:column;padding-top:{{ stapelPad }};">
+          <sc-if value="{{ hatStapel2 }}" hint-placeholder-val="{{ false }}">
+            <span aria-hidden="true" style="position:absolute;top:0;left:10%;right:10%;height:90px;border-radius:14px;overflow:hidden;background:#d3dbe8;transform:rotate(-1.8deg);box-shadow:0 2px 8px rgba(16,29,51,0.12);"><img data-treffer="1" data-src="{{ stapel2 }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:0.55;filter:saturate(0.7);"></span>
+          </sc-if>
+          <sc-if value="{{ hatStapel1 }}" hint-placeholder-val="{{ false }}">
+            <span aria-hidden="true" style="position:absolute;top:16px;left:5%;right:5%;height:90px;border-radius:15px;overflow:hidden;background:#e3e9f2;transform:rotate(1.2deg);box-shadow:0 2px 8px rgba(16,29,51,0.12);"><img data-treffer="1" data-src="{{ stapel1 }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:0.75;filter:saturate(0.8);"></span>
+            <span style="position:absolute;top:2px;right:2%;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:#034EA3;color:#fff;font-size:12.5px;font-weight:700;box-shadow:0 6px 14px -6px rgba(3,78,163,0.6);">{{ stapelLabel }}</span>
+          </sc-if>
+          <div data-rsp="tr-img" role="button" tabindex="0" aria-label="Bild vergrößern" onClick="{{ zoomAuf }}" style="z-index:1;box-shadow:0 10px 26px -14px rgba(16,29,51,0.45);position:relative;aspect-ratio:3/2;background:#eef1f6;overflow:hidden;border-radius:16px;cursor:zoom-in;">
+            <span style="position:absolute;left:14px;top:12px;z-index:2;color:#fff;font-size:13px;font-weight:700;letter-spacing:0.02em;pointer-events:none;text-shadow:0 1px 8px rgba(16,29,51,0.85),0 0 2px rgba(16,29,51,0.6);">{{ stapelPos }}</span>
+            <span style="position:absolute;right:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:rgba(16,29,51,0.72);color:#fff;font-size:12.5px;font-weight:600;pointer-events:none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Zum Vergrößern tippen</span>
+            <img data-treffer="1" data-src="{{ trefferSrc }}" alt="{{ trefferAlt }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;padding:16px 0 0;">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+              <div style="display:flex;flex-direction:column;gap:2px;min-width:0;">
+                <span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;">Ihr Küchenvorschlag</span>
+                <b style="font-size:22px;font-weight:800;line-height:1.2;letter-spacing:-0.01em;color:#101d33;">{{ trefferModell }}</b>
+              </div>
+              <sc-if value="{{ hatTrefferLogo }}" hint-placeholder-val="{{ false }}">
+                <img data-treffer="1" data-src="{{ trefferLogo }}" alt="" style="max-height:30px;max-width:120px;width:auto;height:auto;object-fit:contain;display:block;">
+              </sc-if>
+            </div>
+            <div data-rsp="tr-spec" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #edf1f6;border-bottom:1px solid #edf1f6;">
+              <sc-for list="{{ trefferChips }}" as="tc" hint-placeholder-count="3">
+                <div style="display:flex;flex-direction:column;gap:3px;padding:11px 12px 11px {{ tc.pl }};border-left:{{ tc.bl }};">
+                  <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;">{{ tc.lbl }}</span>
+                  <span style="display:flex;align-items:center;gap:6px;font-size:15.5px;font-weight:700;color:#101d33;">
+                    <sc-if value="{{ tc.ok }}" hint-placeholder-val="{{ true }}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 6L9 17l-5-5"></path></svg></sc-if>
+                    <span style="max-width:none;">{{ tc.val }}</span>
+                  </span>
+                </div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ hatGalerie }}" hint-placeholder-val="{{ false }}">
+              <div data-rsp="tr-gal" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;">
+                <sc-for list="{{ trefferGalerie }}" as="tg" hint-placeholder-count="4">
+                  <button type="button" onClick="{{ tg.pick }}" aria-label="{{ tg.label }}" style="flex:none;width:64px;height:64px;padding:0;border-radius:10px;overflow:hidden;border:2px solid {{ tg.bd }};background:#eef1f6;cursor:pointer;">
+                    <img data-treffer="1" data-src="{{ tg.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+                  </button>
+                </sc-for>
+              </div>
+            </sc-if>
+            <div data-rsp="vs-frage" style="display:flex;flex-direction:column;gap:14px;margin-top:6px;">
+              <div data-rsp="vs-q" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;">
+  <div aria-hidden="true" style="display:flex;padding-left:14px;">
+              <sc-for list="{{ trefferMehr }}" as="tm" hint-placeholder-count="3">
+                <span style="position:relative;display:block;width:58px;height:76px;margin-left:-14px;border-radius:9px;overflow:hidden;border:2px solid #fff;background:#e3e8f1;box-shadow:0 8px 18px -10px rgba(16,29,51,0.45);transform:rotate({{ tm.rot }});">
+                  <img data-treffer="1" data-src="{{ tm.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </span>
+              </sc-for>
+            </div>
+                <b style="max-width:none;font-size:16.5px;font-weight:700;line-height:1.35;color:#101d33;text-wrap:balance;">Möchten Sie diesen Vorschlag und <span style="color:#034EA3;">3 weitere Küchenbeispiele</span> zur Inspiration per E-Mail erhalten?</b>
+              </div>
+              <span style="display:flex;align-items:center;gap:6px;max-width:none;margin-top:-4px;font-size:12.5px;color:#5a6478;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Einmalig, kein Newsletter, kein Spam.</span>
+              <div data-rsp="vs-btns" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                <button type="button" onClick="{{ vorschlagJa }}" style="display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:13px 18px;border:0;border-radius:12px;background:#E30613;color:#fff;cursor:pointer;font-family:var(--font-sans);font-size:16.5px;font-weight:700;" style-hover="background:#c70511;">Ja, gerne&nbsp;<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></button>
+                <button type="button" onClick="{{ vorschlagNein }}" style="display:flex;align-items:center;justify-content:center;min-height:54px;padding:13px 18px;border:1.5px solid #d4deea;border-radius:12px;background:#fff;color:#101d33;cursor:pointer;font-family:var(--font-sans);font-size:16.5px;font-weight:600;" style-hover="border-color:#101d33;">Nein, danke</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+      <button type="button" onClick="{{ goBack }}" style="align-self:center;background:none;border:0;padding:6px 10px;cursor:pointer;font-family:var(--font-sans);font-size:14.5px;font-weight:600;color:#5a6478;">‹&nbsp;Zurück</button>
+    </sc-if>
+    <sc-if value="{{ zoomOffen }}" hint-placeholder-val="{{ false }}">
+      <div role="dialog" aria-modal="true" aria-label="Küchenbild groß" onClick="{{ zoomZu }}" class="zoom-in" style="position:fixed;inset:0;z-index:9999;background:rgba(10,18,32,0.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;cursor:zoom-out;">
+        <button type="button" onClick="{{ zoomZu }}" aria-label="Schließen" style="position:absolute;top:14px;right:14px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,0.14);color:#fff;font-size:24px;line-height:1;cursor:pointer;">×</button>
+        <img data-treffer="1" data-src="{{ zoomSrc }}" alt="{{ trefferAlt }}" style="max-width:min(1200px,100%);max-height:82vh;width:auto;height:auto;border-radius:12px;display:block;box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);">
+        <span style="max-width:none;color:rgba(255,255,255,0.85);font-size:14px;font-weight:600;">{{ trefferModell }}</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ showMail }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:720px;width:100%;margin:0 auto;text-align:left;">
+        <h2 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-wrap:balance;">Wohin dürfen wir Ihre <span style="color:#034EA3;">Vorschläge</span> senden?</h2>
+        <span style="max-width:none;font-size:15px;color:#5a6478;">Sie erhalten diesen Vorschlag und 3 weitere passende Küchenbeispiele zur Inspiration per E-Mail.</span>
+      </div>
+      <div style="width:100%;display:flex;flex-direction:column;gap:14px;">
+        <label style="display:flex;flex-direction:column;gap:7px;">
+          <span style="font-size:14px;font-weight:600;color:#101d33;">E-Mail-Adresse</span>
+          <input type="email" name="email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" placeholder="ihre@email.de" value="{{ emailValue }}" onChange="{{ onMailStep }}" onKeyDown="{{ onMailKey }}" style="width:100%;box-sizing:border-box;min-height:56px;border:1.5px solid {{ mailBorder }};border-radius:10px;padding:12px 16px;font-family:var(--font-sans);font-size:17px;color:#101d33;background:#fff;outline:none;">
+        </label>
+        <sc-if value="{{ mailErr }}" hint-placeholder-val="{{ false }}">
+          <span style="font-size:13.5px;color:#E30613;">Bitte prüfen Sie die E-Mail-Adresse.</span>
+        </sc-if>
+        <button type="button" onClick="{{ mailWeiter }}" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:58px;padding:14px 20px;border:0;border-radius:12px;background:#E30613;color:#fff;cursor:pointer;font-family:var(--font-sans);font-size:17px;font-weight:700;" style-hover="background:#c70511;">Weiter zum letzten Schritt&nbsp;<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></button>
+        <span style="max-width:none;font-size:12.5px;line-height:1.5;color:#5a6478;">Einmalig Ihre Küchenbeispiele, kein Newsletter.</span>
+      </div>
+      <button type="button" onClick="{{ goBack }}" style="align-self:center;background:none;border:0;padding:6px 10px;cursor:pointer;font-family:var(--font-sans);font-size:14.5px;font-weight:600;color:#5a6478;">‹&nbsp;Zurück</button>
     </sc-if>
     <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <div data-rsp="progrow" style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
-          <span style="font-size:15px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;">{{ stepOf }}</span>
-          <span style="font-size:15px;color:var(--text-muted);white-space:nowrap;">{{ stepName }}</span>
+      <div data-rsp="kontakt-card" style="width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px;">
+        <div data-rsp="kh" style="display:block;">
+          <figure data-rsp="berater-fig" style="float:right;margin:0 0 10px 18px;width:132px;text-align:center;"><img src="/assets/team/berater-telefon.webp" alt="Ihr Küchenberater bei Hugelmann" loading="lazy" style="display:block;width:112px;height:112px;margin:0 auto 8px;border-radius:50%;object-fit:cover;object-position:center 22%;shape-outside:circle(50%);box-shadow:0 14px 30px -16px rgba(16,29,51,0.45);"><figcaption style="display:flex;flex-direction:column;gap:1px;line-height:1.3;"><b style="font-size:14px;font-weight:700;color:#101d33;">Herr Krüger</b><a href="tel:+497821965773" style="font-size:13.5px;color:#034EA3;text-decoration:none;white-space:nowrap;">07821 965773</a></figcaption></figure>
+          
+          <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-align:left;">An wen soll sich Ihr <span style="color:#034EA3;">Küchenberater</span> wenden?</h3>
+          <span style="max-width:none;display:block;margin-top:8px;font-size:14.5px;line-height:1.5;color:#5a6478;text-align:left;">Wir melden uns innerhalb von 24 Stunden für Ihren kostenfreien Planungstermin, von unserer Festnetznummer.</span>
+          <sc-if value="{{ showInspHinweis }}" hint-placeholder-val="{{ false }}">
+            <div data-rsp="berater-box" style="clear:both;display:flex;align-items:center;gap:14px;margin-top:12px;padding:14px 16px;border-radius:14px;background:#f2f6fc;border:1px solid #e1e9f4;text-align:left;">
+              <span style="display:flex;flex-direction:column;gap:3px;min-width:0;">
+                <span style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;"><b style="max-width:none;font-size:14.5px;font-weight:700;color:#101d33;">Ihre Küche planen wir gemeinsam</b><span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;background:#1d9e5f;color:#fff;font-size:11.5px;font-weight:700;letter-spacing:0.04em;white-space:nowrap;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Kostenfrei &amp; unverbindlich</span></span>
+                <span style="max-width:none;font-size:13.5px;line-height:1.5;color:#3c4557;">Ihre 3 Küchenbeispiele dienen als Inspiration. Die richtige Planung, maßgenau für Ihren Raum, machen wir gemeinsam bei uns im Möbelhaus in Lahr.</span>
+              </span>
+            </div>
+          </sc-if>
         </div>
-        <div style="height:9px;background:#e3e8f1;border-radius:var(--radius-pill);overflow:hidden;margin-top:4px;">
-          <div style="height:100%;background:var(--hg-blue);border-radius:var(--radius-pill);transition:width 320ms cubic-bezier(0.4,0,0.2,1);width:{{ progressPct }};"></div>
-        </div>
-      </div>
-      <sc-if value="{{ hasSummary }}" hint-placeholder-val="{{ false }}">
-        <div data-rsp="wunsch-sum" style="display:flex;align-items:center;gap:12px;max-width:560px;width:100%;margin:0 auto;padding:14px 18px;border-radius:10px;background:#eef2f9;border:1px solid #dfe5ee;box-sizing:border-box;">
-          <span style="width:30px;height:30px;border-radius:50%;background:#1d9e5f;color:#fff;display:flex;align-items:center;justify-content:center;flex:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7.5"/></svg></span>
-          <span style="display:flex;flex-direction:column;gap:2px;min-width:0;">
-            <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Ihre Wunschküche</span>
-            <span style="font-size:16px;font-weight:600;line-height:1.35;color:var(--text-heading);">{{ summaryText }}</span>
-          </span>
-        </div>
-      </sc-if>
-      <div style="display:flex;flex-direction:column;gap:6px;">
-        <h3 style="margin: 0; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 26px; color: var(--text-heading); letter-spacing: var(--ls-tight); text-align: center">Fast fertig: wie erreichen wir Sie?</h3>
-        <span style="font-size: 15px; color: var(--text-muted); text-align: center">Wir melden uns innerhalb von 24 Stunden zur Terminvereinbarung für Ihren Küchenplanungstermin. Wir rufen von unserer Festnetznummer aus an.</span>
-      </div>
-      
-      
-      <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" name="vorname" autoComplete="given-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" name="nachname" autoComplete="family-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Telefonnummer" type="tel" placeholder="z.B. 07821 123456" name="telefon" autoComplete="tel" inputMode="tel" required="{{ true }}" onChange="{{ onTel }}" error="{{ errTel }}" hint-size="100%,72px"></x-import>
+        <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+          <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" name="vorname" autoComplete="given-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" name="nachname" autoComplete="family-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Telefonnummer" type="tel" placeholder="z.B. 0171 1234567" name="telefon" autoComplete="tel" inputMode="tel" required="{{ true }}" onChange="{{ onTel }}" error="{{ errTel }}" hint-size="100%,72px"></x-import>
+          <sc-if value="{{ showEmailField }}" hint-placeholder-val="{{ true }}">
         <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="E-Mail-Adresse (optional)" type="email" placeholder="ihre@email.de" name="email" autoComplete="email" inputMode="email" autoCapitalize="none" spellCheck="{{ false }}" onChange="{{ onEmail }}" error="{{ errEmail }}" hint-size="100%,72px"></x-import>
-        <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Postleitzahl (optional)" placeholder="z.B. 77933" name="plz" autoComplete="postal-code" inputMode="numeric" value="{{ plzValue }}" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
-      </div>
-      <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13.5px;font-weight:400;line-height:1.5;color:var(--text-muted);background:none;border:0;padding:0;max-width:560px;margin:0 auto;">
-        <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="width:20px;height:20px;margin:1px 0 0;accent-color:var(--hg-blue);cursor:pointer;flex-shrink:0;">
-        <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
-      </label>
-      <p class="privnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg><span>Einmalige Kontaktaufnahme zu Ihrer Anfrage. Keine Werbeanrufe, kein Newsletter, keine Weitergabe Ihrer Daten an Dritte.</span></p>
-      <sc-if value="{{ errConsent }}" hint-placeholder-val="{{ false }}">
-        <p style="margin:-14px 0 0;font-size:13px;color:var(--hg-red);font-weight:var(--fw-semibold);">Bitte bestätigen Sie die Einwilligung, damit wir Sie anrufen dürfen.</p>
-      </sc-if>
-      <sc-if value="{{ consentMissing }}" hint-placeholder-val="{{ true }}">
-      </sc-if>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;">
-        <div data-rsp="finalnav" style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
-        <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1.5px solid #d8deea;border-radius:10px;padding:16px 22px;cursor:pointer;font-family:var(--font-sans);font-size:16px;font-weight:600;color:#101d33;"><span aria-hidden="true">‹</span>Zurück</button>
-        <span data-rsp="submitwrap" style="display:inline-block;">
-          <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Button" variant="primary" size="lg" onClick="{{ submitForm }}" disabled="{{ sending }}" hint-size="auto,52px">{{ submitLabel }}</x-import>
-        </span>
+        </sc-if>
+          <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Postleitzahl (optional)" placeholder="z.B. 77933" name="plz" autoComplete="postal-code" inputMode="numeric" value="{{ plzValue }}" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
         </div>
-      
+        <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13.5px;font-weight:400;line-height:1.5;color:var(--text-muted);background:none;border:0;padding:0;max-width:560px;margin:0 auto;">
+          <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="width:20px;height:20px;margin:1px 0 0;accent-color:var(--hg-blue);cursor:pointer;flex-shrink:0;">
+          <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage und zur Terminvereinbarung kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
+        </label>
+        <sc-if value="{{ errConsent }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:-14px 0 0;font-size:13px;color:var(--hg-red);font-weight:var(--fw-semibold);">Bitte bestätigen Sie die Einwilligung, damit wir Sie anrufen dürfen.</p>
+        </sc-if>
+        <button type="button" data-rsp="cta-final" onClick="{{ submitForm }}" disabled="{{ isSending }}" style="display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:62px;padding:14px 22px;border:0;border-radius:12px;background:#E30613;color:#fff;cursor:pointer;font-family:var(--font-sans);text-align:center;box-shadow:0 14px 28px -16px rgba(227,6,19,0.65);transition:background 140ms ease-out;" style-hover="background:#c70511;">
+          <span style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+            <span style="font-size:18px;font-weight:800;letter-spacing:-0.01em;line-height:1.2;">{{ submitLabel }}</span>
+            <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.9);">{{ ctaSub }}</span>
+          </span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
+        </button>
+        <div data-rsp="vorteil-g" style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;font-size:13px;color:#3c4557;">
+          <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 6L9 17l-5-5"></path></svg><span style="max-width:none;">Bis zu <b style="font-weight:700;color:#101d33;">4.000&nbsp;€</b> Tauschprämie*</span></span>
+          <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 6L9 17l-5-5"></path></svg><span style="max-width:none;">Abbau &amp; Mitnahme <b style="font-weight:700;color:#101d33;">kostenfrei</b></span></span>
+          <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 6L9 17l-5-5"></path></svg><span style="max-width:none;"><b style="font-weight:700;color:#101d33;">0&nbsp;%</b> Finanzierung bis 60 Monate¹</span></span>
+        </div>
+        <p style="display:flex;align-items:flex-start;justify-content:center;gap:7px;margin:0;padding-top:14px;border-top:1px solid #edf1f6;font-size:12.5px;line-height:1.5;color:#5a6478;text-align:left;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span style="max-width:none;">Einmalige Kontaktaufnahme zu Ihrer Anfrage. Keine Werbeanrufe, keine Weitergabe an Dritte. Inspirationen nur, wenn Sie Ihre E-Mail angeben.</span></p>
       </div>
+      <button type="button" onClick="{{ goBack }}" style="align-self:center;background:none;border:0;padding:6px 10px;cursor:pointer;font-family:var(--font-sans);font-size:14.5px;font-weight:600;color:#5a6478;">‹&nbsp;Zurück</button>
     </sc-if>
   </div>
 
-</main><footer style="background:var(--grey-700);color:rgba(255,255,255,0.7);text-align:center;padding:20px 32px;font-size:13px;">
-  interliving – Möbel Hugelmann GmbH · Rainer-Haungs-Straße 1, 77933 Lahr
+</main><footer data-rsp="np-foot" style="background:#4A4A49;color:rgba(255,255,255,0.72);padding:40px 0 32px;font-size:13.5px;line-height:1.65;">
+  <div style="max-width:880px;margin:0 auto;padding:0 22px;box-sizing:border-box;">
+    <img loading="lazy" src="/assets/logo-weiss.webp" alt="Interliving Hugelmann" style="height:40px;width:auto;">
+    <p style="margin-top:12px;">Küchen Hugelmann · Rainer-Haungs-Straße 1, 77933 Lahr</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 22px;margin:18px 0 22px;font-weight:600;">
+      <a style="color:#fff;text-decoration:none;" href="https://www.hugelmann.de/impressum" target="_blank" rel="noopener">Impressum</a>
+      <a style="color:#fff;text-decoration:none;" href="https://www.hugelmann.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+      <a style="color:#fff;text-decoration:none;" href="https://www.hugelmann.de/agb" target="_blank" rel="noopener">AGB</a>
+      <a style="color:#fff;text-decoration:none;" href="https://www.google.com/maps/dir/?api=1&amp;destination=Rainer-Haungs-Stra%C3%9Fe+1%2C+77933+Lahr" target="_blank" rel="noopener">Anfahrt planen</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(255,255,255,0.18);padding-top:20px;font-size:12px;line-height:1.6;color:rgba(255,255,255,0.74);">
+      <p style="margin:0;"><strong style="color:rgba(255,255,255,0.88);">* Teilnahmebedingungen „Alt gegen Neu":</strong> Die Tauschprämie (bis zu 4.000&nbsp;€) wird als Gutschrift mit dem Kauf einer neuen Küche verrechnet, eine Barauszahlung ist nicht möglich. Die Höhe der Prämie richtet sich nach Alter und Zustand der alten Küche sowie dem Wert der neuen Küche. Die Aktion ist auf 30 Plätze limitiert und gilt bis zum 31.12.2026. Ausgenommen sind bereits getätigte Aufträge. Nicht mit anderen Aktionen kombinierbar. Auf Wunsch wird die alte Küche kostenlos demontiert und entsorgt, innerhalb eines 50-km-Radius um Lahr. Alle Preisbeispiele auf dieser Seite sind unverbindlich; alle Maße sind ca.-Maße. Technische Änderungen, Druckfehler und Irrtümer vorbehalten.</p>
+      <p style="margin:0;"><strong style="color:rgba(255,255,255,0.88);">¹ Finanzierungshinweise:</strong> Finanzierungsbeispiel: Nobilia Küche, Barzahlungspreis: 12.000,–&nbsp;€, Gebühr: 0,–&nbsp;€, Anzahlung: 0,–&nbsp;€ = Nettodarlehensbetrag 12.000,–&nbsp;€, monatliche Rate: 200,–&nbsp;€, Laufzeit: 60 Monate, Sollzins p.&nbsp;a.: 0,00&nbsp;%, effektiver Jahreszins und gebundener Sollzins entsprechen 0,00&nbsp;% p.&nbsp;a., Bonität vorausgesetzt. Partner ist die Cronbank AG, Hans-Strothoff-Platz 1, 63303 Dreieich. Die Angaben stellen zugleich das 2/3-Beispiel gemäß §&nbsp;6a Abs.&nbsp;4 PAngV dar. Gilt auf alle Neuaufträge ab einem Einkaufswert von 500,–&nbsp;€ (Mindest-Monatsrate 15,–&nbsp;€).</p>
+    </div>
+  </div>
 </footer>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;spotsLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:9,&quot;min&quot;:1,&quot;max&quot;:30,&quot;section&quot;:&quot;Aktion&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;dankeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;/alt-gegen-neu-danke/&quot;,&quot;section&quot;:&quot;Funnel&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { pos: 0, plzFromLp: false, gebietOut: false, answers: {}, form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
-  shorts = { form: 'Küchenform', alt: 'Alte Küche', alter: 'Alte Küche', stil: 'Küchenstil', farbe: 'Farbstil', budget: 'Budget', zeit: 'Zeitpunkt' };
-  stepNo = { form: 1, alt: 2, alter: 2.5, stil: 3, farbe: 4, budget: 5, zeit: 6, kontakt: 7 };
+  state = { pos: 0, plzFromLp: false, gebietOut: false, answers: {}, galIdx: 0, katalog: null, modulOffen: false, ringFertig: false, hilfe: [], uploads: [], nachricht: '', form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
+  shorts = { phase: 'Planungsstand', angebot: 'Angebot', hilfe: 'Ihr Angebot', unterlagen: 'Unterlagen', details: 'Ihre Angaben', match: 'Passende Küchen', vorschlag: 'Ihr Küchenvorschlag', mail: 'E-Mail', form: 'Küchenform', alt: 'Alte Küche', alter: 'Alte Küche', stil: 'Küchenstil', farbe: 'Farbstil', budget: 'Budget', zeit: 'Zeitpunkt' };
+  stepNo = { phase: 1, angebot: 1.1, hilfe: 1.2, unterlagen: 1.3, details: 4.5, form: 2, stil: 3, farbe: 4, budget: 5, alt: 6, alter: 6.5, zeit: 7, match: 7.5, vorschlag: 7.6, mail: 7.7, kontakt: 8 };
+  hilfeLabels = ['Der Preis ist mir zu hoch', 'Die Planung gefällt mir noch nicht', 'Ausstattung oder Geräte passen nicht', 'Ich möchte eine zweite Meinung', 'Die Lieferzeit ist zu lang', 'Die Beratung hat mich nicht überzeugt'];
+  KW = { phase: 'Küchenplanung', angebot: 'Angebot', form: 'Küchenform', stil: 'Küchenstil', farbe: 'Farbstil', budget: 'Budget', alt: 'alte Küche', alter: 'Küche', zeit: 'neue Küche' };
   Q = {
+    unterlagen: { title: 'Haben Sie schon Planungsunterlagen für uns?', options: ['Ja, hochgeladen', 'Nein'] },
+    angebot: { title: 'Haben Sie bereits ein Angebot für Ihre neue Küche?', sub: 'Zum Beispiel von einem anderen Küchenstudio. Gerne prüfen wir es kostenfrei.', options: ['Ja, ich habe ein Angebot', 'Nein, noch nicht'] },
+    phase: { title: 'Wie konkret ist Ihre Küchenplanung schon?', sub: 'Eine Antwort genügt, wir beraten Sie passend.', options: ['Ich suche Inspiration', 'Ich habe konkrete Vorstellungen'], descs: ['', ''], icons: true },
     form: { title: 'Welche Küchenform wünschen Sie sich?', sub: 'Wählen Sie die Form, die am besten passt.', options: ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Weiß ich noch nicht'], files: ['/assets/kuechenformen/einzeilig.svg', '/assets/kuechenformen/zweizeilig.svg', '/assets/kuechenformen/l-form.svg', '/assets/kuechenformen/u-form.svg', '/assets/kuechenformen/insel.svg', null], imgs: 'form', qmarkLast: true },
     alt: { title: 'Möchten Sie Ihre alte Küche in Zahlung geben?', sub: 'Kostenfreie Demontage, Abholung und eine Tauschprämie für Ihre alte Küche.', options: ['Ja', 'Nein', 'Ich besitze keine alte Küche'] },
     alter: { title: 'Wie alt ist Ihre Küche ungefähr?', sub: 'Eine grobe Schätzung reicht völlig.', note: 'Auch ältere Küchen nehmen wir in Zahlung.', options: ['Unter 10 Jahre', '10 bis 20 Jahre', '20 bis 30 Jahre', 'Über 30 Jahre'] },
-    stil: { title: 'Welchen Küchenstil wünschen Sie sich?', sub: 'Wählen Sie den Stil, der Ihnen am besten gefällt.', options: ['Hochglanz', 'Matt', 'Massivholz', 'Landhaus', 'Weiß ich noch nicht'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
+    stil: { title: 'Welchen Küchenstil wünschen Sie sich?', sub: 'Wählen Sie den Stil, der Ihnen am besten gefällt.', options: ['Hochglanz', 'Matt', 'Holzoptik', 'Landhaus', 'Weiß ich noch nicht'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
     farbe: { title: 'Welchen Farbstil bevorzugen Sie?', sub: 'Hell, dunkel oder farbig – was passt zu Ihrem Zuhause?', options: ['Hell', 'Dunkel', 'Farbig', 'Weiß ich noch nicht'], files: ['/assets/farbstile/hell.webp', '/assets/farbstile/dunkel.webp', '/assets/farbstile/farbig.webp', null], imgs: 'farbe', qmarkLast: true },
     budget: { title: 'Welches Budget planen Sie für Ihre neue Küche?', sub: 'Die Prämie und die 0%-Finanzierung gelten für jedes Budget.', options: ['Bis 10.000 €', '10.000 bis 15.000 €', '15.000 bis 25.000 €', 'Über 25.000 €'] },
     zeit: { title: 'Wann benötigen Sie die neue Küche?', sub: 'Ganz unverbindlich, Sie bestimmen das Tempo.', options: ['Schnellstmöglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später'] },
   };
   flow(ans) {
     const a = ans || this.state.answers;
-    return ['form', 'alt'].concat(a.alt === 0 ? ['alter'] : [], ['stil', 'farbe', 'budget', 'zeit', 'kontakt']);
+    if (a.phase === 1 && a.angebot === 0) return ['phase', 'angebot', 'hilfe', 'unterlagen', 'kontakt'];
+    if (a.phase === 1) return ['phase', 'angebot'].concat(a.angebot === 0 ? ['hilfe'] : [], ['form', 'stil', 'farbe', 'details', 'budget', 'alt']).concat(a.alt === 0 ? ['alter'] : [], ['zeit', 'match'], this.inspSteps(a), ['kontakt']);
+    return ['phase', 'form', 'stil', 'farbe', 'budget', 'alt'].concat(a.alt === 0 ? ['alter'] : [], ['zeit', 'match'], this.inspSteps(a), ['kontakt']);
   }
+  inspSteps(a) { if (!(this.state.katalog && this.state.katalog.kuechen && this.state.katalog.kuechen.length)) return []; return ['vorschlag'].concat(a.vorschlag === 0 ? ['mail'] : []); }
   curId() { return this.flow()[this.state.pos] || 'kontakt'; }
   formIcon(kind) {
     const e = React.createElement;
@@ -472,12 +871,175 @@ class Component extends DCLogic {
       e('text', { x: 24, y: 33, textAnchor: 'middle', fontSize: 26, fontWeight: 700, fill: 'currentColor' }, '?'));
     return e('svg', { width: 48, height: 48, viewBox: '0 0 48 48', style: { color: 'var(--hg-blue)', flexShrink: 0 } }, parts);
   }
+  A_FORM = ['einzeilig', 'zweizeilig', 'l-form', 'u-form', 'insel', null];
+  A_STIL = ['hochglanz', 'matt', 'holz', 'landhaus', null];
+  A_FARBE = ['hell', 'dunkel', 'farbig', null];
+  NACHBAR_STIL = { 'matt|holz': .5, 'holz|matt': .5, 'matt|landhaus': .3, 'landhaus|matt': .3, 'hochglanz|matt': .3, 'matt|hochglanz': .3, 'landhaus|holz': .5, 'holz|landhaus': .5 };
+  NACHBAR_FARBE = { 'hell|farbig': .4, 'farbig|hell': .4, 'dunkel|farbig': .4, 'farbig|dunkel': .4 };
+  NACHBAR_FORM = { 'l-form|u-form': .6, 'u-form|l-form': .6, 'einzeilig|zweizeilig': .6, 'zweizeilig|einzeilig': .6, 'l-form|insel': .3, 'insel|l-form': .3 };
+  LABEL = { hochglanz: 'Hochglanz', matt: 'Matt', holz: 'Holzoptik', landhaus: 'Landhaus', hell: 'Hell', dunkel: 'Dunkel', farbig: 'Farbig', einzeilig: 'Einzeilig', zweizeilig: '2-zeilig', 'l-form': 'L-Form', 'u-form': 'U-Form', insel: 'Insel' };
+  wunsch() {
+    const a = this.state.answers || {};
+    return { fo: typeof a.form === 'number' ? this.A_FORM[a.form] : null, s: typeof a.stil === 'number' ? this.A_STIL[a.stil] : null, f: typeof a.farbe === 'number' ? this.A_FARBE[a.farbe] : null };
+  }
+  punkte(k, s, f, fo) {
+    let p = 0, max = 0;
+    if (s) { max += 3; p += k.stil === s ? 3 : 3 * (this.NACHBAR_STIL[s + '|' + k.stil] || 0); }
+    if (f) { max += 2; p += k.farbe === f ? 2 : 2 * (this.NACHBAR_FARBE[f + '|' + k.farbe] || 0); }
+    if (fo) { max += 1; const fl = k.form || []; p += fl.indexOf(fo) > -1 ? 1 : Math.max(0, ...fl.map(x => this.NACHBAR_FORM[fo + '|' + x] || 0)); }
+    return max ? p / max : 1;
+  }
+  ringAuswahl() {
+    const { s, f, fo } = this.wunsch();
+    const kat = this.state.katalog;
+    const rang = ((kat && kat.kuechen) || []).map(k => ({ ...k, score: this.punkte(k, s, f, fo) })).sort((x, y) => y.score - x.score);
+    if (!rang.length) return [];
+    const zaehler = {}, ring = [];
+    for (const k of rang) {
+      zaehler[k.marke] = (zaehler[k.marke] || 0) + 1;
+      if (zaehler[k.marke] <= 2) ring.push(k);
+      if (ring.length === 6) break;
+    }
+    const i = ring.findIndex(k => k.id === rang[0].id);
+    if (i > -1) ring.splice(1, 0, ring.splice(i, 1)[0]);
+    return ring;
+  }
+  bildUrl(k) {
+    const d = this.state.katalog;
+    return d.basis + d.transformation_karte + '/' + k.bild;
+  }
+  inspOeffnen() {
+    if (this._oeffnet) return;
+    this._oeffnet = true;
+    const w = this.wunsch();
+    this.ga('inspiration_start', { funnel: 'alt_gegen_neu', stil: w.s || '', farbe: w.f || '', form: w.fo || '' });
+    this.fb('AGN_Inspiration_Start', {});
+    if (!this._escFn) { this._escFn = (e) => this.onInspKey(e); document.addEventListener('keydown', this._escFn); }
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const parts = document.querySelectorAll('[data-mfade]');
+    const btn = document.querySelector('.orb-btn');
+    if (!reduce) {
+      parts.forEach(el => { el.style.transition = 'opacity 240ms ease-out, transform 280ms cubic-bezier(.23,1,.32,1)'; el.style.opacity = '0'; el.style.transform = 'translateY(-8px)'; });
+      if (btn) { btn.style.animation = 'none'; btn.style.transition = 'transform 300ms cubic-bezier(.23,1,.32,1), opacity 260ms ease-out'; btn.style.transform = 'scale(1.12)'; btn.style.opacity = '0'; }
+    }
+    setTimeout(() => {
+      this._oeffnet = false;
+      try { const top = document.querySelector('main'); const y = top ? top.getBoundingClientRect().top + window.scrollY - 80 : 0; if (window.scrollY > y) window.scrollTo({ top: Math.max(0, y), behavior: reduce ? 'auto' : 'smooth' }); } catch (e) {}
+      this.setState({ modulOffen: true, ringFertig: false }, () => setTimeout(() => this.ringSpielen(), 40));
+    }, reduce ? 0 : 280);
+  }
+
+  mailWeiterIntern() {
+    const v = String(this.state.form.email || '').trim();
+    if (!/^\S+@\S+\.\S+$/.test(v)) { this.setState({ mailErr: true }); return; }
+    this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.mail, step_name: this.stepName('mail'), answer: 'E-Mail angegeben' });
+    this.setState(s => ({ form: { ...s.form, email: v }, mailErr: false, pos: s.pos + 1 }), () => this.trackStep(this.curId()));
+  }
+  inspWeiter() {
+    this._abbruch = true;
+    if (this._escFn) { document.removeEventListener('keydown', this._escFn); this._escFn = null; }
+    this.setState({ modulOffen: false, ringFertig: false });
+    this.acceptMatchIntern();
+  }
+  acceptMatchIntern() {
+    this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.match, step_name: this.stepName('match'), answer: 'Inspiration: weiter zu Kontaktdaten' });
+    this.setState(s => ({ pos: s.pos + 1 }), () => this.trackStep(this.curId()));
+  }
+  onInspKey(e) { if (e.key === 'Escape' && this.state.modulOffen) this.inspSchliessen(); }
+  inspSchliessen() {
+    this._abbruch = true;
+    if (this._escFn) { document.removeEventListener('keydown', this._escFn); this._escFn = null; }
+    this.setState({ modulOffen: false, ringFertig: false });
+  }
+  ringSpielen() {
+    const N = 6, R = 206, H = 52, DUR = 5600, ZIEL = 1;
+    const els = [];
+    for (let i = 0; i < N; i++) { const el = document.getElementById('rk-' + i); if (el) els[i] = el; }
+    els.forEach(el => { if (!el) return; el.querySelectorAll('img[data-src]').forEach(im => { const s = im.getAttribute('data-src'); if (s && s.indexOf('{{') < 0) im.src = s; }); });
+    if (!els.length) { this.setState({ ringFertig: true }); return; }
+    this._abbruch = false;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const endRot = 720 + ZIEL * 60;
+    const place = (rot) => {
+      els.forEach((el, i) => {
+        if (!el) return;
+        const th = (i * 60 - rot) * Math.PI / 180;
+        const f = (Math.cos(th) + 1) / 2;
+        const x = Math.sin(th) * R, y = -(1 - f) * H;
+        const sc = 0.56 + 0.44 * f + 0.26 * Math.pow(1 - f, 3);
+        el.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) scale(' + sc.toFixed(3) + ')';
+        el.style.opacity = (0.52 + 0.48 * Math.pow(f, 1.1)).toFixed(3);
+        el.style.zIndex = String(Math.round(f * 100));
+        const g = el.querySelector('.r-glas'); if (g) g.style.opacity = (1 - f).toFixed(3);
+        const im = el.querySelector('.r-bild'); if (im) im.style.filter = 'blur(' + ((1 - f) * 3.2).toFixed(2) + 'px)';
+      });
+    };
+    const finale = () => {
+      if (this._abbruch) return;
+      const d = reduce ? 10 : 1;
+      const hit = els[ZIEL];
+      const later = (ms, fn) => setTimeout(() => { if (!this._abbruch) fn(); }, reduce ? 0 : ms);
+      const lp = document.querySelector('.insp-lupe'); if (lp) lp.style.opacity = '0'; const sc = document.querySelector('.insp-scan'); if (sc) sc.style.opacity = '0';
+      later(90, () => {
+        els.forEach((el, i) => {
+          if (!el || i === ZIEL) return;
+          el.style.transition = 'transform ' + (reduce ? d : 380) + 'ms ease-out, opacity ' + (reduce ? d : 380) + 'ms ease-out';
+          el.style.transform = el.style.transform.replace(/scale\([^)]*\)/, 'scale(.86)');
+          el.style.opacity = '0.08';
+        });
+        if (hit) {
+          hit.style.zIndex = '200';
+          hit.style.transition = 'transform ' + (reduce ? d : 460) + 'ms cubic-bezier(.16,.84,.26,1.06)';
+          hit.style.transformOrigin = 'center bottom';
+          hit.style.transform = 'translate(0px,0px) scale(1.24)';
+          const g = hit.querySelector('.r-glas'); if (g) g.style.opacity = '0';
+          const rah = hit.querySelector('.r-rahmen');
+          if (rah) {
+            if (reduce || !rah.animate) rah.style.opacity = '1';
+            else rah.animate([{ opacity: 0 }, { opacity: 1 }, { opacity: 0.25 }, { opacity: 1 }, { opacity: 0.25 }, { opacity: 1 }], { duration: 1150, easing: 'ease-out', fill: 'forwards' });
+          }
+          later(130, () => {
+            const im = hit.querySelector('.r-bild');
+            if (im) { im.style.filter = 'none'; im.style.transform = 'scale(1.06)'; }
+            later(110, () => {
+              const fin = hit.querySelector('.r-final'); if (fin) { fin.style.opacity = '1'; const ck = fin.querySelector('.r-check'); if (ck) requestAnimationFrame(() => { ck.style.transform = 'scale(1)'; }); }
+              this.setState({ ringFertig: true });
+              later(reduce ? 700 : 1100, () => this.inspWeiter());
+            });
+          });
+        }
+      });
+    };
+    const cks = [];
+    for (let i = 0; i < 6; i++) { const c = document.getElementById('ck-' + i); if (c) cks.push(c); }
+    const tick = (c) => { c.style.opacity = '1'; c.style.borderColor = '#bfe3cf'; c.style.background = '#f1faf5'; const dot = c.querySelector('.ck-dot'); if (dot) { dot.style.background = '#1d9e5f'; dot.style.borderColor = '#1d9e5f'; dot.style.transform = 'scale(1.08)'; setTimeout(() => { dot.style.transform = ''; }, 260); } const ic = c.querySelector('.ck-ic'); if (ic) ic.style.opacity = '1'; };
+    if (reduce) cks.forEach(tick);
+    else cks.forEach((c, i) => setTimeout(() => { if (!this._abbruch) tick(c); }, 500 + i * ((DUR * 0.82 - 500) / Math.max(1, cks.length - 1 || 1))));
+    if (reduce) { place(endRot); finale(); return; }
+    let t0 = 0;
+    els.forEach(el => { if (el) el.style.transition = 'transform 640ms cubic-bezier(.23,1,.32,1), opacity 420ms ease-out'; });
+    requestAnimationFrame(() => requestAnimationFrame(() => place(0)));
+    const step = (now) => {
+      if (this._abbruch) return;
+      const t = Math.min(1, (now - t0) / DUR);
+      const e = 1 - Math.pow(1 - t, 2.4);
+      place(e * endRot);
+      if (t < 1) requestAnimationFrame(step); else finale();
+    };
+    setTimeout(() => { if (this._abbruch) return; els.forEach(el => { if (el) el.style.transition = ''; }); t0 = performance.now(); requestAnimationFrame(step); }, 660);
+  }
   ga(name, params) {
     try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) {}
     try { if (typeof window.va === 'function') window.va('event', { name: name, data: params || {} }); } catch (e) {}
   }
   stepName(id) {
     if (id === 'kontakt') return 'Kontaktdaten';
+    if (id === 'match') return 'Passende Küchen gefunden';
+    if (id === 'vorschlag') return 'Küchenvorschlag per E-Mail?';
+    if (id === 'mail') return 'E-Mail für Vorschläge';
+    if (id === 'hilfe') return 'Womit können wir helfen?';
+    if (id === 'unterlagen') return 'Planungsunterlagen';
+    if (id === 'details') return 'Weitere Angaben: Nachricht und Dateien';
     const q = this.Q[id];
     return q ? q.title : '';
   }
@@ -502,10 +1064,16 @@ class Component extends DCLogic {
     });
   }
   componentDidUpdate() {
+    document.querySelectorAll('img[data-treffer]').forEach(im => { const s = im.getAttribute('data-src'); if (s && s.indexOf('{{') < 0 && im.getAttribute('src') !== s) im.src = s; });
     if (this.curId() === 'kontakt') setTimeout(() => this.applyAutofill(), 60);
+    if (!this._vor && this.state.katalog && this.state.answers && this.state.answers.farbe != null) {
+      this._vor = true;
+      try { this.ringAuswahl().forEach(k => { new Image().src = this.bildUrl(k); }); } catch (e) {}
+    }
   }
   componentDidMount() {
     setTimeout(() => this.applyAutofill(), 300);
+    fetch('/assets/kuechen.json').then(r => r.ok ? r.json() : Promise.reject(r.status)).then(d => this.setState({ katalog: d })).catch(() => this.setState({ katalog: null }));
     let startAt = 'form';
     try {
       var sp = new URLSearchParams(location.search);
@@ -515,9 +1083,9 @@ class Component extends DCLogic {
       // LP-Teaser: ?kf=<Index der Küchenform> startet direkt bei Frage 2
       var kf = parseInt(sp.get('kf'), 10);
       if (kf >= 0 && kf < this.Q.form.options.length) {
-        this.setState(s => ({ answers: { ...s.answers, form: kf }, pos: 1 }));
+        this.setState(s => ({ answers: { ...s.answers, form: kf }, pos: 0, formFromLp: true }));
         this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: 1, step_name: this.stepName('form'), answer: this.Q.form.options[kf], source: 'lp_teaser' });
-        startAt = 'alt';
+        startAt = 'phase';
       }
     } catch (e) {}
     this.ga('funnel_start', { funnel: 'alt_gegen_neu' });
@@ -539,7 +1107,8 @@ class Component extends DCLogic {
     this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo[id], step_name: this.stepName(id), answer: q.options[idx] || String(idx) });
     const answers = { ...this.state.answers, [id]: idx };
     const flow = this.flow(answers);
-    const pos = flow.indexOf(id) + 1;
+    let pos = flow.indexOf(id) + 1;
+    if (flow[pos] === 'form' && this.state.formFromLp) pos++;
     this.setState({ answers, pos }, () => this.trackStep(flow[pos]));
   }
   submit() {
@@ -591,6 +1160,16 @@ class Component extends DCLogic {
       telefon: f.tel.trim(),
       plz: f.plz.trim(),
       aktion: 'Alt gegen Neu',
+      planungsstand: answer('phase'),
+      angebot_vorhanden: answer('angebot'),
+      inspiration_mail: this.state.answers.vorschlag === 0 ? 'ja' : (this.state.answers.vorschlag === 1 ? 'nein' : ''),
+      inspiration_treffer: (() => { try { if (!this.state.katalog) return ''; const r = this.ringAuswahl(); const k = r[1] || r[0]; return k ? k.id + ' · ' + (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : '') + ' · ' + this.state.katalog.basis + 'f_auto,q_auto,c_fill,g_auto,ar_16:9,w_1280/' + k.bild : ''; } catch (e) { return ''; } })(),
+      inspiration_kueche: (() => { try { if (!this.state.katalog) return ''; const r = this.ringAuswahl(); const k = r[1] || r[0]; return k ? (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : '') + ' (' + k.id + ')' : ''; } catch (e) { return ''; } })(),
+      angebot_hilfe: (this.state.hilfe || []).join(', '),
+      unterlagen_vorhanden: this.state.answers.unterlagen === 0 ? 'ja' : (this.state.answers.unterlagen === 1 ? 'nein' : ''),
+      nachricht: (this.state.nachricht || '').trim(),
+      dateien: (this.state.uploads || []).filter(u => u.st === 'ok').map(u => u.url).join(' , '),
+      datei_namen: (this.state.uploads || []).map(u => u.name).join(', '),
       kuechenform: answer('form'),
       kuechenstil: answer('stil'),
       farbstil: answer('farbe'),
@@ -605,8 +1184,8 @@ class Component extends DCLogic {
       alte_kueche_form: '',
       alte_kueche_geraete: '',
       alte_kueche_besonderheiten: '',
-      foto_vorhanden: 'nein',
-      foto_dateiname: ''
+      foto_vorhanden: (this.state.uploads || []).some(u => u.st === 'ok') ? 'ja' : 'nein',
+      foto_dateiname: (this.state.uploads || []).map(u => u.name).join(', ')
     });
     const url = 'https://hooks.zapier.com/hooks/catch/18583379/44e0n4p/';
     // Formulardaten: Zapier legt daraus benannte Felder an (nötig für das Mapping)
@@ -633,6 +1212,28 @@ class Component extends DCLogic {
   altFormLabels = ['Einzeilige Küchenzeile', '2-zeilige Küchenzeile', 'L-Form', 'U-Form', 'Küche mit Inselblock', 'Weiß ich noch nicht'];
   geraeteLabels = ['Ja, alle E-Geräte', 'Vereinzelt', 'Nein'];
   pickZustand(i) { this.setState(s => ({ zustand: i, errors: { ...s.errors, zustand: false } })); }
+  CLOUD = 'dusdhljtc';
+  UPLOAD_PRESET = 'hugelmann_funnel';
+  onUploadFiles(e) {
+    const picked = Array.from((e.target && e.target.files) || []);
+    try { e.target.value = ''; } catch (err) {}
+    const free = 5 - (this.state.uploads || []).length;
+    picked.slice(0, Math.max(0, free)).forEach((file) => {
+      const id = Date.now() + '-' + Math.random().toString(36).slice(2, 7);
+      if (file.size > 10 * 1024 * 1024) { this.setState(s => ({ uploads: (s.uploads || []).concat([{ id, name: file.name, st: 'big' }]) })); return; }
+      this.setState(s => ({ uploads: (s.uploads || []).concat([{ id, name: file.name, st: 'up' }]) }));
+      const fd = new FormData();
+      fd.append('file', file);
+      fd.append('upload_preset', this.UPLOAD_PRESET);
+      fd.append('folder', 'funnel-alt-gegen-neu');
+      const upd = (patch) => this.setState(s => ({ uploads: (s.uploads || []).map(u => u.id === id ? { ...u, ...patch } : u) }));
+      fetch('https://api.cloudinary.com/v1_1/' + this.CLOUD + '/auto/upload', { method: 'POST', body: fd })
+        .then(r => r.ok ? r.json() : Promise.reject(r.status))
+        .then(j => upd({ st: 'ok', url: j.secure_url }))
+        .catch(() => upd({ st: 'err' }));
+    });
+    this.ga('funnel_upload', { funnel: 'alt_gegen_neu', files: picked.length });
+  }
   onFotoChange(e) {
     const file = e.target.files && e.target.files[0];
     if (!file) return;
@@ -669,11 +1270,23 @@ class Component extends DCLogic {
     const flow = this.flow();
     const id = this.curId();
     const isContact = id === 'kontakt';
+    const isMatch = id === 'match';
+    const isVorschlag = id === 'vorschlag';
+    const isMail = id === 'mail';
+    const isDetails = id === 'details';
+    const isHilfe = id === 'hilfe';
+    const isUnterlagen = id === 'unterlagen';
+    const ulOpen = answers.unterlagen === 0;
+    const nextFromUl = (v) => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.unterlagen, step_name: this.stepName('unterlagen'), answer: v === 0 ? (ups.filter(u => u.st === 'ok').length + ' Dateien') : 'Nein' }); this.setState(s => ({ answers: { ...s.answers, unterlagen: v }, pos: s.pos + 1 }), () => this.trackStep(this.curId())); };
+    const hilfeSel = this.state.hilfe || [];
+    const hasOffer = answers.angebot === 0;
+    const ups = this.state.uploads || [];
+    const chipGroup = (k, lbl) => ({ lbl, chips: this.Q[k].options.map((label, i) => { const on = answers[k] === i; return { label, bd: on ? '#034EA3' : '#dfe5ee', bg: on ? '#034EA3' : '#fff', fg: on ? '#fff' : '#101d33', pick: () => this.setState(s => ({ answers: { ...s.answers, [k]: on ? undefined : i } })) }; }) });
     const q = this.Q[id] || this.Q.form;
     const selected = answers[id];
-    const vis = flow.filter(x => x !== 'alter' && x !== 'kontakt');
+    const vis = flow.filter(x => x !== 'alter' && x !== 'kontakt' && x !== 'match' && x !== 'vorschlag' && x !== 'mail');
     const total = vis.length;
-    const dispIdx = id === 'alter' ? vis.indexOf('alt') + 1 : vis.indexOf(id) + 1;
+    const dispIdx = id === 'alter' ? vis.indexOf('alt') + 1 : ((id === 'match' || id === 'vorschlag' || id === 'mail') ? vis.length : vis.indexOf(id) + 1);
     const pct = isContact ? 100 : Math.round(((dispIdx - 1) / total) * 100);
     const sum = ['form', 'stil', 'farbe'].map(k => {
       const i = answers[k];
@@ -681,22 +1294,100 @@ class Component extends DCLogic {
       return o && o !== 'Weiß ich noch nicht' ? o : '';
     }).filter(Boolean);
     if (this.state.plzFromLp && !this.state.gebietOut) sum.push('im Aktionsgebiet');
+    const sumItems = [['form', 'Küchenform'], ['stil', 'Stil'], ['farbe', 'Farbe']].map(([k, lbl]) => {
+      const i = answers[k];
+      const o = typeof i === 'number' ? this.Q[k].options[i] : '';
+      const src = typeof i === 'number' && this.Q[k].files ? this.Q[k].files[i] : '';
+      return (o && o !== 'Weiß ich noch nicht' && src) ? { lbl, val: o, src } : null;
+    }).filter(Boolean);
+    const sumChips = [];
+    if (answers.alt === 0) sumChips.push('Alte Küche in Zahlung');
+    if (typeof answers.budget === 'number') sumChips.push('Budget ' + this.Q.budget.options[answers.budget]);
+    if (this.state.plzFromLp && !this.state.gebietOut) sumChips.push('Im Aktionsgebiet');
     return {
       spotsLeft: this.props.spotsLeft ?? 9,
-      showQuiz: !isContact,
+      showQuiz: !isContact && !isMatch && !isDetails && !isHilfe && !isUnterlagen && !isVorschlag && !isMail,
+      showHilfe: isHilfe,
+      showUnterlagen: isUnterlagen,
+      ulOpen,
+      ulJaBg: ulOpen ? '#f2f7fe' : '#fff', ulJaBd: ulOpen ? '#034EA3' : '#dfe5ee',
+      unterlagenJa: () => this.setState(s => ({ answers: { ...s.answers, unterlagen: 0 } })),
+      unterlagenNein: () => nextFromUl(1),
+      unterlagenNext: () => nextFromUl(0),
+      hilfeOpts: this.hilfeLabels.map(label => { const on = hilfeSel.indexOf(label) > -1; return { label, pressed: on ? 'true' : 'false', bd: on ? '#034EA3' : '#dfe5ee', bg: on ? '#f2f7fe' : '#fff', boxBd: on ? '#034EA3' : '#c3cedd', boxBg: on ? '#034EA3' : '#fff', toggle: () => this.setState(s => { const cur = s.hilfe || []; return { hilfe: cur.indexOf(label) > -1 ? cur.filter(x => x !== label) : cur.concat([label]) }; }) }; }),
+      hilfeNext: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.hilfe, step_name: this.stepName('hilfe'), answer: hilfeSel.join(', ') || 'keine Auswahl' }); this.setState(s => ({ pos: s.pos + 1 }), () => this.trackStep(this.curId())); },
+      showDetails: isDetails,
+      dT1: 'Möchten Sie noch weitere Angaben zu Ihrer ', dT2: ' machen?',
+      dSub: hasOffer ? 'Laden Sie Ihr Angebot gern direkt hoch, wir prüfen es kostenfrei. Alles freiwillig, Sie können auch einfach weiter.' : 'Fotos, Grundriss oder ein paar Worte helfen Ihrem Berater bei der Vorbereitung. Alles freiwillig, Sie können auch einfach weiter.',
+      upLabel: hasOffer ? 'Angebot oder Fotos hochladen' : 'Fotos oder Grundriss hochladen',
+      detailGroups: [],
+      nachricht: this.state.nachricht || '',
+      onNachricht: (e) => this.setState({ nachricht: e.target.value }),
+      onUpload: (e) => this.onUploadFiles(e),
+      hasUploads: ups.length > 0,
+      uploads: ups.map(u => ({ name: u.name, stTxt: u.st === 'ok' ? '✓ hochgeladen' : (u.st === 'up' ? 'lädt …' : (u.st === 'big' ? 'zu groß' : 'Fehler')), color: u.st === 'ok' ? '#1d9e5f' : (u.st === 'up' ? '#5a6478' : '#E30613'), remove: () => this.setState(s => ({ uploads: (s.uploads || []).filter(x => x.id !== u.id) })) })),
+      detailsNext: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.details, step_name: this.stepName('details'), answer: ups.filter(u => u.st === 'ok').length + ' Dateien' + ((this.state.nachricht || '').trim() ? ', Nachricht' : '') }); this.setState(s => ({ pos: s.pos + 1 }), () => this.trackStep(this.curId())); },
+      showMatch: isMatch && !this.state.modulOffen,
+      ringLaeuft: !!this.state.modulOffen && !this.state.ringFertig,
+      ...(() => { const r = (isVorschlag && this.state.katalog) ? this.ringAuswahl() : []; const k = r[1] || r[0]; if (!k) return { zoomSrc: '', hatGalerie: false, trefferGalerie: [], trefferChips: [], trefferMehr: [], hatTreffer: false, trefferSrc: '', trefferAlt: '', trefferTitel: '', trefferModell: '', trefferTags: '', trefferLogo: '', hatTrefferLogo: false }; const t = [k.stil, k.farbe, (k.form || [])[0]].filter(Boolean).map(x => this.LABEL[x] || x).join(' · '); const lg = ((this.state.katalog && this.state.katalog.logos) || {})[k.marke] || '';
+        const rots = ['-5deg', '2deg', '6deg'];
+        const mehr = r.filter(x => x && x.id !== k.id).slice(0, 3).map((x, i) => ({ src: this.bildUrl(x), rot: rots[i] }));
+        const nW = mehr.length; return { stapel1: (mehr[0] || {}).src || '', stapel2: (mehr[1] || {}).src || '', hatStapel1: nW > 0, hatStapel2: nW > 1, stapelPad: nW > 1 ? '34px' : (nW > 0 ? '20px' : '0'), stapelLabel: '+' + nW + (nW === 1 ? ' weiterer Vorschlag' : ' weitere Vorschläge'), stapelPos: 'Vorschlag 1 von ' + (nW + 1), trefferMehr: mehr, hatTreffer: true, trefferModell: (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : ''), trefferTags: t, trefferLogo: lg, hatTrefferLogo: !!lg, trefferSrc: this.state.katalog.basis + 'f_auto,q_auto,c_fill,g_auto,ar_3:2,w_1400/' + ([k.bild].concat(k.details || [])[this.state.galIdx || 0] || k.bild),
+        zoomSrc: this.state.katalog.basis + 'f_auto,q_auto,c_limit,w_1800/' + ([k.bild].concat(k.details || [])[this.state.galIdx || 0] || k.bild),
+        hatGalerie: (k.details || []).length > 0,
+        trefferGalerie: [k.bild].concat(k.details || []).slice(0, 5).map((b, i) => ({ src: this.state.katalog.basis + 'f_auto,q_auto,c_fill,g_auto,ar_1:1,w_200/' + b, bd: (this.state.galIdx || 0) === i ? '#034EA3' : 'transparent', label: i ? 'Detailbild ' + i : 'Hauptbild', pick: () => this.setState({ galIdx: i }) })),
+        trefferChips: (() => { const w = this.wunsch(); const c = []; const add = (v, ok, lbl) => c.push({ txt: lbl + ': ' + (this.LABEL[v] || v), lbl, val: this.LABEL[v] || v, ok, pl: c.length ? '14px' : '0', bl: c.length ? '1px solid #edf1f6' : '0' }); const fo = (k.form || []).indexOf(w.fo) > -1 ? w.fo : (k.form || [])[0]; if (fo) add(fo, !!w.fo && fo === w.fo, 'Form'); if (k.stil) add(k.stil, k.stil === w.s, 'Stil'); if (k.farbe) add(k.farbe, k.farbe === w.f, 'Farbe'); return c; })(), trefferAlt: (k.marke_anzeige || k.marke) + ' Küche' + (k.modell ? ' ' + k.modell : ''), trefferTitel: (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : '') + ' · ' + t }; })(),
+      ...(() => { const kat = this.state.katalog; const n = (kat && kat.kuechen) ? kat.kuechen.length : 0; const mk = n ? new Set(kat.kuechen.map(k => k.marke)).size : 4; return { matchSub: n ? 'Wir durchsuchen ' + n + ' Küchen von ' + mk + ' Marken aus unserer Ausstellung und zeigen Ihnen die, die am besten zu Ihren Angaben passt.' : 'Wir suchen aus unserer Ausstellung die Küche heraus, die am besten zu Ihren Angaben passt.', matchCount: n ? n + ' Küchen · ' + mk + ' Marken' : 'aus unserer Ausstellung', findeKueche: () => { if (n) this.inspOeffnen(); else this.acceptMatchIntern(); } }; })(),
+      angabenItems: (() => { const w = this.wunsch(); return [['Küchenform', w.fo], ['Stil', w.s], ['Farbe', w.f]].map(([l, v], i) => ({ lbl: l, val: v ? (this.LABEL[v] || v) : 'offen', col: v ? '#101d33' : '#9aa5b6', bl: i ? '1px solid #dfe5ee' : '0' })); })(),
+      hatKatalog: !!(this.state.katalog && this.state.katalog.kuechen && this.state.katalog.kuechen.length),
+      modulOffen: !!this.state.modulOffen,
+      ringFertig: !!this.state.ringFertig,
+      checkItems: (() => { const w = this.wunsch(); const it = []; if (w.fo) it.push({ lbl: 'Küchenform: ', val: this.LABEL[w.fo] || w.fo }); if (w.s) it.push({ lbl: 'Küchenstil: ', val: this.LABEL[w.s] || w.s }); if (w.f) it.push({ lbl: 'Farbstil: ', val: this.LABEL[w.f] || w.f }); const kat = this.state.katalog; const n = kat && kat.kuechen ? kat.kuechen.length : 0; const mk = n ? new Set(kat.kuechen.map(k => k.marke)).size : 0; if (mk) it.push({ lbl: mk + ' Marken ', val: 'abgeglichen' }); if (n) it.push({ lbl: n + ' Küchen ', val: 'durchsucht' }); return it.map((x, i) => ({ ...x, domId: 'ck-' + i })); })(),
+      ringKarten: (this.state.katalog && this.state.modulOffen) ? this.ringAuswahl().map((k, i) => {
+        const t = [k.stil, k.farbe, (k.form || [])[0]].filter(Boolean).map(x => this.LABEL[x] || x).join(' · ');
+        return { domId: 'rk-' + i, src: this.bildUrl(k), logo: (this.state.katalog.logos || {})[k.marke] || '', marke: k.marke_anzeige || k.marke, tags: t, untertitel: (k.marke_anzeige || k.marke) + (k.modell ? ' ' + k.modell : '') + ' · ' + t };
+      }) : [],
+      oeffneModul: () => this.inspOeffnen(),
+      schliesseModul: () => this.inspSchliessen(),
+      weiterZuKontakt: () => this.inspWeiter(),
+      acceptMatch: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.match, step_name: this.stepName('match'), answer: 'Ja, gerne präsentieren' }); this.setState(s => ({ pos: s.pos + 1 }), () => this.trackStep(this.curId())); },
       showZustand: false,
       showForm: isContact,
-      stepOf: isContact ? 'Letzter Schritt' : 'Schritt ' + dispIdx + ' von ' + total,
+      showVorschlag: isVorschlag,
+      zoomOffen: !!this.state.zoomOffen && isVorschlag,
+      zoomAuf: () => { this.setState({ zoomOffen: true }); this.ga('vorschlag_bild_zoom', { funnel: 'alt_gegen_neu' }); if (!this._zEsc) { this._zEsc = (e) => { if (e.key === 'Escape') this.setState({ zoomOffen: false }); }; document.addEventListener('keydown', this._zEsc); } },
+      zoomZu: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.setState({ zoomOffen: false }); },
+      showMail: isMail,
+      showEmailField: answers.vorschlag !== 0,
+      showInspHinweis: answers.vorschlag === 0,
+      ctaSub: answers.vorschlag === 0 ? 'und Ihre 3 Küchenbeispiele erhalten' : 'Kostenfrei & unverbindlich',
+      vorschlagJa: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.vorschlag, step_name: this.stepName('vorschlag'), answer: 'Ja' }); this.fb('AGN_Vorschlag_Mail_Ja', {}); this.setState(s => ({ answers: { ...s.answers, vorschlag: 0 }, pos: s.pos + 1 }), () => this.trackStep(this.curId())); },
+      vorschlagNein: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.vorschlag, step_name: this.stepName('vorschlag'), answer: 'Nein' }); this.setState(s => ({ answers: { ...s.answers, vorschlag: 1 }, pos: s.pos + 1 }), () => this.trackStep(this.curId())); },
+      emailValue: this.state.form.email || '',
+      mailErr: !!this.state.mailErr,
+      mailBorder: this.state.mailErr ? '#E30613' : '#dfe5ee',
+      onMailStep: (e) => { const v = e.target.value; this.setState(s => ({ form: { ...s.form, email: v }, mailErr: false })); },
+      onMailKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); this.mailWeiterIntern(); } },
+      mailWeiter: () => this.mailWeiterIntern(),
+      isSending: !!this.state.sending,
+      stepOf: isContact ? 'Letzter Schritt' : ((isMatch || isVorschlag || isMail) ? 'Fast geschafft' : 'Schritt ' + dispIdx + ' von ' + total),
+      progSegs: Array.from({ length: total + 1 }, (_, i) => ({ bg: (isContact || i < dispIdx) ? '#ffffff' : 'rgba(255,255,255,0.22)' })),
       stepName: isContact ? 'Kontaktdaten' : this.shorts[id],
       stepNum: this.stepNo[id], progressPct: pct + '%', progressLabel: '',
       qTitle: q.title, qSub: q.sub || '',
+      ...(() => { const t = q.title || ''; const k = this.KW[id]; const i = k ? t.indexOf(k) : -1; return i > -1 ? { qT1: t.slice(0, i), qKw: k, qT2: t.slice(i + k.length) } : { qT1: t, qKw: '', qT2: '' }; })(),
       hasQNote: !isContact && !!q.note, qNote: q.note || '',
-      isTileQ: !isContact && !!q.imgs,
-      isListQ: !isContact && !q.imgs,
+      isTileQ: !isContact && !isMatch && !isDetails && !isHilfe && !isUnterlagen && !!q.imgs,
+      isIconQ: !isContact && !isMatch && !isDetails && !isHilfe && !isUnterlagen && !!q.icons,
+      isListQ: !isContact && !isMatch && !isDetails && !isHilfe && !isUnterlagen && !q.imgs && !q.icons,
       qOptions: q.options.map((label, i) => ({
         label,
+        desc: (q.descs && q.descs[i]) || '',
+        icoInsp: !!q.icons && i === 0,
+        icoPlan: !!q.icons && i === 1,
         icon: null,
         hasImgSrc: !!(q.files && q.files[i]),
+        ratio: ((q.files && q.files[i]) || (!!q.qmarkLast && !!q.files)) ? 'auto' : '1/1',
         img: (q.files && q.files[i]) ? React.createElement('img', { src: q.files[i], alt: label, style: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } }) : null,
         textOnly: !q.imgs,
         hasSlot: !!q.imgs && !q.qmarkLast && !(q.files && q.files[i]),
@@ -714,7 +1405,9 @@ class Component extends DCLogic {
       goBack: () => { this.ga('funnel_back', { funnel: 'alt_gegen_neu', step_number: this.stepNo[this.curId()] }); this.setState(s => ({ pos: Math.max(0, s.pos - 1) }), () => this.trackStep(this.curId())); },
       canForward: selected != null,
       goForward: () => this.pick(selected),
-      hasSummary: sum.length > 0,
+      hasSummary: sumItems.length > 0 || sumChips.length > 0,
+      sumItems, hasSumItems: sumItems.length > 0,
+      sumChips, hasSumChips: sumChips.length > 0,
       summaryText: sum.join(' · '),
       plzValue: this.state.form.plz || '',
       onVorname: this.field('vorname'), onNachname: this.field('nachname'), onTel: this.field('tel'), onEmail: this.field('email'), onPlz: this.field('plz'),
@@ -725,7 +1418,7 @@ class Component extends DCLogic {
       submitForm: () => this.submit(),
       sending: !!this.state.sending || !this.state.consent,
       consentMissing: !this.state.consent,
-      submitLabel: this.state.sending ? 'Wird gesendet …' : 'Jetzt Formular senden (kostenfrei & unverbindlich)',
+      submitLabel: this.state.sending ? 'Wird gesendet …' : 'Jetzt Planungstermin anfragen',
     };
   }
 }
