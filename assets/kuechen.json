@@ -1,0 +1,2559 @@
+{
+ "stand": "2026-10-02",
+ "logos": {
+  "Nobilia": "https://www.kueche-hugelmann.de/assets/marken/nobilia.webp",
+  "Interliving": "https://www.kueche-hugelmann.de/assets/marken/interliving-kueche.webp",
+  "Culineo": "https://www.kueche-hugelmann.de/assets/marken/culineo.webp",
+  "WERT": "https://www.kueche-hugelmann.de/assets/marken/wertkueche.webp"
+ },
+ "cloud": "dusdhljtc",
+ "basis": "https://res.cloudinary.com/dusdhljtc/image/upload/",
+ "transformation_karte": "f_auto,q_auto,c_fill,g_auto,ar_3:4,w_640",
+ "transformation_gross": "f_auto,q_auto,c_fill,g_auto,ar_16:9,w_1280",
+ "hinweis": "Die URL entsteht aus basis + transformation + '/' + bild.",
+ "kuechen": [
+  {
+   "id": "NB01",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "STRUCTURA 419",
+   "bild": "hugelmann/kuechen/nobilia/NB01/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB02",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "STRUCTURA 425",
+   "bild": "hugelmann/kuechen/nobilia/NB02/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB04",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "insel"
+   ],
+   "modell": "SENSO 498",
+   "bild": "hugelmann/kuechen/nobilia/NB04/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB06",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "CADRA 746",
+   "bild": "hugelmann/kuechen/nobilia/NB06/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB07",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "STRUCTURA 409",
+   "bild": "hugelmann/kuechen/nobilia/NB07/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB09",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "FRAME 649",
+   "bild": "hugelmann/kuechen/nobilia/NB09/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB10",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SENSO 499",
+   "bild": "hugelmann/kuechen/nobilia/NB10/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB11",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SYLT 849",
+   "bild": "hugelmann/kuechen/nobilia/NB11/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB12",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "NOVALUX 512",
+   "bild": "hugelmann/kuechen/nobilia/NB12/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB13",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "STRUCTURA 402",
+   "bild": "hugelmann/kuechen/nobilia/NB13/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB14",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "EASYTOUCH 961",
+   "bild": "hugelmann/kuechen/nobilia/NB14/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB15",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "FOCUS 467",
+   "bild": "hugelmann/kuechen/nobilia/NB15/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB16",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "RIVA 893",
+   "bild": "hugelmann/kuechen/nobilia/NB16/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB17",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SENSO 483",
+   "bild": "hugelmann/kuechen/nobilia/NB17/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB18",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "PURA 834",
+   "bild": "hugelmann/kuechen/nobilia/NB18/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB19",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SENSO 488",
+   "bild": "hugelmann/kuechen/nobilia/NB19/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB20",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "INLINE 551",
+   "bild": "hugelmann/kuechen/nobilia/NB20/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB21",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "LASER 416",
+   "bild": "hugelmann/kuechen/nobilia/NB21/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB22",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "STRUCTURA 403",
+   "bild": "hugelmann/kuechen/nobilia/NB22/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB23",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "insel"
+   ],
+   "modell": "SENSO 492",
+   "bild": "hugelmann/kuechen/nobilia/NB23/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB24",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "STONEART 303",
+   "bild": "hugelmann/kuechen/nobilia/NB24/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB25",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "LASER 417",
+   "bild": "hugelmann/kuechen/nobilia/NB25/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB26",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "NATURA 744",
+   "bild": "hugelmann/kuechen/nobilia/NB26/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB27",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "RIVA 842",
+   "bild": "hugelmann/kuechen/nobilia/NB27/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB28",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "NOVALUX 516",
+   "bild": "hugelmann/kuechen/nobilia/NB28/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB29",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "insel"
+   ],
+   "modell": "EASYTOUCH 966",
+   "bild": "hugelmann/kuechen/nobilia/NB29/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB30",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "RIVA 843",
+   "bild": "hugelmann/kuechen/nobilia/NB30/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB31",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "TOUCH 338",
+   "bild": "hugelmann/kuechen/nobilia/NB31/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB32",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "LASER 427",
+   "bild": "hugelmann/kuechen/nobilia/NB32/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB33",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "FLASH 453",
+   "bild": "hugelmann/kuechen/nobilia/NB33/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB34",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "RIVA 891",
+   "bild": "hugelmann/kuechen/nobilia/NB34/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB35",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "NOVALUX 513",
+   "bild": "hugelmann/kuechen/nobilia/NB35/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB36",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "LASER 418",
+   "bild": "hugelmann/kuechen/nobilia/NB36/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB37",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "FLASH 450",
+   "bild": "hugelmann/kuechen/nobilia/NB37/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB38",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "TOUCH 334",
+   "bild": "hugelmann/kuechen/nobilia/NB38/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB39",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "NORDIC 782",
+   "bild": "hugelmann/kuechen/nobilia/NB39/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB40",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "NORDIC 791",
+   "bild": "hugelmann/kuechen/nobilia/NB40/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB41",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "STRUCTURA 405",
+   "bild": "hugelmann/kuechen/nobilia/NB41/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB42",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "SENSO 491",
+   "bild": "hugelmann/kuechen/nobilia/NB42/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB43",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "CASCADA 774",
+   "bild": "hugelmann/kuechen/nobilia/NB43/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB44",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "l-form"
+   ],
+   "modell": "TOUCH 337",
+   "bild": "hugelmann/kuechen/nobilia/NB44/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB45",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "STRUCTURA 406",
+   "bild": "hugelmann/kuechen/nobilia/NB45/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB46",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SOFTLINE 508",
+   "bild": "hugelmann/kuechen/nobilia/NB46/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB47",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "LASER 463",
+   "bild": "hugelmann/kuechen/nobilia/NB47/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB48",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "SENSO 496",
+   "bild": "hugelmann/kuechen/nobilia/NB48/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB49",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "u-form"
+   ],
+   "modell": "FLASH 455",
+   "bild": "hugelmann/kuechen/nobilia/NB49/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB50",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "u-form"
+   ],
+   "modell": "FLASH 452",
+   "bild": "hugelmann/kuechen/nobilia/NB50/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB51",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "FOCUS 470",
+   "bild": "hugelmann/kuechen/nobilia/NB51/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB52",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "EASYTOUCH 970",
+   "bild": "hugelmann/kuechen/nobilia/NB52/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB53",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "farbig",
+   "form": [
+    "l-form"
+   ],
+   "modell": "CASCADA 776",
+   "bild": "hugelmann/kuechen/nobilia/NB53/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB54",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "TOUCH 340",
+   "bild": "hugelmann/kuechen/nobilia/NB54/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB55",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "insel"
+   ],
+   "modell": "EASYTOUCH 963",
+   "bild": "hugelmann/kuechen/nobilia/NB55/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB56",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "farbig",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "FRAME 614",
+   "bild": "hugelmann/kuechen/nobilia/NB56/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB57",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "TOUCH 332",
+   "bild": "hugelmann/kuechen/nobilia/NB57/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB58",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "RIVA 889",
+   "bild": "hugelmann/kuechen/nobilia/NB58/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB59",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "EASYTOUCH 967",
+   "bild": "hugelmann/kuechen/nobilia/NB59/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB60",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "insel"
+   ],
+   "modell": "SENSO 494",
+   "bild": "hugelmann/kuechen/nobilia/NB60/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB61",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SOFTLINE 509",
+   "bild": "hugelmann/kuechen/nobilia/NB61/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB62",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "LASER 461",
+   "bild": "hugelmann/kuechen/nobilia/NB62/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB63",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "LOOK 605",
+   "bild": "hugelmann/kuechen/nobilia/NB63/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB64",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "NORDIC 788",
+   "bild": "hugelmann/kuechen/nobilia/NB64/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB65",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SOFTLINE 507",
+   "bild": "hugelmann/kuechen/nobilia/NB65/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB66",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "FRAME 619",
+   "bild": "hugelmann/kuechen/nobilia/NB66/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB67",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "FLASH 503",
+   "bild": "hugelmann/kuechen/nobilia/NB67/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB68",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel",
+    "l-form"
+   ],
+   "modell": "SENSO 490",
+   "bild": "hugelmann/kuechen/nobilia/NB68/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB69",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "INOX 216",
+   "bild": "hugelmann/kuechen/nobilia/NB69/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB70",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "farbig",
+   "form": [
+    "insel"
+   ],
+   "modell": "FRAME 617",
+   "bild": "hugelmann/kuechen/nobilia/NB70/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB71",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "CASCADA 772",
+   "bild": "hugelmann/kuechen/nobilia/NB71/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB72",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "LOOK 604",
+   "bild": "hugelmann/kuechen/nobilia/NB72/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB73",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "TOUCH 341",
+   "bild": "hugelmann/kuechen/nobilia/NB73/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB74",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "LASER 412",
+   "bild": "hugelmann/kuechen/nobilia/NB74/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB75",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "STRUCTURA 407",
+   "bild": "hugelmann/kuechen/nobilia/NB75/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB76",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "farbig",
+   "form": [
+    "u-form",
+    "insel"
+   ],
+   "modell": "CASCADA 778",
+   "bild": "hugelmann/kuechen/nobilia/NB76/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB77",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SYLT 848",
+   "bild": "hugelmann/kuechen/nobilia/NB77/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB78",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "insel"
+   ],
+   "modell": "SENSO 485",
+   "bild": "hugelmann/kuechen/nobilia/NB78/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB79",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "TOUCH 336",
+   "bild": "hugelmann/kuechen/nobilia/NB79/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB80",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SYLT 847",
+   "bild": "hugelmann/kuechen/nobilia/NB80/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB81",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "EASYTOUCH 969",
+   "bild": "hugelmann/kuechen/nobilia/NB81/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB82",
+   "marke": "Nobilia",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "NOVALUX 519",
+   "bild": "hugelmann/kuechen/nobilia/NB82/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB83",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "RIVA 892",
+   "bild": "hugelmann/kuechen/nobilia/NB83/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB84",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "SOFTLINE 505",
+   "bild": "hugelmann/kuechen/nobilia/NB84/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB85",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SOFTLINE 504",
+   "bild": "hugelmann/kuechen/nobilia/NB85/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB86",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "insel",
+    "l-form"
+   ],
+   "modell": "EASYTOUCH 964",
+   "bild": "hugelmann/kuechen/nobilia/NB86/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB87",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "SOFTLINE 510",
+   "bild": "hugelmann/kuechen/nobilia/NB87/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB88",
+   "marke": "Nobilia",
+   "stil": "holz",
+   "farbe": "farbig",
+   "form": [
+    "insel"
+   ],
+   "modell": "RIVA 839",
+   "bild": "hugelmann/kuechen/nobilia/NB88/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB89",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "EASYTOUCH 968",
+   "bild": "hugelmann/kuechen/nobilia/NB89/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB90",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "u-form"
+   ],
+   "modell": "LASER 415",
+   "bild": "hugelmann/kuechen/nobilia/NB90/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB91",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "NORDIC 786",
+   "bild": "hugelmann/kuechen/nobilia/NB91/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB92",
+   "marke": "Nobilia",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "l-form"
+   ],
+   "modell": "SENSO 495",
+   "bild": "hugelmann/kuechen/nobilia/NB92/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "NB93",
+   "marke": "Nobilia",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "FRAME 613",
+   "bild": "hugelmann/kuechen/nobilia/NB93/leitbild",
+   "details": [],
+   "marke_anzeige": "nobilia"
+  },
+  {
+   "id": "IL01",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL01/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL02",
+   "marke": "Interliving",
+   "stil": "hochglanz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "Elegante Küche in Grau Hochglanz mit Holzarbeitsplatte und Kochinsel",
+   "bild": "hugelmann/kuechen/interliving/IL02/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL03",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form",
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL03/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL04",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL04/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL05",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "einzeilig",
+    "zweizeilig"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL05/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL06",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL06/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL07",
+   "marke": "Interliving",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL07/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL08",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "u-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL08/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL09",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL09/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL10",
+   "marke": "Interliving",
+   "stil": "hochglanz",
+   "farbe": "dunkel",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "Elegante Hochglanzküche in Dunkelgrau mit Holzrückwand und viel Stauraum",
+   "bild": "hugelmann/kuechen/interliving/IL10/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL11",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL11/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL12",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL12/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL13",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL13/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL14",
+   "marke": "Interliving",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL14/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL15",
+   "marke": "Interliving",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL15/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL16",
+   "marke": "Interliving",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "Moderne Küche mit dunklen Holzfronten und heller Kücheninsel in Betonoptik",
+   "bild": "hugelmann/kuechen/interliving/IL16/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL17",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL17/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL18",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL18/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL19",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL19/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL20",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL20/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL21",
+   "marke": "Interliving",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL21/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL22",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL22/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL23",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "u-form",
+    "insel"
+   ],
+   "modell": "Moderne Küche in Olivgrün mit Holzdekor und Kochinsel in U-Form",
+   "bild": "hugelmann/kuechen/interliving/IL23/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL24",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL24/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL25",
+   "marke": "Interliving",
+   "stil": "hochglanz",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL25/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL26",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL26/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL27",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "insel"
+   ],
+   "modell": "Offene Küche in sanftem Grün mit Holzarbeitsplatte und gemütlichem integriertem Essbereich",
+   "bild": "hugelmann/kuechen/interliving/IL27/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL28",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL28/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL29",
+   "marke": "Interliving",
+   "stil": "hochglanz",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL29/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL30",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL30/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL31",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL31/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL32",
+   "marke": "Interliving",
+   "stil": "landhaus",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "Moderne Landhausküche in elegantem Anthrazit mit Holzarbeitsplatte und großzügiger Kochinsel",
+   "bild": "hugelmann/kuechen/interliving/IL32/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL33",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL33/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL34",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL34/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL35",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL35/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL36",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL36/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL37",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "u-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL37/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL38",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL38/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL39",
+   "marke": "Interliving",
+   "stil": "landhaus",
+   "farbe": "dunkel",
+   "form": [
+    "u-form",
+    "insel"
+   ],
+   "modell": "Moderne Landhausküche in Schwarz mit Kücheninsel",
+   "bild": "hugelmann/kuechen/interliving/IL39/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL40",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL40/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL41",
+   "marke": "Interliving",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "einzeilig",
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL41/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL42",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL42/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL43",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL43/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL44",
+   "marke": "Interliving",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "Helle moderne Küche in Weiß-Hochglanz mit Holzarbeitsplatte und offener Gestaltung",
+   "bild": "hugelmann/kuechen/interliving/IL44/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL45",
+   "marke": "Interliving",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "Moderne Landhausküche in Weiß mit Kassettentüren, dunkler Arbeitsplatte und stilvollen Griffen im Vintage-Look",
+   "bild": "hugelmann/kuechen/interliving/IL45/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL47",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL47/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL48",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL48/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL49",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form",
+    "insel"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL49/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL50",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL50/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL51",
+   "marke": "Interliving",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "Weiße Landhausküche mit schwarzer Arbeitsplatte",
+   "bild": "hugelmann/kuechen/interliving/IL51/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "IL52",
+   "marke": "Interliving",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "",
+   "bild": "hugelmann/kuechen/interliving/IL52/leitbild",
+   "details": [],
+   "marke_anzeige": "Interliving"
+  },
+  {
+   "id": "CU01",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C187",
+   "bild": "hugelmann/kuechen/culineo/CU01/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU01/detail-1",
+    "hugelmann/kuechen/culineo/CU01/detail-2",
+    "hugelmann/kuechen/culineo/CU01/detail-3",
+    "hugelmann/kuechen/culineo/CU01/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU02",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C187",
+   "bild": "hugelmann/kuechen/culineo/CU02/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU02/detail-1",
+    "hugelmann/kuechen/culineo/CU02/detail-2",
+    "hugelmann/kuechen/culineo/CU02/detail-3",
+    "hugelmann/kuechen/culineo/CU02/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU03",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C317",
+   "bild": "hugelmann/kuechen/culineo/CU03/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU03/detail-1",
+    "hugelmann/kuechen/culineo/CU03/detail-2",
+    "hugelmann/kuechen/culineo/CU03/detail-3",
+    "hugelmann/kuechen/culineo/CU03/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU04",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C357",
+   "bild": "hugelmann/kuechen/culineo/CU04/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU04/detail-1",
+    "hugelmann/kuechen/culineo/CU04/detail-2",
+    "hugelmann/kuechen/culineo/CU04/detail-3",
+    "hugelmann/kuechen/culineo/CU04/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU05",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C357",
+   "bild": "hugelmann/kuechen/culineo/CU05/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU05/detail-1",
+    "hugelmann/kuechen/culineo/CU05/detail-2",
+    "hugelmann/kuechen/culineo/CU05/detail-3",
+    "hugelmann/kuechen/culineo/CU05/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU06",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "C357",
+   "bild": "hugelmann/kuechen/culineo/CU06/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU06/detail-1",
+    "hugelmann/kuechen/culineo/CU06/detail-2",
+    "hugelmann/kuechen/culineo/CU06/detail-3",
+    "hugelmann/kuechen/culineo/CU06/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU07",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "insel"
+   ],
+   "modell": "C357",
+   "bild": "hugelmann/kuechen/culineo/CU07/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU07/detail-1",
+    "hugelmann/kuechen/culineo/CU07/detail-2",
+    "hugelmann/kuechen/culineo/CU07/detail-3",
+    "hugelmann/kuechen/culineo/CU07/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU08",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "u-form"
+   ],
+   "modell": "C357",
+   "bild": "hugelmann/kuechen/culineo/CU08/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU08/detail-1",
+    "hugelmann/kuechen/culineo/CU08/detail-2",
+    "hugelmann/kuechen/culineo/CU08/detail-3",
+    "hugelmann/kuechen/culineo/CU08/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU09",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C357",
+   "bild": "hugelmann/kuechen/culineo/CU09/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU09/detail-1",
+    "hugelmann/kuechen/culineo/CU09/detail-2",
+    "hugelmann/kuechen/culineo/CU09/detail-3",
+    "hugelmann/kuechen/culineo/CU09/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU10",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "C357",
+   "bild": "hugelmann/kuechen/culineo/CU10/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU10/detail-1",
+    "hugelmann/kuechen/culineo/CU10/detail-2",
+    "hugelmann/kuechen/culineo/CU10/detail-3",
+    "hugelmann/kuechen/culineo/CU10/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU11",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "C357",
+   "bild": "hugelmann/kuechen/culineo/CU11/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU11/detail-1",
+    "hugelmann/kuechen/culineo/CU11/detail-2",
+    "hugelmann/kuechen/culineo/CU11/detail-3",
+    "hugelmann/kuechen/culineo/CU11/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU12",
+   "marke": "Culineo",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "u-form"
+   ],
+   "modell": "C371",
+   "bild": "hugelmann/kuechen/culineo/CU12/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU12/detail-1",
+    "hugelmann/kuechen/culineo/CU12/detail-2",
+    "hugelmann/kuechen/culineo/CU12/detail-3",
+    "hugelmann/kuechen/culineo/CU12/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU13",
+   "marke": "Culineo",
+   "stil": "holz",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "C382",
+   "bild": "hugelmann/kuechen/culineo/CU13/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU13/detail-1",
+    "hugelmann/kuechen/culineo/CU13/detail-2",
+    "hugelmann/kuechen/culineo/CU13/detail-3",
+    "hugelmann/kuechen/culineo/CU13/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU14",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C382",
+   "bild": "hugelmann/kuechen/culineo/CU14/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU14/detail-1",
+    "hugelmann/kuechen/culineo/CU14/detail-2",
+    "hugelmann/kuechen/culineo/CU14/detail-3",
+    "hugelmann/kuechen/culineo/CU14/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU15",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "C382",
+   "bild": "hugelmann/kuechen/culineo/CU15/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU15/detail-1",
+    "hugelmann/kuechen/culineo/CU15/detail-2",
+    "hugelmann/kuechen/culineo/CU15/detail-3",
+    "hugelmann/kuechen/culineo/CU15/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU16",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C615",
+   "bild": "hugelmann/kuechen/culineo/CU16/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU16/detail-1",
+    "hugelmann/kuechen/culineo/CU16/detail-2",
+    "hugelmann/kuechen/culineo/CU16/detail-3",
+    "hugelmann/kuechen/culineo/CU16/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU17",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "C615",
+   "bild": "hugelmann/kuechen/culineo/CU17/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU17/detail-1",
+    "hugelmann/kuechen/culineo/CU17/detail-2",
+    "hugelmann/kuechen/culineo/CU17/detail-3",
+    "hugelmann/kuechen/culineo/CU17/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU18",
+   "marke": "Culineo",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "C615",
+   "bild": "hugelmann/kuechen/culineo/CU18/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU18/detail-1",
+    "hugelmann/kuechen/culineo/CU18/detail-2",
+    "hugelmann/kuechen/culineo/CU18/detail-3",
+    "hugelmann/kuechen/culineo/CU18/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU19",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C615",
+   "bild": "hugelmann/kuechen/culineo/CU19/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU19/detail-1",
+    "hugelmann/kuechen/culineo/CU19/detail-2",
+    "hugelmann/kuechen/culineo/CU19/detail-3",
+    "hugelmann/kuechen/culineo/CU19/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU20",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C615",
+   "bild": "hugelmann/kuechen/culineo/CU20/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU20/detail-1",
+    "hugelmann/kuechen/culineo/CU20/detail-2",
+    "hugelmann/kuechen/culineo/CU20/detail-3",
+    "hugelmann/kuechen/culineo/CU20/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU21",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "C615",
+   "bild": "hugelmann/kuechen/culineo/CU21/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU21/detail-1",
+    "hugelmann/kuechen/culineo/CU21/detail-2",
+    "hugelmann/kuechen/culineo/CU21/detail-3",
+    "hugelmann/kuechen/culineo/CU21/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU22",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "u-form"
+   ],
+   "modell": "C615",
+   "bild": "hugelmann/kuechen/culineo/CU22/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU22/detail-1",
+    "hugelmann/kuechen/culineo/CU22/detail-2",
+    "hugelmann/kuechen/culineo/CU22/detail-3",
+    "hugelmann/kuechen/culineo/CU22/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU23",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "C615",
+   "bild": "hugelmann/kuechen/culineo/CU23/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU23/detail-1",
+    "hugelmann/kuechen/culineo/CU23/detail-2",
+    "hugelmann/kuechen/culineo/CU23/detail-3",
+    "hugelmann/kuechen/culineo/CU23/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU24",
+   "marke": "Culineo",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "C648",
+   "bild": "hugelmann/kuechen/culineo/CU24/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU24/detail-1",
+    "hugelmann/kuechen/culineo/CU24/detail-2",
+    "hugelmann/kuechen/culineo/CU24/detail-3",
+    "hugelmann/kuechen/culineo/CU24/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU25",
+   "marke": "Culineo",
+   "stil": "landhaus",
+   "farbe": "farbig",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C684",
+   "bild": "hugelmann/kuechen/culineo/CU25/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU25/detail-1",
+    "hugelmann/kuechen/culineo/CU25/detail-2",
+    "hugelmann/kuechen/culineo/CU25/detail-3",
+    "hugelmann/kuechen/culineo/CU25/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU26",
+   "marke": "Culineo",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "C684",
+   "bild": "hugelmann/kuechen/culineo/CU26/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU26/detail-1",
+    "hugelmann/kuechen/culineo/CU26/detail-2",
+    "hugelmann/kuechen/culineo/CU26/detail-3",
+    "hugelmann/kuechen/culineo/CU26/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU27",
+   "marke": "Culineo",
+   "stil": "landhaus",
+   "farbe": "hell",
+   "form": [
+    "l-form"
+   ],
+   "modell": "C684",
+   "bild": "hugelmann/kuechen/culineo/CU27/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU27/detail-1",
+    "hugelmann/kuechen/culineo/CU27/detail-2",
+    "hugelmann/kuechen/culineo/CU27/detail-3",
+    "hugelmann/kuechen/culineo/CU27/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU28",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "C945",
+   "bild": "hugelmann/kuechen/culineo/CU28/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU28/detail-1",
+    "hugelmann/kuechen/culineo/CU28/detail-2",
+    "hugelmann/kuechen/culineo/CU28/detail-3",
+    "hugelmann/kuechen/culineo/CU28/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "CU29",
+   "marke": "Culineo",
+   "stil": "matt",
+   "farbe": "farbig",
+   "form": [
+    "u-form"
+   ],
+   "modell": "C945",
+   "bild": "hugelmann/kuechen/culineo/CU29/leitbild",
+   "details": [
+    "hugelmann/kuechen/culineo/CU29/detail-1",
+    "hugelmann/kuechen/culineo/CU29/detail-2",
+    "hugelmann/kuechen/culineo/CU29/detail-3",
+    "hugelmann/kuechen/culineo/CU29/detail-4"
+   ],
+   "marke_anzeige": "Culineo"
+  },
+  {
+   "id": "WE01",
+   "marke": "WERT",
+   "stil": "landhaus",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "WERT KÜCHE® Carina mit AEG Einbaugeräten",
+   "bild": "hugelmann/kuechen/wert/WE01/leitbild",
+   "details": [
+    "hugelmann/kuechen/wert/WE01/detail-1",
+    "hugelmann/kuechen/wert/WE01/detail-2",
+    "hugelmann/kuechen/wert/WE01/detail-3",
+    "hugelmann/kuechen/wert/WE01/detail-4"
+   ],
+   "marke_anzeige": "WERT KÜCHE"
+  },
+  {
+   "id": "WE02",
+   "marke": "WERT",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "WERT KÜCHE® Ella mit Constructa Einbaugeräten",
+   "bild": "hugelmann/kuechen/wert/WE02/leitbild",
+   "details": [
+    "hugelmann/kuechen/wert/WE02/detail-1",
+    "hugelmann/kuechen/wert/WE02/detail-2",
+    "hugelmann/kuechen/wert/WE02/detail-3",
+    "hugelmann/kuechen/wert/WE02/detail-4"
+   ],
+   "marke_anzeige": "WERT KÜCHE"
+  },
+  {
+   "id": "WE03",
+   "marke": "WERT",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "WERT KÜCHE® Franziska mit AEG Einbaugeräten",
+   "bild": "hugelmann/kuechen/wert/WE03/leitbild",
+   "details": [
+    "hugelmann/kuechen/wert/WE03/detail-1",
+    "hugelmann/kuechen/wert/WE03/detail-2",
+    "hugelmann/kuechen/wert/WE03/detail-3",
+    "hugelmann/kuechen/wert/WE03/detail-4"
+   ],
+   "marke_anzeige": "WERT KÜCHE"
+  },
+  {
+   "id": "WE04",
+   "marke": "WERT",
+   "stil": "holz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "WERT KÜCHE® Mona mit Constructa Einbaugeräten",
+   "bild": "hugelmann/kuechen/wert/WE04/leitbild",
+   "details": [
+    "hugelmann/kuechen/wert/WE04/detail-1",
+    "hugelmann/kuechen/wert/WE04/detail-2",
+    "hugelmann/kuechen/wert/WE04/detail-3",
+    "hugelmann/kuechen/wert/WE04/detail-4"
+   ],
+   "marke_anzeige": "WERT KÜCHE"
+  },
+  {
+   "id": "WE05",
+   "marke": "WERT",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "WERT KÜCHE® Nora mit AEG Einbaugeräten",
+   "bild": "hugelmann/kuechen/wert/WE05/leitbild",
+   "details": [
+    "hugelmann/kuechen/wert/WE05/detail-1",
+    "hugelmann/kuechen/wert/WE05/detail-2",
+    "hugelmann/kuechen/wert/WE05/detail-3",
+    "hugelmann/kuechen/wert/WE05/detail-4"
+   ],
+   "marke_anzeige": "WERT KÜCHE"
+  },
+  {
+   "id": "WE06",
+   "marke": "WERT",
+   "stil": "matt",
+   "farbe": "dunkel",
+   "form": [
+    "insel"
+   ],
+   "modell": "WERT KÜCHE® Nora mit SIEMENS Einbaugeräten",
+   "bild": "hugelmann/kuechen/wert/WE06/leitbild",
+   "details": [
+    "hugelmann/kuechen/wert/WE06/detail-1",
+    "hugelmann/kuechen/wert/WE06/detail-2",
+    "hugelmann/kuechen/wert/WE06/detail-3",
+    "hugelmann/kuechen/wert/WE06/detail-4"
+   ],
+   "marke_anzeige": "WERT KÜCHE"
+  },
+  {
+   "id": "WE08",
+   "marke": "WERT",
+   "stil": "matt",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "WERT KÜCHE® Ulrike mit SIEMENS Einbaugeräten",
+   "bild": "hugelmann/kuechen/wert/WE08/leitbild",
+   "details": [
+    "hugelmann/kuechen/wert/WE08/detail-1",
+    "hugelmann/kuechen/wert/WE08/detail-2"
+   ],
+   "marke_anzeige": "WERT KÜCHE"
+  },
+  {
+   "id": "WE09",
+   "marke": "WERT",
+   "stil": "hochglanz",
+   "farbe": "hell",
+   "form": [
+    "insel"
+   ],
+   "modell": "WERT KÜCHE® Uni Gloss mit SIEMENS Einbaugeräten",
+   "bild": "hugelmann/kuechen/wert/WE09/leitbild",
+   "details": [
+    "hugelmann/kuechen/wert/WE09/detail-1",
+    "hugelmann/kuechen/wert/WE09/detail-2",
+    "hugelmann/kuechen/wert/WE09/detail-3",
+    "hugelmann/kuechen/wert/WE09/detail-4"
+   ],
+   "marke_anzeige": "WERT KÜCHE"
+  },
+  {
+   "id": "WE10",
+   "marke": "WERT",
+   "stil": "landhaus",
+   "farbe": "dunkel",
+   "form": [
+    "l-form"
+   ],
+   "modell": "WERT KÜCHE® Vida mit Miele Backofen",
+   "bild": "hugelmann/kuechen/wert/WE10/leitbild",
+   "details": [
+    "hugelmann/kuechen/wert/WE10/detail-1",
+    "hugelmann/kuechen/wert/WE10/detail-2",
+    "hugelmann/kuechen/wert/WE10/detail-3",
+    "hugelmann/kuechen/wert/WE10/detail-4"
+   ],
+   "marke_anzeige": "WERT KÜCHE"
+  },
+  {
+   "id": "WE11",
+   "marke": "WERT",
+   "stil": "landhaus",
+   "farbe": "dunkel",
+   "form": [
+    "einzeilig"
+   ],
+   "modell": "WERT KÜCHE® Vida mit SIEMENS Einbaugeräten",
+   "bild": "hugelmann/kuechen/wert/WE11/leitbild",
+   "details": [
+    "hugelmann/kuechen/wert/WE11/detail-1",
+    "hugelmann/kuechen/wert/WE11/detail-2",
+    "hugelmann/kuechen/wert/WE11/detail-3",
+    "hugelmann/kuechen/wert/WE11/detail-4"
+   ],
+   "marke_anzeige": "WERT KÜCHE"
+  }
+ ],
+ "hinweis_marke": "marke ist der interne Schluessel und passt zu logos. Fuer die Anzeige immer marke_anzeige verwenden."
+}
