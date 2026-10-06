@@ -390,6 +390,11 @@
     [data-rsp~="kc-30"]{position:absolute;top:14px;right:14px;width:70px !important;height:70px !important;}
     [data-rsp~="kc-30"] b{font-size:25px !important;}
     [data-rsp~="kc-vt"]{flex-direction:column !important;gap:6px !important;}
+    [data-rsp~="kc-steps"] ol{grid-template-columns:1fr !important;gap:16px !important;}
+    [data-rsp~="kc-line"]{left:14px !important;right:auto !important;top:16px !important;bottom:16px !important;width:2px !important;height:auto !important;}
+    [data-rsp~="kc-li"]{flex-direction:row !important;align-items:center !important;text-align:left !important;gap:14px !important;}
+    [data-rsp~="kc-txt"]{gap:1px !important;}
+    [data-rsp~="kc-txt"] b{font-size:15px !important;}
   }
 </style>
 </helmet>
@@ -827,23 +832,23 @@
         </div>
         <div style="border-top:1px solid #dfe5ee;padding-top:20px;">
           <span style="display:block;text-align:center;font-size:11.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#5a6478;margin-bottom:14px;">So geht es weiter</span>
-          <div style="position:relative;">
-            <span aria-hidden="true" style="position:absolute;left:16.66%;right:16.66%;top:14px;height:2px;background:#dfe5ee;"></span>
+          <div data-rsp="kc-steps" style="position:relative;">
+            <span aria-hidden="true" data-rsp="kc-line" style="position:absolute;left:16.66%;right:16.66%;top:14px;height:2px;background:#dfe5ee;"></span>
             <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;">
-            <li style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;z-index:1;">
+            <li data-rsp="kc-li" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;z-index:1;">
               <span style="box-sizing:border-box;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;background:#034EA3;color:#fff;box-shadow:0 0 0 5px #e6eef9;">1</span>
-              <b style="font-size:14px;font-weight:700;color:#101d33;line-height:1.25;">Formular senden</b>
-              <span style="font-size:12.5px;color:#5a6478;line-height:1.3;">jetzt, unverbindlich</span>
+              <span data-rsp="kc-txt" style="display:flex;flex-direction:column;gap:6px;"><b style="font-size:14px;font-weight:700;color:#101d33;line-height:1.25;">Formular senden</b>
+              <span style="font-size:12.5px;color:#5a6478;line-height:1.3;">jetzt, unverbindlich</span></span>
             </li>
-            <li style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;z-index:1;">
+            <li data-rsp="kc-li" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;z-index:1;">
               <span style="box-sizing:border-box;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;background:#fff;color:#034EA3;border:2px solid #c9d7ea;">2</span>
-              <b style="font-size:14px;font-weight:700;color:#101d33;line-height:1.25;">Planung in Lahr</b>
-              <span style="font-size:12.5px;color:#5a6478;line-height:1.3;">kostenfrei &amp; in 3D</span>
+              <span data-rsp="kc-txt" style="display:flex;flex-direction:column;gap:6px;"><b style="font-size:14px;font-weight:700;color:#101d33;line-height:1.25;">Planung in Lahr</b>
+              <span style="font-size:12.5px;color:#5a6478;line-height:1.3;">kostenfrei &amp; in 3D</span></span>
             </li>
-            <li style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;z-index:1;">
+            <li data-rsp="kc-li" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;z-index:1;">
               <span style="box-sizing:border-box;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;background:#fff;color:#034EA3;border:2px solid #c9d7ea;">3</span>
-              <b style="font-size:14px;font-weight:700;color:#101d33;line-height:1.25;">Prämie sichern</b>
-              <span style="font-size:12.5px;color:#5a6478;line-height:1.3;">bis zu 4.000&nbsp;€*</span>
+              <span data-rsp="kc-txt" style="display:flex;flex-direction:column;gap:6px;"><b style="font-size:14px;font-weight:700;color:#101d33;line-height:1.25;">Prämie sichern</b>
+              <span style="font-size:12.5px;color:#5a6478;line-height:1.3;">bis zu 4.000&nbsp;€*</span></span>
             </li>
             </ol>
           </div>
@@ -1438,7 +1443,7 @@ class Component extends DCLogic {
       showMail: isMail,
       showEmailField: answers.vorschlag !== 0,
       showInspHinweis: answers.vorschlag === 0,
-      ctaSub: answers.vorschlag === 0 ? 'und Ihre 3 Küchenbeispiele erhalten' : 'Kostenfrei & unverbindlich',
+      ctaSub: 'Kostenfrei & unverbindlich',
       vorschlagJa: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.vorschlag, step_name: this.stepName('vorschlag'), answer: 'Ja' }); this.fb('AGN_Vorschlag_Mail_Ja', {}); this.setState(s => ({ answers: { ...s.answers, vorschlag: 0 }, pos: s.pos + 1 }), () => this.trackStep(this.curId())); },
       vorschlagNein: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.vorschlag, step_name: this.stepName('vorschlag'), answer: 'Nein' }); this.setState(s => ({ answers: { ...s.answers, vorschlag: 1 }, pos: s.pos + 1 }), () => this.trackStep(this.curId())); },
       emailValue: this.state.form.email || '',
@@ -1496,7 +1501,7 @@ class Component extends DCLogic {
       submitForm: () => this.submit(),
       sending: !!this.state.sending || !this.state.consent,
       consentMissing: !this.state.consent,
-      submitLabel: this.state.sending ? 'Wird gesendet …' : 'Jetzt Planungstermin anfragen',
+      submitLabel: this.state.sending ? 'Wird gesendet …' : 'Jetzt Prämie anfragen',
     };
   }
 }
