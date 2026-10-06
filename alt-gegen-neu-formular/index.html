@@ -381,7 +381,18 @@
     [data-rsp~="qwrap"]{padding:24px 18px 22px !important;border-radius:14px !important;}
     [data-rsp~="qwrap"] h2{font-size:25px !important;}
   }
-  </style>
+  
+  /* Kontakt-Schritt v3 */
+  [data-rsp~="qwrap"] [data-rsp~="kc-ticket"] h3,[data-rsp~="kc-ticket"] h3{color:#ffffff !important;font-size:27px !important;line-height:1.15 !important;max-width:none !important;}
+  @media (max-width:640px){
+    [data-rsp~="kc-ticket"]{grid-template-columns:1fr !important;padding:20px 18px !important;}
+    [data-rsp~="qwrap"] [data-rsp~="kc-ticket"] h3,[data-rsp~="kc-ticket"] h3{font-size:23px !important;padding-right:74px;}
+    [data-rsp~="kc-30"]{position:absolute;top:14px;right:14px;width:70px !important;height:70px !important;}
+    [data-rsp~="kc-30"] b{font-size:25px !important;}
+    [data-rsp~="kc-vt"]{flex-direction:column !important;gap:6px !important;}
+    [data-rsp~="kc-person"] img{width:54px !important;height:54px !important;}
+  }
+</style>
 </helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#034EA3"></rect><rect x="28" y="30" width="44" height="8" rx="4" fill="#fff"></rect><rect x="28" y="46" width="44" height="8" rx="4" fill="#fff" opacity="0.7"></rect><rect x="28" y="62" width="44" height="8" rx="4" fill="#E30613"></rect></svg></template>
 <div style="min-height:100vh;display:flex;flex-direction:column;">
@@ -511,7 +522,7 @@
       </div>
       <div style="display:flex;align-items:flex-start;gap:12px;max-width:720px;width:100%;margin:0 auto;padding:14px 16px;border-radius:12px;background:#eef8f2;color:#14774a;box-sizing:border-box;">
         <span style="flex:none;margin-top:1px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
-        <span style="font-size:15px;line-height:1.5;color:#1c3a2c;"><b style="color:#14774a;">Gerne planen wir mit Ihnen kostenfrei zusammen</b> und prüfen Ihr Angebot kostenfrei, abgestimmt auf Ihre Angaben im Formular.</span>
+        <span style="font-size:15px;line-height:1.5;color:#1c3a2c;"><b style="color:#14774a;">Gerne planen wir mit Ihnen kostenfrei zusammen</b> und prüfen Ihr Angebot, abgestimmt auf Ihre Angaben im Formular. Mit unserer Aktion <b style="color:#14774a;">Alt gegen Neu</b> erhalten Sie zusätzlich bis zu 4.000&nbsp;€ Tauschprämie für Ihre alte Küche.*</span>
       </div>
       <div data-rsp="qnav" style="display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:stretch;margin-top:4px;max-width:720px;width:100%;margin-left:auto;margin-right:auto;">
         <button onClick="{{ goBack }}" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1.5px solid #dfe5ee;border-radius:12px;padding:18px 24px;cursor:pointer;font-family:var(--font-sans);font-size:16px;font-weight:600;color:#101d33;">←&nbsp;Zurück</button>
@@ -771,37 +782,28 @@
       <button type="button" onClick="{{ goBack }}" style="align-self:center;background:none;border:0;padding:6px 10px;cursor:pointer;font-family:var(--font-sans);font-size:14.5px;font-weight:600;color:#5a6478;">‹&nbsp;Zurück</button>
     </sc-if>
     <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
-      <div data-rsp="kontakt-card" style="width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px;">
-        <div data-rsp="kh" style="display:block;">
-          <div data-rsp="kt-div" style="display:flex;align-items:center;gap:14px;margin:0 0 18px;">
-            <span aria-hidden="true" style="flex:1;height:1px;background:#dfe5ee;"></span>
-            <span style="display:flex;flex-direction:column;align-items:center;gap:4px;">
-              <span data-rsp="kt-tag" style="display:block;font-weight:800;font-size:20px;letter-spacing:-0.01em;color:#101d33;line-height:1;white-space:nowrap;">Alt gegen <i style="font-style:normal;font-family:'Caveat',cursive;font-size:24px;line-height:1;color:#ff4a55;">Neu!</i></span>
-              <span style="font-size:11.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#034EA3;white-space:nowrap;">Jetzt kostenfrei anmelden</span>
-            </span>
-            <span aria-hidden="true" style="flex:1;height:1px;background:#dfe5ee;"></span>
+      <div data-rsp="kc" style="max-width:720px;width:100%;margin:0 auto;display:flex;flex-direction:column;gap:22px;text-align:left;">
+        <div data-rsp="kc-ticket" style="position:relative;background:#034EA3;color:#fff;border-radius:16px;padding:22px 24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;box-shadow:0 24px 48px -30px rgba(3,78,163,0.75);">
+          <div style="display:flex;flex-direction:column;gap:10px;min-width:0;">
+            <span style="font-weight:800;font-size:17px;letter-spacing:-0.01em;line-height:1;white-space:nowrap;color:#fff;">Alt gegen <i style="font-style:normal;font-family:'Caveat',cursive;font-size:23px;line-height:1;color:#fff;">Neu!</i></span>
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:800;font-size:27px;line-height:1.15;letter-spacing:-0.02em;color:#fff;text-wrap:balance;">Sichern Sie sich Ihren Aktionsplatz und planen Sie Ihre neue Küche.</h3>
+            <div data-rsp="kc-vt" style="display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:#e2ecf9;margin-top:2px;">
+              <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M5 12.5 10 17.5 19 7.5"/></svg><span>Bis zu <b style="color:#fff;">4.000&nbsp;€</b> Tauschprämie*</span></span>
+              <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M5 12.5 10 17.5 19 7.5"/></svg><span>Abbau &amp; Mitnahme kostenfrei</span></span>
+              <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M5 12.5 10 17.5 19 7.5"/></svg><span><b style="color:#fff;">0&nbsp;%</b> bis 60 Monate¹</span></span>
+            </div>
           </div>
-          <figure data-rsp="berater-fig" style="float:right;margin:0 0 10px 18px;width:132px;text-align:center;"><img src="/assets/team/berater-telefon.webp" alt="Ihr Küchenberater bei Hugelmann" loading="lazy" style="display:block;width:112px;height:112px;margin:0 auto 8px;border-radius:50%;object-fit:cover;object-position:center 22%;shape-outside:circle(50%);box-shadow:0 14px 30px -16px rgba(16,29,51,0.45);"><figcaption style="display:flex;flex-direction:column;gap:1px;line-height:1.3;"><b style="font-size:14px;font-weight:700;color:#101d33;">Herr Krüger</b><a href="tel:+497821965773" style="font-size:13.5px;color:#034EA3;text-decoration:none;white-space:nowrap;">07821 965773</a></figcaption></figure>
-          
-          <h3 style="margin:0;font-family:var(--font-display);font-weight:var(--fw-bold);font-size:28px;line-height:1.2;color:#101d33;letter-spacing:var(--ls-tight);text-align:left;">Jetzt einen von <span style="color:#E30613;">30 freien Plätzen</span> sichern, Vorteile mitnehmen und Ihre Küche planen</h3>
-          <span style="max-width:none;display:block;margin-top:8px;font-size:14.5px;line-height:1.5;color:#5a6478;text-align:left;">Wir melden uns innerhalb von 24 Stunden für Ihren kostenfreien Planungstermin, von unserer Festnetznummer.</span>
-          <div data-rsp="next3" style="clear:both;position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px;padding-top:2px;">
-            <span aria-hidden="true" style="position:absolute;left:16.6%;right:16.6%;top:19px;border-top:2px dashed #cfdbec;"></span>
-            <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;">
-              <span style="width:38px;height:38px;border-radius:50%;background:#034EA3;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px #fff;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
-              <span style="display:flex;flex-direction:column;gap:1px;"><b style="font-size:14px;font-weight:700;line-height:1.25;color:#101d33;">Formular ausfüllen</b><span style="font-size:12.5px;line-height:1.35;color:#5a6478;">unverbindlich</span></span>
-            </div>
-            <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;">
-              <span style="width:38px;height:38px;border-radius:50%;background:#fff;border:2px solid #034EA3;color:#034EA3;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px #fff;box-sizing:border-box;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.3 15.3 8.7 2.7a1 1 0 0 0-1.4 0L2.7 7.3a1 1 0 0 0 0 1.4l12.6 12.6a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4z"/><path d="m7.5 10.5 2-2M10.5 13.5l2-2M13.5 16.5l2-2"/></svg></span>
-              <span style="display:flex;flex-direction:column;gap:1px;"><b style="font-size:14px;font-weight:700;line-height:1.25;color:#101d33;">Planung in Lahr</b><span style="font-size:12.5px;line-height:1.35;color:#5a6478;">kostenfrei &amp; in 3D</span></span>
-            </div>
-            <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;">
-              <span style="width:38px;height:38px;border-radius:50%;background:#fff;border:2px solid #E30613;color:#E30613;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px #fff;box-sizing:border-box;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
-              <span style="display:flex;flex-direction:column;gap:1px;"><b style="font-size:14px;font-weight:700;line-height:1.25;color:#101d33;">Prämie sichern</b><span style="font-size:12.5px;line-height:1.35;color:#5a6478;">bis zu 4.000&nbsp;€*</span></span>
-            </div>
+          <div data-rsp="kc-30" aria-label="Begrenzt auf 30 Plätze" style="flex:none;width:96px;height:96px;border-radius:50%;background:#fff;color:#034EA3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-6deg);">
+            <span style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;line-height:1;">nur</span>
+            <b style="font-size:34px;font-weight:800;line-height:1;letter-spacing:-0.03em;">30</b>
+            <span style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;line-height:1;">Plätze</span>
           </div>
         </div>
-        <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+        <div data-rsp="kc-person" style="display:flex;align-items:center;gap:14px;">
+          <img src="/assets/team/berater-telefon.webp" alt="Herr Krüger, Küchenberater bei Hugelmann" loading="lazy" style="flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 22%;box-shadow:0 0 0 4px #eef4fb;">
+          <p style="margin:0;font-size:15px;line-height:1.5;color:#3c4557;"><b style="color:#101d33;">Herr Krüger</b> meldet sich innerhalb von 24 Stunden bei Ihnen, von unserer Festnetznummer <a href="tel:+497821965773" style="color:#034EA3;font-weight:600;text-decoration:none;white-space:nowrap;">07821 965773</a>.</p>
+        </div>
+        <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;">
           <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" name="vorname" autoComplete="given-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
           <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" name="nachname" autoComplete="family-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
           <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Telefonnummer" type="tel" placeholder="z.B. 0171 1234567" name="telefon" autoComplete="tel" inputMode="tel" required="{{ true }}" onChange="{{ onTel }}" error="{{ errTel }}" hint-size="100%,72px"></x-import>
@@ -810,28 +812,48 @@
         </sc-if>
           <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Postleitzahl (optional)" placeholder="z.B. 77933" name="plz" autoComplete="postal-code" inputMode="numeric" value="{{ plzValue }}" onChange="{{ onPlz }}" error="{{ errPlz }}" hint-size="100%,72px"></x-import>
         </div>
-        <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13.5px;font-weight:400;line-height:1.5;color:var(--text-muted);background:none;border:0;padding:0;max-width:560px;margin:0 auto;">
-          <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="width:20px;height:20px;margin:1px 0 0;accent-color:var(--hg-blue);cursor:pointer;flex-shrink:0;">
-          <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage und zur Terminvereinbarung kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
-        </label>
-        <sc-if value="{{ errConsent }}" hint-placeholder-val="{{ false }}">
-          <p style="margin:-14px 0 0;font-size:13px;color:var(--hg-red);font-weight:var(--fw-semibold);">Bitte bestätigen Sie die Einwilligung, damit wir Sie anrufen dürfen.</p>
-        </sc-if>
-        <button type="button" data-rsp="cta-final" onClick="{{ submitForm }}" disabled="{{ isSending }}" style="display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:62px;padding:14px 22px;border:0;border-radius:12px;background:#E30613;color:#fff;cursor:pointer;font-family:var(--font-sans);text-align:center;box-shadow:0 14px 28px -16px rgba(227,6,19,0.65);transition:background 140ms ease-out;" style-hover="background:#c70511;">
-          <span style="display:flex;flex-direction:column;align-items:center;gap:2px;">
-            <span style="font-size:18px;font-weight:800;letter-spacing:-0.01em;line-height:1.2;">{{ submitLabel }}</span>
-            <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.9);">{{ ctaSub }}</span>
-          </span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
-        </button>
-        <div data-rsp="vorteil-g" style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;font-size:13px;color:#3c4557;">
-          <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 6L9 17l-5-5"></path></svg><span style="max-width:none;">Bis zu <b style="font-weight:700;color:#101d33;">4.000&nbsp;€</b> Tauschprämie*</span></span>
-          <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 6L9 17l-5-5"></path></svg><span style="max-width:none;">Abbau &amp; Mitnahme <b style="font-weight:700;color:#101d33;">kostenfrei</b></span></span>
-          <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 6L9 17l-5-5"></path></svg><span style="max-width:none;"><b style="font-weight:700;color:#101d33;">0&nbsp;%</b> Finanzierung bis 60 Monate¹</span></span>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <label data-rsp="consentbox" style="display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13.5px;line-height:1.5;color:#5a6478;">
+            <input type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" style="flex:none;width:20px;height:20px;margin:1px 0 0;accent-color:#034EA3;cursor:pointer;">
+            <span>Ja, Interliving Hugelmann darf mich telefonisch zu meiner Anfrage und zur Terminvereinbarung kontaktieren. Meine Daten werden vertraulich behandelt und nicht weitergegeben.&nbsp;*</span>
+          </label>
+          <sc-if value="{{ errConsent }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:13.5px;font-weight:600;color:#E30613;">Bitte bestätigen Sie die Einwilligung, damit wir Sie anrufen dürfen.</p>
+          </sc-if>
+          <button type="button" data-rsp="cta-final" onClick="{{ submitForm }}" disabled="{{ isSending }}" style="display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:62px;padding:14px 22px;border:0;border-radius:12px;background:#E30613;color:#fff;cursor:pointer;font-family:var(--font-sans);text-align:center;box-shadow:0 14px 28px -16px rgba(227,6,19,0.65);transition:background 140ms ease-out;" style-hover="background:#c70511;">
+            <span style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+              <span style="font-size:18px;font-weight:800;letter-spacing:-0.01em;line-height:1.2;">{{ submitLabel }}</span>
+              <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.9);">{{ ctaSub }}</span>
+            </span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
+          </button>
+          <p style="display:flex;align-items:flex-start;justify-content:center;gap:8px;margin:0;font-size:13px;line-height:1.5;color:#5a6478;text-align:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Einmalige Kontaktaufnahme zu Ihrer Anfrage. Keine Werbeanrufe, keine Weitergabe an Dritte.</span></p>
         </div>
-        <p style="display:flex;align-items:flex-start;justify-content:center;gap:7px;margin:0;padding-top:14px;border-top:1px solid #edf1f6;font-size:12.5px;line-height:1.5;color:#5a6478;text-align:left;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span style="max-width:none;">Einmalige Kontaktaufnahme zu Ihrer Anfrage. Keine Werbeanrufe, keine Weitergabe an Dritte. Inspirationen nur, wenn Sie Ihre E-Mail angeben.</span></p>
+        <div style="border-top:1px solid #dfe5ee;padding-top:20px;">
+          <span style="display:block;text-align:center;font-size:11.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#5a6478;margin-bottom:14px;">So geht es weiter</span>
+          <div style="position:relative;">
+            <span aria-hidden="true" style="position:absolute;left:16.66%;right:16.66%;top:14px;height:2px;background:#dfe5ee;"></span>
+            <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;">
+            <li style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;z-index:1;">
+              <span style="box-sizing:border-box;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;background:#034EA3;color:#fff;box-shadow:0 0 0 5px #e6eef9;">1</span>
+              <b style="font-size:14px;font-weight:700;color:#101d33;line-height:1.25;">Formular senden</b>
+              <span style="font-size:12.5px;color:#5a6478;line-height:1.3;">jetzt, unverbindlich</span>
+            </li>
+            <li style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;z-index:1;">
+              <span style="box-sizing:border-box;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;background:#fff;color:#034EA3;border:2px solid #c9d7ea;">2</span>
+              <b style="font-size:14px;font-weight:700;color:#101d33;line-height:1.25;">Planung in Lahr</b>
+              <span style="font-size:12.5px;color:#5a6478;line-height:1.3;">kostenfrei &amp; in 3D</span>
+            </li>
+            <li style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;position:relative;z-index:1;">
+              <span style="box-sizing:border-box;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;background:#fff;color:#034EA3;border:2px solid #c9d7ea;">3</span>
+              <b style="font-size:14px;font-weight:700;color:#101d33;line-height:1.25;">Prämie sichern</b>
+              <span style="font-size:12.5px;color:#5a6478;line-height:1.3;">bis zu 4.000&nbsp;€*</span>
+            </li>
+            </ol>
+          </div>
+        </div>
       </div>
-      <button type="button" onClick="{{ goBack }}" style="align-self:center;background:none;border:0;padding:6px 10px;cursor:pointer;font-family:var(--font-sans);font-size:14.5px;font-weight:600;color:#5a6478;">‹&nbsp;Zurück</button>
+      <button type="button" onClick="{{ goBack }}" style="align-self:center;background:none;border:0;padding:6px 10px;cursor:pointer;font-family:var(--font-sans);font-size:15px;font-weight:600;color:#5a6478;">‹&nbsp;Zurück</button>
     </sc-if>
   </div>
 
@@ -857,7 +879,7 @@
 class Component extends DCLogic {
   state = { pos: 0, plzFromLp: false, gebietOut: false, answers: {}, galIdx: 0, katalog: null, modulOffen: false, ringFertig: false, hilfe: [], uploads: [], nachricht: '', form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
   shorts = { phase: 'Planungsstand', angebot: 'Angebot', hilfe: 'Ihr Angebot', unterlagen: 'Unterlagen', details: 'Ihre Angaben', inspfrage: 'Inspiration', match: 'Passende Küchen', vorschlag: 'Ihr Küchenvorschlag', mail: 'E-Mail', form: 'Küchenform', alt: 'Alte Küche', alter: 'Alte Küche', stil: 'Küchenstil', farbe: 'Farbwelt', budget: 'Budget', zeit: 'Zeitpunkt' };
-  stepNo = { phase: 1, angebot: 1.1, hilfe: 1.2, unterlagen: 1.3, details: 4.5, form: 2, stil: 3, farbe: 4, budget: 5, alt: 6, alter: 6.5, zeit: 7, inspfrage: 7.4, match: 7.5, vorschlag: 7.6, mail: 7.7, kontakt: 8 };
+  stepNo = { angebot: 1, hilfe: 1.5, form: 2, stil: 3, farbe: 4, details: 5, budget: 6, alt: 7, alter: 7.5, kontakt: 8, phase: 0, unterlagen: 0, zeit: 0, inspfrage: 0, match: 0, vorschlag: 0, mail: 0 };
   hilfeLabels = ['Der Preis ist mir zu hoch', 'Die Planung passt noch nicht', 'Geräte oder Ausstattung passen nicht', 'Ich hätte gern eine zweite Meinung', 'Die Lieferzeit ist mir zu lang', 'Ich habe mich nicht gut beraten gefühlt'];
   KW = { phase: 'Küchenplanung', angebot: 'Angebot', form: 'Küchenform', stil: 'Küchenstil', farbe: 'Farbwelt', budget: 'Budget', alt: 'alte Küche', alter: 'Küche', zeit: 'neue Küche' };
   Q = {
@@ -874,9 +896,7 @@ class Component extends DCLogic {
   };
   flow(ans) {
     const a = ans || this.state.answers;
-    if (a.phase === 1 && a.angebot === 0) return ['phase', 'angebot', 'hilfe', 'unterlagen', 'kontakt'];
-    if (a.phase === 1) return ['phase', 'angebot'].concat(a.angebot === 0 ? ['hilfe'] : [], ['form', 'stil', 'farbe', 'details', 'budget', 'alt']).concat(a.alt === 0 ? ['alter'] : [], ['zeit'], this.inspBlock(a), ['kontakt']);
-    return ['phase', 'form', 'stil', 'farbe', 'budget', 'alt'].concat(a.alt === 0 ? ['alter'] : [], ['zeit'], this.inspBlock(a), ['kontakt']);
+    return ['angebot'].concat(a.angebot === 0 ? ['hilfe'] : [], this.state.formFromLp ? [] : ['form'], ['stil', 'farbe', 'details', 'budget', 'alt'], a.alt === 0 ? ['alter'] : [], ['kontakt']);
   }
   inspBlock(a) { if (!(this.state.katalog && this.state.katalog.kuechen && this.state.katalog.kuechen.length)) return ['match']; return ['inspfrage'].concat(a.inspfrage === 1 ? [] : ['match'].concat(this.inspSteps(a))); }
   inspSteps(a) { if (!(this.state.katalog && this.state.katalog.kuechen && this.state.katalog.kuechen.length)) return []; return ['vorschlag'].concat(a.vorschlag === 0 ? ['mail'] : []); }
@@ -1126,8 +1146,6 @@ class Component extends DCLogic {
   }
   componentDidMount() {
     setTimeout(() => this.applyAutofill(), 300);
-    fetch('/assets/kuechen.json').then(r => r.ok ? r.json() : Promise.reject(r.status)).then(d => this.setState({ katalog: d })).catch(() => this.setState({ katalog: null }));
-    let startAt = 'form';
     try {
       var sp = new URLSearchParams(location.search);
       var qp = sp.get('plz');
@@ -1137,12 +1155,11 @@ class Component extends DCLogic {
       var kf = parseInt(sp.get('kf'), 10);
       if (kf >= 0 && kf < this.Q.form.options.length) {
         this.setState(s => ({ answers: { ...s.answers, form: kf }, pos: 0, formFromLp: true }));
-        this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: 1, step_name: this.stepName('form'), answer: this.Q.form.options[kf], source: 'lp_teaser' });
-        startAt = 'phase';
+        this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.form, step_name: this.stepName('form'), answer: this.Q.form.options[kf], source: 'lp_teaser' });
       }
     } catch (e) {}
     this.ga('funnel_start', { funnel: 'alt_gegen_neu' });
-    this.trackStep(startAt);
+    setTimeout(() => this.trackStep(this.curId()), 0);
   }
   fb(name, params) {
     // Meta Custom Event (Events Manager); fbq-Stub queued auch vor Skript-Load
@@ -1374,7 +1391,7 @@ class Component extends DCLogic {
       hilfeNext: () => { this.ga('funnel_answer', { funnel: 'alt_gegen_neu', step_number: this.stepNo.hilfe, step_name: this.stepName('hilfe'), answer: hilfeSel.join(', ') || 'keine Auswahl' }); this.setState(s => ({ pos: s.pos + 1 }), () => this.trackStep(this.curId())); },
       showDetails: isDetails,
       dT1: 'Möchten Sie noch weitere Angaben zu Ihrer ', dT2: ' machen?',
-      dSub: hasOffer ? 'Laden Sie Ihr Angebot gern direkt hoch, wir prüfen es kostenfrei. Alles freiwillig, Sie können auch einfach weiter.' : 'Fotos, Grundriss oder ein paar Worte helfen Ihrem Berater bei der Vorbereitung. Alles freiwillig, Sie können auch einfach weiter.',
+      dSub: 'Fotos, ein Grundriss, ein vorhandenes Angebot oder ein paar Worte helfen Ihrem Berater bei der Vorbereitung. Alles freiwillig, Sie können auch einfach weiter.',
       upLabel: hasOffer ? 'Angebot oder Fotos hochladen' : 'Fotos oder Grundriss hochladen',
       detailGroups: [],
       nachricht: this.state.nachricht || '',
