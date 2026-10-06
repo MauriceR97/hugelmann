@@ -390,7 +390,6 @@
     [data-rsp~="kc-30"]{position:absolute;top:14px;right:14px;width:70px !important;height:70px !important;}
     [data-rsp~="kc-30"] b{font-size:25px !important;}
     [data-rsp~="kc-vt"]{flex-direction:column !important;gap:6px !important;}
-    [data-rsp~="kc-person"] img{width:54px !important;height:54px !important;}
   }
 </style>
 </helmet>
@@ -799,10 +798,6 @@
             <span style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5a6478;line-height:1;">Plätze</span>
           </div>
         </div>
-        <div data-rsp="kc-person" style="display:flex;align-items:center;gap:14px;">
-          <img src="/assets/team/berater-telefon.webp" alt="Herr Krüger, Küchenberater bei Hugelmann" loading="lazy" style="flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 22%;box-shadow:0 0 0 4px #eef4fb;">
-          <p style="margin:0;font-size:15px;line-height:1.5;color:#3c4557;"><b style="color:#101d33;">Herr Krüger</b> meldet sich innerhalb von 24 Stunden bei Ihnen, von unserer Festnetznummer <a href="tel:+497821965773" style="color:#034EA3;font-weight:600;text-decoration:none;white-space:nowrap;">07821 965773</a>.</p>
-        </div>
         <div data-rsp="split" style="display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;">
           <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Vorname" placeholder="Ihr Vorname" name="vorname" autoComplete="given-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onVorname }}" error="{{ errVorname }}" hint-size="100%,72px"></x-import>
           <x-import component-from-global-scope="HugelmannDesignSystem_eafd78.Input" label="Nachname" placeholder="Ihr Nachname" name="nachname" autoComplete="family-name" autoCapitalize="words" required="{{ true }}" onChange="{{ onNachname }}" error="{{ errNachname }}" hint-size="100%,72px"></x-import>
@@ -828,6 +823,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
           </button>
           <p style="display:flex;align-items:flex-start;justify-content:center;gap:8px;margin:0;font-size:13px;line-height:1.5;color:#5a6478;text-align:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1d9e5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Einmalige Kontaktaufnahme zu Ihrer Anfrage. Keine Werbeanrufe, keine Weitergabe an Dritte.</span></p>
+          <p style="margin:2px 0 0;text-align:center;font-size:14px;line-height:1.5;color:#3c4557;">Noch Fragen? Rufen Sie uns an: <a href="tel:+497821965773" style="color:#034EA3;font-weight:700;text-decoration:none;white-space:nowrap;">07821 965773</a></p>
         </div>
         <div style="border-top:1px solid #dfe5ee;padding-top:20px;">
           <span style="display:block;text-align:center;font-size:11.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#5a6478;margin-bottom:14px;">So geht es weiter</span>
