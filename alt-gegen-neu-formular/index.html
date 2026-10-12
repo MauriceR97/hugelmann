@@ -409,15 +409,6 @@
         </span>
       </div>
       <a href="/alt-gegen-neu/" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:14.5px;color:#cfe0f6;text-decoration:none;"><span aria-hidden="true">‹</span>Zurück zur Aktion</a>
-      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:12px;">
-        <b style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:12.5px;color:#fff;white-space:nowrap;">{{ stepOf }}</b>
-        <span style="font-size:13px;color:#cfe0f6;white-space:nowrap;">{{ stepName }}</span>
-      </div>
-      <div aria-hidden="true" style="display:flex;gap:6px;margin-top:9px;">
-        <sc-for list="{{ progSegs }}" as="sg" hint-placeholder-count="6">
-          <i style="flex:1;height:6px;border-radius:999px;background:{{ sg.bg }};transition:background 260ms cubic-bezier(0.23,1,0.32,1);"></i>
-        </sc-for>
-      </div>
     </div>
   </header>
   <div data-rsp="gbar" style="border-bottom:1px solid var(--border-subtle);background:#fff;">
@@ -790,7 +781,7 @@
         <div data-rsp="kc-ticket" style="position:relative;background:#034EA3;color:#fff;border-radius:16px;padding:22px 24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;box-shadow:0 24px 48px -30px rgba(3,78,163,0.75);">
           <div style="display:flex;flex-direction:column;gap:10px;min-width:0;">
             <span style="font-weight:800;font-size:17px;letter-spacing:-0.01em;line-height:1;white-space:nowrap;color:#fff;">Alt gegen <i style="font-style:normal;font-family:'Caveat',cursive;font-size:23px;line-height:1;color:#fff;">Neu!</i></span>
-            <h3 style="margin:0;font-family:var(--font-display);font-weight:800;font-size:27px;line-height:1.15;letter-spacing:-0.02em;color:#fff;text-wrap:balance;">Sichern Sie sich Ihren Aktionsplatz und planen Sie Ihre neue Küche.</h3>
+            <h3 style="margin:0;font-family:var(--font-display);font-weight:800;font-size:27px;line-height:1.15;letter-spacing:-0.02em;color:#fff;text-wrap:balance;">Jetzt Ihre persönliche Tauschprämie von bis zu 4.000&nbsp;€ anfragen.</h3>
             <div data-rsp="kc-vt" style="display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:#e2ecf9;margin-top:2px;">
               <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M5 12.5 10 17.5 19 7.5"/></svg><span>Bis zu <b style="color:#fff;">4.000&nbsp;€</b> Tauschprämie*</span></span>
               <span style="display:inline-flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M5 12.5 10 17.5 19 7.5"/></svg><span>Abbau &amp; Mitnahme kostenfrei</span></span>
@@ -854,7 +845,6 @@
           </div>
         </div>
       </div>
-      <button type="button" onClick="{{ goBack }}" style="align-self:center;background:none;border:0;padding:6px 10px;cursor:pointer;font-family:var(--font-sans);font-size:15px;font-weight:600;color:#5a6478;">‹&nbsp;Zurück</button>
     </sc-if>
   </div>
 
@@ -880,7 +870,7 @@
 class Component extends DCLogic {
   state = { pos: 0, plzFromLp: false, gebietOut: false, answers: {}, galIdx: 0, katalog: null, modulOffen: false, ringFertig: false, hilfe: [], uploads: [], nachricht: '', form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
   shorts = { phase: 'Planungsstand', angebot: 'Angebot', hilfe: 'Ihr Angebot', unterlagen: 'Unterlagen', details: 'Ihre Angaben', inspfrage: 'Inspiration', match: 'Passende Küchen', vorschlag: 'Ihr Küchenvorschlag', mail: 'E-Mail', form: 'Küchenform', alt: 'Alte Küche', alter: 'Alte Küche', stil: 'Küchenstil', farbe: 'Farbwelt', budget: 'Budget', zeit: 'Zeitpunkt' };
-  stepNo = { angebot: 1, hilfe: 1.5, form: 2, stil: 3, farbe: 4, details: 5, budget: 6, alt: 7, alter: 7.5, kontakt: 8, phase: 0, unterlagen: 0, zeit: 0, inspfrage: 0, match: 0, vorschlag: 0, mail: 0 };
+  stepNo = { angebot: 1, hilfe: 1.5, form: 2, stil: 3, farbe: 4, details: 5, budget: 6, alt: 7, alter: 7.5, kontakt: 1, phase: 0, unterlagen: 0, zeit: 0, inspfrage: 0, match: 0, vorschlag: 0, mail: 0 };
   hilfeLabels = ['Der Preis ist mir zu hoch', 'Die Planung passt noch nicht', 'Geräte oder Ausstattung passen nicht', 'Ich hätte gern eine zweite Meinung', 'Die Lieferzeit ist mir zu lang', 'Ich habe mich nicht gut beraten gefühlt'];
   KW = { phase: 'Küchenplanung', angebot: 'Angebot', form: 'Küchenform', stil: 'Küchenstil', farbe: 'Farbwelt', budget: 'Budget', alt: 'alte Küche', alter: 'Küche', zeit: 'neue Küche' };
   Q = {
@@ -896,8 +886,7 @@ class Component extends DCLogic {
     zeit: { title: 'Wann soll Ihre neue Küche stehen?', sub: 'Ganz unverbindlich, Sie bestimmen das Tempo.', options: ['So bald wie möglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Später, ich plane in Ruhe'] },
   };
   flow(ans) {
-    const a = ans || this.state.answers;
-    return ['angebot'].concat(a.angebot === 0 ? ['hilfe'] : [], this.state.formFromLp ? [] : ['form'], ['stil', 'farbe', 'details', 'budget', 'alt'], a.alt === 0 ? ['alter'] : [], ['kontakt']);
+    return ['kontakt'];
   }
   inspBlock(a) { if (!(this.state.katalog && this.state.katalog.kuechen && this.state.katalog.kuechen.length)) return ['match']; return ['inspfrage'].concat(a.inspfrage === 1 ? [] : ['match'].concat(this.inspSteps(a))); }
   inspSteps(a) { if (!(this.state.katalog && this.state.katalog.kuechen && this.state.katalog.kuechen.length)) return []; return ['vorschlag'].concat(a.vorschlag === 0 ? ['mail'] : []); }
