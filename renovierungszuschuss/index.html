@@ -3323,6 +3323,10 @@ h1 em,h2 em,.v9-head h2 em{font-style:normal;font-family:'Caveat',cursive;font-w
   .rkx-big{margin-top:0 !important;}
   .rkx-big b{font-size:96px !important;}
 }
+
+/* Mobil-Fixes 2 */
+.v10h h1{color:#034EA3 !important;}
+@media (max-width:860px){ .rkx-big--s b{font-size:clamp(34px,11vw,44px) !important;letter-spacing:-0.035em !important;white-space:nowrap;} .rkx-in{overflow:hidden;} }
 </style>
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -4198,7 +4202,7 @@ function play(){load();var p=v.play();if(p&&p.catch)p.catch(function(){btn.inner
 function pause(){v.pause();btn.innerHTML=PL;btn.setAttribute('aria-label','Video abspielen');}
 btn.addEventListener('click',function(){user=true;if(v.paused){play();try{if(window.gtag)gtag('event','hero_video_play',{funnel:'renovierungszuschuss'});}catch(e){}try{if(window.va)va('event',{name:'hero_video_play'});}catch(e){}}else pause();});
 if(low||rm){btn.innerHTML=PL;btn.setAttribute('aria-label','Video abspielen');return;}
-var start=function(){play();if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(user&&v.paused)return;if(e.isIntersecting)play();else v.pause();});},{threshold:0.25}).observe(v);}};
+var start=function(){if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(user&&v.paused)return;if(e.isIntersecting&&e.intersectionRatio>=0.5)play();else if(!e.isIntersecting||e.intersectionRatio<0.2)v.pause();});},{threshold:[0,0.2,0.5,0.8]}).observe(v);}else play();};
 if(document.readyState==='complete')setTimeout(start,300);else window.addEventListener('load',function(){setTimeout(start,300);});})();
 </script>
 
