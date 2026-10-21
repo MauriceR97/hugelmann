@@ -3325,8 +3325,84 @@ h1 em,h2 em,.v9-head h2 em{font-style:normal;font-family:'Caveat',cursive;font-w
 }
 
 /* Mobil-Fixes 2 */
-.v10h h1{color:#034EA3 !important;}
 @media (max-width:860px){ .rkx-big--s b{font-size:clamp(34px,11vw,44px) !important;letter-spacing:-0.035em !important;white-space:nowrap;} .rkx-in{overflow:hidden;} }
+
+/* ===== Prospekt ===== */
+.pk{padding:96px 0;background:#eaf1fb;overflow:hidden;}
+.pk-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.9fr);gap:64px;align-items:center;}
+.pk-txt h2{margin:12px 0 0;font-size:clamp(30px,3.8vw,46px);line-height:1.08;font-weight:800;letter-spacing:-0.03em;color:#101d33;text-wrap:balance;}
+.pk-txt h2 em{font-style:normal;font-family:'Caveat',cursive;font-weight:700;color:#034EA3;font-size:1.18em;letter-spacing:0;}
+.pk-txt > p{margin:16px 0 0;font-size:17px;line-height:1.6;color:#3c4557;max-width:500px;text-wrap:pretty;}
+.pk-pts{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:0;}
+.pk-pts li{display:flex;flex-direction:column;gap:2px;padding:0 22px;border-left:1px solid #c9d7ea;}
+.pk-pts li:first-child{padding-left:0;border-left:0;}
+.pk-pts b{font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#034EA3;line-height:1.1;}
+.pk-pts span{font-size:13px;color:#5a6478;}
+.pk-btns{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:30px;}
+.pk-btns .v9-btn{cursor:pointer;font-family:inherit;}
+.pk-lnk{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15.5px;color:#034EA3;text-decoration:none;}
+.pk-lnk svg{transition:transform 200ms cubic-bezier(0.23,1,0.32,1);}
+@media (hover:hover) and (pointer:fine){ .pk-lnk:hover{color:#101d33;} .pk-lnk:hover svg{transform:translateX(3px);} }
+.pk-vis{position:relative;display:block;width:min(100%,420px);aspect-ratio:3/4;margin:0 auto;padding:0;border:0;background:none;cursor:pointer;font:inherit;}
+.pk-pg,.pk-cov{position:absolute;inset:0;border-radius:6px 14px 14px 6px;}
+.pk-pg{background:#fff;box-shadow:0 18px 40px -26px rgba(16,29,51,0.45);transition:transform 420ms cubic-bezier(0.23,1,0.32,1);}
+.pk-pg3{transform:rotate(7deg) translate(26px,6px);background:#f4f6f9;}
+.pk-pg2{transform:rotate(3.5deg) translate(13px,3px);}
+.pk-cov{overflow:hidden;background:#101d33;box-shadow:0 40px 80px -40px rgba(16,29,51,0.7),inset 6px 0 10px -6px rgba(0,0,0,0.35);transform:rotate(-2deg);transition:transform 420ms cubic-bezier(0.23,1,0.32,1);}
+.pk-cov > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.pk-cov::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,16,28,0.62) 0%,rgba(10,16,28,0) 38%,rgba(10,16,28,0) 70%,rgba(10,16,28,0.35) 100%);}
+.pk-cov::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;z-index:2;background:linear-gradient(90deg,rgba(0,0,0,0.25),rgba(0,0,0,0));}
+.pk-cov-t{position:absolute;left:26px;right:26px;top:26px;z-index:3;display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;color:#fff;}
+.pk-logo{width:120px;height:auto;margin-bottom:16px;}
+.pk-cov-t b{font-size:30px;font-weight:800;letter-spacing:-0.025em;line-height:1.05;}
+.pk-cov-t small{font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;opacity:0.9;}
+.pk-badge{position:absolute;right:20px;bottom:22px;z-index:3;width:104px;height:104px;border-radius:50%;background:#E30613;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-8deg);box-shadow:0 14px 28px -14px rgba(227,6,19,0.7);}
+.pk-badge small{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;line-height:1.1;}
+.pk-badge b{font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;}
+.pk-hint{position:absolute;left:50%;bottom:-46px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-size:13.5px;font-weight:600;color:#034EA3;}
+@media (hover:hover) and (pointer:fine){
+  .pk-vis:hover .pk-cov{transform:rotate(-3.5deg) translateY(-6px);}
+  .pk-vis:hover .pk-pg2{transform:rotate(6deg) translate(22px,2px);}
+  .pk-vis:hover .pk-pg3{transform:rotate(11deg) translate(42px,4px);}
+}
+.pk-vis:focus-visible{outline:3px solid #034EA3;outline-offset:10px;border-radius:14px;}
+.pk-modal{position:fixed;inset:0;z-index:200;background:#101d33;display:flex;}
+.pk-modal[hidden]{display:none;}
+.pk-modal iframe{flex:1;width:100%;height:100%;border:0;background:#E4E7EB;opacity:0;transition:opacity 260ms ease;}
+.pk-modal.ok iframe{opacity:1;}
+.pk-x{position:absolute;top:14px;right:14px;z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:#101d33;font-size:26px;line-height:1;cursor:pointer;box-shadow:0 8px 20px -8px rgba(0,0,0,0.5);}
+.pk-load{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;border:3px solid rgba(255,255,255,0.25);border-top-color:#fff;animation:pkspin 800ms linear infinite;}
+.pk-modal.ok .pk-load{display:none;}
+@keyframes pkspin{to{transform:rotate(360deg);}}
+@media (prefers-reduced-motion: reduce){ .pk-pg,.pk-cov{transition:none;} .pk-load{animation:none;} }
+@media (max-width:980px){
+  .pk{padding:60px 0 84px;}
+  .pk-g{grid-template-columns:1fr;gap:40px;}
+  .pk-vis{margin-bottom:34px;}
+  .pk-vis{width:min(78%,320px);order:-1;}
+  .pk-cov-t{left:18px;right:18px;top:18px;}
+  .pk-logo{width:92px;margin-bottom:10px;}
+  .pk-cov-t b{font-size:23px;}
+  .pk-badge{width:84px;height:84px;right:14px;bottom:16px;}
+  .pk-badge b{font-size:18px;}
+  .pk-pts li{padding:0 14px;}
+  .pk-pts b{font-size:18px;}
+  .pk-btns .v9-btn{width:100%;}
+}
+
+
+/* Prospekt v2: grau, Text links, Titelseite rechts */
+.pk{background:#f4f6f9;}
+.pk-cov--p{background:#fff;transform:rotate(-2deg);}
+.pk-cov--p::after,.pk-cov--p::before{display:none;}
+.pk-cov.pk-cov--p > img.pkc-logo{position:absolute;inset:6% auto auto 8.5%;width:62%;height:auto;object-fit:contain;}
+.pk-cov.pk-cov--p > img.pkc-btn{inset:20% -3% auto auto;width:31%;height:auto;object-fit:contain;}
+@media (max-width:980px){ .pk-vis{order:0;} .pkc-h{font-size:clamp(16px,4.6vw,22px);} }
+.pkc-h{position:absolute;left:8.5%;right:8.5%;top:16%;font-size:clamp(18px,2.2vw,26px);font-weight:600;line-height:1.1;color:#034EA3;letter-spacing:-0.005em;}
+.pkc-ph{position:absolute;left:5.5%;right:5.5%;top:28%;bottom:8.5%;overflow:hidden;background:#e3e8f1;}
+.pkc-ph img{width:100%;height:100%;object-fit:cover;display:block;}
+.pkc-btn{position:absolute;transform:rotate(12deg);filter:drop-shadow(0 6px 12px rgba(0,0,0,0.3));z-index:3;}
+.pkc-ft{position:absolute;right:5.5%;bottom:3.2%;font-size:9px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#7a8394;}
 </style>
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3360,7 +3436,7 @@ h1 em,h2 em,.v9-head h2 em{font-style:normal;font-family:'Caveat',cursive;font-w
 <section class="v10h">
   <div class="v10-wrap">
     <div class="ort2 rv"><span class="ort2-pin" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg></span><span class="ort2-t">Für den ganzen <b>Ortenaukreis</b></span><span class="ort2-all">Offenburg · Lahr · Kehl · Achern &amp; 47 weitere</span></div>
-    <h1 class="rv"><span class="v10-b">Neue Küche</span> mit Zuschuss.<br>Bis zu 4.000&nbsp;€ für Bauherren &amp; Renovierer.</h1>
+    <h1 class="rv"><span class="v10-b">Neue Küche mit Zuschuss.</span><br>Bis zu 4.000&nbsp;€ für Bauherren &amp; Renovierer.</h1>
     <p class="v10h-sub rv">Renovierungszuschuss von Küchen Hugelmann für den ganzen Ortenaukreis, gestaffelt nach Auftragswert und nur <span class="v10-date">bis 31.12.2026</span>. Dazu Abbau und Mitnahme Ihrer alten Küche, kostenfrei.*</p>
     <p class="v10-rot rv"><span class="v10-sr">Jetzt ist die Zeit für Ihre neue Küche.</span><span aria-hidden="true">Jetzt ist die Zeit für <span class="v10-rot-w" id="v10-rot"><span class="on">Ihre Traumküche.</span></span></span></p>
     <div class="v10-col rv">
@@ -3412,6 +3488,38 @@ h1 em,h2 em,.v9-head h2 em{font-style:normal;font-family:'Caveat',cursive;font-w
       <a class="s12-btn" href="/renovierungszuschuss-formular/" data-cta="schritte"><span>Jetzt Zuschuss beantragen</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a>
       <p>Kostenlos &amp; unverbindlich · nur bis 31.12.2026</p>
     </div>
+  </div>
+</section>
+
+<!-- Prospekt -->
+<section class="pk" id="prospekt">
+  <div class="v10-wrap pk-g">
+    <div class="pk-txt rv">
+      <span class="v9-eb">Unser aktueller Küchenprospekt · gültig bis 30.11.2026</span>
+      <h2>Blättern Sie durch Ihre <em>Traumküche.</em></h2>
+      <p>Ausgewählte Küchen aus unserer Ausstellung, mit Markengeräten von Miele, AEG und Privileg, allen Maßen und Ihrem Renovierungszuschuss von bis zu 4.000&nbsp;€.</p>
+      <div class="pk-btns">
+        <button type="button" class="v9-btn" data-pk-open><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5.5C4.5 4 8 4 12 6c4-2 7.5-2 10-.5V19c-2.5-1.5-6-1.5-10 .5-4-2-7.5-2-10-.5z"/><path d="M12 6v13.5"/></svg>Prospekt durchblättern</button>
+        <a class="pk-lnk" href="/renovierungszuschuss-formular/" data-cta="prospekt">Zuschuss anfragen<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <button type="button" class="pk-vis rv" data-pk-open aria-label="Küchenprospekt öffnen">
+      <span class="pk-pg pk-pg3" aria-hidden="true"></span>
+      <span class="pk-pg pk-pg2" aria-hidden="true"></span>
+      <span class="pk-cov pk-cov--p">
+        <img class="pkc-logo" src="/assets/prospekt/cover-logo.webp" alt="Interliving Küchen Hugelmann" loading="lazy" decoding="async">
+        <b class="pkc-h">Ihre neue Traumküche</b>
+        <span class="pkc-ph"><img src="/assets/prospekt/cover-foto.webp" alt="Moderne Küche in Anthrazit mit Eiche und Kücheninsel" loading="lazy" decoding="async"></span>
+        <img class="pkc-btn" src="/assets/prospekt/cover-btn.webp" alt="Jetzt mit bis zu 4.000 € Renovierungszuschuss" loading="lazy" decoding="async">
+        <span class="pkc-ft">Küchenprospekt · gültig bis 30.11.2026</span>
+      </span>
+      <span class="pk-hint">Jetzt durchblättern →</span>
+    </button>
+  </div>
+  <div class="pk-modal" id="pk-modal" role="dialog" aria-modal="true" aria-label="Küchenprospekt" hidden>
+    <button type="button" class="pk-x" data-pk-close aria-label="Schließen">×</button>
+    <div class="pk-load" aria-hidden="true"></div>
+    <iframe title="Küchenprospekt Küchen Hugelmann" data-src="/renovierungszuschuss/prospekt.html" loading="lazy"></iframe>
   </div>
 </section>
 
@@ -3715,6 +3823,8 @@ h1 em,h2 em,.v9-head h2 em{font-style:normal;font-family:'Caveat',cursive;font-w
   </div>
   </div>
 </section>
+
+
 
 
 <!-- Möbelhaus -->
@@ -4273,6 +4383,15 @@ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)ret
 w.classList.remove('rv');w.classList.add('drop');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>0.6){w.classList.add('land');io.disconnect();}});},{threshold:[0.6]});
 io.observe(w);})();
+</script>
+<script>
+(function(){var m=document.getElementById('pk-modal');if(!m)return;var f=m.querySelector('iframe'),last;
+function ga(n){try{if(window.gtag)gtag('event',n,{funnel:'renovierungszuschuss'});}catch(e){}try{if(window.va)va('event',{name:n});}catch(e){}}
+function open(e){last=e&&e.currentTarget;if(!f.src){f.addEventListener('load',function(){m.classList.add('ok');},{once:true});f.src=f.getAttribute('data-src');}m.hidden=false;document.body.style.overflow='hidden';m.querySelector('.pk-x').focus();ga('prospekt_open');}
+function close(){m.hidden=true;document.body.style.overflow='';if(last)last.focus();}
+document.querySelectorAll('[data-pk-open]').forEach(function(b){b.addEventListener('click',open);});
+m.querySelector('[data-pk-close]').addEventListener('click',close);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close();});})();
 </script>
 </body>
 </html>
