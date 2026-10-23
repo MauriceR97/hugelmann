@@ -1663,7 +1663,7 @@ class Component extends DCLogic {
       submitForm: () => this.submit(),
       sending: !!this.state.sending || !this.state.consent,
       consentMissing: !this.state.consent,
-      submitLabel: this.state.sending ? 'Wird gesendet …' : (this.zuschuss() > 0 ? 'Zuschuss sichern' : 'Termin jetzt anfragen'),
+      submitLabel: this.state.sending ? 'Wird gesendet …' : (this.zuschuss() > 0 ? 'Zuschuss unverbindlich reservieren' : 'Termin jetzt anfragen'),
     };
   }
 }
