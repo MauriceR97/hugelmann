@@ -1142,6 +1142,54 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 .pcx-s{margin:12px auto 22px !important;max-width:290px !important;font-size:14.5px !important;}
 .pcx-cta{margin-top:0 !important;min-height:52px !important;font-size:15px !important;}
 }
+@media (max-width:860px){
+.mh-cta{display:flex !important;align-items:center !important;justify-content:space-between !important;gap:14px !important;min-height:70px !important;padding:12px 12px 12px 22px !important;border-radius:14px !important;background:var(--rot) !important;box-shadow:0 18px 32px -18px rgba(227,6,19,0.65),inset 0 1px 0 rgba(255,255,255,0.18) !important;text-align:left;}
+.mh-cta-t{display:flex;flex-direction:column;gap:3px;min-width:0;}
+.mh-cta-t b{font-size:17px;font-weight:700;line-height:1.2;color:#fff;}
+.mh-cta-t small{font-size:13px;font-weight:500;color:rgba(255,255,255,0.88);}
+.mh-cta-a{flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:#fff;color:var(--rot);transition:transform 200ms cubic-bezier(0.4,0,0.2,1);}
+.mh-cta:active .mh-cta-a{transform:translateX(3px);}
+}
+@media (max-width:860px){
+.mh-cta{justify-content:center !important;gap:16px !important;min-height:74px !important;padding:12px 22px !important;border-radius:12px !important;box-shadow:0 14px 26px -14px rgba(32,31,31,0.55) !important;}
+.mh-cta-a{order:-1;width:36px !important;height:36px !important;}
+.mh-cta-t{gap:4px !important;}
+.mh-cta-t b{font-size:19px !important;font-weight:700 !important;letter-spacing:-0.01em;}
+.mh-cta-t small{font-size:14px !important;letter-spacing:0.06em;color:rgba(255,255,255,0.85) !important;}
+}
+@media (max-width:860px){
+.mh-bot{gap:18px !important;padding:28px 20px 30px !important;}
+.mh-sh .eyebrow{display:none !important;}
+.mh-sh h2{margin:0 !important;font-size:34px !important;line-height:1.12 !important;font-weight:800 !important;letter-spacing:-0.025em !important;color:#14263a !important;}
+.mh-sh h2 .hl{display:inline-block;font-size:1em !important;font-weight:800 !important;letter-spacing:-0.02em !important;line-height:1.05 !important;color:#fff !important;background:#2c4a5e;border-radius:6px;padding:2px 10px 4px;margin:4px 0;}
+.mh-such .mh-lead{margin-top:14px !important;}
+.mh-such{gap:6px !important;}
+.mh-such .such-grid{gap:0 !important;margin-top:10px;border-top:1px solid #dfe4ea;}
+.mh-such .such-card{display:grid !important;grid-template-columns:34px minmax(0,1fr) !important;column-gap:18px !important;align-items:start !important;padding:20px 4px !important;background:transparent !important;border:0 !important;border-bottom:1px solid #dfe4ea !important;border-radius:0 !important;box-shadow:none !important;}
+.mh-such .such-card .ic{grid-row:1 / span 2;width:34px !important;height:34px !important;margin:2px 0 0 !important;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c4a5e' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m7.5 12.5 3 3 6-6.5'/%3E%3C/svg%3E") center/34px no-repeat !important;}
+.mh-such .such-card .ic svg{display:none !important;}
+.mh-such .such-card .ic::after{display:none !important;}
+.mh-such .such-card h3{grid-column:2;font-size:19px !important;line-height:1.3 !important;font-weight:700 !important;color:#2c4a5e !important;align-self:start !important;}
+.mh-such .such-card .sc-v{grid-column:2;margin-top:6px !important;font-size:16px !important;color:#3c4f62 !important;}
+.mh-cta{margin-top:10px;}
+.mh-g{margin-top:-2px;}
+.mh-g2{margin:-10px 0 0;text-align:center;font-size:14px;color:#1d2a38;}
+}
+.mh-g2{display:none;}
+@media (max-width:860px){ .mh-g2{display:block;} }
+@media (max-width:860px){
+.mh-sh .eyebrow{display:block !important;}
+.mh-sh h2{margin-top:6px !important;font-size:26px !important;line-height:1.15 !important;letter-spacing:-0.02em !important;color:#2c4a5e !important;}
+.mh-sh h2 .hl{display:inline !important;background:none !important;box-shadow:none !important;padding:0 !important;margin:0 !important;border-radius:0 !important;color:var(--rot) !important;font-size:1.45em !important;font-weight:900 !important;letter-spacing:-0.03em !important;line-height:1 !important;}
+}
+@media (max-width:860px){
+.mh-such .such-card h3{font-size:20.5px !important;}
+.mh-such .such-card .sc-v{font-size:17px !important;}
+.mh-cta-t b{font-size:20px !important;}
+.mh-cta-t small{font-size:15px !important;}
+.mh-g{font-size:14px !important;}
+.mh-g2{font-size:15px !important;}
+}
 </style>
 </head>
 <body>
@@ -1258,9 +1306,9 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
       <div class="such-card"><span class="ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><h3>0&nbsp;% Finanzierung</h3><span class="sc-v">über 60 Monate¹</span></div>
       </div>
     </div>
-    <a class="mh-cta" href="/alt-gegen-neu-formular/"><span>Tauschprämie unverbindlich anfragen</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg></a>
-    <p class="mh-note">Kostenlos &amp; unverbindlich · nur 30 Plätze</p>
+    <a class="mh-cta" href="/alt-gegen-neu-formular/"><span class="mh-cta-a" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 6 6 6-6 6"/></svg></span><span class="mh-cta-t"><b>Tauschprämie anfragen</b><small>unverbindlich &amp; kostenlos</small></span></a>
     <div class="mh-g"><svg viewBox="0 0 48 48" width="15" height="15" aria-hidden="true" style="flex:none;"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.970 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg><span class="mh-stars" aria-label="4,2 von 5 Sternen">★★★★★</span><span><b>4,2 von 5</b> bei Google · 547 Bewertungen</span></div>
+    <p class="mh-g2">In 1 Minute zu Ihrer persönlichen Tauschprämie</p>
   </div>
 </section>
 
@@ -1317,7 +1365,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
     </div>
     <div class="pgrid">
       <div class="pcard rv">
-        <div class="imgw"><img loading="lazy" src="/assets/beispiel-wert.webp" alt="Einstiegsküche aus der Ausstellung"><span class="cat">Einstieg</span></div>
+        <div class="imgw"><img loading="lazy" src="/assets/beispiel-wert.webp" alt="Einstiegsküche aus der Ausstellung"></div>
         <div class="body">
           <img class="pbrand" loading="lazy" src="/assets/marken/wertkueche.webp" alt="WERT Küche">
           <h3>WERT Küche „Nora"</h3>
@@ -1330,7 +1378,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
         </div>
       </div>
       <div class="pcard rv rv-d1">
-        <div class="imgw"><img loading="lazy" src="/assets/beispiel-interliving.webp" alt="Interliving Küche aus der Ausstellung"><span class="cat">Bestseller</span></div>
+        <div class="imgw"><img loading="lazy" src="/assets/beispiel-interliving.webp" alt="Interliving Küche aus der Ausstellung"></div>
         <div class="body">
           <img class="pbrand" loading="lazy" src="/assets/marken/interliving-kueche.webp" alt="Interliving Küche">
           <h3>Interliving Küche, grifflos</h3>
@@ -1343,7 +1391,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
         </div>
       </div>
       <div class="pcard rv rv-d2">
-        <div class="imgw"><img loading="lazy" src="/assets/beispiel-culineo.webp" alt="Culineo Küche aus der Ausstellung"><span class="cat">Komfort</span></div>
+        <div class="imgw"><img loading="lazy" src="/assets/beispiel-culineo.webp" alt="Culineo Küche aus der Ausstellung"></div>
         <div class="body">
           <img class="pbrand" loading="lazy" src="/assets/marken/culineo.webp" alt="Culineo Küche">
           <h3>Culineo Küche „C357"</h3>
