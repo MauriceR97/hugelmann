@@ -1355,6 +1355,27 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
 }
 @keyframes mhShine{0%,55%{left:-40%;}85%,100%{left:120%;}}
 @media (prefers-reduced-motion: reduce){ .mh .mh-cta::after{animation:none;display:none;} }
+
+@media (min-width:861px){
+  .haus-split{display:grid !important;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:32px;align-items:center;max-width:1040px;margin:0 auto 28px !important;}
+  .haus-vid{max-width:none !important;margin:0 !important;}
+  .haus-facts{margin-top:0 !important;grid-template-columns:1fr 1fr !important;gap:14px !important;}
+  .haus-siegel{grid-column:span 2 !important;}
+  .hf{padding:20px 20px 18px !important;}
+  .hf b{font-size:36px !important;}
+  .hf span{font-size:14px !important;}
+  .haus-siegel span{font-size:14px !important;}
+  .heroimg img.hero-ov{left:-3% !important;right:auto !important;width:106% !important;}
+  .steps{margin-left:auto !important;margin-right:auto !important;width:100%;max-width:780px !important;align-self:center !important;justify-self:center !important;}
+}
+
+@media (min-width:861px){
+  .pgrid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:20px !important;max-width:1040px;margin-left:auto;margin-right:auto;}
+  .pcard .crow{align-items:baseline;}
+  .pcard .crow > span:first-child{min-width:0;}
+  .pcard .crow > span:last-child{white-space:nowrap;flex:none;}
+  .pr-k{flex-wrap:wrap;}
+}
 </style>
 </head>
 <body>
@@ -1503,7 +1524,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.72);padding:48px 0 36px;f
     <div class="sec-head rv">
       <span class="eyebrow">Beispiele aus der Ausstellung</span>
       <h2>So viel sparst du in der Black Week</h2>
-      <p>Drei Küchen aus unserem Studio in Lahr, durchgerechnet mit 50&nbsp;% Black-Week-Rabatt. Deine Küche kalkulieren wir im Termin genauso transparent.</p>
+      <p>Drei Küchen aus unserem Studio in Lahr, durchgerechnet mit 50&nbsp;% auf den Möbelanteil. Deine Küche kalkulieren wir im Termin genauso transparent.</p>
     </div>
     <div class="pgrid">
       <div class="pcard rv">
