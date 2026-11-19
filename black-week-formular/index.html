@@ -936,7 +936,7 @@
 class Component extends DCLogic {
   state = { pos: 0, terminTag: null, terminZeit: null, personen: null, plzFromLp: false, gebietOut: false, answers: (function () { try { var g = new URLSearchParams(location.search).get('geraet'); var i = ['slushi', 'dualzone', 'creami'].indexOf(g); return i > -1 ? { ninja: i } : {}; } catch (e) { return {}; } })(), galIdx: 0, katalog: null, modulOffen: false, ringFertig: false, hilfe: [], uploads: [], nachricht: '', form: { vorname: '', nachname: '', tel: '', plz: '', email: '' }, consent: false, errors: {}, zustand: null, altForm: null, geraete: null, besonderheiten: '', foto: null };
   shorts = { ninja: 'Ninja-Gerät', laufzeit: 'Laufzeit', termin: 'Termin', phase: 'Planungsstand', angebot: 'Angebot', hilfe: 'Ihr Angebot', unterlagen: 'Unterlagen', details: 'Ihre Angaben', inspfrage: 'Inspiration', match: 'Passende Küchen', vorschlag: 'Ihr Küchenvorschlag', mail: 'E-Mail', form: 'Küchenform', alt: 'Alte Küche', alter: 'Alte Küche', stil: 'Küchenstil', farbe: 'Farbwelt', budget: 'Budget', zeit: 'Zeitpunkt' };
-  stepNo = { ninja: 1, form: 2, stil: 3, farbe: 4, budget: 5, laufzeit: 0, zeit: 6, termin: 0, kontakt: 7, angebot: 0, hilfe: 0, details: 0, alt: 0, alter: 0, phase: 0, unterlagen: 0, inspfrage: 0, match: 0, vorschlag: 0, mail: 0 };
+  stepNo = { ninja: 1, form: 2, stil: 3, farbe: 4, budget: 5, laufzeit: 0, zeit: 7, termin: 0, kontakt: 8, angebot: 0, hilfe: 0, details: 0, alt: 6, alter: 0, phase: 0, unterlagen: 0, inspfrage: 0, match: 0, vorschlag: 0, mail: 0 };
   hilfeLabels = ['Der Preis ist mir zu hoch', 'Die Planung passt noch nicht', 'Geräte oder Ausstattung passen nicht', 'Ich hätte gern eine zweite Meinung', 'Die Lieferzeit ist mir zu lang', 'Ich habe mich nicht gut beraten gefühlt'];
   KW = { ninja: 'Ninja-Gerät', laufzeit: 'Monate', phase: 'Küchenplanung', angebot: 'Angebot', form: 'Küchenform', stil: 'Küchenstil', farbe: 'Farbwelt', budget: 'Budget', alt: 'alte Küche', alter: 'Küche', zeit: 'neue Küche' };
   Q = {
@@ -945,7 +945,7 @@ class Component extends DCLogic {
     angebot: { title: 'Haben Sie schon ein Angebot von einem anderen Anbieter?', sub: 'Wir schauen es uns gern an, kostenfrei und ganz in Ruhe.', options: ['Ja, ich habe ein Angebot', 'Nein, noch nicht'] },
     phase: { title: 'Wie weit sind Sie mit Ihrer Küchenplanung?', sub: 'Ganz gleich, wo Sie stehen: Wir beraten Sie passend.', options: ['Ich suche noch Ideen', 'Ich weiß schon, was ich möchte'], descs: ['', ''], icons: true },
     form: { title: 'Welche Küchenform schwebt dir vor?', sub: 'Eine erste Idee genügt. Was genau in deinen Raum passt, planen wir gemeinsam in Lahr.', options: ['Eine Küchenzeile', 'Zwei Zeilen gegenüber', 'L-Form (über Eck)', 'U-Form', 'Mit Kochinsel', 'Weiß ich noch nicht'], files: ['/assets/kuechenformen/einzeilig.svg', '/assets/kuechenformen/zweizeilig.svg', '/assets/kuechenformen/l-form.svg', '/assets/kuechenformen/u-form.svg', '/assets/kuechenformen/insel.svg', null], imgs: 'form', qmarkLast: true },
-    alt: { title: 'Möchten Sie Ihre alte Küche in Zahlung geben?', sub: 'Wir bauen sie kostenfrei ab, nehmen sie mit und schreiben Ihnen eine Tauschprämie gut.', options: ['Ja, gerne', 'Nein', 'Ich habe keine alte Küche'] },
+    alt: { title: 'Wusstest du schon? Wir nehmen deine alte Küche kostenfrei mit.', sub: 'Steht bei dir noch eine alte Küche? Wir bauen sie ab und nehmen sie mit, du organisierst nichts.', options: ['Ja, bitte abbauen und mitnehmen', 'Nein, brauche ich nicht', 'Ich habe keine alte Küche'] },
     alter: { title: 'Wie alt ist Ihre jetzige Küche ungefähr?', sub: 'Eine grobe Schätzung reicht völlig.', note: 'Auch ältere Küchen nehmen wir in Zahlung.', options: ['Unter 10 Jahre', '10 bis 20 Jahre', '20 bis 30 Jahre', 'Über 30 Jahre'] },
     stil: { title: 'Welcher Küchenstil gefällt dir?', sub: 'Folge ruhig deinem Bauchgefühl.', options: ['Hochglanz', 'Matt', 'Holzoptik', 'Landhaus', 'Weiß ich noch nicht'], files: ['/assets/kuechenstile/hochglanz.webp', '/assets/kuechenstile/matt.webp', '/assets/kuechenstile/massivholz.webp', '/assets/kuechenstile/landhaus.webp', null], imgs: 'stil', qmarkLast: true },
     farbe: { title: 'Welche Farbwelt passt zu deinem Zuhause?', sub: 'Hell und freundlich, dunkel und edel oder mit Farbe.', options: ['Hell', 'Dunkel', 'Farbig', 'Weiß ich noch nicht'], files: ['/assets/farbstile/hell.webp', '/assets/farbstile/dunkel.webp', '/assets/farbstile/farbig.webp', null], imgs: 'farbe', qmarkLast: true },
@@ -954,7 +954,7 @@ class Component extends DCLogic {
     zeit: { title: 'Wann soll deine neue Küche stehen?', sub: 'Ganz unverbindlich, du bestimmst das Tempo.', options: ['So bald wie möglich', 'In 1 bis 3 Monaten', 'In 3 bis 6 Monaten', 'Erst 2027'] },
   };
   flow(ans) {
-    return ['ninja'].concat(this.state.formFromLp ? [] : ['form']).concat(['stil', 'farbe', 'budget', 'zeit', 'kontakt']);
+    return ['ninja'].concat(this.state.formFromLp ? [] : ['form']).concat(['stil', 'farbe', 'budget', 'alt', 'zeit', 'kontakt']);
   }
   inspBlock(a) { if (!(this.state.katalog && this.state.katalog.kuechen && this.state.katalog.kuechen.length)) return ['match']; return ['inspfrage'].concat(a.inspfrage === 1 ? [] : ['match'].concat(this.inspSteps(a))); }
   inspSteps(a) { if (!(this.state.katalog && this.state.katalog.kuechen && this.state.katalog.kuechen.length)) return []; return ['vorschlag'].concat(a.vorschlag === 0 ? ['mail'] : []); }
@@ -1439,7 +1439,7 @@ class Component extends DCLogic {
       return (o && o !== 'Weiß ich noch nicht' && src) ? { lbl, val: o, src } : null;
     }).filter(Boolean);
     const sumChips = [];
-    if (answers.alt === 0) sumChips.push('Alte Küche in Zahlung');
+    if (answers.alt === 0) sumChips.push('Abbau alte Küche');
     if (typeof answers.budget === 'number') sumChips.push('Budget ' + this.Q.budget.options[answers.budget]);
     if (this.state.plzFromLp && !this.state.gebietOut) sumChips.push('Im Aktionsgebiet');
     return {
